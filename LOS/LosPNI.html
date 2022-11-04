@@ -1,0 +1,211 @@
+﻿<div class="title">
+  <h1>Zonal Quality Check(ZQC) : Agency Verification</h1>
+</div>
+
+<form id="PostForm" name="PostForm" action="http://119.226.197.6:8080/omnidocs/integration/foldView/viewFoldList.jsp" method="post" target="newWin">
+    <input type="hidden" name="Application" value="SHFL_LOANS">
+    <input type="hidden" id="fold_nm" name="FolderName" value="">
+    <input type="hidden" name="sessionIndexSet" value="false">
+</form>
+
+    <div class="content-div">
+        <div class="box-div lead-information" id="main_agtLeadDiv">
+            <ul class="form-controls">
+                <h2>Lead Information <i class="icon-plus div-right" title="Omnidox" id="popclose" onclick="fnpop();"></i><i class="icon-customer div-right" onclick="fnOpenCustomerDetails();"></i></h2>
+                <li class="category-icons">
+                    <label><i class="icon-home-loan"></i></label>
+                    <p></p>
+                </li>
+                <li class="width-1 read-only">
+                    <label>Lead ID</label>
+                    <p id="Agt_LeadId" name="content" key="LeadID"></p>
+                </li>
+                <li class="width-280 read-only">
+                    <label>Applicant</label>
+                    <p id="Agt_LeadNm" name="content" key="LeadNm"></p>
+                </li>
+                <li class="width-15 read-only">
+                    <label>Branch</label>
+                    <p id="Agt_Branch" name="content" key="BranchNm"></p>
+                </li>
+                <li class="width-33 read-only">
+                    <label>Application Number</label>
+                    <p id="Agt_AppNo" name="content" key="AppNo"></p>
+                </li>
+            </ul>
+        </div>
+        <div id="fulagtdiv"  class="box-div agent-verification-div">
+            <div>
+                <!--<input type="button" value="test" onclick="fnsavedata()"/>-->
+                <h2>Buisness/Office Address</h2>
+                <div class="box-div" id="whole_addr_div">
+                    <ul class="common-tabs" id="ul_coapp">
+                        <li class="active" id="li_Start" val="0">Applicant</li>
+                    </ul>
+                    <div val="0" id="agt_addr_content_0" emptyp="0" class="app_Addr" contentchanged="false">
+                        <div class="adr_content">
+                            <h2>Address</h2>
+                            <ul class="form-controls">
+                                <li class="width-8">
+                                    <label>Flat/Door No</label>
+                                    <input type="text" name="text" key="agt_app_DoorNo" placeholder="" maxlength="20">
+                                </li>
+                                <li class="width-21">
+                                    <label>Building</label>
+                                    <input type="text" name="text" key="agt_app_Building" class="mandatory" placeholder="" maxlength="100" >
+                                </li>
+                                <li class="width-8">
+                                    <label>Plot No</label>
+                                    <input type="text" name="text" key="agt_app_PlotNo" placeholder="" maxlength="20">
+                                </li>
+                                <li class="width-54">
+                                    <label>Street</label>
+                                    <input type="text" name="text" key="agt_app_Street" placeholder="" maxlength="150">
+                                </li>
+                                <li class="width-54">
+                                    <label>Land Mark</label>
+                                    <input type="text" name="text" key="agt_app_Landmark" placeholder="" maxlength="250">
+                                </li>
+                                <li class="width-54 city">
+                                    <label>Town/Village/City</label>
+                                    <input type="text" name="text" key="agt_app_Area" placeholder="" class="mandatory" maxlength="150">
+                                </li>
+                                <li class="width-54 district">
+                                    <label>District</label>
+                                    <input type="text" name="text" key="agt_app_District" placeholder="" class="mandatory" maxlength="100">
+                                </li>
+                                <li class="width-21 state">
+                                    <label>State</label>
+                                    <input type="text" name="text" key="agt_app_State" placeholder="" class="mandatory" maxlength="100">
+                                </li>
+                                <li class="width-6">
+                                    <label>PIN</label>
+                                    <comp-help id="comp-help" txtcol="Pincode" valcol="PinPk" onrowclick="Pinclick" prcname="PrcShflPincodehelp" width="100%"></comp-help>
+                                    <input type="hidden" name="text" key="agt_app_pin" placeholder="" restrict="number" maxlength="6">
+                                </li>
+                                <li class="width-6" style="display:none;">
+                                    <input type="hidden" name="text" key="agt_app_Typ" placeholder="">
+                                    <input type="hidden" name="text" key="agt_app_LapFk" placeholder="">
+                                    <input type="hidden" name="text" key="agt_app_AppFk" placeholder="">
+                                </li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- (Example - Resi FI, Office FI,DV report, Collection Feedback,Tech report, Legal report) -->
+
+
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<div class="popup-bg" id="agent-div" style="display:none">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2>Agents <i class="icon-close div-right"></i></h2>
+        </div>
+        <div class="popup-content">
+            <div contentchanged="true" class="agt_DtlInfo">
+                <div id="griddiv">
+                    <ul class="trigger-div" id="#agtgridUlid">
+                        <li class="rowGrid">
+                            <label>Field investigation(Residence) </label>
+                            <span class="icon-sales-manager">
+                                <div class="select-focus">
+                                    <input type="hidden" name="text" colkey="agt_SrvTyp" value="0">
+                                    <comp-help id="fir_help" txtcol="AgentName" valcol="Agtpk" helpfk="0" prcname="PrcShfl_AgentMas_help" width="100%"></comp-help>
+                                    <!--<input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="agt_AgtFk" id="fldinsres" class="autofill mandatory">
+                                    <i class="icon-down-arrow"></i>
+                                    <ul class="custom-select agt_sel"></ul>-->
+                                </div>
+                            </span>
+                        </li>
+                        <li class="rowGrid" id="fldofz">
+                            <label>Field investigation(Office/Business) </label>
+                            <span class="icon-sales-manager">
+                                <div class="select-focus">
+                                    <input type="hidden" name="text" colkey="agt_SrvTyp" value="1">
+                                    <comp-help id="fio_help" txtcol="AgentName" valcol="Agtpk" helpfk="0" prcname="PrcShfl_AgentMas_help" width="100%"></comp-help>
+                                    <!--<input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="agt_AgtFk" id="fldofzid" class="autofill mandatory">
+                                    <i class="icon-down-arrow"></i>
+                                    <ul class="custom-select agt_sel"></ul>-->
+                                </div>
+                            </span>
+                        </li>
+                        <li class="rowGrid">
+                            <label>Document Verification</label>
+                            <span class="icon-sales-manager">
+                                <div class="select-focus">
+                                    <input type="hidden" name="text" colkey="agt_SrvTyp" value="2">
+                                    <comp-help id="dv_help" txtcol="AgentName" valcol="Agtpk" helpfk="0"  prcname="PrcShfl_AgentMas_help" width="100%"></comp-help>
+                                    <!--<input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="agt_AgtFk" id="docverid" class="autofill mandatory">
+                                    <i class="icon-down-arrow"></i>
+                                    <ul class="custom-select agt_sel"></ul>-->
+                                </div>
+                            </span>
+                        </li>
+                        <li class="rowGrid collection">
+                            <label>Collection Feedback</label>
+                            <span class="icon-sales-manager">
+                                <div class="select-focus">
+                                    <input type="hidden" name="text" colkey="agt_SrvTyp" value="3">
+                                    <comp-help id="cf_help" txtcol="AgentName" valcol="Agtpk" helpfk="3"  prcname="PrcShfl_AgentMas_help" width="100%"></comp-help>
+                                    <!--<input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="agt_AgtFk" id="colfedbackid" class="autofill mandatory">
+                                    <i class="icon-down-arrow"></i>
+                                    <ul class="custom-select agt_sel"></ul>-->
+                                </div>
+                            </span>
+                        </li>
+                        <!--<li class="hiddenAgency rowGrid" id="tech_ver">
+                            <label>Technical Verification</label>
+                            <span class="icon-sales-manager">
+                                <div class="select-focus">
+                                    <input type="hidden" name="text" colkey="agt_SrvTyp" value="5">
+                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="agt_AgtFk" id="techverid" class="autofill mandatory">
+                                    <i class="icon-down-arrow"></i>
+                                    <ul class="custom-select agt_sel"></ul>
+                                </div>
+                            </span>
+                        </li>
+                        <li class="hiddenAgency rowGrid" id="legal_ver">
+                            <label>Legal Verification</label>
+                            <span class="icon-sales-manager">
+                                <div class="select-focus">
+                                    <input type="hidden" name="text" colkey="agt_SrvTyp" value="4">
+                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="agt_AgtFk" id="legalverid" class="autofill mandatory">
+                                    <i class="icon-down-arrow"></i>
+                                    <ul class="custom-select agt_sel"></ul>
+                                </div>
+                            </span>
+                        </li>-->
+                        <li>
+                            <input onclick="fnagentPNIconfirm()" type="button" value="Confirm" />
+                        </li>
+                       
+                    </ul>
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+ 
+    </div>
+
+<script>
+    calcHeight(); //Viewport Height Function Starts
+    rightdocument(); /*Document Popup*/
+    popupclose(); /*close popup function*/
+
+    function fnpop() {
+        $("#fold_nm").val(GlobalXml[0].LeadID);
+        window.open("", "newWin", "location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no,left=20,top=20,width=600,height=600");
+        PostForm.submit();
+    }
+
+</script> 
+
+<script src="js/Scrn/LosPNI.js"></script>

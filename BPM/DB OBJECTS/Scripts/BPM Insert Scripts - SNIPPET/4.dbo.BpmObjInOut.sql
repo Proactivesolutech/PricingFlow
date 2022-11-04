@@ -1,0 +1,51 @@
+SELECT  N'IF NOT EXISTS(SELECT ''X'' FROM [BpmObjInOut] WHERE BioPk='+  CAST(BioPk AS NVARCHAR(50)) 
+        +N')BEGIN ' +  CHAR(5) + '
+        SET IDENTITY_INSERT [dbo].[BpmObjInOut] ON ' +  CHAR(5) + ' 
+
+        INSERT INTO [dbo].[BpmObjInOut]      ' +  CHAR(5) + '(
+					[BioBvmFk], ' +  CHAR(5) + '
+					[BioBfwFk], ' +  CHAR(5) + '
+					[BioBtbFk], ' +  CHAR(5) + '
+					[BioId], ' +  CHAR(5) + '
+					[BioInBfwFk], ' +  CHAR(5) + '
+					[BioInId], ' +  CHAR(5) + '
+					[BioOutBfwFk], ' +  CHAR(5) + '
+					[BioOutId], ' +  CHAR(5) + '
+					[BioSubBfwFk], ' +  CHAR(5) + '
+					[BioPk], ' +  CHAR(5) + '
+					[BioRowId], ' +  CHAR(5) + '
+					[BioCreatedBy], ' +  CHAR(5) + '
+					[BioCreatedDt], ' +  CHAR(5) + '
+					[BioModifiedBy], ' +  CHAR(5) + '
+					[BioModifiedDt], ' +  CHAR(5) + '
+					[BioDelFlg], ' +  CHAR(5) + '
+					[BioDelId], ' +  CHAR(5) + '
+					[BioTreeId]) ' +  CHAR(5) + '
+             VALUES' +  CHAR(5) + ' 
+                  ( '  + ISNULL(CAST(BioBvmFk AS NVARCHAR(1000)), 'NULL') + ' ' +  CHAR(5) + ' 
+					, '  + ISNULL(CAST(BioBfwFk AS NVARCHAR(1000)), 'NULL') + ' ' +  CHAR(5) + ' 
+					, '  + ISNULL(CAST(BioBtbFk AS NVARCHAR(1000)), 'NULL') + ' ' +  CHAR(5) + ' 
+					, '''  + ISNULL(CAST(BioId AS NVARCHAR(1000)), 'NULL') + ''' ' +  CHAR(5) + ' 
+					, '  + ISNULL(CAST(BioInBfwFk AS NVARCHAR(1000)), 'NULL') + ' ' +  CHAR(5) + ' 
+					, '''  + ISNULL(CAST(BioInId AS NVARCHAR(1000)), 'NULL') + ''' ' +  CHAR(5) + ' 
+					, '  + ISNULL(CAST(BioOutBfwFk AS NVARCHAR(1000)), 'NULL') + ' ' +  CHAR(5) + ' 
+					, '''  + ISNULL(CAST(BioOutId AS NVARCHAR(1000)), 'NULL') + ''' ' +  CHAR(5) + ' 
+					, '  + ISNULL(CAST(BioSubBfwFk AS NVARCHAR(1000)), 'NULL') + ' ' +  CHAR(5) + ' 
+					, '  + ISNULL(CAST(BioPk AS NVARCHAR(1000)), 'NULL') + ' ' +  CHAR(5) + ' 
+					, '''  + ISNULL(CAST(BioRowId AS NVARCHAR(1000)), 'NULL') + ''' ' +  CHAR(5) + ' 
+					, '''  + ISNULL(CAST(BioCreatedBy AS NVARCHAR(1000)), 'NULL') + ''' ' +  CHAR(5) + ' 
+					,dbo.gefgChar2Date(''' + dbo.gefgDMY(GETDATE()) + ''')' +  CHAR(5) + ' 
+					, '''  + ISNULL(CAST(BioModifiedBy AS NVARCHAR(1000)), 'NULL') + ''' ' +  CHAR(5) + ' 
+					,dbo.gefgChar2Date(''' + dbo.gefgDMY(GETDATE()) + ''')' +  CHAR(5) + ' 
+					, '  + ISNULL(CAST(BioDelFlg AS NVARCHAR(1000)), 'NULL') + ' ' +  CHAR(5) + ' 
+					, '  + ISNULL(CAST(BioDelId AS NVARCHAR(1000)), 'NULL') + ' ' +  CHAR(5) + ' 
+					, '''  + ISNULL(CAST(BioTreeId AS NVARCHAR(1000)), 'NULL') + ''' ' +  CHAR(5) + ' 
+                   ) ' +  CHAR(5) + ' 
+        SET IDENTITY_INSERT [dbo].[BpmObjInOut] OFF ' +  CHAR(5) + ' 
+        END ' +  CHAR(5) + ' 
+        ' +  CHAR(5) + ' '+  CHAR(5)
+FROM BpmObjInOut A
+WHERE NOT EXISTS(SELECT 'X' FROM [SHFL_BPM_UAT]..[BpmObjInOut] B WHERE B.BioPk = A.BioPk)
+
+
+ 

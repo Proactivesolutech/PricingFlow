@@ -1,0 +1,676 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHFL</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/common.css?$$$v=1.0.3$$$">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css?$$$v=1.0.3$$$">
+    <link rel="stylesheet" type="text/css" href="css/range.css?$$$v=1.0.3$$$">
+    <link rel="stylesheet" type="text/css" href="css/fonts/style.css?$$$v=1.0.3$$$" />
+    <link rel="stylesheet" type="text/css" href="css/BeatPicker.min.css?$$$v=1.0.3$$$" />
+    <!-- Jquery JS -->
+    <script src="js/jquery.js?$$$v=1.0.3$$$"></script>
+    <script src="js/highcharts.js?$$$v=1.0.3$$$"></script>
+    <!-- Jquery JS -->
+    <!-- Common JS BPM/LOS-->
+    <script src="../COMMON/js/Scrn/CommonFns.js?$$$v=1.0.3$$$"></script>
+    <!-- Common JS BPM/LOS-->
+
+    <!-- BPM Required JS-->
+    <script src="../COMMON/js/devp-js/ProDataAccesScript.js?$$$v=1.0.3$$$"></script>
+    <script src="../COMMON/js/Scrn/BPM_Common.js?$$$v=1.0.3$$$"></script>
+    <!-- BPM Required JS-->
+
+    <!-- LOS Required JS -->
+    <script src="js/common-js.js?$$$v=1.0.3$$$"></script>
+    <script src="js/Scrn/index.js?$$$v=1.0.3$$$"></script>
+    <script src="js/Scrn/LogDtls.js?$$$v=1.0.3$$$"></script>
+    <script src="../COMMON/js/devp-js/ProLOSDataAccesScript.js?$$$v=1.0.3$$$"></script>
+    <!-- LOS Required JS -->
+
+    <!-- SELECT2-->
+    <!--<link href="../COMMON/Components/js/select2-3.5.1/select2-bootstrap.css?$$$v=1.0.3$$$" rel="stylesheet" />
+    <link href="../COMMON/Components/js/select2-3.5.1/select2.css?$$$v=1.0.3$$$" rel="stylesheet" />
+    <script src="../COMMON/Components/js/select2-3.5.1/select2.js?$$$v=1.0.3$$$"></script>-->
+
+    <link href="../COMMON/Components/js/select2-4.0.3/select2-bootstrap.css?$$$v=1.0.3$$$" rel="stylesheet" />
+    <link href="../COMMON/Components/js/select2-4.0.3/select2.css?$$$v=1.0.3$$$" rel="stylesheet" />
+    <script src="../COMMON/Components/js/select2-4.0.3/select2.js?$$$v=1.0.3$$$"></script>
+
+    <!-- SELECT2-->
+    <!--COMPONENTS-->
+    <script src="../COMMON/Components/js/webcomponent-lite.min.js?$$$v=1.0.3$$$"></script>
+    <!--FOR PDF-->
+    <script src="../COMMON/Components/js/PDF2IMAGE/PdfJs.js?$$$v=1.0.3$$$"></script>
+    <script src="../COMMON/Components/js/PDF2IMAGE/processing-api.min.js?$$$v=1.0.3$$$"></script>
+    <!--FOR PDF-->
+    <link rel="stylesheet" type="text/css" href="../COMMON/Components/css/jquery-ui.css?$$$v=1.0.3$$$" />
+    <link rel="stylesheet" type="text/css" href="../COMMON/Components/css/common.css?$$$v=1.0.3$$$" />
+    <link rel="stylesheet" type="text/css" href="../COMMON/Components/css/fonts/query-style.css?$$$v=1.0.3$$$" />
+    <link rel="stylesheet" type="text/css" href="../COMMON/Components/css/fonts/scan-style.css?$$$v=1.0.3$$$" />
+
+    <script src="../COMMON/Components/js/jquery-ui.js?$$$v=1.0.3$$$"></script>
+
+    <!-- Dashboard Files -->
+    <link rel="import" id="dashboard" href="../COMMON/Components/comp-dashboard/comp-dashboard.html?$$$v=1.0.3$$$" />
+    <script src="../COMMON/Components/comp-dashboard/js/comp-dashboard.js?$$$v=1.0.3$$$"></script>
+    <!-- Dashboard Files -->
+    <!-- SCAN Files -->
+    <link id="scan" rel="import" href="../COMMON/Components/comp-scan/comp-scan.html?$$$v=1.0.3$$$" />
+    <script src="../COMMON/Components/comp-scan/js/comp-scan.js?$$$v=1.0.3$$$"></script>
+    <link id="scanfile" rel="import" href="../COMMON/Components/comp-scan-file/comp-scan-file.html?$$$v=1.0.3$$$" />
+    <script src="../COMMON/Components/comp-scan-file/js/comp-scan-file.js?$$$v=1.0.3$$$"></script>
+    <!-- SCAN Files -->
+
+    <!-- Query Files -->
+    <link id="query" rel="import" href="../COMMON/Components/comp-query/comp-query.html?$$$v=1.0.3$$$" />
+    <script src="../COMMON/Components/comp-query/js/comp-query.js?$$$v=1.0.3$$$"></script>
+    <!-- Query Files -->
+
+    <!-- Help Files -->
+    <link rel="stylesheet" type="text/css" href="../COMMON/Components/comp-help/css/comp-help.css?$$$v=1.0.3$$$" />
+    <link id="help" rel="import" href="../COMMON/Components/comp-help/comp-help.html?$$$v=1.0.3$$$" />
+    <script src="../COMMON/Components/comp-help/js/comp-help.js?$$$v=1.0.3$$$"></script>
+    <!-- Help Files -->
+
+    <!--COMPONENTS-->
+
+    <script src="js/range.js?$$$v=1.0.3$$$"></script>
+
+    <script>
+        function fnPreviewSelected() {
+            $(".folder-popup").hide();
+            var arr = $("#scanfileid").getSelectedImages();
+            $(".scand-document").show();
+            $(".scand-document").siblings().not(".clear").hide();
+            $("#compsaveid").MakeEmpty();
+            $("#compsaveid").LoadImageArr(arr);
+        }
+    </script>
+</head>
+<body>
+    <div class="main-wrapper">
+
+        <!-- Error Popup Div Starts-->
+        <div class="error-div" style="display:none;">
+            <div class="error-content">
+                <div class="display-table">
+                    <div class="display-table-cell"><i id="AlertIcon"></i></div>
+                    <div class="display-table-cell">
+                        <h4 id="title_msg"></h4>
+                        <p id="error_msg"></p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <input type="button" id="btn_Ok" value="OK"> <input id="btn_Cancel" type="button" value="CANCEL">
+            </div>
+        </div>
+        <!-- Error Popup Div Ends-->
+
+        <div id="div_btnTemplate" style="display:none;" class="center form-btns">
+            <div id="drop-button" class="drop-button">
+                <input onclick="fnConfirmScreenFinal()" type="button" value="Confirm">
+                <i class="icon-down-arrow"></i>
+                <ul id="temp_btn_option" class="drop-list"></ul>
+            </div>
+            <input type="button" id="btn_Trigger" value="Trigger" style="display:none;" onclick="fnShowFlowDtls()">
+            <!--<input type="button" id="btn_Back" value="back" onclick="fnBackDtls()"/>-->
+        </div>
+        <div class="content-wrapper">
+            <div style="height:100vh;" class="left-panel bg-blue div-left align-center">
+                <i> <!--class="icon-menu"--></i>
+                <ul>
+                    <!--
+                    <li onclick="LoadHtmlDiv('sales-dashboard.html')" title="Sales Manager"><i class="icon-sales-manager"></i><span>Sales Manager</span></li>
+                    <li onclick="LoadHtmlDiv('branch-dashboard.html')" title="Branch Ops"><i class="icon-branch-ops"></i><span>Branch Ops</span></li>
+                    <li onclick="LoadHtmlDiv('credit-dashboard.html')" title="Branch Credit"><i class="icon-branch-credit"></i><span>Branch Credit</span></li>
+                    <li onclick="LoadHtmlDiv('zonal-dashboard.html')" title="Zonal Ops"><i class="icon-zonal-ops"></i><span>Zonal Ops</span></li>
+                    <li onclick="LoadHtmlDiv('zonalqc-dashboard.html')" title="Zonal Ops (QC)"><i class="icon-zonal-ops-qc"></i><span>Zonal Ops (QC)</span></li>
+                    <li onclick="LoadHtmlDiv('agents-dashboard.html')" title="Agents"><i class="icon-agents"></i><span>Agents</span></li>
+                    <li onclick="LoadHtmlDiv('zonalcredit-dashboard.html')" title="Zonal Credit"><i class="icon-zonal-credit"></i><span>Zonal Credit</span></li>
+                    <li onclick="LoadHtmlDiv('rcu-dashboard.html')" title="RCU"><i class="icon-rcu"></i><span>RCU</span></li>
+                    <li onclick="LoadHtmlDiv('disbursement-dashboard.html')" title="Disbursement Officer"><i class="icon-dispurcement-manager"></i><span>Disbursement Officer</span></li>
+                    <li onclick="LoadHtmlDiv('dashboard-chart.html')" title="Operation Manager"><i class="icon-opration-manager"></i><span>Operation Manager</span></li>
+                    <li onclick="LoadHtmlDiv('agent-mgmt.html')" title="Agent Management"><i class="icon-opration-manager"></i><span>Agent Management</span></li>
+                    <!--<li onclick="LoadHtmlDiv('agent-management.html')" title="Agent Management dd"><i class="icon-opration-manager"></i><span>Agent Management dd</span></li>
+                    <li onclick="LoadHtmlDiv('agent-man.html')" title="Agent Management dd"><i class="icon-opration-manager"></i><span>Agent Management dd</span></li>
+                    -->
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="right-panel div-right">
+                <img style="cursor:pointer;" src="images/user.png" onclick="location.reload();" />
+                <div class="display-table">
+                    <ul id="right_panel" style="display:none" class="right-icons display-table-cell">
+                        <li title="Query"><i class="icon-chat"></i><span id="qry_Cnt"></span></li>
+                        <li title="Notification"><i class="icon-notification"></i><span id="not_Cnt"></span></li>
+                        <li title="Documents"><i class="icon-folder"></i><span id="fold_Cnt"></span></li>
+                        <li title="Tracking"><i class="icon-clock"></i></li>
+                    </ul>
+                </div>
+                <div class="right-content-div" style="display: none; height: 100%;">
+                    <comp-query width="100%" height="100%" id="QueryDiv"></comp-query>
+                </div>
+            </div>
+            <div class="center-panel">
+                <div class="top-panel">
+                    <span>
+                        <img src="images/logo.png" alt="">
+                        <p>Version 2.0</p>
+                    </span>
+                    <i id="link_Dash" style="display:none;" class="icon-dashboard div-right cursor" title="Dashboard"></i>                                     
+                    <i id="Lead_His" style="display:none;" class="icon-lead-details div-right cursor" title="Lead Search Filter" onclick="LoadHtmlDiv('DashboardLeadHis.html')"></i>
+                    <i id="Lead_Info" style="display:none;" class="icon-lead-details div-right cursor" title="Lead Search Filter" onclick="LoadHtmlDiv('LeadInformation.html')"></i>
+                      
+                    </div>
+   
+                <div class="content-panel" id="div-user-content"> </div>
+            </div>
+        </div>
+
+        <!-- Return Listing Starts -->
+        <div class="popup-bg documents-popup" id="return-popup" style="display:none;">
+            <div class="popup-div">
+                <h2>Return <i class="icon-close right"></i></h2>
+                <div class="return-form">
+                    <input name="Qry_opt" value="1" type="radio" checked> Process With Flow
+                    <input name="Qry_opt" value="2" type="radio"> Return to Current Screen
+                </div>
+                <ul class="return-list" id="QryRtnTrigger"></ul>
+            </div>
+        </div>
+        <!-- Return Listing Ends -->
+        <!-- New Flow Listing Starts -->
+        <div class="popup-bg documents-popup" id="list_newflow" style="display:none;">
+            <div class="popup-div">
+                <h2>Flows <i class="icon-close right"></i></h2>
+                <ul class="return-list" id="div_flow_list"></ul>
+            </div>
+        </div>
+        <!-- New Flow Listing Ends -->
+        <!-- Tracking Popup Div Starts-->
+        <div class="popup-bg" id="tracking-div" style="display:none;">
+            <div class="popup-div popup-large">
+                <div class="popup-header">
+                    <h2>Case Tracker <i class="icon-close div-right"></i></h2>
+                </div>
+                <div class="popup-content">
+                    <div class="tracking-div">
+                        <ul class="form-controls">
+                            <li class="category-icon">
+                                <i class="icon-home-loan"></i>
+                                <p>Home Loan</p>
+                            </li>
+                            <li class="width-1 read-only">
+                                <label>Lead ID</label>
+                                <p>SHFC11765689</p>
+                            </li>
+                            <div class="clear"></div>
+                        </ul>
+                        <div class="tracking-content">
+                            <div class="track-border"></div>
+                            <div class="history-main">
+                                <h3>Data Entry</h3>
+                                <div class="history-sub">
+                                    <h4>DSI</h4>
+                                    <span class="bg1 round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                                <div class="history-sub">
+                                    <h4>QDE</h4>
+                                    <span class="bg1 round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                                <div class="history-sub">
+                                    <h4>DDE</h4>
+                                    <span class="bg1 round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                                <div class="history-sub">
+                                    <h4>QC</h4>
+                                    <span class="bg1 round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                            </div>
+                            <div class="history-main">
+                                <h3>Agent Verification</h3>
+                                <div class="history-sub">
+                                    <h4>FI</h4>
+                                    <span class="bg2 round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                                <div class="history-sub">
+                                    <h4>DV</h4>
+                                    <span class="bg2 round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                                <div class="history-sub">
+                                    <h4>LV</h4>
+                                    <span class="bg2 round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                                <div class="history-sub">
+                                    <h4>TV</h4>
+                                    <span class="bg2 round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                                <div class="history-sub">
+                                    <h4>CF</h4>
+                                    <span class="bg2 round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                            </div>
+                            <div class="history-main">
+                                <h3>Credit</h3>
+                                <div class="history-sub">
+                                    <h4>PD</h4>
+                                    <span class="bg3 round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                                <div class="history-sub">
+                                    <h4>TV</h4>
+                                    <span class="bg3 round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                                <div class="history-sub">
+                                    <h4>DDE</h4>
+                                    <span class="bg3 round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                            </div>
+                            <div class="history-main">
+                                <h3>Credit Sanction</h3>
+                                <div class="history-sub">
+                                    <h4>CO</h4>
+                                    <span class="bg round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                                <div class="history-sub">
+                                    <h4>CA</h4>
+                                    <span class="bg round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                                <div class="history-sub">
+                                    <h4>DSI</h4>
+                                    <span class="bg round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                            </div>
+                            <div class="history-main">
+                                <h3>Disbrusment</h3>
+                                <div class="history-sub">
+                                    <h4>DDE</h4>
+                                    <span class="bg round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                                <div class="history-sub">
+                                    <h4>QC</h4>
+                                    <span class="bg round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                                <div class="history-sub">
+                                    <h4>DO</h4>
+                                    <span class="bg round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                                <div class="history-sub">
+                                    <h4>DA</h4>
+                                    <span class="bg round"></span>
+                                    <p>1 Aug (1d)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Tracking Popup Div End-->
+        <!-- Subjective Popup Div Starts-->
+        <div class="popup-bg" id="subjective-div" style="display:none;">
+            <div class="popup-div">
+                <div class="popup-header"> <i class="icon-close div-right"></i> </div>
+                <div class="popup-content">
+                    <div class="query-box">                        
+                        <div class="">
+                            <div class="comment-div">
+                                <textarea id="Crd_Comment">Write Comments</textarea>
+                                <div>
+                                    <!--<input type="button" value="Attachments" class="div-left">-->
+                                    <input type="button" value="ADD" class="div-right" onclick="fnCreditComment()">
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Subjective Popup Div End-->
+        <!--document(scan and attach) Popup-->
+        <div id="document-content" class="popup-bg document-pop-content" style="display:none;">
+            <div class="popup-div">
+                <div class="popup-header">
+                    <h2>
+                        Documents <span class="right">
+                        </span> <i class="icon-close div-right"></i>
+                    </h2>
+                    <div class="clear"></div>
+                </div>
+                <div class="popup-content">
+                    <div class="document-entry">
+                        <div class="preview-icons right"> <i class="icon-list-view"></i> <i class="icon-thumbnails"></i> </div>
+                        <div class="clear"></div>
+                        <div class="popup documents attach-icon doc-list-view">
+                            <ul>
+                                <li>
+                                    Voter Id
+                                    <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">Address Proof</span></p>
+                                </li>
+                                <li><i class="icon-document doc-view"></i></li>
+                                <li><i class="icon-delete"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Application Form
+                                    <p><span class="bg">Applicant</span> <span class="bg">Application</span></p>
+                                </li>
+                                <li><i class="icon-document doc-view"></i></li>
+                                <li><i class="icon-delete"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Sale Deed
+                                    <p><span class="bg">Applicant</span> <span class="bg">Property</span> <span class="bg">Sale Deed</span></p>
+                                </li>
+                                <li><i class="icon-document doc-view"></i></li>
+                                <li><i class="icon-delete"></i></li>
+                            </ul>
+                            <ul>
+                                <li>Processing Fee Cheque</li>
+                                <li><i class="icon-document"></i></li>
+                                <li><i class="icon-delete"></i></li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="document-attach" style="display:none;">
+                        <h2><i class="icon-close right"></i></h2>
+                        <div class="clear"></div>
+                        <div class="drag-div"> Drag Drop </div>
+                        <div class="preview-icons right"> <i class="icon-list-view"></i> <i class="icon-thumbnails"></i> </div>
+                        <div class="clear"></div>
+                        <div class="attached-document">
+                            <ul class="thumbnail-view">
+                                <li>
+                                    <img src="images/pdf-small.jpg" alt="" title="">
+                                    <p>Application Form</p>
+                                </li>
+                                <li>
+                                    <img src="images/pdf-small.jpg" alt="" title="">
+                                    <p>Application Form</p>
+                                </li>
+                                <li>
+                                    <img src="images/pdf-small.jpg" alt="" title="">
+                                    <p>Application Form</p>
+                                </li>
+                                <li>
+                                    <img src="images/pdf-small.jpg" alt="" title="">
+                                    <p>Application Form</p>
+                                </li>
+                                <li>
+                                    <img src="images/pdf-small.jpg" alt="" title="">
+                                    <p>Application Form</p>
+                                </li>
+                                <li>
+                                    <img src="images/pdf-small.jpg" alt="" title="">
+                                    <p>Application Form</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="scand-document" style="display:none;">
+                        <h2>Scaned Document <i class="icon-close right"></i></h2>
+                        <div class="scand-doc-details">
+                            <!--scand-doc-details-->
+                            <div class="image-div">
+                                <div class="image-preview-option">
+                                    <div class="left"> <a href="#" title="View All"> <i class="icon-document"></i></a></div>
+                                    <a href="#" title="Print"> <i class="icon-printer"></i></a> <a href="#" title="Page Up"> <i class="icon-up-arrow"></i></a> <a href="#" title="Page Down"> <i class="icon-down-arrow1"></i></a> <span class="page-no">
+                                        <input type="text">
+                                        / 5
+                                    </span> <a href="#" title="Zoom In"> <i class="icon-plus"></i></a> <a href="#" title="Zoom Out"> <i class="icon-minus"></i></a> <a href="#" title="Rotate"> <i class="icon-rotate-left"></i></a> <a href="#" title="Rotate"> <i class="icon-rotate-right"></i></a> <a href="#" title="crop"> <i class="icon-crop"></i></a> <a href="#" title="Note"> <i class="icon-chat-o"></i></a>
+                                    <div class="right"> <a href="#" title="Expand"> <i class="icon-expand"></i></a> </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div>
+                                    <ul class="thumbnail" style="display:none;">
+                                        <li><img src="images/file_1.jpg"></li>
+                                        <li><img src="images/file_2.jpg"></li>
+                                        <li><img src="images/file_4.jpg"></li>
+                                        <li><img src="images/file_5.jpg"></li>
+                                        <li><img src="images/file_6.jpg"></li>
+                                        <div class="clear"></div>
+                                    </ul>
+                                    <!--</div>-->
+                                    <div class="thumb-preview"> <img src="images/file_2.jpg"> </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="right-scan">
+                                <ul>
+                                    <li>Applicant</li>
+                                    <li>KYC</li>
+                                    <li>
+                                        <p>ID proof</p>
+                                        <p>Address proof</p>
+                                        <p>DOB</p>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <p>
+                                                <select>
+                                                    <option>Voter ID</option>
+                                                    <option>PAN Card</option>
+                                                    <option>Driving Licence</option>
+                                                </select>
+                                            </p>
+                                            <p class="mrgin-1x">
+                                                <input type="text">
+                                            </p>
+                                            <p>
+                                                <input type="text">
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                <select>
+                                                    <option>Voter ID</option>
+                                                    <option>PAN Card</option>
+                                                    <option>Driving Licence</option>
+                                                </select>
+                                            </p>
+                                            <p class="mrgin-1x">
+                                                <input type="text">
+                                            </p>
+                                            <p>
+                                                <input type="text">
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                <select>
+                                                    <option>Voter ID</option>
+                                                    <option>PAN Card</option>
+                                                    <option>Driving Licence</option>
+                                                </select>
+                                            </p>
+                                            <p class="mrgin-1x">
+                                                <input type="text">
+                                            </p>
+                                            <p>
+                                                <input type="text">
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>Co-Applicant</li>
+                                    <li>Application Form</li>
+                                </ul>
+                                <ul>
+                                    <li>Applicant</li>
+                                    <li>Property</li>
+                                </ul>
+                                <ul>
+                                    <li>Applicant</li>
+                                    <li>Income</li>
+                                </ul>
+                                <ul>
+                                    <li>Applicant</li>
+                                    <li>Processing Fee</li>
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--document(scan and attach) Popup End-->
+        <!--Right Folder Popup-->
+        <div class="popup-bg folder-popup" style="display:none;">
+            <div class="popup-div">
+                <div class="popup-header">
+                    <h2>
+                        <input type="button" value="Preview" onclick="fnPreviewSelected()" /><i class="icon-close div-right"></i>
+                    </h2>
+                    <div class="clear"></div>
+                </div>
+                <div class="popup-content">
+                    <comp-scan-file width="650px" height="100%" id="scanfileid"></comp-scan-file>
+                </div>
+            </div>
+        </div>
+        <!--Right Folder Popup End-->
+        <!-- Category or Product popup -->
+        <div class="popup-bg category-popup" id="product_popupdiv" style="display:none;">
+            <div class="popup-div">
+                <div class="popup-header">
+                    <h2>Products <i class="icon-close div-right"></i></h2>
+                </div>
+                <div class="popup-content category-div">
+                    <ul id="ul_Prd">
+                        <li>
+                            <i class="icon-lap"></i>
+                            <p>LAP</p>
+                        </li>
+                        <li>
+                            <i class="icon-home-loan"></i>
+                            <p>Home Loan</p>
+                        </li>
+                        <li>
+                            <i class="icon-balance-transfer"></i>
+                            <p>Balance Transfer</p>
+                        </li>
+                        <li>
+                            <i class="icon-bank"></i>
+                            <p>Bank</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Category or Product popup End-->
+        <!-- Category Selection Popup Div Starts-->
+        <div class="popup-bg" id="category-div" style="display:none;">
+            <div class="popup-div">
+                <div class="popup-header"> <i class="icon-close div-right"></i> </div>
+                <div class="popup-content">
+                    <!--<ul style="display:none;" class="category-list">
+                        <h2>Products</h2>
+                        <li>
+                            <i class="icon-lap"></i>
+                            <p>LAP</p>
+                        </li>
+                        <li>
+                            <i class="icon-home-loan"></i>
+                            <p>Home Loan</p>
+                        </li>
+                        <li>
+                            <i class="icon-balance-transfer"></i>
+                            <p>Balance Transfer</p>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>-->
+                    <ul class="category-list">
+                        <h2>Product type</h2>
+                    </ul>
+                    <ul class="category-list">
+                        <h2>Customer Classification</h2>
+                        <li>
+                            <i class="icon-salaried"></i>
+                            <p>Salaried </p>
+                        </li>
+                        <li>
+                            <i class="icon-self-employed"></i>
+                            <p> Self Employed</p>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+                    <ul class="category-list">
+                        <h2>Income Classification</h2>
+                        <li>
+                            <i class="icon-proof"></i>
+                            <p>Proof </p>
+                        </li>
+                        <li>
+                            <i class="icon-no-proof"></i>
+                            <p>No Proof</p>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>                    
+                </div>
+            </div>
+        </div>
+        <!-- Category Selection Popup Div End-->
+
+
+        <!-- Credit Approver Tax Popup Starts -->
+        <div class="popup-bg documents-popup matrix-popup" id="CApf" style="display:none;">
+            <div class="popup-div popup-small">
+                <div class="popup-header"><h2> <span id="spn_title">PF Details </span><i onclick="$('#CApf').hide();" class="icon-close div-right"></i></h2></div>
+                <div class="popup-content PFinst"><table id="taxpf_inst"></table></div>
+                <div class="popup-content totPF"><table id="taxpf"></table></div>   
+                <div class="popup-content RemPF"><table id="Remainingpf"></table></div>          
+            </div>
+        </div>
+        <!-- Credit Approver Tax Popup  Ends -->
+
+    </div>
+
+    <!-- Subjective Popup Div Starts-->
+    <div class="popup-bg" id="rejection-popup" style="display:none;">
+        <div class="popup-div popup-small">
+            <div class="popup-header"> <h2>Rejection Remarks</h2></div>
+            <div class="popup-content">            
+                        <div class="comment-div">
+                            <textarea id="rejection-textarea" placeholder="Rejection remarks. min 20 words"></textarea>
+                            <div>                                
+                                <input type="button" value="OK" class="div-right" onclick="fnSetRejectionRemarks()">
+                                <input type="button" value="Cancel" class="div-right" onclick="fnCancelRejctionRmks()">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+            </div>
+        </div>
+    </div>
+    <!-- Subjective Popup Div End-->
+
+
+</body>
+</html>

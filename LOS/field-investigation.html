@@ -1,0 +1,351 @@
+<div class="title">
+  <h1 id="Scrn_Nm">Zonal Qc : Field Investigation</h1>
+</div>
+<div class="content-div" id="technical-popup">
+  <div class="box-div zonal-agent">
+    <div class="agent-header">
+        <div class="div-left">
+            <div class="div-left">
+              <i class="icon-agents"></i>
+            </div>
+            <p class="div-right"><span id="agt_name"></span><span id="agt_Scr_Typ"></span></p>
+        </div>
+        <span class="div-right" id="lead_id"></span>
+      <div class="clear"></div>
+    </div>
+    <div class="agent-content">
+      <div class="field-content"> </div>
+        <div id="agtFB">
+            <div id="mainfieldinvdiv">
+                <div id = "commonDiv" contentchanged="true" class="fidt2">
+                    <ul class="fom-controls">
+                        <li class="div-left width-4">
+                            <label>Date of Report</label>
+                            <input type="text" key="agt_rptdt" id ="datecheck"name="text" data-beatpicker="true" data-beatpicker-position="['*','*']" class="mandatory">
+                        </li>
+                        <li class="div-right status">
+                            <p class="bg bg1"><i class="icon-positive" id="rptsts" onclick="fnReprtSts(this);"></i></p>
+                            <input name="text" key="agt_rptstatus" type="hidden">
+                        </li>
+                    </ul>
+                    <textarea name="text" key="agt_notes" class="mandatory" maxlength="500"></textarea>
+                    <div>
+                        <ul class="div-left attachment-div">
+                            <li id="attach_spn">
+                                <!--<span><i class="icon-attach"></i> report.pdf <i class="icon-down-arrow"></i></span>-->
+                                <!--<ul class="attach-dd" style="display:none;">
+                              <li>Remove</li>
+                              <li>Download</li>
+                            </ul>-->
+                            </li>
+                        </ul>
+                        <span id="Spn_reportupload" class="div-right bg-blue"><i class="icon-attach"></i> Attach</span>
+                        <input type="file" id="FIReportUpload" multiple style="display:none;" class="mandatory"/>
+                        <input type="text" id="agt_Rpt" key="agt_RptPath" style="display:none;" />
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <!--<input type="button" value="Save" class="div-right" onclick="fnSaveChangedData();"><div class="clear"></div>-->
+    </div>
+  </div>
+</div>
+
+<!--<div class="popup-bg field-popup" id="technical-popup">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2><i class="icon-agents"></i> <span id="agt_name"></span> <span id="agt_Scr_Typ"></span> <i class="icon-close div-right"></i></h2>
+            <span class="div-right" id="lead_id"></span>
+            <div class="clear"></div>
+        </div>
+        <div class="popup-content">
+            <div class="field-content">
+            </div>
+            <div id="mainfieldinvdiv">
+                <div contentchanged="true" class="fidt2">
+                    <ul class="fom-controls">
+                        <li class="div-left width-4">
+                            <label>Date of Report</label>
+                            <input type="text" key="agt_rptdt" name="text" class="datepicker">
+                        </li>
+                        <li class="div-right status">
+                            <p class="bg bg1"><i class="icon-positive" onclick="fnReprtSts(this);"></i></p>
+                            <input name="text" key="agt_rptstatus" type="hidden">
+                        </li>
+                    </ul>
+                    <textarea name="text" key="agt_notes"></textarea>
+                    <ul class="div-left attachment-div">
+                        <li>
+                            <span><i class="icon-attach"></i> report.pdf <i class="icon-down-arrow"></i></span>
+                            <ul class="attach-dd" style="display:none;">
+                                <li>Remove</li>
+                                <li>Download</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <span id="Spn_reportupload" class="div-right bg-blue"><i class="icon-attach"></i> Attach</span>
+                    <input type="file" id="FIReportUpload" multiple style="display:none;" />
+                    <input type="text" key="agt_RptPath" style="display:none;" />
+
+                </div>
+            </div>
+        </div>
+        <input type="button" value="Save" class="div-right" onclick="fnSaveChangedData();">
+    </div>
+</div>--> 
+<!-- Field Investication popup End--> 
+<!--div class="title">
+  <h1>Service Agents : Field Investigation</h1>
+</div>
+<div class="content-div">
+  <div class="box-div lead-information">
+    <ul class="form-controls">
+      <div class="div-right">
+        <i class="icon-document"></i>
+      </div>
+      <li class="category-icon"> <i class="icon-home-loan"></i>
+        <p>Home Loan</p>
+      </li>
+      <li class="width-1 read-only">
+        <label>Lead ID</label>
+        <p>SHFC11765689</p>
+      </li>
+      <li class="width-16 read-only">
+        <label>Application Number</label>
+        <p>CHAPP267488</p>
+      </li>
+      <li class="width-15 read-only">
+        <label>Branch</label>
+        <p>Chennai</p>
+      </li>
+      <li class="width-15 read-only">
+        <label>Agency</label>
+        <p>RB Agency</p>
+      </li>
+      <li class="width-15">
+        <label>Date of Report</label>
+        <input type="text">
+      </li>
+      <div class="clear"></div>
+    </ul>
+  </div>
+  <div class="verification-div">
+    <div class="box-div">
+      <ul class="form-controls col-5">
+        <li class="read-only">
+          <label>Applicant</label>
+          <p>SIVARAMA KRISHNAN S</p>
+        </li>
+        <li class="read-only">
+          <label>Verification To</label>
+          <p>Residence</p>
+        </li>
+        <li class="read-only">
+          <label>Status</label>
+          <p>Verified</p>
+        </li>
+        <li class="status">
+            <div class="bg bg1"> <i class="icon-positive"></i> </div>
+        </li>
+        <li class="readonly align-right"> <i class="icon-document"></i>
+          <p>Report</p>
+        </li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+    <div class="box-div">
+      <ul class="form-controls col-5">
+        <li class="read-only">
+          <label>Co-Applicant</label>
+          <p>KRISHNAVENI</p>
+        </li>
+        <li class="read-only">
+          <label>Verification To</label>
+          <p>Residence</p>
+        </li>
+        <li class="read-only">
+          <label>Status</label>
+          <p>Verified</p>
+        </li>
+        <li class="status">
+            <div class="bg bg1 "> <i class="icon-positive"></i> </div>
+        </li>
+        <li class="readonly align-right"> <i class="icon-document"></i>
+          <p>Report</p>
+        </li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+    <div class="box-div">
+      <ul class="form-controls col-5">
+        <li class="read-only">
+          <label>Applicant</label>
+          <p>SIVARAMA KRISHNAN S</p>
+        </li>
+        <li class="read-only">
+          <label>Verification To</label>
+          <p>Residence</p>
+        </li>
+        <li class="read-only">
+          <label>Status</label>
+          <p>Verified</p>
+        </li>
+        <li class="status">
+            <div class="bg bg1 "> <i class="icon-positive"></i> </div>
+        </li>
+        <li class="readonly align-right"> <i class="icon-document"></i>
+          <p>Report</p>
+        </li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+  </div>
+</div>--> 
+<!--<div id="div-document-content" class="documents-content" style="display:none;">
+</div>--> 
+<!-- TV popup --> 
+<!--<div class="popup-bg" id="verification-pop" style="display:none;">
+    <div class="popup-div">
+      <div class="popup-header">
+        <h2> <i class="icon-close div-right"></i></h2>
+        <ul class="common-tabs report-li">
+          <li class="active tab1">Data Fields</li>
+          <li class="tab2">Reports</li>
+        </ul>
+      </div>
+      <div class="popup-content">
+        <div class="tab1-content">
+          <ul class="form-controls"> box-div
+            <li class="width-98p">
+              <label>Date of Visit: </label>
+              <input type="text" value="28/07/2016">
+            </li>
+            <li class="width-98p">
+              <label>Time of Visit: </label>
+              <input type="text" value="15:12">
+            </li>
+            <li class="width-98p">
+              <label>Address Confirmed:</label>
+              <input type="text" value="Yes">
+            </li>
+            <li class="width-98p">
+              <label>Prominent Landmark: </label>
+              <input type="text" value="Nr Padma Nagar">
+            </li>
+            <li class="width-98p">
+              <label>Locality Of Residence:</label>
+              <input type="text" value="Middle Class">
+            </li>
+            <li class="width-98p">
+              <label>Accessibility:</label>
+              <input type="text" value="Easy to Locate Access">
+            </li>
+            <li class="width-98p">
+              <label>Type of Residence:</label>
+              <input type="text" value="Multi Tenant House">
+            </li>
+            <li class="width-98p">
+              <label>Ownership Status:</label>
+              <input type="text" value="Self Owned">
+            </li>
+            <li class="width-98p">
+              <label>No.of Stories:</label>
+              <input type="text" value="1">
+            </li>
+            <li class="width-98p">
+              <label>Lift:</label>
+              <input type="text" value="No">
+            </li>
+            <li class="width-98p">
+              <label>External Appearance of House/Building:</label>
+              <input type="text" value="Excellent">
+            </li>
+            <li class="width-98p">
+              <label>Construction of House:</label>
+              <input type="text" value="Pukka">
+            </li>
+            <li class="width-98p">
+              <label>Carpet Area in Sq. Ft:</label>
+              <input type="text" value="800">
+            </li>
+            <li class="width-98p">
+              <label>Internal Appearance of House:</label>
+              <input type="text" value="Painted,Curtains,WALL unit, Carpeted,Clean">
+            </li>
+            <li class="width-98p">
+              <label>Asset Seen:</label>
+              <input type="text" value="Phone,Sofa Set,Home Theater,A/C">
+            </li>
+            <li class="width-98p">
+              <label>Person Contacted:</label>
+              <input type="text" value="Applicant">
+            </li>
+            <li class="width-98p">
+              <label>If Applicant House is locked the below mentioned need to be obtained from neighbour:</label>
+            </li>
+            <li class="width-98p">
+              <label>Does the Applicant Stays in this Residency:</label>
+              <input type="text" value="Yes">
+            </li>
+            <li class="width-98p">
+              <label>If Yes the Duration of Stay:</label>
+              <input type="text" value="12y">
+            </li>
+            <li class="width-98p">
+              <label>Approximate Time When the Applicant is available at home:</label>
+              <input type="text" value="n">
+            </li>
+            <li class="width-98p">
+              <label>No.of Person Staying with Applicant:</label>
+              <input type="text" value="App Husband 2 Children">
+            </li>
+            <li class="width-98p">
+              <label>Neighbour Feedback:</label>
+              <input type="text" value="1 st flr Tenant">
+            </li>
+            <li class="width-98p">
+              <label>Political Link:</label>
+              <input type="text" value="No">
+            </li>
+            <li class="width-98p">
+              <label>Residence Verification:</label>
+              <input type="text" value="Satisfied">
+            </li>
+          </ul>
+        </div>
+        <div class="tab2-content" style="display:none;">
+          <div class="image-div box-div">
+            <div class="image-preview-option"><div class="left"> <a href="#" title="View All"> <i class="icon-document"></i></a></div> <a href="#" title="Print"> <i class="icon-printer"></i></a> <a href="#" title="Page Up"> <i class="icon-up-arrow"></i></a> <a href="#" title="Page Down"> <i class="icon-down-arrow1"></i></a> <span class="page-no">
+              <input type="text">
+              / 5 </span> <a href="#" title="Zoom In"> <i class="icon-plus"></i></a> <a href="#" title="Zoom Out"> <i class="icon-minus"></i></a> <a href="#" title="Rotate"> <i class="icon-rotate-left"></i></a> <a href="#" title="Rotate"> <i class="icon-rotate-right"></i></a> <a href="#" title="crop"> <i class="icon-crop"></i></a> <a href="#" title="Note"> <i class="icon-chat-o"></i></a>
+              <div class="right"><a href="#" title="Expand"> <i class="icon-expand"></i></a>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div>
+              <ul class="thumbnail" style="display:none;">
+                <li><img src="images/FI-report1.jpg"></li>
+                <div class="clear"></div>
+              </ul>
+              <div class="thumb-preview"> <img src="images/FI-report1.jpg"> </div>
+              <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</div>--> 
+<!-- TV popup End--> 
+<script src="js/BeatPicker.min.js"></script>
+<script>
+    GlobalXml[0].Agt_loadHtml = "mainfieldinvdiv";
+    calcHeight(); /*window height for all div*/
+    scanDocPreview(); /*Scand or Attached Document image Preview*/
+    commontabs();
+    customselect();
+    rightdocument()
+</script> 
+<script src="js/Scrn/AgentFB.js"></script> 

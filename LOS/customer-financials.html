@@ -1,0 +1,725 @@
+<div class="title">
+    <h1>Branch Credit : Customer Financials</h1>
+</div>
+<div class="content-div customer-financials-page">
+    <div class="box-div">
+        <div class="leadinfo">
+            <div class="lead-information lead-info-category">
+                <ul class="form-controls div-left credit-header">
+                    <li class="width-1 read-only">
+                        <label>Lead ID</label>
+                        <p id="txtLeadID"></p>
+                    </li>
+                    <li class="width-16 read-only">
+                        <label>Application Number</label>
+                        <p id="txtappNo"></p>
+                    </li>
+                    <li class="width-15 read-only">
+                        <label>Branch</label>
+                        <p branchfk="0" id="txtBrnchNm"></p>
+                    </li>
+                    <li class="width-13">
+                        <label>File Send Date</label>
+                        <input id="File_Sent_dt" data-beatpicker="true" data-beatpicker-position="['*','*']" type="text" name="text"  class="mandatory" sign="R">
+                    </li> 
+                    <li style="display:none;" class="width-12 read-only">
+                        <label>Purpose of purchase</label>
+                        <p id="txtLoanPurpose"></p>
+                    </li>
+                </ul>
+                <div class="category-info">
+                    <ul class="category-icons div-left">
+                        <li>
+                            <label><i class=""></i></label>
+                            <p>Loan Type</p>
+                        </li>
+                        <li>
+                            <label><i class=""></i></label>
+                            <p>
+                                Customer <br>
+                                Classification
+                            </p>
+                        </li>
+                        <li>
+                            <label><i class=""></i></label>
+                            <p>
+                                Income <br>
+                                Classification
+                            </p>
+                        </li>
+                    </ul>
+                    <!--<i class="icon-document div-right" onclick="fnSelectDocment();"></i>-->
+                    <i class="icon-plus div-right" title="Omnidox" id="popclose" onclick="fnpop();"></i>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <form id="PostForm" name="PostForm" action="http://119.226.197.6:8080/omnidocs/integration/foldView/viewFoldList.jsp" method="post" target="newWin">
+                <input type="hidden" name="Application" value="SHFL_LOANS">
+                <input type="hidden" id="fold_nm" name="FolderName" value="">
+                <input type="hidden" name="sessionIndexSet" value="false">
+            </form>
+        </div>
+        <div class="credit-summary">
+            <div class="summary-income branch-credit">
+                <div class="bc-total-summary">
+                    <div class="bc-summary">
+                        <ul>
+                            <li>&nbsp;</li>
+                            <li>Loan</li>
+                            <li>Tenure(Month)</li>
+                            <li>ROI</li>
+                        </ul>
+                        <ul class="expectation-sum">
+                            <li>
+                                Customer<br>
+                                Expectation
+                            </li>
+                            <li>
+                                <p class="income-amount box-sum">
+                                    <i class="icon-indian-rupee"></i><span id="txtLoanAmt"></span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="income-amount box-sum">
+                                    <input readonly id="txtLoanTenure" type="text" />
+                                </p>
+                            </li>
+                            <li>
+                                <p class="income-amount box-sum">
+                                    <input readonly type="text" id="txtLoanROI" value="16" />
+                                </p>
+                            </li>
+                        </ul>
+                        <ul class="recommendation-bg">
+                            <li>
+                                My<br>
+                                recommendation
+                            </li>
+                            <li>
+                                <p class="income-amount box-sum">
+                                    <i class="icon-indian-rupee"></i>
+                                    <span id="R_txtLoanAmt" contenteditable="true">0</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="income-amount box-sum">
+                                    <input id="R_txtLoanTenure" restrict="number" type="text" />
+                                </p>
+                            </li>
+                            <li>
+                                <p class="income-amount box-sum">
+                                    <input id="R_txtLoanROI" restrict="number" type="text" />
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="bc-total-sum right">
+                        <li class="box-sum">
+                            <h2 class="cursor" onclick="fnsetPropInfo();">Property</h2>
+                            <p id="txtShflPrpVal"></p>
+                            <!--<p onclick="fnsetPropInfo();"  id="property_bc" class="cursor"><i class="icon-indian-rupee"></i></p>-->
+                            <div class="property">
+                                <p class="prop-label-list"> <span name="TV" class="bg bg8 tv-popup cursor" onclick="fnAgentspopup_BC(this)">TV</span> <span name="LV" class="bg bg8  cursor" onclick="fnAgentspopup_BC(this)">LV</span> </p>
+                            </div>
+                        </li>
+                        <!--  <li class="width-6 read-only pf-amt-pop">
+                          <label>PF Amount</label>
+                          <p title="Realised"> </p>
+                        </li>-->
+                        <li class="box-sum bg8 pf-amt-pop">
+                            <h2>PF</h2>
+                            <p title="Realised"id="pfTAX" onclick="fnPFTax(this)"> </p>
+                        </li>
+                        <li class="box-sum">
+                            <h2>Score</h2>
+                            <p id="MaxCibil"></p>
+                        </li>
+                        <li class="box-sum">
+                            <h2>Income</h2>
+                            <p id="totalIncome"><i class="icon-indian-rupee"></i>0</p>
+                        </li>
+                        <li class="box-sum">
+                            <h2>Obligation</h2>
+                            <p id="totalObligation"><i class="icon-indian-rupee"></i>0</p>
+                        </li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="customer-financial">
+            <ul class="common-tabs">
+                <span class="applicant-li">
+                    <li val="1">
+                        <p></p>
+                        <span class="app-type">Applicant</span>
+                    </li>
+                    <li style='display:none' class="li-icon-plus"><i class="icon-plus"></i></li>
+                </span>
+                <span>
+                    <li class="reference-li">
+                        <p> &nbsp;</p>
+                        <span>References</span>                    
+                    </li>
+                </span>
+                <span>
+                    <li class="deviate-li right">
+                        <p> &nbsp;</p>
+                    <span>Deviations</span>
+                    </li>
+                </span>
+                <div class="clear"></div>
+            </ul>
+            <div class="applicant-tab">
+                <!--  Appliant Summary box static added by cs starts-->
+                <div id="Brnch_summary" class="applicant-summary income-obligation-applicant">
+                    <!--<div class="applicant-box">
+                        <div onclick="fnOpenCustomerDetails()" class="applicant-info div-left cursor"> <img src="images/photo.jpg" alt="" class="left"> </div>
+                        <div class="div-left">
+                            <p key="Age" name="AGE" class="bg-tag bg1 age">19</p>
+                            <div class="appliant-verifications" lapfk="4423"> <span name="FIR" title="Field Investigation - Residencial" class="bg-tag bg8 cursor" onclick="fnAgentspopup_BC(this);">FIR</span> <span name="FIO" title="Field Investigation - Office" class="bg-tag bg8 cursor" onclick="fnAgentspopup_BC(this);">FIO</span> <span name="DV" title="Document verification" class="bg-tag bg8 cursor" onclick="fnAgentspopup_BC(this);">DV</span> <span name="CF" title="Collection FeedBack" class="bg-tag bg8 cursor" onclick="fnAgentspopup_BC(this);">CF</span><span pk="0" class="bc_link_feeback bg bg1 cursor" flag="3" id="spantele_R">TE (R)</span> <span pk="0" class="bc_link_feeback bg bg1 cursor" flag="1" id="spantele">TE (O)</span> <span pk="0" class="bc_link_feeback bg bg1 cursor" flag="2" id="spanpd">PD</span> </div>
+                        </div>
+                        <div class="div-right applicant-income">
+                            <div onclick="fnOpenCreditScreen(event,this)" class="applicant-amount cursor">
+                                <div class="left box-div">
+                                    <p class="income-amount"><i class="icon-indian-rupee"></i>0</p>
+                                    <h5>Income</h5>
+                                </div>
+                                <div class="left box-div">
+                                    <p class="liability-amount"><i class="icon-indian-rupee"></i>0</p>
+                                    <h5>Obligation</h5>
+                                </div>
+                                <div class="left box-div">
+                                    <p class="cibil-score">888</p>
+                                    <h5>Cibil</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>-->
+                    <div class="clear"></div>
+                </div>
+                <div val="1" class="customer-financial-div">
+                    <div class="clear"></div>
+                    <div class="income-obligation">
+                        <div class="incom-box-div">
+                            <ul class="finance-tab">
+                                <li class="obligation-li">
+                                    <p>Obligations</p>
+                                    <h4 class="currency"><i class="icon-indian-rupee"></i>0</h4>
+                                </li>
+                                <li class="li-icon-plus"><i class="app-plus-icon icon-plus" onclick="fnOpenOptionsToOpen(this)"></i></li>
+                                <div class="clear"></div>
+                            </ul>
+                            <div class="box-div income-container">
+                                <!--LIABILITY DIV START-->
+                                <div class="liability-div">
+                                    <div class="">
+                                        <textarea class="TxtRemarks" maxlength="500">Remarks</textarea>
+                                        <i class="icon-plus" onclick="fnopenLoanType(this)"></i>
+                                        <div class="grid-type income-scroll1">
+                                            <ul class="form-controls titleul">
+                                                <li class="width-6a"></li>
+                                                <li class="width-6c">
+                                                    <label>Loan</label>
+                                                </li>
+                                                <li class="width-12">
+                                                    <label>Bank / Source</label>
+                                                </li>
+                                                <li class="width-15">
+                                                    <label>Reference No.</label>
+                                                </li>
+                                                <li class="width-10">
+                                                    <label>Loan Amount</label>
+                                                </li>
+                                                <li class="width-15 amount">
+                                                    <label>EMI</label>
+                                                </li>
+                                                <li class="width-15 amount">
+                                                    <label>Outstanding Amount</label>
+                                                </li>
+                                                <li class="width-8a">
+                                                    <label>Remaining Terms</label>
+                                                </li>
+                                                <li class="width-8a">
+                                                    <label>No.of EMI Bounce</label>
+                                                </li>
+                                                <li class="width-30">
+                                                    <label>Debited Bank</label>
+                                                </li>
+                                                <li class="width-6b">
+                                                    <label>Remarks</label>
+                                                </li>
+                                            </ul>
+                                            <div class="income-scroll"> </div>
+                                        </div>
+                                    </div>
+                                    <!---liability div end-->
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Bank div starts -->
+                    <div class="bank-details box-div">
+                        <h2>Bank Details <i class="icon-plus" onclick="fnAddBankRow(this)"></i></h2>
+                        <ul class="form-controls">
+                            <li class="width-11">
+                                <label>Name of A/C Holder</label>
+                            </li>
+                            <li class="width-18">
+                                <label>Account type</label>
+                            </li>
+                            <li class="width-11">
+                                <label>Account Number</label>
+                            </li>
+                            <li class="width-9">
+                                <label>Operative Since</label>
+                            </li>
+                            <li class="width-32">
+                                <label>Bank</label>
+                            </li>
+                            <li class="width-18">
+                                <label>Branch</label>
+                            </li>
+                            <li class="width-22">
+                                <label>Banking Transaction(in months)</label>
+                            </li>
+                            <li class="width-53">
+                                <label>Average Bank Balance</label>
+                            </li>
+                            <li class="width-53">
+                                <label>Inward Cheque Bounce</label>
+                            </li>
+                            <li class="width-5">
+                                <label>Remarks</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--Bank div Ends -->
+                </div>
+            </div>
+            <div class="reference-tab">
+                <div id="Reference" class="box-div">
+                    <h2>Reference details</h2>
+                    <ul class="form-controls">
+                        <li class="width-12">
+                            <label>Reference Name</label>
+                        </li>
+                        <li class="width-11">
+                            <label>Mobile No</label>
+                        </li>
+                        <li class="width-12">
+                            <label>Office No</label>
+                        </li>
+                        <li class="width-12">
+                            <label>Residence No</label>
+                        </li>
+                        <li class="width-11  align-center">
+                            <label>Summary</label>
+                        </li>
+                        <li class="width-6">
+                            <label>Status</label>
+                        </li>
+                    </ul>
+                    <div id="ReferenceDiv"> </div>
+                </div>
+                <div class="box-div">
+                    <ul class="div-left form-controls grid-50">
+                        <h2>NHB CLSS</h2>
+                        <li class="width-10">
+                            <label>NHB CLSS Applicable</label>
+                            <select id="NHBapplicable">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </li>
+                        <li class="width-10">
+                            <label>Borrower Having Pucca House</label>
+                            <select id="NHBpuccahouse">
+                                <option value="-1">select</option>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </li>
+                        <li class="width-10">
+                            <label>House Hold Category</label>
+                            <select id="NHBcatogory">
+                                <option value="-1">select</option>
+                                <option value="1">LIG</option>
+                                <option value="2">EWS</option>
+                                <option value="3">MIG</option>
+                                <option value="4">HIG</option>
+                            </select>
+                        </li>
+                        <li class="amount width-10">
+                            <i class="icon-indian-rupee"></i>
+                            <label>House Hold Annual Income</label>
+                            <input id="txthouseaninc" type="text" onkeypress="return fnNumberKeyPress(event,this);" class="currency">
+                        </li>
+                        <li class="width-9">
+                            <label>Location Code</label>
+                            <span>
+                                <comp-help id="comp-help" disabled txtcol="LocCd" valcol="LocPk" locnm="LocNm" onrowclick="NHBLocRowclick" prcname="PrcShflLocationhelp" width="100%"></comp-help>
+                                <input type="hidden" id="txtloccd" placeholder="" restrict="number" name="text">
+                                <!--<input id="txtloccd" type="text" onkeypress="return fnNumberKeyPress(event,this);">-->
+                            </span>
+                        </li>
+                        <li class="width-10">
+                            <label>Location Name</label>
+                            <span>
+                                <input id="txtlocnm" type="text" onkeypress="return fnAlphaKeyPress(event, this);"readonly>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="div-right dependent-div grid-50">
+                        <h2>Dependent Details</h2>
+                        <i class="icon-plus" id="NHbDepdAdd" onclick="fniconPlusDepndt(this)"></i>
+                        <div class="grid-type">
+                            <ul class="form-controls">
+                                <li class="width-33">
+                                    <label>Dependent</label>
+                                </li>
+                                <li class="width-10">
+                                    <label>Reference No.</label>
+                                </li>
+                                <li class="width-23">
+                                    <label>Proof</label>
+                                </li>
+                            </ul>
+                            <div class="dependt"> </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div id="LoanExist" style="display:none;" class="box-div">
+                    <h2>Existing takeover loan details <i class="icon-plus div-right" onclick="fnAddExitingLoanRow()"></i></h2>
+                    <ul class="form-controls">
+                        <li class="width-12">
+                            <label>Bank / Institution Name</label>
+                        </li>
+                        <li class="width-12">
+                            <label>Reference No</label>
+                        </li>
+                        <li class="width-12 amount">
+                            <label>Outstanding Amount</label>
+                        </li>
+                        <li class="width-12 amount">
+                            <label>Remaining tenure</label>
+                        </li>
+                    </ul>
+                    <div id="ExistingLoanUL"> </div>
+                </div>
+            </div>
+            <div class="deviation-tab box-div" style="display:none;">
+                <div id="DeviationDataDiv" class="grid-45 div-left deviation-main">
+                    <!--<h2>Deviations <i onclick="fnAddDevaitionRow()" class="icon-plus right cursor"></i></h2>-->
+                    <h2>Deviations <i title="Expand/collapse" onclick="fnCollapseAllDeviation('DeviationDataDiv')" class="icon-plus right cursor"></i></h2>
+                    <input type="search" class="deviation-search" placeholder="Search Deviation" />
+                    <div id="deviationListDiv" class="deviation-height"></div>
+                </div>
+                <div class="grid-55 div-right">
+                    <!--<h2>Personal Discussion - Notes</h2>
+            <ul class="form-controls">
+                <li class="width-15">
+                    <label>Report Date</label>
+                    <input id="bc_RptDt" name="text" key="pop_date" placeholder="" data-beatpicker="true" data-beatpicker-position="['*','*']" class="mandatory" />
+                </li>
+                <li class="div-right status">
+                    <p class="bg bg1"><i class="icon-positive" id="rptsts" onclick="fnReprtSts(this);"></i></p>
+                    <input name="text" key="pop_rptstatus" type="hidden">
+                </li>
+            </ul>-->
+                    <div id="editor"></div>
+
+                    <div class="deviation-mascategory">
+                        <h2>Proposal note details</h2>
+                        <br />
+
+                    </div>   
+                </div>
+              
+
+                        <div class="clear"></div>
+                </div>
+
+                <!-- Common Comments Popup Div Starts-->
+                <div class="popup-bg" id="comment-chat" style="display:none;">
+                    <div class="popup-div">
+                        <div class="popup-header">
+                            <h2>Remarks <i class="icon-close div-right"></i></h2>
+                        </div>
+                        <div class="popup-content">
+                            <textarea maxlength="500"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- Common Comments Popup Div Starts-->
+                <!-- Income Selection Popup Div Starts-->
+                <div class="popup-bg" id="SelectType" style="display:none;">
+                    <div class="popup-div">
+                        <div class="popup-header"> <i class="icon-close div-right"></i> </div>
+                        <div class="popup-content">
+                            <div class="category-div">
+                                <ul>
+                                    <li val="income-salary">
+                                        <i class="icon-salaried"></i>
+                                        <p>Salaried </p>
+                                    </li>
+                                    <li val="income-business">
+                                        <i class="icon-self-employed"></i>
+                                        <p>Business</p>
+                                    </li>
+                                    <li val="income-cash">
+                                        <i class="icon-no-proof"></i>
+                                        <p>Cash</p>
+                                    </li>
+                                    <li val="income-bank">
+                                        <i class="icon-bank"></i>
+                                        <p>Bank</p>
+                                    </li>
+                                    <li val="income-other">
+                                        <i class="icon-fixed-deposits"></i>
+                                        <p>Others</p>
+                                    </li>
+                                </ul>
+                                <div class="multiple-income margin-10">
+                                    <select style="display:none" id="select-income-type" class="div-left width-50p">
+                                        <option value="income-business">Business</option>
+                                        <option value="income-salary">Salary</option>
+                                        <option value="income-cash">Cash</option>
+                                        <option value="income-bank">Bank</option>
+                                        <option value="income-other">other</option>
+                                    </select>
+                                    <input type="text" id="txtIncomeNmAc" placeholder="Name(or)Account Number" class="width-50p">
+                                    <!--<input type="text" placeholder="Name(or)Account Number" class="div-right width-50p">-->
+                                    <div class="clear"></div>
+                                </div>
+                                <input type="button" value="select" onclick="fnOpenTab()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Income Selection Popup Div Starts-->
+
+            </div>
+
+        <!-- PD & Tele Verification Popup Div Starts-->
+        <div id="bc_Feedback_div" class="popup-bg document-pop-content" style="display:none;">
+            <div contentchanged="true">
+                <div class="popup-div popup-small">
+                    <div class="popup-header">
+                        <h2>
+                            <span id="Feeback_title">text</span><span class="right">
+                                <input type="hidden" name="text" id="sel_Pop_typ" key="sel_Pop_typ" />
+                                <input type="hidden" name="text" id="sel_lapFk" key="sel_lapFk" />
+                            </span> <i class="icon-close div-right"></i>
+                        </h2>
+                        <div class="clear"></div>
+                    </div>
+                    <div id="popupdivdate" class="popup-content">
+                        <ul class="form-controls">
+                            <li class="width-15">
+                                <label>Report Date</label>
+                                <input id="bc_RptDt" name="text" key="pop_date" placeholder="" data-beatpicker="true" data-beatpicker-position="['*','*']" class="mandatory" />
+                            </li>
+                            <li class="div-right status">
+                                <p class="bg bg1"><i class="icon-positive" id="rptsts" onclick="fnReprtSts(this);"></i></p>
+                                <input name="text" key="pop_rptstatus" type="hidden">
+                            </li>
+                            <li class="width-98p contact-details" id="mobnum">
+                                <label>Details</label>
+                                <p id="ltv_Mob" class="TVphNo cursor"><i class="icon-mobile"></i> Mobile   : <span></span></p>
+                                <p id="ltv_Lnd" class="TVphNo cursor"><i class="icon-landline"></i> LandLine : <span></span></p>
+                                <p id="ltv_off" class="TVphNo cursor"><i class="icon-landline"></i> Office No : <span></span></p>
+                                <p id="ltv_alter" class="TVphNo cursor"><i class="icon-mobile"></i> Alternate No : <span></span></p>
+                            </li>
+                            <li class="width-98p">
+                                <label>Remarks</label>
+                                <textarea id="bc_RptRmks" name="text" key="pop_text" placeholder="" maxlength="500"></textarea>
+                            </li>
+                            <li class="width-98p" id="clkidvalue">
+                                <input type="button" value="Confirm" id="bc_Rpt_Ok" onclick="fnpopupconfirm(this);">
+                            </li>
+                            <li class="width-98p" id="PDattachDiv" style="display:none;">
+                                <div class="div-left" id="PDfileList"></div>
+                                <span class="div-right bg-blue cursor" onclick="$('#pdAttachMnt').click()"><i class="icon-attach"></i> Attach</span>
+                                <input type="file" style="display:none;" id="pdAttachMnt" onchange="fnPDattachMent(this)" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- PD & Tele Verification Popup Div Starts-->
+        <!-- Liability Loan Type Popup Div Starts-->
+        <div class="popup-bg" id="loan-type" style="display:none;">
+            <div class="popup-div">
+                <div class="popup-header"> <i class="icon-close div-right"></i> </div>
+                <div class="popup-content">
+                    <div class="category-div">
+                        <h2>Loan Type</h2>
+                        <ul class="liability-loan-type">
+                            <li>
+                                <i class="icon-auto-loan"></i>
+                                <p>Auto Loan </p>
+                            </li>
+                            <li>
+                                <i class="icon-car-loan"></i>
+                                <p>Car Loan</p>
+                            </li>
+                            <li>
+                                <i class="icon-two-wheeler-loan"></i>
+                                <p>Twowheeler Loan</p>
+                            </li>
+                            <li>
+                                <i class="icon-home-loan"></i>
+                                <p>Home Loan</p>
+                            </li>
+                            <li>
+                                <i class="icon-lap"></i>
+                                <p>Loan Against Property</p>
+                            </li>
+                            <li>
+                                <i class="icon-gold-loan"></i>
+                                <p>Gold Loan</p>
+                            </li>
+                            <li>
+                                <i class="icon-personal-loan"></i>
+                                <p>Personal Loan</p>
+                            </li>
+                            <li>
+                                <i class="icon-business"></i>
+                                <p>Business Loan</p>
+                            </li>
+                            <li>
+                                <i class="icon-term"></i>
+                                <p>Term Loan</p>
+                            </li>
+                            <li>
+                                <i class="icon-consumer-loan"></i>
+                                <p>Consumer Loan</p>
+                            </li>
+                            <li>
+                                <i class="icon-other-loan"></i>
+                                <p>Other Loan</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Liability Loan Type Popup Div Starts-->
+        <!--AGENTVERIFICATION POPUP START-->
+        <!--Changes start By Kani On 31/12/2016-->
+        <div class="popup-bg" id="agents-popup-BC" style="display:none;">
+            <div class="popup-div">
+                <div class="popup-header">
+                    <h2 id="agent_pop_title"><i onclick="$('#agents-popup-BC').hide();" class="icon-close div-right"></i></h2>
+                    <div class="clear"></div>
+                </div>
+                <div id="agent_load_div_BC" class="popup-content credit-agent"> </div>
+            </div>
+        </div>
+        <div class="popup-bg" id="agentFIR-div" style="display:none">
+            <div class="popup-div">
+                <div class="popup-header">
+                    <h2>Field Investigation <i class="icon-close div-right"></i></h2>
+                </div>
+            </div>
+        </div>
+        <!--/*CHANGES ON 31/12/2016*/-->
+        <!--AGENTVERIFICATION POPUP END-->
+        <!--PROPERTY POPUP START-->
+
+        <div class="popup-bg" id="Prop_Popup_BC" style="display:none;">
+            <div class="popup-div">
+                <div class="popup-header">
+                    <h2 id="Property"><i onclick="$('#Prop_Popup_BC').hide();" class="icon-close div-right"></i></h2>
+                    <div class="clear"></div>
+                </div>
+                <div id="PropDiv_BC" class="popup-content"> </div>
+                <input onclick="fnConfirmProp(this)" type="button" value="Confirm" />
+            </div>
+        </div>
+        <!--PROPERTY POPUP END-->
+        <!-- Documents Div Starts-->
+        <div id="div-document-content" class="documents-content" style="display:none;"> </div>
+        <!-- Documents Div Ends-->
+        <!-- Proposal Note Information Div Starts-->
+        <div class="popup-bg" id="PrpslInfo-popup" style="display:none;">
+            <div class="popup-div">
+                <div class="popup-header">
+                    <h2 id="PrpslInfoClose"><i onclick="$('#PrpslInfo-popup').hide();" class="icon-close div-right"></i></h2>
+                    <div class="clear"></div>
+                </div>
+                <div id="editor"></div>
+                <input onclick="fnConfirmPrpslInfo()" type="button" value="Confirm" />
+            </div>
+        </div>
+        <!-- Proposal Note Information Div Starts-->
+        <div class="popup-bg" id="credit-popup_DDE" style="display:none;">
+            <div class="popup-div popup-large" style="top:5% !important;">
+                <div class="popup-header">
+                    <h2><i onclick="    fnCloseCredit_BC()" class="icon-close div-right"></i></h2>
+                    <div class="clear"></div>
+                </div>
+                <div class="popup-content"> </div>
+            </div>
+        </div>       
+        <script src="../COMMON/js/devp-js/ckeditor/ckeditor.js"></script>
+        <!--<script src="../COMMON/js/devp-js/ckeditor/samples/js/sample.js"></script>-->
+        <script src="js/Scrn/cust-financials.js?$$$v=1.0.3$$$"></script>
+        <script src="js/BeatPicker.min.js?$$$v=1.0.3$$$"></script>
+        <style>
+            .summary-income [readonly] {
+                border: none;
+            }
+
+            .li-income-title p {
+                text-transform: uppercase;
+            }
+
+            #PDattachDiv span {
+                padding: 1px 5px;
+            }
+
+            #bc_RptRmks {
+                height: 110px;
+            }
+
+            span.percText, .Business_DoF {
+                outline: none;
+            }
+
+            p.TVphNo.active i {
+                color: red;
+            }
+            
+        </style>
+        <script>
+            $(".applicant-li").click(function (e) {
+                $(".applicant-tab").show();
+                $(".reference-tab,.deviation-tab").hide();
+            });
+            $(".reference-li").click(function (e) {
+                $(".reference-tab").show();
+                $(".applicant-tab,.deviation-tab").hide();
+            });
+            $(".deviate-li").click(function (e) {
+                editortooldisable();
+                $(".deviation-tab").show();
+                $(".applicant-tab,.reference-tab").hide();
+            });
+            $(document).on("click", ".obligation-li", function (e) {
+                var maindiv = $(this).closest(".customer-financial-div");
+                $(maindiv).find(".liability-div").show();
+                $(".customer-business,.customer-salary,.customer-cash,.customer-bank,.customer-other").hide();
+            });
+           
+        </script>
+    </div>

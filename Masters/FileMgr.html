@@ -1,0 +1,32 @@
+﻿<div class="title">
+    <h1><i class="icon-sales-manager"></i> File Manager </h1>
+</div>
+<div class="content-div">
+    <input style="display:none;" type="text" readonly id="folderpath"/>
+    <div class="folder-container">
+        <div id="container_id"></div>
+        <div id="updload_div">
+            <input type="file" id="uploadfile"/>
+            <div> <input type="button" value="open file"/> </div>
+        </div>
+    </div>
+</div>
+<link href="../Masters/js/scrn/FileTree/jqueryFileTree.css" rel="stylesheet" />
+<script src="../Masters/js/scrn/FileTree/jqueryFileTree.js"></script>
+<script src="../Masters/js/scrn/FileTree/jquery.easing.js"></script>
+<script src="../Masters/js/Scrn/FileMgr.js"></script>
+<style>
+.folder-container {
+    width:98%;
+}
+.folder-container div {
+    width: 48%;
+    position: relative;
+    border: 1px solid #BBB;
+    float: left;
+    margin:0px 10px;
+}
+#updload_div {
+    height: 300px;
+}
+</style>

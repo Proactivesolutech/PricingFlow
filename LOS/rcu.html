@@ -1,0 +1,221 @@
+<style>
+    .rcu-list .documents.doc-list-view ul li {
+        width: 10%;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+        .rcu-list .documents.doc-list-view ul li:first-child {
+            width: 40%;
+            text-align: left;
+        }
+
+        .rcu-list .documents.doc-list-view ul li:last-child {
+            width: 30%;
+            text-align: left;
+        }
+</style>
+<script src="js/Scrn/rcu.js"></script>
+
+<div class="title">
+    <h1>RCU : Scrutiny</h1>
+</div>
+<div class="content-div" id="whole_div">
+
+    <form id="PostForm" name="PostForm" action="http://119.226.197.6:8080/omnidocs/integration/foldView/viewFoldList.jsp" method="post" target="newWin">
+        <input type="hidden" name="Application" value="SHFL_LOANS">
+        <input type="hidden" id="fold_nm" name="FolderName" value="">
+        <input type="hidden" name="sessionIndexSet" value="false">
+    </form>
+
+    <div>
+        <div class="box-div lead-information">
+            <ul class="form-controls">
+                <div class="div-right">
+                    <i class="icon-plus div-right" title="Omnidox" id="popclose" onclick="fnpop();"></i>
+                </div>
+                <li class="Product_Icon">
+                    <i class="icon-home-loan"></i>
+                    <p>Home Loan</p>
+                </li>
+                <li class="width-1 read-only">
+                    <label>Lead ID</label>
+                    <p name="content" id="rcu_leadid"></p>
+                </li>
+                <li class="width-15 read-only">
+                    <label>Applicant</label>
+                    <p name="content" id="rcu_applicant"></p>
+                </li>
+                <li class="width-15 read-only">
+                    <label>Application Number</label>
+                    <p name="content" id="rcu_appno"></p>
+                </li>
+                <li class="width-15 read-only">
+                    <label>Branch</label>
+                    <p name="content" id="rcu_brnch"></p>
+                </li>
+                <li class="width-15 read-only">
+                    <label>Loan Amount</label>
+                    <p name="content" id="rcu_amnt"></p>
+                </li>
+                <li class="width-15 read-only">
+                    <label>Tenure of the Loan</label>
+                    <p name="content" id="rcu_tenure"></p>
+                </li>
+                <li class="width-13">
+                    <label>RCU Initiation Date</label>
+                    <input id="Rcudate" data-beatpicker="true" data-beatpicker-position="['*','*']" type="text" name="text" class="mandatory" sign="D">
+                </li> 
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <div contentchanged="true">
+            <div class="box-div rcugrid" contentchanged="true" id="append">
+                <!--<div class="box-div" contentchanged id="applicant">
+                <ul class="form-controls">
+                <li class="width-10 read-only">
+                    <label>Gender</label>
+                    <input type="text" name="text" key="rcu_gen" id="rcu_gen" />
+                </li>
+                <li class="width-10 read-only">
+                    <label>DOB</label>
+                    <input type="text" name="text" key="rcu_dob" id="rcu_dob" />
+                </li>
+                </ul>
+            </div>
+            <div class="box-div" contentchanged id="coapplicant">-->
+                <!--<ul class="form-controls">
+                <li class="width-10 read-only">
+                    <label>Gender</label>
+                    <input type="text" name="text" key="rcu_gen1" id="rcu_gen1" />
+                </li>
+                <li class="width-10 read-only">
+                    <label>DOB</label>
+                    <input type="text" name="text" key="rcu_dob1" id="rcu_dob1" />
+                </li>
+
+            </ul>-->
+                <!--</div>-->
+                
+            </div>
+            </div>
+
+            <!--<div class="box-div document-div">
+            <div class="document-entry rcu-list">
+                <h2>
+                    Documents
+                    <div class="clear"></div>
+                </h2>
+                <ul class="form-controls">
+                    <li class="width-10 read-only">
+                        <label>Report Date</label>
+                        <input type="text" name="text" key="rcu_date" data-beatpicker="true" id="rcu_rpt_dt" />
+                    </li>
+                    <li class="width-10 read-only">
+                        <label>Reference Id</label>
+                        <input type="text" name="text" key="rcu_refId" id="rcu_refId" />
+                    </li>
+                    <li class="read-only">
+                        <label>Screened</label>
+                        <input type="checkbox" name="checkbox" key="rcu_screened">
+                    </li>
+                    <li class="read-only">
+                        <label>Sampled</label>
+                        <input type="checkbox" name="checkbox" key="rcu_sample">
+                    </li>
+                    <li class="status"><div class="bg bg1"><i class="icon-positive"></i>
+                       <input name="text" key="rcu_status" type="hidden">
+                        </div></li>
+                    <li class="read-only">
+                        <label>Comments</label>
+                        <input type="text" name="text" key="rcu_cmnts" id="rcu_cmnts">
+                    </li>
+                </ul>
+
+               <!-- <div class="documents doc-list-view rcugrid" contentchanged id="appendul">-->
+            <!--<ul>
+          <li>Licence
+            <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">Address Proof</span></p>
+          </li>
+          <li class="read-only icon-view-click">
+            <p><i class="icon-view"></i></p>
+            <label>Screened</label>
+          </li>
+          <li class="read-only icon-test-tube-view">
+            <p><i class="icon-test-tube"></i></p>
+            <label>Sampled</label>
+          </li>
+          <li class="status"><div class="bg bg1"><i class="icon-positive"></i></div></li>
+          <li class="read-only">
+            <label>Comments</label>
+            <input type="text">
+          </li>
+        </ul>
+        <ul>
+          <li>Pan Card
+            <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">ID Proof</span></p>
+          </li>
+          <li class="read-only icon-view-click">
+            <p><i class="icon-view"></i></p>
+            <label>Screened</label>
+          </li>
+          <li class="read-only icon-test-tube-view">
+            <p><i class="icon-test-tube"></i></p>
+            <label>Sampled</label>
+          </li>
+          <li class="status"><div class="bg bg1"><i class="icon-positive"></i></div></li>
+          <li class="read-only">
+            <label>Comments</label>
+            <input type="text">
+          </li>
+        </ul>
+        <ul>
+          <li>Passport
+            <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">DOB Proof</span></p>
+          </li>
+          <li class="read-only icon-view-click">
+            <p><i class="icon-view"></i></p>
+            <label>Screened</label>
+          </li>
+          <li class="read-only icon-test-tube-view">
+            <p><i class="icon-test-tube"></i></p>
+            <label>Sampled</label>
+          </li>
+          <li class="status"><div class="bg bg1"><i class="icon-positive"></i></div></li>
+          <li class="read-only">
+            <label>Comments</label>
+            <input type="text">
+          </li>
+        </ul>-->
+            <!--</div>-->
+
+            <div class="clear"></div>
+            <input type="hidden" id="hiddenclass" value="0" name="text" key="hiddenkey" />
+        </div>
+</div>-->
+
+      </div>
+</div>
+
+
+<div id="div-document-content" class="documents-content" style="display:none;">
+</div>
+<script src="js/BeatPicker.min.js"></script>
+<script>
+    calcHeight(); /*window height for all div*/
+    scanDocPreview(); /*Scand or Attached Document image Preview*/
+    scanAttachClick(); /*Scan or Attach click*/
+    customselect();
+    rightdocument();
+
+    $(document).ready(function () {
+        categoryPopup();
+        dropButton();
+    });
+
+    function fnpop() {
+        $("#fold_nm").val(GlobalXml[0].LeadID);
+        window.open("", "newWin", "location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no,left=20,top=20,width=600,height=600");
+        PostForm.submit();
+    }
+</script>

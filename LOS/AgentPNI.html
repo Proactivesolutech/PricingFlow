@@ -1,0 +1,187 @@
+﻿<div id="agt_title" class="title">
+    <h1>Zonal Quality Check(ZQC) : Agency Verification</h1>
+</div>
+
+
+<div class="content-div">
+    <div class="box-div lead-information" id="main_agtLeadDiv">
+        <ul class="form-controls">
+            <h2>Lead Information <i class="icon-document div-right" onclick="fnSelectDocment();"></i><i class="icon-customer div-right" onclick="fnOpenCustomerDetails();"></i></h2>
+            <li class="category-icons">
+                <label><i class="icon-home-loan"></i></label>
+                <p></p>
+            </li>
+            <li class="width-1 read-only">
+                <label>Lead ID</label>
+                <p id="Agt_LeadId" name="content" key="LeadID"></p>
+            </li>
+            <li class="width-280 read-only">
+                <label>Applicant</label>
+                <p id="Agt_LeadNm" name="content" key="LeadNm"></p>
+            </li>
+            <li class="width-15 read-only">
+                <label>Branch</label>
+                <p id="Agt_Branch" name="content" key="BranchNm"></p>
+            </li>
+            <li class="width-33 read-only">
+                <label>Application Number</label>
+                <p id="Agt_AppNo" name="content" key="AppNo"></p>
+            </li>
+        </ul>
+    </div>
+    <div class="box-div agent-verification-div">
+        <div contentchanged="true" id="fulagtdiv">
+
+            <div class="property-content box-div" id="Prp_AdrsDiv">
+                <div class="clear"></div>
+                <ul class="common-tabs">
+                    <li prpcount ="0"class="prop_tab active tab_0" onclick="fnaddDiv(this);" onfocusout="fnsavedata();">Property 1</li>
+                    <li class="add">
+                        <i class="icon-plus" onclick="fnAddprop()"></i>
+                    </li>
+                </ul>
+                <div id="agt_Info" pk="0">
+                    <div prppk="0" class="tab-content" id="maindiv_0" contentchanged="true">
+                        <input type="hidden" value="0" name="text" key="agt_prppk" />
+                        <ul class="form-controls">
+                            <li>
+                                <label>Name of seller</label>
+                                <input type="text" name="text" key="agt_seller" class="mandatory" restrict="alphaspace">
+                            </li>
+                            <li>
+                                <label>Name of Project</label>
+                                <!--Changes ON 30/11/2016-->         <input type="text" name="text" key="agt_project">
+                            </li>
+                            <li class="width-32">
+                                <label>Property Type</label>                                  
+                                <!--<select name="select" key="agt_prtytyp" class="select mandatory">
+                                    <option value="0">Residential</option>
+                                    <option value="1">Commercial</option>
+                                </select>-->                             
+                                <div class="select-focus">
+                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="agt_prtytyp" class="autofill mandatory">
+                                    <i class="icon-down-arrow"></i>
+                                    <ul class="custom-select">
+                                        <li val="0">Residential</li>
+                                        <li val="1">Commercial</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <h2>Address</h2>
+                        <ul class="address-div1 form-controls">
+                            <li class="width-8">
+                                <label>Flat/Door No</label>
+                                <input type="text" name="text" key="agt_flno" placeholder="" class="mandatory valdflat" maxlength="20">
+                            </li>
+                            <li class="width-21">
+                                <label>Building</label>
+                                <input type="text" name="text" key="agt_buildg" maxlength="100" class="valdbuild">
+                            </li>
+                            <li class="width-8">
+                                <label>Plot No</label>
+                                <input type="text" name="text" key="agt_plotno" placeholder="" class="mandatory valdplot" maxlength="20">
+                            </li>
+                            <li class="width-54">
+                                <label>Street</label>
+                                <input type="text" name="text" key="agt_str" maxlength="150" class="valdstreet">
+                            </li>
+                            <li class="width-54">
+                                <label>Land Mark</label>
+                                <input type="text" name="text" key="agt_lnmrk" maxlength="250" class="valdLM">
+                            </li>
+                            <li class="width-54 city">
+                                <label>Town/Village/City</label>
+                                <input type="text" name="text" key="agt_town" placeholder="" class="mandatory" maxlength="150">
+                            </li>
+                            <li class="width-54 district">
+                                <label>District</label>
+                                <input type="text" name="text" key="agt_city" placeholder="" class="mandatory" maxlength="100">
+                            </li>
+                            <li class="width-21 state">
+                                <label>State</label>
+                                <input type="text" name="text" key="agt_state" placeholder="" class="mandatory" maxlength="100">
+                            </li>
+                            <li class="width-6">
+                                <label>PIN</label>
+                                <comp-help id="comp-help" txtcol="Pincode" valcol="PinPk" onrowclick="Pinclick" prcname="PrcShflPincodehelp" width="100%"></comp-help>
+                                <input type="hidden" name="text" key="agt_pin" placeholder="" class="mandatory" restrict="number" maxlength="6">
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+
+            </div>
+            <!--<input type="button" value="test" onclick="fnsavedata()"/>-->
+
+            
+
+            <!-- (Example - Resi FI, Office FI,DV report, Collection Feedback,Tech report, Legal report) -->
+
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+</div>
+
+<div class="popup-bg" id="agent-div" style="display:none">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2>Agents <i class="icon-close div-right"></i></h2>
+        </div>
+        <div class="popup-content">
+            <div contentchanged="true" class="agt_DtlInfo">
+                <div id="griddiv">
+                    <ul class="trigger-div" id="#agtgridUlid">
+                        <li class="hiddenAgency rowGrid" id="legal_ver">
+                            <label>Legal Verification</label>
+                            <span class="icon-sales-manager">
+
+                                <div class="select-focus">
+                                    <input type="hidden" name="text" colkey="agt_SrvTyp" value="4">
+                                    <comp-help id="legalverid_help" txtcol="AgentName" valcol="Agtpk" helpfk="4" prcname="PrcShfl_AgentMas_help" width="100%"></comp-help>
+                                    <input type="hidden" id="legalverid" name="text" selval="">
+                                    <!--<input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="agt_AgtFk" id="legalverid" class="autofill mandatory">-->
+                                    <!--<i class="icon-down-arrow"></i>
+                <ul class="custom-select agt_sel"></ul>-->
+                                </div>
+                            </span>
+                        </li>
+                        <li class="hiddenAgency rowGrid tech_div" prop="0" id="div_tech_ver_0">
+                            <label>Technical Verification</label>
+                            <span class="icon-sales-manager">                              
+                                <div class="select-focus">
+                                    <input type="hidden" name="text" colkey="agt_SrvTyp" value="5">
+                                    <input type="hidden" name="text" colkey="agt_PrpKey" value="1">
+                                    <comp-help id="techverid_0_help" txtcol="AgentName" valcol="Agtpk" helpfk="5" prcname="PrcShfl_AgentMas_help" width="100%"></comp-help>
+                                    <!--<input type="hidden" id="techverid_0" name="text" selval="">-->                                   
+                                 </div>
+                            </span>
+                        </li>
+                  
+                        <li>
+                            <input onclick="fnagentconfirmcrdPNI()" type="button" value="Confirm" />
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function () {
+        selectfocus();
+    });
+
+    calcHeight(); //Viewport Height Function Starts
+    rightdocument(); /*Document Popup*/
+    popupclose(); /*close popup function*/
+     /* Custom Select2 plugin Function*/
+</script>
+<script src="js/Scrn/AgentPNI.js"></script>

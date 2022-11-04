@@ -1,0 +1,156 @@
+﻿<custom-component compid="comp-query">
+    <div class="query_notification-div">
+        <h2>Queries</h2>
+        <div class="query_box-div" style="height:80vh;">
+            <div class="query_notify-div" id="QueryList" repeat-data="true">
+                <div class="query_notify-cnt">
+                    <div class="query-infoProcessID">Process Id : {{LeadInfo_LeadFk}}</div>
+                    <div class="query-info">
+                        <div class="query_left">
+                            <i class="query_left query_icon-customer"></i>
+                            <div class="query_left query_read-only">
+                                <p class="query_bg query_bg4">{{Query_Category}}</p>
+                            </div>
+                            <div class="query_right query_read-only">
+                                <label>{{LeadRef}}</label>
+                                <p>{{Lead_Name}}</p>
+                            </div>
+                        </div>
+                        <div class="query_right">
+                            <!--<i class="query_icon-home-loan"></i>-->
+                        </div>
+                        <i class="query_icon-drop-down-arrow"></i>
+                        <div class="query_clear"></div>
+                    </div>
+                    <div class="query-infodetail">
+                        <p class="query_bg-blue query_left">{{Raised_User}}</p>
+                        <div class="query_time-date query_left"> <span>{{Raise_date}}</span></div>
+                    </div>
+                    <div class="query_clear"></div>
+                    <div class="query_details" style="display:none;">
+                        <div class="query_thread-div">
+                            <div class="query_clear"></div>
+                        </div>
+                        <!--<div class="notify">
+                        <p>{{Query}}</p>
+                    </div>-->
+                        <div class="query_pending-icon">
+                            <i style="{{reply}}" class="query_icon-reply query_right"></i>
+                            <i style="{{Paging}}" value="{{LeadRef}}" class="icon-drill-down query_right"></i>
+                            <input type="hidden" name="LeadInfo_LeadFk" class="query_LeadInfo_LeadFk" value="{{LeadInfo_LeadFk}}" />
+                            <input type="hidden" name="LeadInfo_UserFk" class="query_LeadInfo_UserFk" value="{{LeadInfo_UserFk}}" />
+                            <input type="hidden" name="LeadInfo_PageVersion" class="query_LeadInfo_PageVersion" value="{{LeadInfo_PageVersion}}" />
+
+                            <!--<input type="hidden" name="LeadInfo_LeadFk" class="query_LeadInfo_LeadFk" value="{{LeadInfo_LeadFk}}" />
+                        <input type="hidden" name="LeadInfo_LeadFk" class="query_LeadInfo_LeadFk" value="{{LeadInfo_LeadFk}}" />-->
+                            <span sts="{{Sts}}" class="query_Sts query_bg query_left {{bg}}" style="{{cursor}}{{visibility}}"><i class="{{PendingCls}}"></i> <span>{{PendingMsg}}</span> </span>
+                            <div class="query_clear"></div>
+                            <div class="query_reply-div">
+                                <div>
+                                    <i class="query_icon-customer"></i><span>{{Name}}  :  {{Msg}}</span>
+                                    <br />
+                                    <span>Attachment(s)  :  {{QueryAttachments}}</span>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="query_clear"></div>
+                        <div class="query_comment-div" style="display:none;">
+
+                            <h2>Reply To</h2><select class="query_sel_ReplyTo" multiple></select>
+
+                            <textarea rows="3" class="rplyTxt" placeholder="Write Comment"></textarea>
+                            <!--Added by Vijay S-->
+                            <div class="query_replyAttchmnt_div">
+                                <ul class="query_fileupload"></ul>
+                                <label class="query_replyAttchmnt_label">
+                                    <i class="query_replyAttchmnt_img material-icons" title="Attach Files"></i>
+                                    <input type="file" name="replyAttchmnt" class="query_replyAttchmnt" onchange="fnreplyAttach(this);" />
+                                </label>
+                            </div> 
+                                                   
+                            <input type="hidden" name="Raised_id" class="query_Raised_id" value="{{Raised_id}}" />
+                            <div>
+                                <div class="query_drop-button query_right">
+                                    <input type="button" value="Send" class="query_btnSend"><i class="query_icon-down-arrow"></i>
+                                    <ul class="query_drop-list" style="display: none;">
+                                        <li>Resolved</li>
+                                        <li>Waived</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="query_clear"></div>
+                    </div>
+                    <input type="hidden" name="hdrpk" class="query_hdrpk" value="{{hdrpk}}" />
+                </div>
+            </div>
+            <div class="clear"></div>
+            <i class="query_icon-plus query_bg-blue"></i>
+        </div>
+        <div class="query_pop-bg" style="display: none;" id="query_plus-popup">
+            <div class="query_popup-div">
+                <i class="query_icon-close query_right"></i>
+                <div class="query_clear"></div>
+                <div class="query_notify-div">
+                    <div class="query_notify-cnt">
+                        <div>
+                            <div class="query_left" > <i class="query_icon-customer"></i></div>
+                            <div class="query_left query_read-only">
+                                <div class="query_left" >
+                                    <select id="query_sel_QryRaised"></select>
+                                </div>
+                                <div class="query_right">
+                                    <label id="query_leadNo"></label>
+                                    <p id="query_leadName"></p>
+                                </div>
+                            </div>
+                            <div class="query_right">
+                                <!--<i class="query_icon-home-loan"></i>-->
+                            </div>
+                        </div>
+                        <div class="query_clear"></div>
+                        <div>
+                            <p class="query_bg-blue query_left" id="UsrRaised"></p>
+                            <div class="query_time-date query_left"> <span id="Issuedt"></span></div>
+                        </div>
+                        <div class="query_clear"></div>
+                        <div>
+                            <h2>To:</h2>  <select id="query_sel_Toaddr" multiple></select>
+                        </div>
+                        <div class="query_comment-div">
+                            <textarea rows="3" class="commentTxt" placeholder="Write Comment"></textarea>
+                            <!--Added by Vijay S-->
+                            <div class="query_replyAttchmnt_div">
+                                <ul class="query_fileupload"></ul>
+                                <label class="query_replyAttchmnt_label">
+                                    <i class="query_replyAttchmnt_img material-icons" title="Attach Files"></i>
+                                    <input type="file" name="replyAttchmnt" class="query_replyAttchmnt" onchange="fnreplyAttach(this);" />
+                                </label>
+                            </div>
+                            <div>
+                                <input type="button" value="Send" class="query_right" id="query_btnQrySend">
+                                <div class="query_left query_bg query_bg1 query_resolved" style="display:none;"><i class="query_icon-positive"></i> Resolved</div>
+                                <script>
+                                    $(document).on("click", ".query_drop-button i", function (e) {
+                                        $(".query_drop-list").toggle();
+                                    });
+                                    $(".query_pending").click(function (e) {
+                                        $(".query_resolved").show();
+                                        $(".query_pending").hide();
+                                    });
+                                    $(".query_resolved").click(function (e) {
+                                        $(".query_pending").show();
+                                        $(".query_resolved").hide();
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="query_clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</custom-component>

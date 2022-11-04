@@ -1,0 +1,57 @@
+﻿<link rel="stylesheet" href="css/common.css?$$$v=1.0.3$$$">
+<link rel="stylesheet" type="text/css" href="css/responsive.css?$$$v=1.0.3$$$">
+<link rel="stylesheet" type="text/css" href="css/fonts/style.css?$$$v=1.0.3$$$" />
+
+<!-- Jquery JS -->
+<script src="js/jquery.js?$$$v=1.0.3$$$"></script>
+<!-- Jquery JS -->
+<!-- Common JS BPM/LOS-->
+<script src="../COMMON/js/Scrn/CommonFns.js?$$$v=1.0.3$$$"></script>
+<!-- Common JS BPM/LOS-->
+<!-- BPM Required JS-->
+<script src="../COMMON/js/devp-js/ProDataAccesScript.js?$$$v=1.0.3$$$"></script>
+<!-- BPM Required JS-->
+<!-- LOS Required JS -->
+<script src="js/common-js.js?$$$v=1.0.3$$$"></script>
+<script src="../COMMON/js/devp-js/ProLOSDataAccesScript.js?$$$v=1.0.3$$$"></script>
+
+<script src="js/Scrn/LeadHis.js"></script>
+<style>
+   .box-div { margin:10px auto;}
+    .form-controls { border-bottom:1px solid #efefef;}
+        .form-controls.lead-history-3 li, #fulHtmlhisdivId .form-controls li, #fulHtmlcompdivId .form-controls li, #fulHtmlpendivId .form-controls li {
+            width: 32%;
+        }
+        .form-controls.lead-history-4 li, #Ritscrndata .form-controls li, #PenursrefdataId .form-controls li {
+            width: 23%;
+        }
+</style>
+
+    <div class="content-div">
+        <div>
+            <div class="box-div grid-50">
+                <h1>Pending Screen Details of Lead with User Ref</h1>
+                <ul class="form-controls lead-history-4">
+                    <li class="read-only"><h2>ScreenName</h2></li>
+                    <li class="read-only"><h2>User Name</h2></li>
+                </ul>
+                <ul id="PenursrefdataId"></ul>
+                <div class="clear"></div>
+            </div>
+
+            <div class="box-div grid-50">
+                <h1>User Rights for the Screen</h1>
+                <ul class="form-controls lead-history-4">
+                    <li class="read-only"><h2>ScreenName</h2></li>
+                    <li class="read-only"><h2>SourceScreen</h2></li>
+                </ul>
+                <ul id="Ritscrndata"></ul>
+                <div class="clear"></div>
+            </div>
+            </div>
+        </div>
+        <script>
+    calcHeight();
+    </script>
+
+

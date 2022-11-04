@@ -1,0 +1,41 @@
+<style>
+    .closeDiv i {
+        line-height: 25px;
+        text-align: center;
+        border-radius: 50%;
+        position: absolute;
+        color: #2d2d2d;
+        /*background: #009fd7;
+            width: 25px;
+        height: 25px;*/
+        font-size: 17px;
+        z-index: 9;
+        top: 5px;
+        right: 8px;
+    }
+</style>
+<a class="closeDiv bg1" href="#" title="Close"> <i onclick="fnClosePrw()" class="icon-close"></i></a>
+<comp-scan type="viewer" class="document-list" id="scanviewerid"></comp-scan>
+<script>
+    debugger;
+    function fnClosePrw() {
+        $("#div-document-content").hide();
+        $(".content-div").removeClass('center-collapse');
+    }
+    var path = localStorage.getItem("previewPath");
+    path = path ? path : "";
+    if (path != "") {
+        console.log(path);
+        var pathList = path.split("$$$");
+        if (pathList.length > 1)
+            $("#scanviewerid").LoadImageArr(pathList);
+        else {
+            var ImageArr = [];
+            ImageArr.push({ path: path, src: "" });
+            $("#scanviewerid").LoadImageArr(ImageArr);
+        }
+    }
+    localStorage.setItem("previewPath", "");
+    localStorage.removeItem("previewPath");
+    //scanDocPreview();    
+</script>

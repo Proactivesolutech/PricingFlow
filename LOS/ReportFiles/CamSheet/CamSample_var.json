@@ -1,0 +1,12 @@
+{"PrdNm": "Product Name",
+"Loc": "Location",
+"EligCal": "Eligibility Calculation",
+"Risk": "Risk Category",
+"LnAmt": "Loan Amount",
+"ROI": "Rate of Interest",
+"Tenure": "Tenure",
+"@ApplTable": "Applicant Details",
+"@IncomeTable": "Income Details",
+"@TechTable": "Technical Details",
+"@ObligTable": "Obligation Details",
+"@FinalLnTable": "Final Loan Details"}

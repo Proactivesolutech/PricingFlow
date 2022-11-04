@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<!--<script src="js/JavaScript1.js"></script>-->
+
+<script src="js/BuilderMas.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="fuldiv" class="detailed-content box-div">
+        <div contentchanged="true">
+            <div class="legal-hier-detail margin-10 dde_cont box-div">
+                <h1>Builder Details</h1>
+                <ul class="form-controls">
+
+                    <li class="width-13">
+                        <label>Code</label>
+                        <input type="text" name="text" key="GbmCd" maxlength="50" class="mandatory">
+                    </li>
+                    <li class="width-13">
+                        <label>Name</label>
+                        <input type="text" name="text" key="GbmName" maxlength="100" class="mandatory">
+                    </li>
+                    <li class="width-13">
+                        <label>Contact Person</label>
+                        <input type="text" name="text" key="GbmContactPerson" maxlength="100" class="mandatory">
+
+                    </li>
+                    <li class="width-13">
+                        <label>Land Number</label>
+                        <input type="text" name="text" key="GbmLandNo" maxlength="50">
+                    </li>
+                    <li class="width-13">
+                        <label>Mobile No</label>
+                        <input type="text" name="text" key="GbmMobileNo" restrict="number" class="mobile" maxlength="10" class="mandatory">
+                    </li>
+                    <li class="width-13">
+                        <label>PAN No</label>
+                        <input type="text" name="text" key="GbmPANNo" maxlength="12" class="mandatory">
+                    </li>
+                    <li class="width-13">
+                        <label>CIN No</label>
+                        <input type="text" name="text" key="GbmCINNo" maxlength="50">
+                    </li>
+                    <li class="width-13">
+                        <label>E-Mail</label>
+                        <input type="text" name="text" key="GbmEmail" class="email" maxlength="50">
+                    </li>
+                    <li class="width-20 edit-type">
+                        <input type="hidden" id="hidpkid" name="text" key="hid_val">
+                    </li>
+                </ul>
+            </div>
+            <div class="box-div">
+                <ul class="form-controls address-div">
+                    <li class="width-8">
+                        <label>Flat/Door No</label>
+                        <input type="text" name="text" key="GbaDoorNo" restrict="address" maxlength="10" class="mandatory">
+                    </li>
+                    <li class="width-21 div-right">
+                        <label>Building</label>
+                        <input type="text" name="text" key="GbaBuilding" restrict="address" maxlength="150">
+                    </li>
+                    <li class="width-8">
+                        <label>Plot No</label>
+                        <input type="text" name="text" key="GbaPlotNo" restrict="address" maxlength="20">
+                    </li>
+                    <li class="width-21 div-right">
+                        <label>Street</label>
+                        <input type="text" name="text" key="GbaStreet" restrict="address" maxlength="150" class="mandatory">
+                    </li>
+                    <li class="width-98p">
+                        <label>Land Mark</label>
+                        <input type="text" name="text" key="GbaLandmark" restrict="address" maxlength="250">
+                    </li>
+                    <li class="width-98p city">
+                        <label>Town/Village/City</label>
+                        <input type="text" name="text" key="GbaArea" class="mandatory" restrict="address" maxlength="150">
+                    </li>
+                    <li class="width-98p district">
+                        <label>District</label>
+                        <input type="text" name="text" key="GbaDistrict" class="mandatory" restrict="address" maxlength="100">
+                    </li>
+                    <li class="width-21 state">
+                        <label>State</label>
+                        <input type="text" name="text" key="GbaState" class="mandatory" restrict="address" maxlength="100">
+                    </li>
+                    <li class="width-6 div-right">
+                        <label>Country</label>
+                        <input type="text" name="text" key="GbaCountry" restrict="address" maxlength="100">
+                    </li>
+                    <li class="width-6 div-right pinnum">
+                        <label>PIN</label>
+                        <comp-help id="comp-help" txtcol="Pincode" valcol="PinPk" onrowclick="Pinclick" prcname="PrcShflPincodehelp" width="100%"></comp-help>
+                        <input name="text" key="GbaPin" restrict='number' class="mandatory" type="hidden" placeholder="" maxlength="6">
+
+                    </li>
+                </ul>
+            </div>
+            <input type="button" value="save" id="savebutton" onclick="fnsave();">
+            <table>               
+                    <thead>
+                        <td><h1>Code</h1></td>
+                        <td><h1>Name</h1></td>
+                        <td><h1>Contact Person</h1></td>
+                        <td><h1>Mobile NO</h1></td>
+                    </thead>
+                <tbody id="grddivid"></tbody>                           
+            </table>
+            </div>
+       
+        </div>
+</body>
+</html>
+

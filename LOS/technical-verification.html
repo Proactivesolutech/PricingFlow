@@ -1,0 +1,386 @@
+﻿<div class="title">
+  <h1> Zonal QC: Technical Verification</h1>
+</div>
+<div class="content-div" id="technical-popup">
+  <div class="box-div zonal-agent">
+    <div class="agent-header">
+
+        <div class="div-left">
+            <div class="div-left">
+                <i class="icon-agents"></i>
+            </div>
+            <p class="div-right"><span id="agt_name"></span> <span>Technical Verification</span> </p>
+        </div>
+        <span class="div-right" id="lead_id"></span>
+
+      <div class="clear"></div>
+    </div>
+    <div class="agent-content">
+      <div class="field-content"> </div>
+        <div id="agtFB">
+            <div id="maintechnicaldiv" class="agent-content-drilldown">
+                <!--<div contentchanged="true" class="legal-content legal-agent">
+                    <ul class="grid-45 div-left box-div form-controls">
+                        <h2>Boundaries As Per Sale Deed</h2>
+                        <li class="width-98p">
+                            <label>East</label>
+                            <input name="text" key="agt_lftEst" type="text" class="mandatory">
+                        </li>
+                        <li class="width-98p">
+                            <label>West</label>
+                            <input name="text" key="agt_lftWst" type="text" class="mandatory">
+                        </li>
+                        <li class="width-98p">
+                            <label>North</label>
+                            <input name="text" key="agt_lftNor" type="text" class="mandatory">
+                        </li>
+                        <li class="width-98p">
+                            <label>South</label>
+                            <input name="text" key="agt_lftSou" type="text" class="mandatory">
+                        </li>
+                    </ul>
+                    <div class="grid-50 div-right box-div">
+                        <ul class="form-controls">
+                            <li class="width-98p">
+                                <label>Reference Number</label>
+                                <input name="text" key="agt_lftRefno" type="text" class="mandatory">
+                            </li>
+                            <h2>Property Valuation</h2>
+                            <li class="width-98p amount">
+                                <label>Market value</label>
+                                <i class="icon-indian-rupee"></i>
+                                <input name="text" key="agt_lftmgtval" type="text" class="currency mandatory" restrict="number">
+                            </li>
+                            <li class="width-98p amount">
+                                <label>Amenities amount </label>
+                                <input name="text" key="agt_amenAmt" type="text" class="currency" restrict="number">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="width-100p">
+                                <textarea style="display:none"></textarea>
+                            </li>
+                            <h2>&nbsp;</h2>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>-->
+                <div contentchanged="true" class="fidt2">
+                    <ul class="fom-controls mandatory">
+                        <li class="div-left width-4">
+                            <label>Date of Report</label>
+                            <input name="text" key="agt_rptdt" type="text" data-beatpicker="true" data-beatpicker-position="['*','*']">
+                        </li>
+                        <li class="div-right status">
+                            <p class="bg bg1"><i class="icon-positive" id="rptsts" onclick="fnReprtSts(this);"></i></p>
+                            <input name="text" key="agt_rptstatus" type="hidden">
+                        </li>
+                    </ul>
+                    <textarea name="text" key="agt_notes" class="mandatory" maxlength="500"></textarea>
+                    <!--<ul class="div-left attachment-div">
+                        <li id="attach_spn">
+                            <span><i class="icon-attach"></i> report.pdf <i class="icon-down-arrow"></i></span>
+                        <ul class="attach-dd" style="display:none;">
+                          <li>Remove</li>
+                          <li>Download</li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <span id="Spn_reportupload" class="div-right bg-blue"><i class="icon-attach"></i> Attach</span>
+                    <input type="file" id="FIReportUpload" multiple style="display:none;" />
+                    <input type="text" id="agt_Rpt" key="agt_RptPath" style="display:none;" />
+                    <div class="clear"></div>-->
+                </div>
+            </div>
+        </div>
+      <!--<input type="button" value="Save" class="div-right" onclick="fnSaveChangedData();">-->
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+
+<!--<div class="popup-bg field-popup" id="technical-popup">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2><i class="icon-agents"></i> <span id="agt_name"></span> <span>Technical Verification</span> <i class="icon-close div-right"></i></h2>
+            <span class="div-right" id="lead_id"></span>
+            <div class="clear"></div>
+        </div>
+        <div class="popup-content">
+            <div class="field-content">
+            </div>
+            <div id="maintechnicaldiv" class="agent-content-drilldown">
+                <div contentchanged="true" class="legal-content legal-agent">
+                    <ul class="grid-45 div-left box-div form-controls">
+                        <h2>Boundaries As Per Sale Deed</h2>
+                        <li class="width-98p">
+                            <label>East</label>
+                            <input name="text" key="agt_lftEst" type="text">
+                        </li>
+                        <li class="width-98p">
+                            <label>West</label>
+                            <input name="text" key="agt_lftWst" type="text">
+                        </li>
+                        <li class="width-98p">
+                            <label>North</label>
+                            <input name="text" key="agt_lftNor" type="text">
+                        </li>
+                        <li class="width-98p">
+                            <label>South</label>
+                            <input name="text" key="agt_lftSou" type="text">
+                        </li>
+                    </ul>
+                    <div class="grid-50 div-right box-div">
+                        <ul class="form-controls">
+                            <li class="width-48p">
+                                <label>Reference Number</label>
+                                <input name="text" key="agt_lftRefno" type="text">
+                            </li>
+                            <h2>Property Valuation</h2>
+                            <li class="width-48p amount">
+                                <label>Market value</label>
+                                <i class="icon-indian-rupee"></i>
+                                <input name="text" key="agt_lftmgtval" type="text">
+                            </li>
+                            <li class="width-48p amount">
+                                <label>Amenities amount </label>
+                                <input name="text" key="agt_amenAmt" type="text">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="width-100p">
+                                <textarea></textarea>
+                            </li>
+                            <h2>&nbsp;</h2>
+                            <h2>&nbsp;</h2>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div contentchanged="true" class="fidt2">
+                    <ul class="fom-controls">
+                        <li class="div-left width-4">
+                            <label>Date of Report</label>
+                            <input name="text" key="agt_rptdt" type="text" class="datepicker">
+                        </li>
+                        <li class="div-right status">
+                            <p class="bg bg1"><i class="icon-positive" onclick="fnReprtSts(this);"></i></p>
+                            <input name="text" key="agt_rptstatus" type="hidden">
+                        </li>
+                    </ul>
+                    <textarea name="text" key="agt_notes"></textarea>
+                    <ul class="div-left attachment-div">
+                        <li>
+                            <span><i class="icon-attach"></i> report.pdf <i class="icon-down-arrow"></i></span>
+                            <ul class="attach-dd" style="display:none;">
+                                <li>Remove</li>
+                                <li>Download</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <span class="div-right bg-blue"><i class="icon-attach"></i> Attach</span>
+                </div>
+            </div>
+            <input type="button" value="Save" class="div-right" onclick="fnSaveChangedData();">
+        </div>
+    </div>
+</div>--> 
+
+<!--<div class="box-div">
+      <ul class="common-tabs">
+        <li class="active tab1">Legal Scrutiny</li>
+        <li class="tab2">Pre Disbursement</li>
+        <li class="tab3">Post Disbursement</li>
+      </ul>
+      <div>
+        <div class="tab1-content">
+          <div class="feedback">
+            <div class="div-left">
+              <div class="status left">
+                <div class="bg bg1"> <i class="icon-positive"></i> </div>
+              </div>
+              <textarea class="left">Comments</textarea>
+            </div>
+            <div class="div-right align-center"><i class="icon-document document-expand"></i>
+              <p>Report</p>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="legal-content">
+            <div class="grid-33 div-left">
+              <ul class="box-div form-controls">
+                <h2>Boundaries As Per Sale Deed</h2>
+                <li class="width-100p">
+                  <label>East</label>
+                  <input type="text" placeholder=""value="VACANT LAND">
+                </li>
+                <li class="width-100p">
+                  <label>West</label>
+                  <input type="text" placeholder=""value="MANIKKAM HOUSE">
+                </li>
+                <li class="width-100p">
+                  <label>North</label>
+                  <input type="text" placeholder=""value="ROAD">
+                </li>
+                <li class="width-100p">
+                  <label>South</label>
+                  <input type="text" placeholder=""value="SSR NAGAR">
+                </li>
+              </ul>
+            </div>
+            <div class="grid-33 div-left">
+              <ul class="box-div form-controls">
+                <h2>Property Address</h2>
+                <li class="width-8">
+                  <label>Flat/Door No</label>
+                  <input type="text" placeholder=""value="NO 1/77">
+                </li>
+                <li class="width-37">
+                  <label>Building</label>
+                  <input type="text" placeholder=""value="SUDHARSAN NAGAR 1st STREET">
+                </li>
+                <li class="width-8">
+                  <label>Plot No</label>
+                  <input type="text" placeholder=""value="S NO 307/3A1">
+                </li>
+                <li class="width-37">
+                  <label>Street</label>
+                  <input type="text" placeholder=""value="MAMBAKKAM">
+                </li>
+                <li class="width-98p">
+                  <label>Land Mark</label>
+                  <input type="text" placeholder=""value="MAMBAKKAM">
+                </li>
+                <li class="width-98p">
+                  <label>Town/Village</label>
+                  <input type="text" placeholder=""value="KOLAPAKKAM">
+                </li>
+                <li class="width-98p">
+                  <label>District/City</label>
+                  <input type="text" placeholder=""value="CHENNAI">
+                </li>
+                <li class="width-37">
+                  <label>State</label>
+                  <input type="text" placeholder=""value="TAMIL NADU">
+                </li>
+                <li class="width-6 right">
+                  <label>PIN</label>
+                  <input type="text" placeholder=""value="600127">
+                </li>
+              </ul>
+            </div>
+            <div class="grid-33 div-left">
+              <div class="box-div">
+                <h2>Property Ownership</h2>
+                <p>
+                  <input type="checkbox">
+                  <span>SIVARAMA KRISHNAN S</span></p>
+                <p>
+                  <input type="checkbox">
+                  <span>KRISHNAVENI</span></p>
+              </div>
+              <ul class="box-div form-controls">
+                <h2>ROC</h2>
+                <li class="width-98p">
+                  <label>Builder Name</label>
+                  <input type="text" placeholder="" value="">
+                </li>
+                <li class="width-98p">
+                  <label>CIN of Builder</label>
+                  <input type="text" placeholder="" value="">
+                </li>
+              </ul>
+              <ul class="box-div form-controls">
+                <li class="width-98p">
+                  <label>Search Period (In Yrs)</label>
+                  <input type="text" placeholder=""value="14">
+                </li>
+              </ul>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="tab2-content legal-list" style="display:none;">
+          <div class="document-entry">
+            <h2>Documents <i class="icon-plus font-14"></i></h2>
+            <div class="documents doc-list-view">
+              <ul>
+                <li class="div-left">Licence
+                  <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">Address Proof</span></p>
+                </li>
+                <li class="read-only div-right align-center">
+                  <label>Type of Document</label>
+                  <p>Original</p>
+                </li>
+                <div class="clear"></div>
+              </ul>
+              <ul>
+                <li>Pan Card
+                  <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">ID Proof</span></p>
+                </li>
+                <li class="read-only div-right align-center">
+                  <label>Type of Document</label>
+                  <p>Original</p>
+                </li>
+              </ul>
+              <ul>
+                <li>Passport
+                  <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">DOB Proof</span></p>
+                </li>
+                <li class="read-only div-right align-center">
+                  <label>Type of Document</label>
+                  <p>Original</p>
+                </li>
+              </ul>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="tab3-content legal-list" style="display:none;">
+          <div class="document-entry">
+            <h2>Documents <i class="icon-plus font-14"></i></h2>
+            <div class="documents doc-list-view">
+              <ul>
+                <li class="div-left">Licence
+                  <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">Address Proof</span></p>
+                </li>
+                <li class="read-only div-right align-center">
+                  <label>Type of Document</label>
+                  <p>Original</p>
+                </li>
+                <div class="clear"></div>
+              </ul>
+              <ul>
+                <li>Pan Card
+                  <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">ID Proof</span></p>
+                </li>
+                <li class="read-only div-right align-center">
+                  <label>Type of Document</label>
+                  <p>Original</p>
+                </li>
+              </ul>
+              <ul>
+                <li>Passport
+                  <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">DOB Proof</span></p>
+                </li>
+                <li class="read-only div-right align-center">
+                  <label>Type of Document</label>
+                  <p>Original</p>
+                </li>
+              </ul>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>-->
+
+<div id="div-document-content" class="documents-content" style="display:none;"> </div>
+<script src="js/BeatPicker.min.js"></script>
+<script>
+    GlobalXml[0].Agt_loadHtml = "maintechnicaldiv";
+    calcHeight(); /*window height for all div*/
+    scanDocPreview(); /*Scand or Attached Document image Preview*/
+    commontabs();
+    customselect();
+    rightdocument()
+</script> 
+<script src="js/Scrn/AgentFB.js"></script> 

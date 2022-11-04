@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/fonts/style.css?$$$v=1.0.3$$$" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <script src="js/jquery.js?$$$v=1.0.3$$$"></script>
+    <!-- Jquery JS -->
+    <!-- Common JS BPM/LOS-->
+    <script src="../COMMON/js/Scrn/CommonFns.js?$$$v=1.0.3$$$"></script>
+    <!-- Common JS BPM/LOS-->
+    <!-- BPM Required JS-->
+    <script src="../COMMON/js/devp-js/ProDataAccesScript.js?$$$v=1.0.3$$$"></script>
+    <script src="../COMMON/js/Scrn/BPM_Common.js?$$$v=1.0.3$$$"></script>
+    <!-- BPM Required JS-->
+    <!-- LOS Required JS -->
+    
+    
+
+    <!-- LOS Required JS -->
+    
+
+
+    <style>
+        /*.main {
+            width: 100%;
+            height: auto;
+        }
+
+        .center {
+            width: 50% !important;
+            display: table;
+            margin: 0 auto;
+        }
+
+        #UserMasTbl {
+            width: 100%;
+            margin-top: 200px;
+            border-collapse: collapse;
+            border: 1px solid #000;
+        }
+
+            #UserMasTbl tr td {
+                padding: 10px;
+                border-collapse: collapse;
+            }
+
+        input {
+            border-radius: 5px;
+        }*/
+
+        #ErrText {
+            color: red;
+        }
+
+        .center-panel {
+            padding: 0;
+        }
+
+        .top-panel, .left-panel, .right-panel {
+            display: none;
+        }
+    </style>
+    <script src="js/Scrn/login.js"></script>
+    <script>        
+    </script>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="login-div" id="UserMasTbl">
+            <div class="div-right">
+                <div class="form-div">
+                    <ul class="form-controls">
+                        <h1>User Login</h1>
+                        <p id="ErrText">&nbsp;</p>
+                        <li class="align-left">
+                            <input type="text" id="UsrNm" required>
+                            <span class=" bar"></span>
+                            <label><i class="icon-user"></i> User Name</label>
+                        </li>
+                        <li class="align-left">
+                            <input type="password" id="UsrPwd" required>
+                            <span class=" bar"></span>
+                            <label><i class="icon-password"></i> Password</label>
+                        </li>
+                        <li class="align-left">
+                            <input type="checkbox">
+                            Remember Me
+                        </li>
+                        <li>
+                            <input type="button" onclick="fnLogin()" value="Submit">
+                        </li>
+                        <li>Forgot Password?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="main">
+            <div class="center">
+                <table id="UserMasTbl">
+                    <tr>
+                        <td colspan="2" style="text-align:center"><h1>User Login</h1></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><label id="ErrText"></label></td>
+                    </tr>
+                    <tr>
+                        <td>User Name</td>
+                        <td><input type="text" id="UsrNm" placeholder="Enter User Name" /></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" id="UsrPwd" placeholder="password" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" onclick="fnLogin()" value="submit" /></td>
+                    </tr>
+                </table>
+            </div>
+        </div>-->
+</body>
+</html>

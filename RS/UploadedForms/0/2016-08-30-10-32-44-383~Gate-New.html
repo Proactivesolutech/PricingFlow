@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> PO </title>
+	<script type="text/javascript">
+        $(document).ready(function () {
+		    $("#btn_Save").click(function (e) {
+                
+		        var objProcData = { ProcedureName: "Prc_DataEntry", Type: "SP", Parameters: [$("#Po_No").val(), $("#Sup_Nm").val(),1] }
+		        fnCallWebService("SAVE_DATA", objProcData, fnProjResult_PO, "MULTI", "");
+
+			})
+        });
+
+        function fnProjResult_PO(ServDesc, Obj, Param1, Param2) {
+            if (ServDesc == "SAVE_DATA") {
+                var GatePk = JSON.parse(Obj.result)[0].Pk;
+                alert(GatePk);
+                fnMoveNxtLevel(GlobalXml[0].FwdDataPk + "," + Data2[0].PagePk);
+            }
+        }
+	</script>
+</head>
+<body>
+	<table>
+	<tr>
+		<td> Gate NO. </td>
+		<td> <input type="text" id="Po_No"/> </td>
+	</tr>	
+	<tr>
+		<td> Supplier Name </td>
+		<td> <input type="text" id="Sup_Nm"/> </td>
+	</tr>
+	<tr>
+		<td> <input id="btn_Save" type="button" value="Save"/> </td>
+	</tr>
+	</table>
+</body>
+</html>

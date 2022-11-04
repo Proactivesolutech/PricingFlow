@@ -1,0 +1,101 @@
+<div class="title">
+<h1>Office Verification</h1>
+</div>
+<div class="content-div verification-div">
+    <div class="input box-div">
+       <ul>
+          <li class="width-280 read-only">
+            <label>Financial Applicant</label>
+            <p>Saranya</p>
+          </li>
+          <li class="width-15 read-only">
+            <label>Telephone No.</label>
+            <p>044-85967445</p>
+          </li>
+          <li class="width-22 read-only">
+            <label>Office Name / Company Name</label>
+            <p>IIT Company</p>
+          </li>
+          <li class="width-20 read-only">
+            <label>Office Address</label>
+            <p>Some Address,Address line.</p>
+          </li>
+          <li class="width-20 read-only">
+            <label>Landmark</label>
+            <p>Some text will come here</p>
+          </li>
+          </ul>
+  </div>
+  <div class="output box-div">
+      <ul>
+        <li class="width-1">
+          <label>Date of Report</label>
+          <input type="text" class="datepicker-here" data-language="en">
+        </li>
+        <li class="width-15">
+          <label>Feed Back</label>
+          <div class="cust-select"> <span class="selected">Select</span><i class="arrow"></i>
+             <ul>
+                <li>Positive</li>
+                <li>Negative</li>
+                <li>Refer</li>
+             </ul>
+           </div>
+        </li>
+        <li class="width-31">
+          <label>Status</label>
+          <div class="cust-select"> <span class="selected">Select</span><i class="arrow"></i>
+             <ul>
+                <li>Door Locked</li>
+                <li>Address not traceable</li>
+                <li>Address short</li>
+                <li>Third party Check</li>
+                <li>Others</li>
+             </ul>
+           </div>
+        </li>
+        <li class="width-20">
+          <label>Comments</label>
+          <input type="text">
+        </li>
+        <li class="width-1">
+          <label>Attachment of the Report</label>
+          <input type="button" value="Attach">
+        </li>
+      </ul>
+    </div>
+</div>
+<div id="div-document-content"></div>
+<div class="center form-btns">
+  <input type="button" value="Back" onClick="LoadHtmlDiv('field-investigation.html')">
+  <input type="button" value="Confirm" onClick="LoadHtmlDiv('document-verification.html')">
+</div>
+<script>
+/*Custom Select starts*/
+$('.cust-select').click(function(e) {
+	$(this).children('ul').toggle();
+});
+$('.cust-select ul li').click(function(e) {
+	$('.cust-select ul li:first-child').addClass('active');
+	$(this).toggleClass('active');
+	$(this).siblings().removeClass('active');
+	var val = $(this).text();
+	$(this).parent('ul').siblings('span.selected').text(val);
+});
+$(".cust-select").mouseleave(function(e) {
+	$(".cust-select ul").hide();
+});
+/*Custom Select ends*/
+var cHeight = function() {
+		var cHeight = $(window).innerHeight();
+		//alert(cHeight);
+		$('#div-user-content .content-div').css({'height': cHeight-130+'px'});
+	}
+	cHeight();
+$(window).resize(function() {
+     cHeight()
+      }).load(function() {
+ cHeight()
+});
+
+</script>

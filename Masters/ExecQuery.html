@@ -1,0 +1,169 @@
+﻿<div class="title">
+    <h1 ondblclick="fnchangeAuthentication()"><i class="icon-sales-manager"></i> Execute Query </h1>
+</div>
+<div class="content-div">
+    <div class="query-input">
+        <h1>
+            Query  
+            <select id="selectDB">
+                 
+            </select>
+            <span class="cursor toggleQry" onclick="fnToggleQueryDiv()">Hide/show Query</span>
+            <span class="cursor DBinstance" onclick="fnAddEditDBInstance()">Add/Edit DB Instance</span>            
+            <i class="icon-expand cursor right QryExpnd" onclick="fnExpandQry()"></i>
+            <input type="button" onclick="fnExecuteQuery()" value="Execute(Ctrl+Enter)" />
+        </h1>
+        <div class="QryDiv">
+            <i class="icon-close right" onclick="$('.QryExpnd').click();"></i>
+            <textarea class="querytext" spellcheck="false"></textarea>
+        </div>
+    </div>
+    <div class="query-output">
+        <h1> Results <span class="NoOfResult"></span></h1>        
+        <div class="result-div">
+          
+        </div>
+    </div>
+</div>
+
+
+   <!-- JsonEdit Popup Div Starts-->
+<div class="popup-bg" id="jsonedit-popup" style="display:none;">
+    <div class="popup-div popup-large">
+        <div class="popup-header"> <h2>DB Instances</h2></div>
+        <div class="popup-content">
+            <div class="comment-div">
+                <textarea id="json-textarea"></textarea>
+                <div>
+                    <input type="button" value="OK" class="jsonbtn div-right"  onclick="fnEditJson()">
+                    <input type="button" value="Cancel" class="jsonbtn div-right" onclick="fnclosejsonpop(this)">
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- JsonEdit Popup Div End-->
+
+<script src="../Masters/js/Scrn/ExecQuery.js"></script>
+<style>
+.query-input {
+border-bottom:1px solid #808080;
+}
+    .query-input, .query-output {
+    width: 95%;
+}
+    .query-input .querytext {
+    height: 200px;
+    resize: none;
+    color:#000;
+    font-size:13px;
+    border:1px solid #000;
+}
+
+.querytext::-webkit-input-placeholder {
+    color: red;
+}
+
+.querytext::-moz-placeholder {
+    color: red;
+}
+
+.querytext:-ms-input-placeholder {
+    color: red;
+}
+
+.querytext:-moz-placeholder {
+    color: red;
+}
+
+#selectDB {
+    width: 200px;
+    margin: 0 10px;
+}
+
+.result-div {
+    width:98%;
+}
+
+.result-div .result-set {
+    margin: 30px;
+    max-width: 95%;
+    max-height: 300px;
+    overflow: auto;        
+}
+
+.result-div .result-grid {
+    position: relative;
+} 
+        
+.result-div table td, .result-div table th {
+    white-space: nowrap;
+}
+
+.toggleQry, .DBinstance, .jsonbtn {
+    margin: 0 20px;
+}
+
+.result-number {
+    position: absolute;
+    background: black;
+    padding: 5px;
+    width: 23px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+.NoOfResult {
+    margin:0 30px;
+}
+
+#jsonedit-popup .popup-div {
+    top:2%;
+}
+
+#jsonedit-popup .popup-content {
+    height: 580px;
+}
+#json-textarea {
+    height: 490px;
+    font-weight: bolder;
+    font-size: 13px;
+}
+.result-div table th, .result-div table td {
+    padding: 2px 5px;
+    margin: 2px 5px;
+}
+.QryExpnd {
+    color: #000;
+    font-weight: bold;
+}
+
+.QryDiv .icon-close {
+    display: none;
+}
+
+.expand-Qry i.icon-close {
+    display: block !important;
+    background: #000;
+    color: #FFF;
+    padding: 4px;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 2%;
+}
+.expand-Qry {
+    position: absolute;
+    top: 5%;
+    width: 95%;
+    z-index: 99;
+}
+.expand-Qry textarea {
+    z-index: 999;
+    height: 550px !important;
+    width:95%;
+}
+</style>

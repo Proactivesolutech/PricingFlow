@@ -1,0 +1,505 @@
+<style>
+
+    
+.verification-list1 .left { width: 95%; }
+.verification-list1.dedupe-score .left { width: 75%; }
+.right.dedupe-cibil{ width:24%;}
+.dedupe-score-content .verification-list1{ background:rgba(235, 113, 112,0.2);}
+.dedupe-score-content .verification-list1.dedupe-score .left { width: 84%;}
+.right.dedupe-cibil .dedupe-box{ width:73px;}
+.dedupe-score .right.dedupe-cibil.score-square .dedupe-box .bg{ line-height:11px; text-align:center;}
+.verification-list1 .left li p { font-size: 13px; }
+.verification-list1 .right { text-align: center; }
+.verification-list1 .expand-icon { width: 28px; height: 28px; }
+.verification-list1 .left.green { width: auto !important; padding: 12px 10px; }
+.personal-discussion-div .verification-list .left { width: 32%; }
+.red-color{ color:#e33d43;}
+.nhb-icon i{ font-size:40px; }
+.dedupe-form { margin:10px;}
+.dedupe-form li{ display:block; clear:both; margin: 0 0 10px 0;}
+	.dedupe-form li label{ display:block;}
+	.dedupe-form li .cust-select { width:30%; display:inline-block;}
+	.dedupe-form li input[type='text']{ width:68%; margin:0 1%; display:inline-block;}
+	.dedupe-search{ margin:0 15px 0 0;}
+
+
+</style>
+<script src="js/Scrn/dedupe.js"></script>
+<div class="title">
+  <h1>De-Dupe</h1>
+</div>
+<div class="content-div dedupe-div">
+  <div class="box-div match-div">
+    <ul class="form-controls div-left">
+      <li class="read-only width-1"><!--width-17-->
+        <label>Applicant</label>
+        <p id="Dedupe_LeadName"></p>
+      </li>
+      <li class="read-only width-1">
+        <label>DOB</label>
+        <p id="Dedupe_LeadBOD"></p>
+      </li>
+      <li class="read-only width-1">
+        <label>Gender</label>
+        <p id="Dedupe_LeadGen"></p>
+      </li>
+      <li class="read-only width-1">
+        <label>Mobile</label>
+        <p id="Dedupe_LeadPh_No"></p>
+      </li>
+      <!--<li class="read-only width-1">
+        <label>FatherName</label>
+        <p id="Dedupe_LeadFatherNm"></p>
+      </li>-->
+      <li class="read-only width-1">
+        <label>PINCODE</label>
+        <p id="Dedupe_LeadPin"></p>
+      </li>
+      <li class="read-only width-1">
+        <label>PAN</label>
+        <p id="Dedupe_LeadPAN"></p>
+      </li>
+      <li class="read-only width-1">
+        <label>Driving License</label>
+        <p id="Dedupe_LeadDL"></p>
+      </li>
+      <li class="read-only width-1">
+        <label>Voter ID</label>
+        <p id="Deadupe_LeadVoterId"></p>
+      </li>
+      <li class="read-only width-1">
+        <label>Aadhar</label>
+        <p id="Dedupe_LeadAadhar"></p>
+      </li>
+    </ul>
+    <div class="div-right">
+      <div class="dedupe-box">
+        <p>Match</p>
+        <div class="status"><i class="bg bg1 icon-positive"></i></div>
+        <p>Found(2)</p>
+      </div>
+      <div class="dedupe-box">
+        <div class="status">
+          <p class="bg bg6">Create Customer</p>
+        </div>
+      </div>
+      <div class="dedupe-box wild">
+        <div class="status">
+          <p class="bg bg6">Wild Search</p>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="match-div-content" style="display:none;">
+    <div class="box-div">
+      <h2>RULE : FirstName, MiddleName, LastName, DOB, Gender, FatherName, PINCODE</h2>
+      <ul class="form-controls div-left">
+        <li class="category-icons width-9">
+          <label><i class="icon-home-loan"></i></label>
+          <p>Home Loan</p>
+        </li>
+        <li class="read-only width-19">
+          <label>First Name</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>Middle Name</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>Last Name</label>
+          <p>S</p>
+        </li>
+        <li class="read-only width-19">
+          <label>DOB</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>Gender</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>Mobile</label>
+          <p></p>
+        </li>
+        <!--<li class="read-only width-19">
+          <label>FatherName</label>
+          <p></p>
+        </li>-->
+        <li class="read-only width-19">
+          <label>PINCODE</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>PAN</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>Driving License</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>Voter ID</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>Aadhar</label>
+          <p></p>
+        </li>
+      </ul>
+      <div class="div-right">
+        <div class="dedupe-box">
+          <p>&nbsp</p>
+          <div class="status">
+            <p class="bg bg2">780</p>
+          </div>
+          <p>Score</p>
+        </div>
+        <div class="dedupe-box">
+          <div class="status">
+            <p class="bg bg6">Choose</p>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="box-div">
+      <h2>RULE : FirstName, MiddleName, LastName, DOB, Gender, FatherName</h2>
+      <ul class="form-controls div-left">
+        <li class="category-icons width-19">
+          <label><i class="icon-home-loan"></i></label>
+          <p>Home Loan</p>
+        </li>
+        <li class="read-only width-19">
+          <label>First Name</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>Middle Name</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>Last Name</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>DOB</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>Gender</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>Mobile</label>
+          <p></p>
+        </li>
+        <!--<li class="read-only width-19">
+          <label>FatherName</label>
+          <p></p>
+        </li>-->
+        <li class="read-only width-19">
+          <label>Branch</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>PINCODE</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>PAN</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>Driving License</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>Voter ID</label>
+          <p></p>
+        </li>
+        <li class="read-only width-19">
+          <label>Aadhar</label>
+          <p></p>
+        </li>
+      </ul>
+      <div class="div-right">
+        <div class="dedupe-box">
+          <div class="status">
+            <p class="bg bg2">DDE</p>
+          </div>
+          <p>Zonal Ops</p>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="box-div">
+    <ul class="form-controls div-left">
+        <li class="read-only width-1">
+            <label>Co-Applicant</label>
+            <p id="coDedupe_LeadName"></p>
+        </li>
+        <li class="read-only width-1">
+            <label>DOB</label>
+            <p id="coDedupe_LeadBOD"></p>
+        </li>
+        <li class="read-only width-1">
+            <label>Gender</label>
+            <p id="coDedupe_LeadGen"></p>
+        </li>
+        <li class="read-only width-1">
+            <label>Mobile</label>
+            <p id="coDedupe_LeadPh_No"></p>
+        </li>
+        <!--<li class="read-only width-1">
+      <label>FatherName</label>
+      <p id="Dedupe_LeadFatherNm"></p>
+    </li>-->
+        <li class="read-only width-1">
+            <label>PINCODE</label>
+            <p id="coDedupe_LeadPin"></p>
+        </li>
+        <li class="read-only width-1">
+            <label>PAN</label>
+            <p id="coDedupe_LeadPAN"></p>
+        </li>
+        <li class="read-only width-1">
+            <label>Driving License</label>
+            <p id="coDedupe_LeadDL"></p>
+        </li>
+        <li class="read-only width-1">
+            <label>Voter ID</label>
+            <p id="coDeadupe_LeadVoterId"></p>
+        </li>
+        <li class="read-only width-1">
+            <label>Aadhar</label>
+            <p id="coDedupe_LeadAadhar"></p>
+        </li>`
+    </ul>
+    <div class="div-right">
+      <div class="dedupe-box">
+        <p>NHB</p>
+        <div class="status"><i class="bg bg-white icon-warning"></i></div>
+        <p>Caution</p>
+      </div>
+      <div class="dedupe-box">
+        <div class="status">
+          <p class="bg bg6">Create Customer</p>
+        </div>
+      </div>
+      <div class="dedupe-box wild">
+        <div class="status">
+          <p class="bg bg6">Wild Search</p>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <!--<div class="box-div">
+    <ul class="form-controls div-left">
+      <li class="read-only">
+        <label>Guarantor</label>
+        <p></p>
+      </li>
+    </ul>
+    <div class="div-right">
+      <div class="dedupe-box">
+        <p>Match</p>
+        <div class="status"><i class="bg bg2 icon-negative"></i></div>
+        <p>Not Found</p>
+      </div>
+      <div class="dedupe-box">
+        <div class="status">
+          <p class="bg bg6">Create Customer</p>
+        </div>
+      </div>
+      <div class="dedupe-box wild">
+        <div class="status">
+          <p class="bg bg6">Wild Search</p>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>-->
+  <!-- Wild search popup -->
+<div class="popup-bg" id="wild-search" style="display:none;">
+    <div class="popup-div">
+      <div class="popup-header">
+        <h2>Wild Search <i class="icon-close div-right"></i></h2>
+      </div>
+      <div class="popup-content">
+          <ul class="dedupe-form">
+              <li>
+                  <label>First Name</label>
+                 
+              <div class="cust-select">
+                  <span class="selected">Starting With</span><i class="arrow"></i>
+                  <ul>
+                      <li>A</li>
+                      <li>B</li>
+                      <li>C</li>
+                  </ul>
+              </div>
+              <input type="text" placeholder="First Name">
+              </li>
+              <li>
+                  <label>Middle Name</label>
+                 
+                  <div class="cust-select">
+                      <span class="selected">Starting With</span><i class="arrow"></i>
+                      <ul>
+                          <li>A</li>
+                          <li>B</li>
+                          <li>C</li>
+                      </ul>
+                  </div>
+                  <input type="text" placeholder="Middle Name">
+              </li>
+              <li>
+                  <label>Last Name</label>
+                  
+                  <div class="cust-select">
+                      <span class="selected">Starting With</span><i class="arrow"></i>
+                      <ul>
+                          <li>A</li>
+                          <li>B</li>
+                          <li>C</li>
+                      </ul>
+                  </div>
+                  <input type="text" placeholder="Last Name">
+              </li>
+              <li>
+                  <label>Father/Spouse Name</label>
+                  
+                  <div class="cust-select">
+                      <span class="selected">Starting With</span><i class="arrow"></i>
+                      <ul>
+                          <li>A</li>
+                          <li>B</li>
+                          <li>C</li>
+                      </ul>
+                  </div>
+                  <input type="text" placeholder="Father/Spouse Name">
+              </li>
+              <li>
+                  <label>Father Middle Name</label>
+                  
+                  <div class="cust-select">
+                      <span class="selected">Starting With</span><i class="arrow"></i>
+                      <ul>
+                          <li>A</li>
+                          <li>B</li>
+                          <li>C</li>
+                      </ul>
+                  </div>
+                  <input type="text" placeholder="Father Middle Name">
+              </li>
+              <li>
+                  <label>Father Last Name</label>
+                  
+                  <div class="cust-select">
+                      <span class="selected">Starting With</span><i class="arrow"></i>
+                      <ul>
+                          <li>A</li>
+                          <li>B</li>
+                          <li>C</li>
+                      </ul>
+                  </div>
+                  <input type="text" placeholder="Father Last Name">
+              </li>
+              <li>
+                  <label>D.O.B</label>
+                  <input type="text" placeholder="12/08/16" data-beatpicker="true" data-beatpicker-position="['*','*']">
+              </li>
+              <li>
+                  <label>Landline No.</label>
+                  
+                  <div class="cust-select">
+                      <span class="selected">Starting With</span><i class="arrow"></i>
+                      <ul>
+                          <li>A</li>
+                          <li>B</li>
+                          <li>C</li>
+                      </ul>
+                  </div>
+                  <input type="text" placeholder="Landline No.">
+              </li>
+              <li>
+                  <label>Mobile No.</label>
+                  
+                  <div class="cust-select">
+                      <span class="selected">Starting With</span><i class="arrow"></i>
+                      <ul>
+                          <li>A</li>
+                          <li>B</li>
+                          <li>C</li>
+                      </ul>
+                  </div>
+                  <input type="text" placeholder="Mobile No.">
+              </li>
+              <li>
+                  <label>Email Id</label>
+                 
+                  <div class="cust-select">
+                      <span class="selected">Starting With</span><i class="arrow"></i>
+                      <ul>
+                          <li>A</li>
+                          <li>B</li>
+                          <li>C</li>
+                      </ul>
+                  </div>
+                  <input type="text" placeholder="Email Id">
+              </li>
+              <li>
+                  <label>Area</label>
+                  
+                  <div class="cust-select">
+                      <span class="selected">Starting With</span><i class="arrow"></i>
+                      <ul>
+                          <li>A</li>
+                          <li>B</li>
+                          <li>C</li>
+                      </ul>
+                  </div>
+                  <input type="text" placeholder="Area">
+              </li>
+              <li>
+                  <label>Pin Code</label>
+                  <input type="text" placeholder="Pin Code">
+              </li>
+              <li>
+                  <label>Branch</label>
+                  
+                  <div class="cust-select">
+                      <span class="selected">Starting With</span><i class="arrow"></i>
+                      <ul>
+                          <li>A</li>
+                          <li>B</li>
+                          <li>C</li>
+                      </ul>
+                  </div>
+                  <input type="text" placeholder="Branch">
+              </li>
+          </ul>
+      </div>
+      <input type="button" value="Search" class="div-right">
+    </div>
+</div>
+<!-- Wild search popup End-->
+</div>
+<script>   
+calcHeight();
+popupclose();
+customselect();
+selectfocus(); /* Custom Select2 plugin Function*/
+$(".match-div").click(function(e) {
+    $(".match-div-content").toggle();
+	$(".match-div-content .box-div").css('background-color','rgba(235, 113, 112,0.2)');
+});
+$(".wild").click(function(e) {
+    $("#wild-search").toggle();
+});
+</script>
+<script src="js/BeatPicker.min.js"></script>

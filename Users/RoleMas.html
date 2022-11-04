@@ -1,0 +1,159 @@
+﻿<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHFL</title>
+	
+	<link rel="stylesheet" href="css/common.css?$$$v=1.0.4$$$">
+	
+    <!-- Jquery JS -->
+    <script src="../COMMON/js/jquery-1.11.1.js"></script>
+	<script src="../LOS/js/common-js.js"></script>
+    <!-- Jquery JS -->
+	
+    <!-- Common JS BPM/LOS-->
+    <script src="../COMMON/js/Scrn/CommonFns.js"></script>
+    <!-- Common JS BPM/LOS-->
+
+    <!-- BPM Required JS-->
+    <script src="../COMMON/js/devp-js/ProDataAccesScript.js"></script>
+    <script src="../COMMON/js/Scrn/BPM_Common.js"></script>
+    <!-- BPM Required JS-->
+
+    <!-- LOS Required JS -->
+    <script src="../COMMON/js/devp-js/ProLOSDataAccesScript.js"></script>
+    <!-- LOS Required JS -->
+
+	 <!--COMPONENTS-->
+    <script src="../COMMON/Components/js/webcomponent-lite.min.js?$$$v=1.0.4$$$"></script>
+    <!--FOR PDF-->
+    <script src="../COMMON/Components/js/PDF2IMAGE/PdfJs.js?$$$v=1.0.4$$$"></script>
+    <script src="../COMMON/Components/js/PDF2IMAGE/processing-api.min.js?$$$v=1.0.4$$$"></script>
+    <!--FOR PDF-->
+    <link rel="stylesheet" type="text/css" href="../COMMON/Components/css/jquery-ui.css?$$$v=1.0.4$$$" />
+    <link rel="stylesheet" type="text/css" href="../COMMON/Components/css/common.css?$$$v=1.0.4$$$" />
+    <link rel="stylesheet" type="text/css" href="../COMMON/Components/css/fonts/query-style.css?$$$v=1.0.4$$$" />
+    <link rel="stylesheet" type="text/css" href="../COMMON/Components/css/fonts/scan-style.css?$$$v=1.0.4$$$" />
+
+    <script src="../COMMON/Components/js/jquery-ui.js?$$$v=1.0.4$$$"></script>
+
+    <!-- Dashboard Files -->
+    <link rel="import" id="dashboard" href="../COMMON/Components/comp-dashboard/comp-dashboard.html?$$$v=1.0.4$$$" />
+    <script src="../COMMON/Components/comp-dashboard/js/comp-dashboard.js?$$$v=1.0.4$$$"></script>
+    <!-- Dashboard Files -->
+    <!-- SCAN Files -->
+    <link id="scan" rel="import" href="../COMMON/Components/comp-scan/comp-scan.html?$$$v=1.0.4$$$" />
+    <script src="../COMMON/Components/comp-scan/js/comp-scan.js?$$$v=1.0.4$$$"></script>
+    <link id="scanfile" rel="import" href="../COMMON/Components/comp-scan-file/comp-scan-file.html?$$$v=1.0.4$$$" />
+    <script src="../COMMON/Components/comp-scan-file/js/comp-scan-file.js?$$$v=1.0.4$$$"></script>
+    <!-- SCAN Files -->
+
+    <!-- Query Files -->
+    <link id="query" rel="import" href="../COMMON/Components/comp-query/comp-query.html?$$$v=1.0.4$$$" />
+    <script src="../COMMON/Components/comp-query/js/comp-query.js?$$$v=1.0.4$$$"></script>
+    <!-- Query Files -->
+
+    <!-- Help Files -->
+    <link rel="stylesheet" type="text/css" href="../COMMON/Components/comp-help/css/comp-help.css?$$$v=1.0.4$$$" />
+    <link id="help" rel="import" href="../COMMON/Components/comp-help/comp-help.html?$$$v=1.0.4$$$" />
+    <script src="../COMMON/Components/comp-help/js/comp-help.js?$$$v=1.0.4$$$"></script>
+    <!-- Help Files -->
+
+    <!--COMPONENTS-->
+
+</head>
+<script>
+        setLocalStorage("BpmUrl", "http://172.31.244.22//PRICING_RS//");
+		setLocalStorage("LosUrl", "http://172.31.244.22/BPM/BPM/CommonRS//");
+
+		//setLocalStorage("BpmUrl", "http://192.169.5.227//PRICING_RS//");
+		//setLocalStorage("LosUrl", "http://192.169.5.227//BPM/BPM/CommonRS//");
+		setLocalStorage("LosUrl", "CommonRS//");
+	</script>
+<div class="title">
+    <h1><i class="icon-sales-manager"></i> Role Master</h1>
+</div>
+<div class="content-div">
+
+
+
+    <style>
+        input {
+            width: 154px;
+            height: 23px;
+            margin-top: 10px;
+            border: 1px solid #e3e3e3;
+            margin-left: 35px;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Roboto Slab',serif;
+        }
+
+        #RolLvlNo {
+            margin-left: 42px;
+            height: 23px;
+            width: 155px;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: aliceblue;
+        }
+
+        table tr {
+            border: 1px solid #000;
+        }
+
+        caption {
+            font-weight: bold;
+            text-align: left;
+        }
+    </style>
+
+    <div>
+        <p id="head"></p>
+        <h2>Role Master</h2>
+        <form>
+            <label>&nbsp;&nbsp; Role Level:</label>
+            <select id="RolLvlNo">
+                <option value="0" selected="selected">Choose Your Level</option>
+                <option value="1">Branch</option>
+                <option value="2">Zonal</option>
+                <option value="3">State</option>
+                <option value="4">Central</option>
+            </select><br />
+            <br />
+            &nbsp;<label>&nbsp; Role Name: </label>
+            &nbsp;<input id="RolNm" type="text" />
+            <br />
+            <input id="RolPk" type="hidden" />
+            <br />
+            <br />
+            <br />
+            <br />
+            &nbsp;<input id="SaveBtn" type="button" value="Save" onclick=" fnInsUpd();" />
+            &nbsp;<input id="DeleteBtn" type="button" value="Delete" onclick="fnDeleteData();" />
+            &nbsp;<input id="ClearBtn" type="button" value="Clear" onclick="fnclear();" />
+            <br />
+            <br />
+            <table id="RolTbl" style="border:1px solid #000;border-collapse:collapse;text-align:center;" class="Details" cellspacing="0" width="100%">
+                <caption></caption>
+            </table>
+        </form>
+
+    </div>
+    <script src="../Users/js/Scrn/RoleScript.js"></script>
+
+</div>

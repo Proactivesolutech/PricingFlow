@@ -1,0 +1,247 @@
+﻿<custom-component compid="comp-scan">
+    <div class="custom-component">
+        <div class="scan_scand-document">
+            <h2 class="scan_scan-title">Scaned Document</h2>
+            <div class="scan_image-div">
+                <div class="scan_left-scan scan_left">
+                    <div class="scan_image-preview-option">
+                        <div class="scan_left"><a title="View All"> <i class="scan_icon-document"></i></a></div>
+                        <a href="javascript:void(0)" title="Print"> <i class="scan_icon-printer"></i></a>
+                        <a href="javascript:void(0)" title="Page Up"> <i class="scan_icon-up-arrow"></i></a>
+                        <a href="javascript:void(0)" title="Page Down"> <i class="scan_icon-down-arrow"></i></a>
+                        <span class="scan_page-no"> <input type="text" id="scan_txtPageNo"> / <span id="scan_pagecnt">0</span></span>
+                        <a href="javascript:void(0)" title="Zoom In (Ctrl+Alt+I)"> <i class="scan_icon-plus"></i></a>
+                        <a href="javascript:void(0)" title="Zoom Out (Ctrl+Alt+O)"> <i class="scan_icon-minus"></i></a>
+                        <a href="javascript:void(0)" title="Rotate left(Ctrl+Alt+left)"> <i class="scan_icon-rotate-left"></i></a>
+                        <a href="javascript:void(0)" title="Rotate right(Ctrl+Alt+right)"> <i class="scan_icon-rotate-right"></i></a>
+                        <a href="javascript:void(0)" title="crop"> <i class="scan_icon-crop"></i></a>
+                        <a href="javascript:void(0)" title="Note"> <i class="scan_icon-chat-o"></i></a>
+                        <!--<a href="javascript:void(0)" title="output"> <input type="text" id="scan_scanOutput" /> </a>-->
+                        <div class="scan_right">
+                            <a href="javascript:void(0)" title="Expand"> <i class="scan_icon-expand"></i></a>
+                            <a href="javascript:void(0)" title="collapse"><i style="display:none" class="scan_icon-collapse"></i></a>
+                        </div>
+                        <div class="scan_clear"></div>
+                    </div>
+                    <ul id="scan_thumbImgList" class="scan_thumbnail" style="display:none;" isrepeat="true" repeat-data="{{data1}}"></ul>
+                    <!--</div>-->
+                    <div id="scan_ImagePrw" class="scan_thumb-preview">
+                        <img src="">
+                    </div>
+                    <div class="scan_clear"></div>
+                </div>
+                <div class="scan_right-scan scan_right">
+                    <span class="scan_save-span"> <input type="button" class="scan_savedoc scan_right" value="Save" /> <i class="scan_icon-plus scan_right"></i></span>
+                    <ul class="scan_UlSave">
+                        <li>
+                            <p>
+                                <select class="scan_AplTyp">
+                                    <option value="0">Applicant</option>
+                                    <option value="1">CoApplicant</option>
+                                    <option value="2">Guarantor</option>
+                                </select>
+                            </p>
+                            <p class="P_scan_AplTypSub">
+                                <select class="scan_AplTypSub">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </p>
+                        </li>
+                        <li>
+                            <select class="scan_DocGrp">
+                                <option value="KYC">KYC</option>
+                                <option value="APPLICATION">APPLICATION</option>
+                                <option value="INCOME">INCOME</option>
+                                <option value="PROCESSING FEE">PROCESSING FEE</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select class="scan_DocTyp">
+                                <option value="ID proof">ID proof</option>
+                                <option value="Address proof">Address proof</option>
+                                <option value="DOB">DOB</option>
+                            </select>
+                        </li>
+                        <li>
+                            <div>
+                                <p>
+                                    <select class="scan_DocNm">
+                                        <option value="Voter ID">Voter ID</option>
+                                        <option value="PAN Card">PAN Card</option>
+                                        <option value="Driving Licence">Driving Licence</option>
+                                    </select>
+                                </p>
+                                <p class="mrgin-1x">
+                                    <input type="text" class="scan_PageFrom" onkeypress="return COMP_SCAN.fnAllowNumber(event)" placeholder="" />
+                                </p>
+                                <p>
+                                    <input type="text" class="scan_Pageto" onkeypress="return COMP_SCAN.fnAllowNumber(event)" placeholder="" />
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="scan_clear"></div>
+            </div>
+        </div>
+    </div>
+    <style>
+        /* SCROLL BAR */
+        /*::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            background-color: #FFF;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            background-color: #CCC;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            background-color: #CCC;
+        }
+
+
+        ::-webkit-scrollbar-track:horizontal {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            background-color: #FFF;
+        }
+
+        ::-webkit-scrollbar:horizontal {
+            width: 8px;
+            background-color: #CCC;
+        }
+
+        ::-webkit-scrollbar-thumb:horizontal {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            background-color: #CCC;
+        }*/
+
+
+
+        /* SCROLL BAR */
+
+        /* ADDED */
+
+        .custom-component {
+            background: #FFF;
+        }
+
+        .scan_scand-document .scan_image-div .scan_left-scan {
+            width: 48%;
+        }
+
+        .scan_scand-document .scan_image-div .scan_right-scan {
+            width: 50%;
+        }
+
+            .scan_scand-document .scan_image-div .scan_right-scan .scan_save-span {
+                width: 100%;
+                float: left;
+                display: block;
+            }
+
+                .scan_scand-document .scan_image-div .scan_right-scan .scan_save-span * {
+                    margin: 5px 15px 0 0;
+                }
+
+        .scan_UlSave li {
+            width: 18%;
+        }
+
+            .scan_UlSave li:last-child {
+                width: 18%;
+            }
+
+
+        /* ADDED */
+
+        .scan_left-thumbnail {
+            float: left;
+            border-right: 1px solid #ddd;
+        }
+
+        ul.scan_thumbnail {
+            padding: 5px 10px;
+            margin: 0px;
+            padding-top: 0;
+            /*height: 61vh;*/
+            width: 23%;
+            overflow-y: auto;
+            float: left;
+            border-right: 1px solid #CCC;
+        }
+
+            ul.scan_thumbnail li i {
+                position: absolute;
+                top: 3px;
+                right: 3px;
+                background: rgba(0,0,0,0.6);
+                width: 20px;
+                height: 20px;
+                font-style: normal;
+                color: #fff;
+                border-radius: 50%;
+            }
+
+            ul.scan_thumbnail li img {
+                width: 100%;
+                height: 100%;
+            }
+
+            ul.scan_thumbnail li.scan_active {
+                background: #CCC;
+            }
+
+        .scan_top-thumbnail {
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .scan_top-thumbnail i:hover {
+                cursor: pointer;
+            }
+
+        ul.scan_thumbnail li {
+            display: block;
+            text-align: center;
+            margin: 10px 0;
+            padding: 10px;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ddd;
+        }
+
+        .scan_thumb-preview {
+            width: 100%;
+            overflow-y: auto;
+            text-align: center;
+            float: left;
+        }
+
+            .scan_thumb-preview img {
+                width: 100%;
+                margin: 0px 0px 100px 0px;
+            }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+        }
+    </style>
+</custom-component>

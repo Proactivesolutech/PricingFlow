@@ -1,0 +1,245 @@
+<div class="title">
+  <h1>Zonal QC : Legal Verification</h1>
+</div>
+<div class="content-div" id="technical-popup">
+   <div class="box-div zonal-agent">
+      <div class="agent-header">
+
+          <div class="div-left">
+              <div class="div-left">
+                  <i class="icon-agents"></i>
+              </div>
+              <p class="div-right"><span id="agt_name"></span> <span>Legal Verification</span></p>
+          </div>
+          <span class="div-right" id="lead_id"></span>
+
+            <div class="clear"></div>
+        </div>
+      
+      <div class="agent-content">
+            <div class="field-content">
+            </div>
+          <div id="agtFB">
+              <div id="mainlegaldiv">
+                  <!--<div contentchanged="true" class="legal-content legal-agent">
+                      <ul class="grid-45 div-left box-div form-controls">
+                          <h2>Boundaries As Per Sale Deed</h2>
+                          <li class="width-98p read-only">
+                              <label>East</label>
+                              <input type="text" name="text" key="agt_lftEst" class="mandatory">
+                          </li>
+                          <li class="width-98p read-only">
+                              <label>West</label>
+                              <input type="text" name="text" key="agt_lftWst" class="mandatory">
+                          </li>
+                          <li class="width-98p read-only">
+                              <label>North</label>
+                              <input type="text" name="text" key="agt_lftNor" class="mandatory">
+                          </li>
+                          <li class="width-98p read-only">
+                              <label>South</label>
+                              <input type="text" name="text" key="agt_lftSou" class="mandatory">
+                          </li>
+                      </ul>
+                      <div class="grid-50 div-right box-div">
+                          <ul class="form-controls">
+                              <li class="width-48p">
+                                  <label>Reference Number</label>
+                                  <input type="text" name="text" key="agt_lftRefno" class="mandatory">
+                              </li>
+                              <li class="width-48p">
+                                  <label>Approval Plan Number</label>
+                                  <input type="text" name="text" key="agt_AppplnNo" class="mandatory">
+                              </li>
+                              <h2>Property Valuation</h2>
+                              <li class="width-48p amount">
+                                  <label>Agreement Value</label>
+                                  <i class="icon-indian-rupee"></i>
+                                  <input type="text" name="text" id="agt_AstCost" key="agt_AstCost" class="currency mandatory" restrict="number" onkeyup="sum();">
+                              </li>
+                              <li class="width-48p amount">
+                                  <label>Registration Charges</label>
+                                  <i class="icon-indian-rupee"></i>
+                                  <input type="text" name="text" id="agt_Regchg" key="agt_Regchg" class="currency mandatory" restrict="number" onkeyup="sum();">
+                              </li>
+                              <li class="width-48p amount">
+                                  <label>Stamp Duty Charges</label>
+                                  <i class="icon-indian-rupee"></i>
+                                  <input type="text" name="text" id="agt_stmpchg" key="agt_stmpchg" class="currency mandatory" restrict="number" onkeyup="sum();">
+                              </li>
+                              <li class="width-48p amount">
+                                  <label>Asset Cost</label>
+                                  <i class="icon-indian-rupee"></i>
+                                  <input type="text" name="text" id="agt_agtval" key="agt_agtval" class="currency mandatory" restrict="number" disabled>
+                              </li>
+                              <h2>&nbsp;</h2>
+                              <h2>&nbsp;</h2>
+                              <h2>&nbsp;</h2>
+                              <li>
+                            <input type="button" name="button" value="SAVE" onclick="fnSaveChangedData();">
+                        </li>
+                          </ul>
+                      </div>
+                      <div class="clear"></div>
+                  </div>-->
+
+                  <div contentchanged="true" class="fidt2">
+                      <ul class="fom-controls">
+                          <li class="div-left width-4">
+                              <label>Date of Report</label>
+                              <input name="text" key="agt_rptdt" type="text" data-beatpicker="true" data-beatpicker-position="['*','*']"class="mandatory">
+                          </li>
+                          <li class="div-right status">
+                              <p class="bg bg1"><i class="icon-positive" id="rptsts" onclick="fnReprtSts(this);"></i></p>
+                              <input name="text" key="agt_rptstatus" type="hidden">
+                          </li>
+                      </ul>
+                      <textarea name="text" key="agt_notes" class="mandatory" maxlength="500"></textarea>
+                      <ul class="div-left attachment-div">
+                          <li id="attach_spn">
+                              <!--<span><i class="icon-attach"></i> report.pdf <i class="icon-down-arrow"></i></span>
+                        <ul class="attach-dd" style="display:none;">
+                            <li>Remove</li>
+                            <li>Download</li>
+                        </ul>-->
+                          </li>
+                      </ul>
+                      <!--<span id="Spn_reportupload" class="div-right bg-blue"><i class="icon-attach"></i> Attach</span>
+                      <input type="file" id="FIReportUpload" multiple style="display:none;" />
+                      <input type="text" id="agt_Rpt" key="agt_RptPath" style="display:none;" />-->
+                  </div>
+                  <div class="clear"></div>
+              </div>
+          </div>
+        </div>
+        <!--<div class="box-div">
+          <ul class="common-tabs">
+            <li class="active tab1">Legal Scrutiny</li>
+            <li class="tab2">Pre Disbursement</li>
+            <li class="tab3">Post Disbursement</li>
+          </ul>
+          <div>
+            <div class="tab1-content">
+              <div class="feedback">
+                <div class="div-left">
+                  <div class="status left">
+                    <div class="bg bg1"> <i class="icon-positive"></i> </div>
+                  </div>
+                </div>
+
+
+<!--<div class="popup-bg field-popup" id="technical-popup">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2><i class="icon-agents"></i> <span id="agt_name"></span> <span>Legal Verification</span> <i class="icon-close div-right"></i></h2>
+            <span class="div-right" id="lead_id"></span>
+                <div class="clear"></div>
+              </div>
+        <div class="popup-content">
+            <div class="field-content">
+            </div>
+            <div id="mainlegaldiv">
+                <div contentchanged="true" class="legal-content legal-agent">
+                    <ul class="grid-45 div-left box-div form-controls">
+                    <h2>Boundaries As Per Sale Deed</h2>
+                        <li class="width-98p read-only">
+                      <label>East</label>
+                            <input type="text" name="text" key="agt_lftEst">
+                    </li>
+                        <li class="width-98p read-only">
+                      <label>West</label>
+                            <input type="text" name="text" key="agt_lftWst">
+                    </li>
+                        <li class="width-98p read-only">
+                      <label>North</label>
+                            <input type="text" name="text" key="agt_lftNor">
+                    </li>
+                        <li class="width-98p read-only">
+                      <label>South</label>
+                            <input type="text" name="text" key="agt_lftSou">
+                    </li>
+                  </ul>
+                    <div class="grid-50 div-right box-div">
+                        <ul class="form-controls">
+                            <li class="width-48p">
+                                <label>Reference Number</label>
+                                <input type="text" name="text" key="agt_lftRefno">
+                    </li>
+                            <li class="width-48p">
+                                <label>Approval Plan Number</label>
+                                <input type="text" name="text" key="agt_AppplnNo">
+                    </li>
+                            <h2>Property Valuation</h2>
+                            <li class="width-48p amount">
+                                <label>Asset Cost</label>
+                                <i class="icon-indian-rupee"></i>
+                                <input type="text" name="text" key="agt_AstCost">
+                    </li>
+                            <li class="width-48p amount">
+                                <label>Registration Charges</label>
+                                <i class="icon-indian-rupee"></i>
+                                <input type="text" name="text" key="agt_Regchg">
+                    </li>
+                            <li class="width-48p amount">
+                                <label>Stamp Duty Charges</label>
+                                <i class="icon-indian-rupee"></i>
+                                <input type="text" name="text" key="agt_stmpchg">
+                    </li>
+                            <li class="width-48p amount">
+                                <label>Agreement Value</label>
+                                <i class="icon-indian-rupee"></i>
+                                <input type="text" name="text" key="agt_agtval">
+                    </li>
+                            <h2>&nbsp;</h2>
+                            <h2>&nbsp;</h2>
+                            <h2>&nbsp;</h2>
+                            <li>
+                                <input type="button" name="button" value="SAVE" onclick="fnSaveChangedData();">
+                    </li>
+                  </ul>
+                </div>
+                <div class="clear"></div>
+              </div>
+
+                <div contentchanged="true" class="fidt2">
+                    <ul class="fom-controls">
+                        <li class="div-left width-4">
+                            <label>Date of Report</label>
+                            <input name="text" key="agt_rptdt" type="text" class="datepicker">
+                    </li>
+                        <li class="div-right status">
+                            <p class="bg bg1"><i class="icon-positive" onclick="fnReprtSts(this);"></i></p>
+                            <input name="text" key="agt_rptstatus" type="hidden">
+                    </li>
+                  </ul>
+                    <textarea name="text" key="agt_notes"></textarea>
+                    <ul class="div-left attachment-div">
+                        <li>
+                            <span><i class="icon-attach"></i> report.pdf <i class="icon-down-arrow"></i></span>
+                            <ul class="attach-dd" style="display:none;">
+                                <li>Remove</li>
+                                <li>Download</li>
+                  </ul>
+                    </li>
+                  </ul>
+                    <span class="div-right bg-blue"><i class="icon-attach"></i> Attach</span>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </div>
+       
+          </div>
+        </div>-->
+    <div id="div-document-content" class="documents-content" style="display:none;">
+    </div>
+   <script src="js/BeatPicker.min.js"></script>
+    <script>
+        GlobalXml[0].Agt_loadHtml = "mainlegaldiv";
+        calcHeight(); /*window height for all div*/
+        scanDocPreview(); /*Scand or Attached Document image Preview*/
+        commontabs();
+        customselect();
+        rightdocument()
+    </script>
+    <script src="js/Scrn/AgentFB.js"></script>
+    <!--<script src="js/Scrn/Legal-Verification.js"></script>-->

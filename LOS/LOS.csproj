@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{94D5F2BB-3B90-4934-A3EB-692D1696EC03}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LOS</RootNamespace>
+    <AssemblyName>LOS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin.html" />
+    <Content Include="agent-management.html" />
+    <Content Include="agent-mgmt.html" />
+    <Content Include="agent-verification.html" />
+    <Content Include="AgentPNI.html" />
+    <Content Include="BalancePF.html" />
+    <Content Include="buildermas.html" />
+    <Content Include="CamLinkZO.html" />
+    <Content Include="cases.html" />
+    <Content Include="CourierSend.html" />
+    <Content Include="credit-approver1_PNI.html" />
+    <Content Include="credit-approver2_PNI.html" />
+    <Content Include="credit-approver_2.html" />
+    <Content Include="credit-approver_3.html" />
+    <Content Include="credit-approver_4.html" />
+    <Content Include="credit-officer1_PNI.html" />
+    <Content Include="credit-officer2_PNI.html" />
+    <Content Include="css\BeatPicker.min.css" />
+    <Content Include="css\common.css" />
+    <Content Include="css\datepicker.min.css" />
+    <Content Include="css\fonts\icomoon.eot" />
+    <Content Include="css\fonts\icomoon.svg" />
+    <Content Include="css\fonts\icomoon.ttf" />
+    <Content Include="css\fonts\icomoon.woff" />
+    <Content Include="css\fonts\roboto-regular.eot" />
+    <Content Include="css\fonts\roboto-regular.svg" />
+    <Content Include="css\fonts\roboto-regular.ttf" />
+    <Content Include="css\fonts\roboto-regular.woff" />
+    <Content Include="css\fonts\roboto-regular.woff2" />
+    <Content Include="css\fonts\style.css" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\range.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="customer-financials_1.html" />
+    <Content Include="CustomerInfo.html" />
+    <Content Include="dashboard.html" />
+    <Content Include="DashboardLeadHis.html" />
+    <Content Include="DB OBJECTS\Functions\dbo.fnAllocWS.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.fnCalcROI.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.fnDocCtrlConfig.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.gefgChar2Date.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.GefgCurFormat.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.GefgCurFormat_Print.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.gefgDMY.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.gefgGetCmpCnfgVal.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.gefgGetDecPass.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.gefgGetDelFlg.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.gefgGetPadZero.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.Split.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcCalculateLoan.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcCalculateLoan_LAP.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcParseJSON.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflAgtTrig.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflBpm_Proj.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflCAM.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflCamPrint.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflCusDedupe.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflCustFinancials.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflDDEEntry.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflDelTbl.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflDeviations.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflDisburseMemo.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflExceptionReport.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflGenLog.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflgetDeviationData.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflLeadDetails.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflLegalVerification.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflLoanDetail.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcSHFLLosBalancePF.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcSHFLLosLeadSearch.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflLosScan.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflManualDeviation.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflMasterInsert.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflPaymentSchedule.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflPostSanction.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflProposalNotePrint.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflQDEEntry.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflQueryLog.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflRcu.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflRejectionRemark.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflRiskCalc.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflRuleCheck.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflSanctionLetter.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflSanctionPrint.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflAgtMgmt.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflAgtPNI.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflbuildermas.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflCreditOff_new.sql" />
+    <Content Include="DB OBJECTS\Procedures\prcshflCustomerInfo.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflDates.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflDepositebankhelp.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflLead.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflleadBranchhelp.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflleadhelp.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflLeadSearchDashhelp.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflLedAgtMgt.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcSHFLLosLeadSearchZonallink.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflPni.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflRemPFCalc.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflRiskCalculPrint.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflsaleOfzhelp.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflSanctionRejectPrint.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflScanBankhelp.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShflTechApprover.sql" />
+    <Content Include="DB OBJECTS\Procedures\UNOSYNC\dbo.PrcSyncAgtfrmUNO.sql" />
+    <Content Include="DB OBJECTS\Procedures\UNOSYNC\dbo.PrcSyncCusfrmUNO.sql" />
+    <Content Include="DB OBJECTS\Procedures\UNOSYNC\dbo.PrcSyncLdfrmUNO.sql" />
+    <Content Include="DB OBJECTS\Procedures\UNO\PrcShflAccEntry_Insert.sql" />
+    <Content Include="DB OBJECTS\Procedures\UNO\PrcShflReceiptAccEntry.sql" />
+    <Content Include="DB OBJECTS\Scripts\dbo.BnkMasInsert.sql" />
+    <Content Include="DB OBJECTS\Scripts\dbo.BranchPolicy.sql" />
+    <Content Include="DB OBJECTS\Scripts\dbo.GetLeadDtls.sql" />
+    <Content Include="DB OBJECTS\Scripts\dbo.LeadInsert.sql" />
+    <Content Include="DB OBJECTS\Scripts\StartUp\LOS Tables Karthi.xlsx" />
+    <Content Include="DB OBJECTS\Scripts\StartUp\Los Tables_ 1.sql" />
+    <Content Include="DB OBJECTS\Scripts\StartUp\UsrRoleGeoTbl.sql" />
+    <Content Include="DB OBJECTS\Temp\script.sql" />
+    <Content Include="DetailedData.html" />
+    <Content Include="Disbursement-Approver.html" />
+    <Content Include="Disbursement-Officer.html" />
+    <Content Include="ExceptionReport.html" />
+    <Content Include="images\attach.png" />
+    <Content Include="images\cibil-bg.png" />
+    <Content Include="images\download.png" />
+    <Content Include="images\favicon.png" />
+    <Content Include="images\FI-report1.jpg" />
+    <Content Include="images\file_1.jpg" />
+    <Content Include="images\file_2.jpg" />
+    <Content Include="images\file_4.jpg" />
+    <Content Include="images\file_5.jpg" />
+    <Content Include="images\file_6.jpg" />
+    <Content Include="images\index.jpg" />
+    <Content Include="images\kpi2.jpg" />
+    <Content Include="images\kpi3.jpg" />
+    <Content Include="images\left-hand.jpg" />
+    <Content Include="images\login-bg.png" />
+    <Content Include="images\login-pattern.jpg" />
+    <Content Include="images\login.jpg" />
+    <Content Include="images\login.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\pdf-small.jpg" />
+    <Content Include="images\pdf.jpg" />
+    <Content Include="images\photo.jpg" />
+    <Content Include="images\right-hand.jpg" />
+    <Content Include="images\svs-icon-inactive.png" />
+    <Content Include="images\svs-icon.png" />
+    <Content Include="images\ui-icons_444444_256x240.png" />
+    <Content Include="images\ui-icons_555555_256x240.png" />
+    <Content Include="images\ui-icons_777620_256x240.png" />
+    <Content Include="images\ui-icons_777777_256x240.png" />
+    <Content Include="images\ui-icons_cc0000_256x240.png" />
+    <Content Include="images\ui-icons_ffffff_256x240.png" />
+    <Content Include="images\user.png" />
+    <Content Include="Insurar.html" />
+    <Content Include="js\BeatPicker.min.js" />
+    <Content Include="js\BuilderMas.js" />
+    <Content Include="js\CamlinkZO.js" />
+    <Content Include="js\common-js.js" />
+    <Content Include="js\datepicker.en.js" />
+    <Content Include="js\datepicker.min.js" />
+    <Content Include="js\highcharts-more.src.js" />
+    <Content Include="js\highcharts.js" />
+    <Content Include="js\highcharts.src.js" />
+    <Content Include="js\JavaScript1.js" />
+    <Content Include="js\jquery-ui.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\modules\exporting.src.js" />
+    <Content Include="js\modules\heatmap.src.js" />
+    <Content Include="js\modules\solid-gauge.src.js" />
+    <Content Include="js\ProDataAccesScript.js" />
+    <Content Include="js\range.js" />
+    <Content Include="js\Scrn\Aadhar.js" />
+    <Content Include="js\Scrn\admin.js" />
+    <Content Include="js\Scrn\AgentFB.js" />
+    <Content Include="js\Scrn\AgentPNI.js" />
+    <Content Include="js\Scrn\AgentTrg.js" />
+    <Content Include="js\Scrn\BalancePF.js" />
+    <Content Include="js\Scrn\cases.js" />
+    <Content Include="js\Scrn\collectionFb.js" />
+    <Content Include="js\Scrn\CourierSend.js" />
+    <Content Include="js\Scrn\CreditApprover_new.js" />
+    <Content Include="js\Scrn\CreditApprover_new_PNI.js" />
+    <Content Include="js\Scrn\cust-financials.js" />
+    <Content Include="js\Scrn\cust-financials_1.js" />
+    <Content Include="js\Scrn\CustomerInfo.js" />
+    <Content Include="js\Scrn\DashboardLeadHis.js" />
+    <Content Include="js\Scrn\DDE.js" />
+    <Content Include="js\Scrn\dedupe.js" />
+    <Content Include="js\Scrn\deviation-coloring.js" />
+    <Content Include="js\Scrn\documentVer.js" />
+    <Content Include="js\Scrn\ExceptionReport.js" />
+    <Content Include="js\Scrn\fieldInv.js" />
+    <Content Include="js\Scrn\index.js" />
+    <Content Include="js\Scrn\insurarmas.js" />
+    <Content Include="js\Scrn\Lead-AgtMgmt.js" />
+    <Content Include="js\Scrn\lead.js" />
+    <Content Include="js\Scrn\LeadHis.js" />
+    <Content Include="js\Scrn\LeadInformationjs.js" />
+    <Content Include="js\Scrn\Legal-Verification.js" />
+    <Content Include="js\Scrn\legalverification.js" />
+    <Content Include="js\Scrn\LogDtls.js" />
+    <Content Include="js\Scrn\login.js" />
+    <Content Include="js\Scrn\LosPNI.js" />
+    <Content Include="js\Scrn\post-sanction-qc.js" />
+    <Content Include="js\Scrn\QDE.js" />
+    <Content Include="js\Scrn\rcu.js" />
+    <Content Include="js\Scrn\sanction_letter_gen.js" />
+    <Content Include="js\Scrn\scan.js" />
+    <Content Include="js\Scrn\selfemployed.js" />
+    <Content Include="js\Scrn\technical-verification-approver.js" />
+    <Content Include="js\Scrn\zonalQc.js" />
+    <Content Include="LeadHis.html" />
+    <Content Include="LeadInformation.html" />
+    <Content Include="LegalManager.html" />
+    <Content Include="Legalverification.html" />
+    <Content Include="LosPNI.html" />
+    <Content Include="LOS_NewUI.csproj" />
+    <Content Include="post-sanction-qc.html" />
+    <Content Include="PostSanctioncopy.html" />
+    <Content Include="rcucopy.html" />
+    <Content Include="ReportFiles\CamSheet\CamSample.html" />
+    <Content Include="ReportFiles\CamSheet\CamSample.json" />
+    <Content Include="ReportFiles\CamSheet\CamSample_var.json" />
+    <Content Include="ReportFiles\DisbursementMemo\Disbursement Memo.html" />
+    <Content Include="ReportFiles\ProposalNote\ProposalNote.html" />
+    <Content Include="ReportFiles\ProposalNote\ProposalNote.json" />
+    <Content Include="ReportFiles\ProposalNote\ProposalNote_var.json" />
+    <Content Include="ReportFiles\ProposalRejection\ProposalRejection.html" />
+    <Content Include="ReportFiles\ProposalRejection\ProposalRejection.json" />
+    <Content Include="ReportFiles\ProposalRejection\ProposalRejection_var.json" />
+    <Content Include="ReportFiles\Risk Calculation Matrix\riskcalculation.html" />
+    <Content Include="ReportFiles\SanctionLetter\SanctionSample.html" />
+    <Content Include="ReportFiles\SanctionLetter\SanctionSample.json" />
+    <Content Include="ReportFiles\SanctionLetter\SanctionSample_var.json" />
+    <Content Include="SanctionLetter_Generation.html" />
+    <Content Include="self-employed.html" />
+    <Content Include="technical-Manager.html" />
+    <Content Include="technical-valuation.html" />
+    <Content Include="technical-verification-approver.html" />
+    <Content Include="technical-verification.html" />
+    <Content Include="zonalQc_Dashboard.html" />
+    <Content Include="ReportFiles\DisbursementMemo\Disbursement Memo.json" />
+    <Content Include="ReportFiles\DisbursementMemo\Disbursement Memo_var.json" />
+    <Content Include="ReportFiles\Risk Calculation Matrix\riskcalculation.json" />
+    <Content Include="ReportFiles\Risk Calculation Matrix\riskcalculation_var.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="agents-dashboard.html" />
+    <Content Include="branch-dashboard.html" />
+    <Content Include="collection-feedback.html" />
+    <Content Include="credit-approver.html" />
+    <Content Include="credit-dashboard.html" />
+    <Content Include="customer-financials.html" />
+    <Content Include="dedupe.html" />
+    <Content Include="detail-data-entry.html" />
+    <Content Include="document-verification.html" />
+    <Content Include="documents.html" />
+    <Content Include="field-investigation.html" />
+    <Content Include="index.html" />
+    <Content Include="lead.html" />
+    <Content Include="legal-verification.html" />
+    <Content Include="Login.html" />
+    <Content Include="operationmanager-dashboard.html" />
+    <Content Include="pd.html" />
+    <Content Include="proposal-entry.html" />
+    <Content Include="quick-entry.html" />
+    <Content Include="rcu-dashboard.html" />
+    <Content Include="rcu.html" />
+    <Content Include="roles.html" />
+    <Content Include="sales-dashboard.html" />
+    <Content Include="scan.html" />
+    <Content Include="tele-verification.html" />
+    <Content Include="Web.config" />
+    <Content Include="zonal-dashboard.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50589</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51081/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

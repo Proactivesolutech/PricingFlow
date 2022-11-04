@@ -1,0 +1,6 @@
+<Integration_Nodes>
+<DB connectionString="Provider=SQLOLEDB;Data Source=172.31.242.6\abistesting;Initial Catalog=RANE_NEW;User id=proabis;Password=Abispro@123" /> 
+<Node datasrc="PRC_BPM_INTG" Params="Prd|param1|param2" TableName="Product" ColList="PrdCd,PrdNm"/>
+<Node datasrc="PRC_BPM_INTG" Params="Cust|param1|param2" TableName="Customer" ColList="CustCd,CustNm"/>
+<Node datasrc="PRC_BPM_INTG" Params="Stk|param1|param2" TableName="Stock" ColList="StkCd,StkNm"/>
+</Integration_Nodes>

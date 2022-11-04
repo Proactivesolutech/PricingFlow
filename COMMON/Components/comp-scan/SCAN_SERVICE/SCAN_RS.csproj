@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CAA90E9C-F1B0-4BBD-B603-0F6B85033DF5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCAN_RS</RootNamespace>
+    <AssemblyName>SCAN_RS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ISQUARE_GenericControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ISQUARE_GenericControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ALL_DOCS\SHFL_2016826121957__X__SLPHBHOP0000053__X__TP.TIF" />
+    <Content Include="ALL_DOCS\SHFL_2016912115825__X__1.jpg" />
+    <Content Include="ALL_DOCS\SHFL_2016912154028__X__Default-profile-Picture.jpg" />
+    <Content Include="ALL_DOCS\SHFL_2016913141148__X__your_pic_name %281%29.jpg" />
+    <Content Include="bin\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\ISQUARE_GenericControls.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\SCAN_RS.dll" />
+    <Content Include="bin\SCAN_RS.pdb" />
+    <Content Include="bin\SynPIDLIBRARYV2.dll" />
+    <Content Include="Global.asax" />
+    <Content Include="REPOSITORY\1\SHFL_2016103151035__X__2.bmp" />
+    <Content Include="REPOSITORY\1\SHFL_2016104104046__X__SHFL_2016826121957__X__SLPHBHOP0000053__X__TP.TIF" />
+    <Content Include="REPOSITORY\1\SHFL_2016929161520__X__2016913103428.jpg" />
+    <Content Include="RestServiceSvc.svc" />
+    <Content Include="SHFL_DOCS\12\Applicant\KYC\ID_proof\Voter_ID\file_003_enc.jpg" />
+    <Content Include="SHFL_DOCS\12\Applicant\KYC\ID_proof\Voter_ID\file_004_enc.jpg" />
+    <Content Include="SHFL_DOCS\12\Applicant\KYC\ID_proof\Voter_ID\file_005_enc.jpg" />
+    <Content Include="SHFL_DOCS\12\Applicant\KYC\ID_proof\Voter_ID\file_006_enc.jpg" />
+    <Content Include="SHFL_DOCS\12\Applicant\KYC\ID_proof\Voter_ID\file_007_enc.jpg" />
+    <Content Include="SHFL_DOCS\12\Applicant\KYC\ID_proof\Voter_ID\file_008_enc.jpg" />
+    <Content Include="SHFL_DOCS\12\Applicant\KYC\ID_proof\Voter_ID\file_009_enc.jpg" />
+    <Content Include="SHFL_DOCS\12\Applicant\KYC\ID_proof\Voter_ID\file_010_enc.jpg" />
+    <Content Include="SHFL_DOCS\12\Applicant\KYC\ID_proof\Voter_ID\file_011_enc.jpg" />
+    <Content Include="SHFL_DOCS\12\Applicant\KYC\ID_proof\Voter_ID\file_012_enc.jpg" />
+    <Content Include="SHFL_DOCS\12\file_001_enc.jpg" />
+    <Content Include="SHFL_DOCS\12\file_002_enc.jpg" />
+    <Content Include="SHFL_DOCS\131\Applicant\KYC\ID_proof\Voter_ID\file_001_enc.jpg" />
+    <Content Include="SHFL_DOCS\1\12_Applicant_KYC_ID_proof_Voter_ID_enc.txt" />
+    <Content Include="SHFL_DOCS\1\1_Applicant_APPLICATION_Address_proof_PAN_Card_enc.txt" />
+    <Content Include="SHFL_DOCS\1\1_Applicant_APPLICATION_ID_proof_Voter_ID_enc.txt" />
+    <Content Include="SHFL_DOCS\1\1_Applicant_KYC_Address_proof_Voter_ID_enc.txt" />
+    <Content Include="SHFL_DOCS\1\1_Applicant_KYC_ID_proof_Driving_Licence_enc.txt" />
+    <Content Include="SHFL_DOCS\1\1_Applicant_KYC_ID_proof_Voter_ID_enc.txt" />
+    <Content Include="SHFL_DOCS\1\1_CoApplicant_PROCESSING_FEE_DOB_PAN_Card_enc.txt" />
+    <Content Include="SHFL_DOCS\1\Applicant_KYC_ID_proof_Voter_ID\file_008_enc.jpg" />
+    <Content Include="SHFL_DOCS\1\Applicant_KYC_ID_proof_Voter_ID\file_009_enc.jpg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileManager_Classes\FileManager.cs" />
+    <Compile Include="FileManager_Handler.ashx.cs">
+      <DependentUpon>FileManager_Handler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IRestServiceSvc.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestServiceSvc.svc.cs">
+      <DependentUpon>RestServiceSvc.svc</DependentUpon>
+    </Compile>
+    <Compile Include="TiffManager.cs" />
+    <Compile Include="Word2Img.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FileManager_Handler.ashx" />
+    <Content Include="bin\SCAN_RS.dll.config" />
+    <None Include="Properties\PublishProfiles\SSS.pubxml" />
+    <Content Include="REPOSITORY\1\SHFL_2016103155610__X__javascript_tutorial.pdf" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53498</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53498/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

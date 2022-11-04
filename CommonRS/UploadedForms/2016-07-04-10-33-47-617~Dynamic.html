@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Dynamic Columns </title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btn_Save").click(function (e) {
+
+                var objProcData = { ProcedureName: "Prc_DataEntry", Type: "SP", Parameters: [GlobalXml[0].FwdDataPk, $("#cib_scr").val(), "", 1] }
+                fnCallWebService("SAVE_DATA", objProcData, fnProjResult_PO, "MULTI", "");
+
+            })
+        });
+
+        function fnProjResult_PO(ServDesc, Obj, Param1, Param2) {
+            if (ServDesc == "SAVE_DATA") {
+                var Pk = JSON.parse(Obj.result)[0].Pk;
+                fnTriggerNxtPrc(Pk);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="display:table" id="tbl_Avg_Calc">
+
+    </div>
+</body>
+</html>

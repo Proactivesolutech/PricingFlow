@@ -1,0 +1,23 @@
+﻿<script src="js/Scrn/admin.js"></script>
+<style>
+.master-screens .box-div { padding: 50px; cursor:pointer;}
+.master-screens .box-div h2 {  text-align:center;font-size:14px;  }
+.master-screens .box-div:hover { background:#dbe8ea  }
+.uline { font-weight:bold;font-size:120%;text-decoration:underline;text-transform:uppercase;  }
+</style>
+
+<div class="title">
+    <h1 ondblclick="fnchangeAuthentication()"><i class="icon-sales-manager"></i> Admin Dashboard </h1>
+</div>
+<div class="content-div">
+    <div class="master-screens">
+        <div class="box-div" onclick="fnOpenScreen('U')"> <h2>User Master</h2> </div>
+        <div class="box-div" onclick="fnOpenScreen('R')"> <h2>Role Master </h2></div>
+        <div class="box-div" onclick="fnOpenScreen('BR')"> <h2>Branch Master</h2> </div>
+        <div class="box-div" onclick="fnOpenScreen('MAP')"> <h2>Geo Map Master</h2> </div>
+        <div class="box-div" onclick="fnOpenScreen('BL')"> <h2>Builder Master</h2> </div>
+        <div class="box-div" onclick="fnOpenScreen('IM')"> <h2>Insurar Master</h2> </div>
+        <!--<div class="box-div" onclick="fnOpenScreen('Q')"> <h2><u class="uline">Q</u>uery Window</h2> </div>-->
+        <!--<div class="box-div" onclick="fnOpenScreen('F')"> <h2><u class="uline">F</u>ile Manager</h2> </div>-->
+    </div>
+</div>

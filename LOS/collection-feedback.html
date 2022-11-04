@@ -1,0 +1,80 @@
+<style>
+.collection-div ul li{ width:10%; text-align:center;vertical-align: middle; display:inline-block; margin-left:-4px;}
+.collection-div ul li:first-child{ width:40%; text-align:left;}
+.collection-div ul li:nth-child(4){ width:30%; text-align:left;}
+</style>
+<script src="js/Scrn/AgentFB.js"></script> 
+<div class="title">
+  <h1>Zonal Qc : Collection Feedback</h1>
+</div>
+<div class="content-div">
+    <div class="popup-bg field-popup" id="field-popup" style="display:none;">
+        <div class="popup-div">
+            <div class="popup-header">
+                <h2><i class="icon-agents"></i> Agent Name <span>Collection Feedback</span> <i class="icon-close div-right"></i></h2>
+                <span class="div-right">SHFL0035</span>
+                <div class="clear"></div>
+            </div>
+            <div class="popup-content">
+                <div class="field-content">
+                </div>
+                <div id="maindiv">
+                    <div class="fidt2">
+                        <ul class="fom-controls">
+                            <li class="div-left width-4">
+                                <label>Date of Report</label>
+                                <input type="text" key="agt_rptdt" name="text" data-beatpicker="true" data-beatpicker-position="['*','*']">
+                            </li>
+                            <li class="div-right status">
+                                <p class="bg bg1"><i class="icon-positive" onclick="fnReprtSts(this);"></i></p>
+                                <input name="text" key="agt_rptstatus" type="hidden">
+                            </li>
+                        </ul>
+                        <textarea name="text" key="agt_notes" maxlength="500"></textarea>
+                        <div>
+                            <ul class="div-left attachment-div">
+                                <li id="attach_spn">
+                                    <!--<span><i class="icon-attach"></i> report.pdf <i class="icon-down-arrow"></i></span>-->
+                                    <!--<ul class="attach-dd" style="display:none;">
+                  <li>Remove</li>
+                  <li>Download</li>
+                </ul>-->
+                                </li>
+                            </ul>
+                            <span id="Spn_reportupload" class="div-right bg-blue"><i class="icon-attach"></i> Attach</span>
+                            <input type="file" id="FIReportUpload" multiple style="display:none;" />
+                            <input type="text" id="agt_Rpt" key="agt_RptPath" style="display:none;" />
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<input type="button" value="Save" class="div-right" onclick="fnSaveChangedData();">-->
+        </div>
+    </div>
+</div>
+<div id="div-document-content" class="documents-content" style="display:none;">
+</div>
+<script src="js/BeatPicker.min.js"></script>
+<script>   
+calcHeight(); /*window height for all div*/	 
+scanDocPreview(); /*Scand or Attached Document image Preview*/
+scanAttachClick(); /*Scan or Attach click*/
+commontabs(); /*Common tab style*/
+customselect();
+rightdocument();
+selectfocus(); /* Custom Select2 plugin Function*/
+$(".doc-view").click(function(e) {
+	$(".content-div").addClass("center-collapse");
+	$("#div-document-content").show();
+	LoadHtmldoc('documents.html');
+});
+function LoadHtmldoc(HtmlPage){
+  $("#div-document-content").empty();	
+  $("#div-document-content").load(HtmlPage);
+}
+ $(document).ready(function () {
+        categoryPopup();
+		dropButton();
+  });
+</script>

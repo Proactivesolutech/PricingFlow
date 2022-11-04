@@ -1,0 +1,726 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHFL</title>
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+<link rel="icon" href="images/favicon.ico">
+<link rel="stylesheet" href="css/common.css?$$$v=1.0.3$$$">
+<link rel="stylesheet" type="text/css" href="css/responsive.css?$$$v=1.0.3$$$">
+<link rel="stylesheet" type="text/css" href="css/range.css?$$$v=1.0.3$$$">
+<link rel="stylesheet" type="text/css" href="css/fonts/style.css?$$$v=1.0.3$$$" />
+<link rel="stylesheet" type="text/css" href="css/BeatPicker.min.css?$$$v=1.0.3$$$" />
+<!-- Jquery JS -->
+<script src="js/jquery.js?$$$v=1.0.3$$$"></script>
+<!-- Jquery JS -->
+<!-- Common JS BPM/LOS-->
+<script src="../COMMON/js/Scrn/CommonFns.js?$$$v=1.0.3$$$"></script>
+<!-- Common JS BPM/LOS-->
+<!-- BPM Required JS-->
+<script src="../COMMON/js/devp-js/ProDataAccesScript.js?$$$v=1.0.3$$$"></script>
+<script src="../COMMON/js/devp-js/ProLOSDataAccesScript.js"></script>
+<script src="../COMMON/js/Scrn/BPM_Common.js?$$$v=1.0.3$$$"></script>
+<!-- BPM Required JS-->
+<!-- LOS Required JS -->
+<script src="js/common-js.js?$$$v=1.0.3$$$"></script>
+<script src="js/Scrn/index.js?$$$v=1.0.3$$$"></script>
+<!--<script src="js/Scrn/LogDtls.js?$$$v=1.0.3$$$"></script>-->
+<script src="../COMMON/js/devp-js/ProLOSDataAccesScript.js?$$$v=1.0.3$$$"></script>
+<!-- LOS Required JS -->
+<link rel="stylesheet" type="text/css" href="../COMMON/Components/css/jquery-ui.css?$$$v=1.0.3$$$" />
+<link rel="stylesheet" type="text/css" href="../COMMON/Components/css/common.css?$$$v=1.0.3$$$" />
+<link rel="stylesheet" type="text/css" href="../COMMON/Components/css/fonts/query-style.css?$$$v=1.0.3$$$" />
+ <link href="../COMMON/Components/js/select2-4.0.3/select2-bootstrap.css?$$$v=1.0.3$$$" rel="stylesheet" />
+    <link href="../COMMON/Components/js/select2-4.0.3/select2.css?$$$v=1.0.3$$$" rel="stylesheet" />
+    <script src="../COMMON/Components/js/select2-4.0.3/select2.js?$$$v=1.0.3$$$"></script>
+<script src="../COMMON/Components/js/jquery-ui.js?$$$v=1.0.3$$$"></script>
+<!-- Query Files -->
+<link id="query" rel="import" href="../COMMON/Components/comp-query/comp-query.html?$$$v=1.0.3$$$" />
+<script src="../COMMON/Components/comp-query/js/comp-query.js?$$$v=1.0.3$$$"></script>
+<!-- Query Files -->
+<!-- Dashboard Files -->
+<link rel="import" id="dashboard" href="../COMMON/Components/comp-dashboard/comp-dashboard.html?$$$v=1.0.3$$$" />
+<script src="../COMMON/Components/comp-dashboard/js/comp-dashboard.js?$$$v=1.0.3$$$"></script>
+<!--Added by Vijay S-->
+    <script src="../COMMON/js/devp-js/ckeditor/ckeditor.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../BPMFLOW/css/font.css" />
+<link rel="stylesheet" href="../BPMFLOW/css/font-awesome.css">
+<link  href="http://fonts.googleapis.com/css? />
+<!-- Dashboard Files -->
+</head>
+<body>
+ <!-- Error Popup Div Starts-->
+    <div class="error-div" style="display:none;">
+        <div class="error-content" style="display:none;">
+            <i id="AlertIcon"></i>
+            <p id="error_msg"></p>
+            <input type="button" id="btn_Ok" value="OK">
+            <input type="button" id="btn_Cancel" value="CANCEL">
+        </div>
+    </div>
+    <!-- Error Popup Div Ends-->
+
+<div class="main-wrapper">
+  <div class="content-wrapper">
+      <div class="top-panel">
+          <span><img src="images/logo-shriram.png" alt=""/></span>
+          <div class="right">
+              <i class="icon-user right cursor" onclick="localStorage.clear();location.href='login.html'"></i> 
+              <i class="icon-dashboard right cursor" onclick="$('#dash_key_his').empty(); $('#dashboard_main').show(); $('#dash_key_his').hide(); fnLoadDash()"></i> 
+              <i class="icon-lead-details div-right cursor" title="Lead Search Filter"
+                onclick="$('#dash_key_his').empty(); $('#dash_key_his').load('LeadInformation.html'); $('#dashboard_main').hide(); $('#dash_key_his').show();"></i>
+          </div>
+          <div class="clear"></div>
+      </div>
+    <div class="center-panel">
+       <!--<div class="top-panel"> 
+        <div class="right">
+         <i class="icon-user right cursor" onclick="localStorage.clear();location.href='login.html'"></i> <i class="icon-dashboard right cursor" onclick="$('#dash_key_his').empty(); $('#dashboard_main').show(); $('#dash_key_his').hide(); fnLoadDash()"></i> <i class="icon-lead-details div-right cursor" title="Lead Search Filter"
+       onclick="$('#dash_key_his').empty(); $('#dash_key_his').load('LeadInformation.html'); $('#dashboard_main').hide(); $('#dash_key_his').show();"></i> 
+        </div>-->
+       <div class="clear"></div>
+       </div>
+       <div id="dashboard_main">
+        <div class="dashboard-div">
+          <div class="title">
+            <!--<h1><i class="icon-branch-ops"></i> <span id="dash_usr_nm">Zonal Operation</span> : Dashboard <span id="spnaddbtn"><input type="button" id= "processadd" style="margin-left: 38%;" value="Add"></span></h1>-->
+            <!--<h1><i class="icon-branch-ops"></i> <span id="dash_usr_nm">Zonal Operation</span> : Dashboard <span id="spnaddbtn" style="margin-left: 38%;">Click here to add new task     <a id= "processadd" style="margin-left: 38%;"><span>ADD</span></a></span></h1>-->
+            <h1><i class="icon-branch-ops"></i> <span id="dash_usr_nm">Zonal Operation</span> : Dashboard <!--<span id="spnaddbtn" style="margin-left: 24%;"><a id= "processadd"><span>New task</span></a></span>--><!--commented by Vijay S--></h1>
+          
+           <!-- <h1><i class="icon-branch-ops"></i> <span id="dash_usr_nm">Zonal Operation</span> : Dashboard <span id="spnaddbtn"><img src="../COMMON/css/img/ic_add_box_black_24dp/web/ic_add_box_black_24dp_2x.png" id= "processadd"  alt="ADD" style="margin-left: 38%;"/></span></h1>-->
+            
+             <!--<span style="float:right;"><input type="text" id="FlwSrch"  placeholder="Process Id" style="width:50% !Important;"/><input type="button" style="float:right;" id="srchbtn"onclick="IdSearch()" value="Search" /> </span>-->
+            <!--<span style="float:right"><input type="text" id="FlwSrch" onkeypress="IdSearch()" placeholder="Process Id" style="width:50% !Important;"/><input type="button" style="float:right;" id="srchbtn"onclick="IdSearch()" value="Search" /> </span>-->
+          </div>
+          <div class="clear"></div>
+   <!--Model Container -->
+          <!--<div id="myModal" class="modal">-->
+          <div id="myModal" class="modal" >
+
+  <!-- Modal content -->
+  <div class="modal-content" style="width:33.33% !Important;">
+   <span class="close">&times;</span>
+          <div class="grid-333" id="close">
+            <h2>Processes</h2>
+            <div class="process-list box-div"> </div>
+          </div>
+          </div></div>
+         
+          <div class="grid-33" style = "Width:50% !Important;">
+            <comp-dashboard width="100%" type="lead" id="home_dashboard"> </comp-dashboard>
+          </div>
+          <div class="grid-33" style="Width:50% !Important">
+            <comp-query width="100%" type="list" id="dashboardQuery"></comp-query>
+          </div>
+        </div>
+        <div id="div-user-content"> 
+            
+        </div>
+        <div id="div_btnTemplate" style="display:none;" class="center form-btns">
+          <div id="drop-button" class="drop-button">
+            <input onclick="fnMoveNxtLevel_new()" type="button" value="Confirm & Handover">
+            <i class="icon-down-arrow"></i>
+            <ul id="temp_btn_option" class="drop-list">
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Tracking Popup Div Starts-->
+        <div class="popup-bg" id="tracking-div" style="display:none;">
+          <div class="popup-div popup-large">
+            <div class="popup-header">
+              <h2>Case Tracker <i class="icon-close div-right"></i></h2>
+            </div>
+            <div class="popup-content">
+              <div class="tracking-div">
+                <ul class="form-controls">
+                  <div class="clear"></div>
+                </ul>
+                <div class="tracking-content">
+                  <div class="track-border"></div>
+                  <div class="history-main"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Tracking Popup Div End--> 
+      </div>
+       <div id="dash_key_his"> </div>
+    </div>
+    <div class="right-panel div-right">
+      <div class="display-table">
+        <ul id="right_panel" style="display:none" class="right-icons display-table-cell">
+          <li title="Query"><i class="icon-chat"></i><span id="qry_Cnt"></span></li>
+          <li title="Tracking"><i class="icon-clock"></i></li>
+        </ul>
+      </div>
+      <div class="right-content-div" style="display: none; height: 100%;">
+        <comp-query width="100%" height="100%" id="QueryDiv"></comp-query>
+      </div>
+    </div>
+    
+  </div>
+ 
+</div>
+</body>
+<script>
+
+    var UsrPk = localStorage.getItem("UsrPk");
+    var flowFk = localStorage.getItem("BpmPk");
+    var branchFk = localStorage.getItem("UsrBrnch");
+    var usrNm = localStorage.getItem("UsrNm");
+    var UsrCd = localStorage.getItem("UsrCd");
+    var flowPk;
+    $("#dash_usr_nm").text(usrNm);
+
+    if (!UsrPk || UsrPk == null || UsrPk == "") {
+        location.href = "login.html";
+    }
+    GlobalXml[0].UsrCd = UsrCd;
+    GlobalXml[0].UsrPk = UsrPk;
+    GlobalXml[0].UsrNm = usrNm;
+    GlobalXml[0].BrnchFk = branchFk;
+
+    $(document).ready(function () {
+        fnGetBpmList();
+        fnSelectKeyList();
+        fnLoadQry();
+        var modal = document.getElementById('myModal');
+
+        var btn = document.getElementById("newtask");//processadd newtask//modified by Vijay S
+
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }       
+//        window.onclick = function (event) {
+//            if (event.target == modal) {
+//                modal.style.display = "none";
+//            }
+        //        }
+        //added by Vijay
+        fnGetAppSettingsValue("FileAttachmentPath", "FileUpldPath");
+        fnGetXMLData();
+
+        $('body').on('mousedown', '.slider', function (e) {            
+            $('#div-user-content').mousemove(function (e) {
+                var diff = $('.slider').offset().top + 5 - e.pageY;
+                $('#content_box').height($('#content_box').height() - diff);
+                $('#boxdiv').height($('#boxdiv').height() + diff);
+            });
+        });
+        $('body').on('mouseup', '#div-user-content', function () {
+            $('#div-user-content').off('mousemove');
+        });
+        //added by Vijay S for Point 9
+        $('body').on('focus', '[jsondata*="config_integration"]', function () {            
+            if ($(this).find(".usrtype_integration").length > 0) $(this).find(".usrtype_integration").css("display", ""); 
+            else
+            {                
+                $(this).append("<div class='usrtype_integration'></div>");
+                var connStr = $(xmlStr).find("DB").attr("connectionString");
+                var datasrc = JSON.parse($(this).find(".usrtype_integration").prev().attr("usrtype-value")).DataSource;
+                var dataNode = $(xmlStr).find("Node[TableName='" + datasrc + "']");
+                var spName = dataNode.attr("datasrc");
+                var spParams = dataNode.attr("Params").split("|");
+                var ColList = dataNode.attr("ColList").split(",");                
+                var objProcData = { ConnString: connStr, ProcedureName: spName, Type: "SP", Parameters: spParams };                
+                fnCallWebService("", objProcData, fnGetIntegrationData, "MULTI", ColList, "");
+            }
+        });
+        $('body').on('blur', '[jsondata*="config_integration"]', function () {            
+            $(this).find(".usrtype_integration").css("display", "none");            
+        });
+    });
+        
+    //return function of fnCallWebService to display the extracted JSON data into Table in a div
+    function fnGetIntegrationData(serviceFor, obj, extParam1, extParam2, extParam3) {
+        var ColList = extParam2;
+        var resultObj = JSON.parse(obj.result);
+        var table = ConvertJsonToTable(resultObj, "", "onmousedown=GetClickValue(this)", true, ColList);
+        $(".usrtype_integration").append(table);
+    }
+    
+    //called when mousedown event triggered on the div.usrtype_integration
+    function GetClickValue(Elem) {
+        //to get the selected ColumnValue 
+        var ColValue = JSON.parse($("[usrtype = 'config_integration']").attr("usrtype-value")).ColumnValue;
+        //to get the corresponding table column value from the table extracted from DB
+        var obj = {}; var Heading = $(Elem).closest("table").find("th");
+        for (var a = 0; a < Heading.length; a++) { obj[Heading[a].textContent] = $(Elem).closest("tr").children()[a].textContent; }
+        $("[usrtype = 'config_integration']").val(obj[ColValue]);
+    }
+
+    //Convert the JSON data of table into table with tags - added by Vijay S
+    //use trAttrbs and tdAttrbs to assign any attributes/events to tr and td respectively
+    //set isHeadingRequired=true to show the table with Headers
+    //if the table columns should be ordered in any particular order pass the orderlist as array to ColOrder
+    //Note: works only for single table
+    function ConvertJsonToTable(data, trAttrbs, tdAttrbs, isHeadingRequired, ColOrder) {
+        var table = $("<table><thead></thead><tbody></tbody></table>");
+        var thead = table.find("thead");
+        var tbody = table.find("tbody");        
+        var rowKeys = Object.keys(data[0]);
+        var rowCnt = rowKeys.length;
+        var isOrderRequired = ColOrder.length == 0 ? false : true;
+        for (var i = -1; i < data.length; i++) {            
+            var row = $("<tr id=row_'" + (i + 1) + "' " + trAttrbs + "/>");
+            //-1 is to insert the Colulmn heading for the data
+            if (i == -1) thead.append(row);
+            else tbody.append(row);            
+            for (var j = 0; j < rowCnt; j++) {
+                var tdVal = rowKeys[j];
+                if (!!isOrderRequired) tdVal = ColOrder[j];
+                if (i == -1 && !!isHeadingRequired) row.append($("<th style='text-align:center;'>" + tdVal + "</th>"));
+                else row.append($("<td " + tdAttrbs + ">" + data[i][tdVal] + "</td>"));
+            }
+        }        
+        return table;
+    }   
+
+    function IdSearch() {
+
+        var GlobalBpmXml = {};
+        GlobalBpmXml.UsrPk = UsrPk;
+        GlobalBpmXml.UsrCd = localStorage.getItem("UsrCd");
+
+        var objProcData = { ProcedureName: "PrcShflBpm_Proj", Type: "SP", Parameters: ["GET_FLOW_DATA", JSON.stringify(GlobalBpmXml),"","","", $("#FlwSrch").val()]}
+        fnCallWebService("GET_PENDINGS_LIST", objProcData, fnResult, "MULTI", UsrPk);
+
+    }
+
+    function fnLoadQry() {
+        var DashGlobal = [{}];
+        DashGlobal[0].FlowFk = GlobalXml[0].CurVerFlowPk;
+        DashGlobal[0].ProcFk = GlobalXml[0].CurProcFk;
+        DashGlobal[0].UsrFk = GlobalXml[0].UsrPk;
+        DashGlobal[0].UsrNm = GlobalXml[0].UsrNm;
+        DashGlobal[0].AgtNm = GlobalXml[0].AgtNm;
+
+        $("#dashboardQuery").setQueryProps(DashGlobal[0]);
+        $("#dashboardQuery").setQuery();
+    }
+    //GlobalBrnch
+    jQuery.fn.justtext = function () {
+        return $(this).clone().children().remove().end().text().trim();
+    };
+
+    var GlobXml = {};
+    var branchNm = 'CHENNAI CHIT UNIT';
+    function fnSavetoFlow(elem) {
+        modal = document.getElementById('myModal');
+        modal.style.display = "none";
+        var flowNm = $(elem).closest("li").justtext();
+            flowPk = $(elem).closest("ul").attr("flowfk");
+        var caseNm = flowNm; //$("#casenm").val();
+        if (caseNm.trim() == "")
+            return;
+        var Obj = { ProcedureName: "PrcSaveKeyData", Type: "SP", Parameters: ['Save', caseNm, branchFk] };
+        fnCallWebService("SaveKey", Obj, fnResult, "MULTI", "new");
+    }
+
+    function fnResult(serviceFor, Obj, Param1, Param2) {
+        if (serviceFor == "GetBpmList") {
+            var data = JSON.parse(Obj.result);
+            if (!data && data.length == 0)
+                return;
+            var process = "";
+            for (var i = 0; i < data.length; i++) {
+                process += "<ul class='ulProc' flowfk='" + data[i].BpmPk + "'><li>" + data[i].BpmNm + " <span class='right' onclick='fnSavetoFlow(this)'><i class='icon-plus'></i></span> </li> </ul>";
+            }
+            $(".process-list").append(process);
+        }
+
+        if (serviceFor == "SaveKey") {
+            debugger;
+            var data = JSON.parse(Obj.result);
+            if (data && data.length > 0)
+                fnAddCase(data);
+
+        }
+
+        if (serviceFor == "GET_PENDINGS_LIST") {
+
+
+            GlobalXml[0].UsrPk = JSON.parse(Obj.result_1)[0].UsrFk;
+            var Data = JSON.parse(Obj.result_2);
+            //var Data2 = JSON.parse(Obj.result_3);
+            //fnCallBackFromBpm(serviceFor, Data, []);
+            $(".dashboard-div").show();
+            $("#div-user-content").empty();
+
+            $("#home_dashboard").find("#Comp-dashBrdList").empty();
+            $("#home_dashboard").setDashBoard(Data);
+            if (window.keyPk && window.keyPk != "")
+                setTimeout(function () { $("#home_dashboard").find("ul[keypk='" + window.keyPk + "']").click(); }, 500);
+
+            return;
+
+
+            var data = JSON.parse(Obj.result);
+            if (!data || data.length == 0)
+                return;
+            for (var i = 0; i < data.length; i++) {
+                var row = "<tr key='" + data[i].KeyNm + "' onclick='fnGotoPage(this)'><td>" + data[i].KeyNm + "</td></tr>";
+                $("#tableNm").append(row);
+            }
+        }
+    }
+    function fnAddCase(data) {
+        GlobXml.LeadPk = data[0].KeyPk;
+        window.keyPk = data[0].KeyPk;
+        GlobXml.BrnchFk = branchFk
+        GlobXml.Branch = branchNm;
+        fnGetBpmHelpFor('LEAD_CREATE', GlobXml, flowPk, UsrCd);
+    }
+
+    function fnSelectKeyList() {
+        //var Obj = { ProcedureName: "PrcSaveKeyData", Type: "SP", Parameters: ['Select','', ''] };
+        //fnCallWebService("Select", Obj, fnResult, "MULTI");
+        $("#hdr_title").empty();
+
+        var GlobalBpmXml = {};
+        GlobalBpmXml.UsrPk = UsrPk;
+        GlobalBpmXml.UsrCd = localStorage.getItem("UsrCd");
+
+        var objProcData = { ProcedureName: "PrcShflBpm_Proj", Type: "SP", Parameters: ["GET_ENTRY_DATA", JSON.stringify(GlobalBpmXml)] }
+        fnCallWebService("GET_PENDINGS_LIST", objProcData, fnResult, "MULTI", UsrPk);
+
+    }
+
+    function fnGotoPage(elem) {
+        var keyfk = $(elem).attr("key");
+        fnGetBpmHelpFor("GET_PGDTLS", Param1, Param2, Param3, Param4, Param5, Param6);
+    }
+
+
+    function fnLoadDash() {
+        $(".dashboard-div").show();
+        $("#div-user-content").empty();
+        $("#hdr_title").empty();
+        window.keyPk = "";
+        fnSelectKeyList();
+        fnBtnTemplate(0);
+        fnLoadQry();
+        $("#right_panel").hide();
+    }
+    
+    function fnMoveNxtLevel_new(TgtPgId, DblEntry, RtnOption, Param1) {                
+        //added by Vijay S for Issue5      
+        if (!!fnCheckMandatory()) return;
+        //added by Vijay S for Issue3  
+        if ($("#temp_btn_option").find("li").length > 0){
+            $('#temp_btn_option').toggle();
+            if(!TgtPgId) return;                
+        }
+        if (TgtPgId == "Auto") { TgtPgId = GlobalXml[0].TgtPageID; }
+        RtnOption = (RtnOption == 2 || RtnOption == 1) ? RtnOption : 0;
+
+        GlobalXml[0].TgtPageID = TgtPgId;
+        GlobalXml[0].DblEntry = DblEntry;
+        GlobalXml[0].RtnOption = RtnOption;
+        GlobalXml[0].IsReject = (Param1 == "R") ? 1 : 0
+        //Added by Vijay S for file uploader
+        if ($("#content_box").find("input[type='file']").length > 0) {
+            $("#content_box").find("input[type='file']").each(function () { fnFileAttacher(this, false); });
+        }
+        fnCallFinalConfirmation("true");
+    }
+    
+    function fnGetBpmList() {
+        var Obj = { ProcedureName: "PrcSaveKeyData", Type: "SP", Parameters: ['GetBpmList', '', '', GlobalXml[0].UsrPk] };
+        fnCallWebService("GetBpmList", Obj, fnResult, "MULTI");
+    }
+
+    //added by Vijay S for Issue5
+    function fnCheckMandatory() {
+        var isMandate = false;
+        $(".Elem_Inp_Val[ismandatory='true']").each(function () {
+            if ($(this).val() == null || $(this).val() == "") {
+                if (isMandate == false) {
+                    $(this).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).focus();
+                    isMandate = true;
+                }
+                $(this).prev().length > 0 ? $(this).prev().addClass("mandateHighlight") : $(this).parent().prev().addClass("mandateHighlight");
+                $(this).attr("placeholder", "Enter the " + $(this).attr("id"));
+                $(this).addClass("mandateHighlight");
+            }
+        });
+        $(document).on('change', 'input.mandateHighlight', function () {
+            //$(this).prev().length > 0 ? $(this).prev().removeClass("mandateHighlight") : $(this).parent().prev().removeClass("mandateHighlight");
+            $(this).removeClass("mandateHighlight");
+        });
+        return isMandate;
+    }         
+</script>
+<style>
+table { margin-top: 20px; }
+table tr td { padding: 10px; border-collapse: collapse; border: 1px solid #ccc; }
+.process-list { }
+.process-list ul { padding: 10px; margin: 10px 0px; background: #E5E5E5; border-radius: 10px; }
+.process-list ul:first-child { margin-top: 0; }
+.process-list ul:hover { /*background: #009fd7;*/
+}
+.process-list ul span:hover { /*background: #009fd7;
+        padding: 5px 10px;
+        padding: 5px 10px;
+        border-radius: 4px;*/
+cursor: pointer; }
+ .process-list ul span; {
+ padding: 5px 10px;
+ cursor: pointer;
+ padding: 5px 10px;
+ border-radius: 4px;
+}
+#Comp-dashBrdList, .process-list { height: 80vh; overflow-y: auto; }
+comp-dashboard .icon-warning { display: none; }
+.cases-div ul li:nth-of-type(1) { width: 50%; text-align: left; }
+.showhide
+{
+    height:320px !Important;
+    /*height:520px !Important;*/
+    }
+    .showhide2
+{
+    /*display:none;*/
+    height:200px !Important;
+    }
+    
+    #myModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+
+    padding: 20px;
+    border: 1px solid #888;
+    position: relative;
+    background-color: #fefefe;
+    margin: 2% auto;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+#processadd {
+    
+    -webkit-border-radius: 10px;
+    
+    -webkit-box-shadow: 
+        0px 3px rgba(128,128,128,1), /* gradient effects */
+        0px 4px rgba(118,118,118,1),
+        0px 5px rgba(108,108,108,1),
+        0px 6px rgba(98,98,98,1),
+        0px 7px rgba(88,88,88,1),
+        0px 8px rgba(78,78,78,1),
+        0px 14px 6px -1px rgba(128,128,128,1); /* shadow */
+    
+    -webkit-transition: -webkit-box-shadow .1s ease-in-out;
+} 
+#processadd span {
+    background-color: #E8E8E8;
+    
+    background-image: 
+        /* gloss gradient */
+        -webkit-gradient(
+            linear, 
+            left bottom, 
+            left top, 
+            color-stop(50%,rgba(255,255,255,0)), 
+            color-stop(50%,rgba(255,255,255,0.3)), 
+            color-stop(100%,rgba(255,255,255,0.2))),
+        
+        /* dark outside gradient */
+        -webkit-gradient(
+            linear, 
+            left top, 
+            right top, 
+            color-stop(0%,rgba(210,210,210,0.3)), 
+            color-stop(20%,rgba(210,210,210,0)), 
+            color-stop(80%,rgba(210,210,210,0)), 
+            color-stop(100%,rgba(210,210,210,0.3))),
+        
+        /* light inner gradient */
+        -webkit-gradient(
+            linear, 
+            left top, 
+            right top, 
+            color-stop(0%,rgba(255,255,255,0)), 
+            color-stop(20%,rgba(255,255,255,0.5)), 
+            color-stop(80%,rgba(255,255,255,0.5)), 
+            color-stop(100%,rgba(255,255,255,0))),        
+        
+        /* diagonal line pattern */
+        -webkit-gradient(
+            linear, 
+            0% 100%, 
+            100% 0%, 
+            color-stop(0%,rgba(255,255,255,0)), 
+            color-stop(40%,rgba(255,255,255,0)), 
+            color-stop(40%,#D2D2D1), 
+            color-stop(60%,#D2D2D1), 
+            color-stop(60%,rgba(255,255,255,0)), 
+            color-stop(100%,rgba(255,255,255,0)));
+    
+        -webkit-box-shadow:
+            0px -1px #fff, /* top highlight */
+            0px 1px 1px #FFFFFF; /* bottom edge */
+    
+    -webkit-background-size: 100%, 100%, 100%, 4px 4px;
+    
+    -webkit-border-radius: 10px;
+    -webkit-transition: -webkit-transform .1s ease-in-out;
+    
+    display: inline-block;
+    /*padding: 10px 40px 10px 40px;
+    font-size: 32px;*/
+    font-weight: 700;
+    padding: 5px 30px 5px 30px;
+    font-size: 20px;
+    color: #3A474D;
+    text-transform: uppercase;
+    font-family: 'TradeGothicLTStd-BdCn20','PT Sans Narrow';
+    
+    
+    text-shadow: 0px 1px #fff, 0px -1px #262F33;
+}
+
+        #processadd span:hover {
+        /*#processadd:hover {*/
+            color: #AEBF3B;
+            text-shadow: 0px -1px #97A63A;
+            cursor: pointer;
+        }
+
+        #processadd:active {
+            -webkit-box-shadow: 
+                0px 3px rgba(128,128,128,1),
+                0px 4px rgba(118,118,118,1),
+                0px 5px rgba(108,108,108,1),
+                0px 6px rgba(98,98,98,1),
+                0px 7px rgba(88,88,88,1),
+                0px 8px rgba(78,78,78,1),
+                0px 10px 2px 0px rgba(128,128,128,.6); /* shadow */
+        }
+
+        /*#processadd:active span{*/
+        #processadd:active {
+            -webkit-transform: translate(0, 5px); /* depth of button press */
+        }
+
+    /*#processadd span:after {*/
+     #processadd:after {
+        /*content: ">";*/
+        display: block;
+        width: 10px;
+        height: 10px;
+    
+        position: absolute;
+        right: 43%;
+        top: 59px;    
+        
+        font-family: 'Cabin';
+        font-weight: 700;
+        color: #AEBF3B;
+        text-shadow: 0px 1px #fff, 0px -1px #97A63A;
+        font-size: 26px;
+    }
+    .animate
+{
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+
+.action-button
+{
+	position: relative;
+	padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  float: left;
+	border-radius: 10px;
+	font-family: 'Pacifico', cursive;
+	font-size: 25px;
+	color: #FFF;
+	text-decoration: none;	
+}
+.green
+{
+	background-color: #82BF56;
+	border-bottom: 5px solid #669644;
+	text-shadow: 0px -2px #669644;
+}
+.action-button:active
+{
+	transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}
+   /*ul:hover 
+   {
+       font-size:large !Important;
+  background: #f6f6f6 !Important;
+}*/
+.cases-div ul:first-child {padding-top:10px !Important;}
+/*added by Vijay S for Drag bar*/
+    .slider {
+        width: 100%;
+        height: 3px;
+        background-color: #cecece;
+        cursor: row-resize;
+    }
+
+    .usrtype_integration {
+        width: 100%;
+        height: 100px !important;
+        border: 1px solid black;
+        overflow-y: auto;
+        position: sticky;        
+    }
+</style>
+</html>

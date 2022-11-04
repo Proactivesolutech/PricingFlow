@@ -1,0 +1,27 @@
+=================28-7-2017==================
+1. NOLOCK or READUNCOMMITTED hint
+2. OUTPUT.*
+
+
+=================27-7-2017==================
+1.XML to JSON and viceversa possible
+	http://goessner.net/download/prj/jsonxml/
+2.EXE\DLL creation from javascript(Microsoft JScript) possible
+	https://www.phpied.com/make-your-javascript-a-windows-exe/
+3.HTA - HTML Application
+	https://www.codeproject.com/Articles/113678/How-to-execute-a-Local-File-using-HTML-Application
+
+
+=================26-7-2017==================
+1.Responsive web designing - meta viewport
+2.document.ready importance
+
+
+=================25-7-2017==================
+1.HTML5 elements nav, aside, object, param, 
+2.Responsive web designing
+
+
+=================24-7-2017==================
+1.JSON
+2.AJAX

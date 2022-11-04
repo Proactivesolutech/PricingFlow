@@ -1,0 +1,369 @@
+<script src="../COMMON/js/devp-js/mfs100.js" type="text/javascript"></script>
+<script src="js/Scrn/Aadhar.js"></script>
+<script src="js/Scrn/QDE.js"></script>
+<div class="title">
+    <h1>Zonal Ops (DE) : Quick Data Entry</h1>
+</div>
+<div class="content-div quick-entry-page">
+    <div class="box-div lead-information">
+        <ul class="form-controls">
+            <h2>Lead Information <i class="icon-document div-right"></i>
+                <i class="icon-plus div-right" title="Omnidox" id="popclose" onclick="fnpop();"></i></h2>
+            <li class="category-icon">
+                <div id="prddiv">
+                  
+                </div>
+            </li>
+            <li class="width-1 read-only">
+                <label>Lead ID</label>
+                <p id="QDE_LeadId"></p>
+            </li>
+            <li class="width-280 read-only">
+                <label>Applicant</label>
+                <p id="QDE_LeadNm"></p>
+            </li>
+            <li class="width-15 read-only">
+                <label>Branch</label>
+                <p id="QDE_Branch"></p>
+            </li>
+            
+            <!--<li class="width-33 read-only">
+                <label>Application Number</label>
+                <p id="QDE_AppNo"></p>
+            </li>-->
+            <li class="width-20 edit-type">
+                <div id="qde_pApplNo">
+                    <!--<label>Physical Application Number</label>-->
+                    <input type="hidden" id="QDE_PAppNo" name="text" key="qde_txt_pappno" class="mandatory">
+                </div>
+            </li>
+           
+        </ul>
+    </div>
+    <div class="box-div quick-entry" id="qde_div_appdtls">
+        <ul id="qde_ul_app_tabs" class="common-tabs">
+            <li val="0" actor="0" subactor="1" contentchanged="false" pk="0" isel="0" onclick="fnConfirmScreen(this)" class="active">Applicant</li>
+            <li class="QDEAdd" onclick=fnQdeAddNewTab(this,'New')><i class="icon-plus"></i></li>
+        </ul>
+        <div class="qde_content" val="0" id="qde_div_content_0">
+            <div class="qde_ChildConent" contentchanged="false">
+                <div class="grid-33 div-left">
+                    <div class="box-div">
+                        <h2>Personal</h2>
+                        <ul class="form-controls">
+                            <li class="width-98p">
+                                <label>First Name</label>
+                                <input name="text" key="qde_txt_FirstNm" class="mandatory " type="text" placeholder="" restrict="alphaspace" maxlength="100">
+                            </li>
+                            <li class="width-48p">
+                                <label>Middle Name</label>
+                                <input name="text" key="qde_txt_MiddleNm" type="text" placeholder="" class="alphaonly" restrict="alphaspace" maxlength="100">
+                            </li>
+                            <li class="width-48p">
+                                <label>Last Name</label>
+                                <input name="text" key="qde_txt_LastNm" type="text" placeholder="" class="alphaonly" restrict="alphaspace" maxlength="100">
+                            </li>
+                            <li class="width-98p">
+                                <label>Father/Husband</label>
+                            </li>
+                            <li class="width-98p">
+                                <label>First Name</label>
+                                <input name="text" key="qde_txt_fthr1stNm" class="mandatory" type="text" placeholder="" restrict="alphaspace" maxlength="100">
+                            </li>
+                            <li class="width-48p">
+                                <label>Middle Name</label>
+                                <input name="text" key="qde_txt_fthrMidNm" type="text" placeholder="" restrict="alphaspace" maxlength="100">
+                            </li>
+                            <li class="width-48p">
+                                <label>Last Name</label>
+                                <input name="text" key="qde_txt_fthrLastNm" type="text"  placeholder="" restrict="alphaspace" maxlength="100">
+                            </li>
+                            <li class="width-15">
+                                <label>Gender</label>
+                                   <select name="select2" key="qde_sel_Gender" class="select mandatory">
+                                       <option value="-1">Select</option>
+                                        <option value="0">Male</option>
+                                        <option value="1">Female</option>
+                                </select>
+                                <!--<div class="select-focus">
+                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="qde_sel_Gender" class="autofill mandatory">
+                                    <i class="icon-down-arrow"></i>
+                                    <ul class="custom-select">
+                                        <li val="0">Male</li>
+                                        <li val="1">Female</li>
+                                    </ul>
+                                </div>-->
+                            </li>
+                            <li class="width-15">
+                                <label>DOB</label>
+                               <input name="text" class="datepicker mandatory" key="qde_dt_dob" type='text'/>
+                               <!--  <input type='text' class="mandatory" key="qde_dt_dob" value="" data-beatpicker="true" data-beatpicker-position="['*','*']" />-->
+                            </li>
+                            <li class="width-15 div-right">
+                                <label>Mobile</label>
+                                <input name="text" key="qde_txt_mob" class="mobile mandatory" type="text" placeholder="" restrict="number" maxlength="10">
+                            </li>
+                            <li class="width-98p">
+                                <label>Email</label>
+                                <input class="email" name="text" key="qde_txt_email" type="text" maxlength="100">
+                            </li>
+                            <li class="width-15 read-only">
+                                <input type="hidden" id="leadpk" pcd="">
+                                <input type="hidden" id="LeadPrdPk">
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid-33 div-left">
+                    <div class="box-div">
+                        <h2>Personal Identity</h2>
+                        <ul class="form-controls">
+                            <li class="width-21">
+                                <input type="checkbox" name="checkbox" key="qde_chk_doc"onclick="fnDocChk(this);">
+                                <label>Other Documents Available</label>
+                            </li>
+                            <li class="width-98p">
+                                <label>Aadhaar Number <i class="icon-aadhar aadhar-icon cursor"></i></label>
+                                <input class="adhar" name="text" key="qde_txt_aadhar" type="text" restrict="number" maxlength="20">
+                            </li>
+                            <li class="width-98p">
+                                <label>PAN</label>
+                                <input name="text" key="qde_txt_pan" type="text" placeholder="" maxlength="20">
+                            </li>
+                            <li class="width-98p">
+                                <label>Driving License</label>
+                                <input name="text" key="qde_txt_drv_lic" type="text" maxlength="20">
+                            </li>
+                            <li class="width-98p">
+                                <label>Voter ID</label>
+                                <input name="text" key="qde_txt_VotId" type="text" maxlength="20">
+                            </li>
+                            <li class="width-98p">
+                                <label>Passport Number</label>
+                                <input name="text" key="qde_txt_passNum" type="text" maxlength="20">
+                            </li>
+                            <li class="width-98p">
+                                <label>CIBIL</label>
+                                <input name="text" id="CIBIL_ID" key="qde_txt_cibil" class="mandatory" type="text" restrict="numbersub"><br/>
+                                <input type="button" value="CibilReport" class="div-center" onclick="fnGenerateReport()">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid-33 div-right">
+                    <div class="box-div">
+                        <h2>Present Address</h2>
+                        <ul class="form-controls">
+                            <li class="width-21 Addr_Chkbx" style="display:none;">
+                                <input type="checkbox" name="checkbox" key="qde_chk_ApplAddr" onclick="fnFetchApplAddr(this,'Auto')">
+                                <label>Same as Applicant Address</label>
+                            </li>
+                            <li class="width-8">
+                                <label>Flat/Door No</label>
+                                <input name="text" key="qde_txt_DoorNo"  type="text" placeholder="" maxlength="10" restrict="address">
+                            </li>
+                            <li class="width-21 div-right">
+                                <label>Building</label>
+                                <input name="text" key="qde_txt_BuildNo" class="mandatory"  type="text" placeholder="" maxlength="150" restrict="address">
+                            </li>
+                            <li class="width-8">
+                                <label>Plot No</label>
+                                <input name="text" key="qde_txt_PlotNo"  type="text" maxlength="20" restrict="address">
+                            </li>
+                            <li class="width-21 div-right">
+                                <label>Street</label>
+                                <input name="text" key="qde_txt_Street" type="text" placeholder="" maxlength="150" restrict="address">
+                            </li>
+                            <li class="width-98p">
+                                <label>Land Mark</label>
+                                <input name="text" key="qde_txt_LandMark" type="text" placeholder="" maxlength="250" restrict="address">
+                            </li>
+                            <li class="width-98p city">
+                                <label>Town/Village/City</label>
+                                <input name="text" key="qde_txt_TownVil" class="mandatory" type="text" placeholder="" maxlength="150" restrict="address">
+                            </li>
+                            <li class="width-98p district">
+                                <label>District</label>
+                                <input name="text" key="qde_txt_DisCity" class="mandatory" type="text" placeholder="" maxlength="100" restrict="address">
+                            </li>
+                            <li class="width-21 state">
+                                <label>State</label>
+                                <input name="text" key="qde_txt_State" class="mandatory" type="text" placeholder="" maxlength="100" restrict="address">
+                            </li>
+                            <!--Vishali-->
+                            <li class="width-6 div-right">
+                                <label>PIN</label>                            
+                                <comp-help id="comp-help" txtcol="Pincode" valcol="PinPk" onrowclick="Pinclick" prcname="PrcShflPincodehelp" width="100%"></comp-help>
+                                <input name="text" key="qde_txt_Pin" restrict='number' class="mandatory" type="hidden" placeholder="" maxlength="6">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <form id="PostForm" name="PostForm" action="http://119.226.197.6:8080/omnidocs/integration/foldView/viewFoldList.jsp" method="post" target="newWin">
+        <input type="hidden" name="Application" value="SHFL_LOANS">
+        <input type="hidden" id="fold_nm" name="FolderName" value="">
+        <input type="hidden" name="sessionIndexSet" value="false">
+    </form>
+</div>
+<div id="div-document-content" class="documents-content" style="display:none;"></div>
+
+<!-- Applicant Name User Input PopUp Starts -->
+<div id="qde_div_appPop" class="popup-bg document-pop-content" style="display:none;">
+    <div class="popup-div popup-small">
+        <div class="popup-header">
+            <h2>
+                Applicant Type<span class="right">
+                </span> <i class="icon-close div-right"></i>
+            </h2>
+            <div class="clear"></div>
+        </div>
+        <div class="popup-content category-div">
+            <ul class="form-controls ">
+                <li>
+                    <i class="icon-coapplicant" val="1" style="font-size: 26px">Co-Applicant</i>
+                    <p></p>
+                </li></br>
+                <li>
+                    <i class="icon-guarantor" val="2" style="font-size: 26px">Gurantor</i>
+                    <p></p>
+                </li>
+            </ul>
+                <!--<li class="width-98p">
+            <!--<label>Enter Applicant Type</label>-->
+                <!--<div class="select-focus">
+                <input placeholder="Select" onkeydown="return false" selval="-1" name="select" id="qde_apptyp" class="autofill">
+                <i class="icon-down-arrow"></i>
+                <ul class="custom-select">
+                    <li val="1">Co-Applicant</li>
+                    <li val="2">Gurantor</li>
+                </ul>
+            </div>-->
+                <!--<label style="color:red; display:none;" id="qde_mand_apptyp">*Applicant Type Required!!</label>
+            </li>-->
+                <!--<li class="width-98p">
+                <input type="button" value="OK" id="qde_btn_Caption">
+            </li>-->
+
+            
+        </div>
+    </div>
+</div>
+<!-- Applicant Name User Input PopUp Ends -->
+<!-- Aadhar Popup Div Starts-->
+<div class="popup-bg" id="aadhar-popup" style="display:none;">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2>Aadhaar Verification <i class="icon-close div-right"></i> </h2>
+        </div>
+        <div class="popup-content">
+            </h2>
+            <ul class="form-controls">
+                <li>
+                    <label>Aadhaar Number</label>
+                    <input id="qde_txt_adhar" class="adhar mandatory" type="text">
+                </li>
+            </ul>
+            <ul class="common-tabs common-tabs-active">
+                <li class="active tab1">Finger Print</li>
+                <li class="tab2">OTP</li>
+            </ul>
+            <div>
+                <div class="tab1-content">
+                    <div class="grid-50 div-left">
+                        <div class="box-div">
+                            <ul class="common-tabs common-tabs-active">
+                                <li class="tab3">Left</li>
+                                <li class="tab4">Right</li>
+                            </ul>
+                            <div class="align-center map-hover">
+                                <div class="tab3-content">
+                                    <img src="images/left-hand.jpg" usemap="#Map" id='map-image'>
+                                    <map name="Map">
+                                        <area shape="rect" coords="2,119,41,174" href="#">
+                                        <area shape="rect" coords="43,14,89,58" href="#">
+                                        <area shape="rect" coords="101,2,148,39" href="#">
+                                        <area shape="rect" coords="152,13,189,56" href="#">
+                                        <area shape="rect" coords="196,53,219,96" href="#">
+                                    </map>
+                                    <div class="hover-thumb">
+                                        <span class="hover hoverthumb1" onclick="$('#txt_SelFinger').text('LEFT THUMB')"></span>
+                                        <span class="hover hoverthumb2" onclick="$('#txt_SelFinger').text('LEFT INDEX')"></span>
+                                        <span class="hover hoverthumb3" onclick="$('#txt_SelFinger').text('LEFT MIDDLE')"></span>
+                                        <span class="hover hoverthumb4" onclick="$('#txt_SelFinger').text('LEFT RING')"></span>
+                                        <span class="hover hoverthumb5" onclick="$('#txt_SelFinger').text('LEFT LITTLE')"></span>
+                                    </div>
+                                </div>
+                                <div class="tab4-content" style="display:none;">
+                                    <img src="images/right-hand.jpg" usemap="#Map2">
+                                    <map name="Map2">
+                                        <area shape="rect" coords="0,56,26,96" href="#" target="_self" alt="">
+                                        <area shape="rect" coords="32,11,67,52" href="#" target="_self" alt="">
+                                        <area shape="rect" coords="74,2,112,42" href="#" target="_self" alt="">
+                                        <area shape="rect" coords="135,20,169,59" href="#" target="_self" alt="">
+                                        <area shape="rect" coords="179,122,218,164" href="#" target="_self" alt="">
+                                    </map>
+                                    <div class="hover-thumb">
+                                        <span class="hover hoverthumb6" onclick="$('#txt_SelFinger').text('RIGHT LITTLE')"></span>
+                                        <span class="hover hoverthumb7" onclick="$('#txt_SelFinger').text('RIGHT RING')"></span>
+                                        <span class="hover hoverthumb8" onclick="$('#txt_SelFinger').text('RIGHT MIDDLE')"></span>
+                                        <span class="hover hoverthumb9" onclick="$('#txt_SelFinger').text('RIGHT INDEX')"></span>
+                                        <span class="hover hoverthumb10" onclick="$('#txt_SelFinger').text('RIGHT THUMB')"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-50 div-right">
+                        <div class="box-div">
+                            <h2 id="txt_SelFinger" class="align-center"></h2>
+                            <div class="align-center finger-index-image"><img id="imgFinger" alt="" title=""></div>
+                            <input type="button" id="btnCapture" onclick="return Capture($('#qde_txt_adhar').val())" value="Capture" class="div-right">
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="tab2-content otp-div" style="display:none;">
+                    <ul class="form-controls">
+                        <li class="read-only">
+                            <label>Mobile</label>
+                            <p class="mobile" id="qde_txt_mob"></p>
+                        </li>
+                        <li>
+                            <input type="button" onclick="return OnGoOTPclick($('#qde_txt_adhar').val())" value="Generate OTP">
+                        </li>
+                        <li>
+                            <label>Enter OTP</label>
+                            <input id="qde_txt_otp" type="text" class="mandatory">
+                        </li>
+                        <li>
+                            <input type="button" onclick="return OnGoclick($('#qde_txt_adhar').val(), $('#qde_txt_otp').val());" value="Go">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Aadhar Popup Div Starts-->
+<script src="js/BeatPicker.min.js"></script>
+<script>
+    calcHeight(); //Viewport Height Function Starts
+    rightdocument(); /*Document Popup*/
+    popupclose(); /*close popup function*/
+    fnDrawDatePicker();
+    commontabs();
+    //categoryPopup();
+    $(document).on("click", ".aadhar-icon", function () {
+        $("#aadhar-popup").show();
+        $("#qde_txt_adhar").val($(this).parent().siblings("input").val());
+        $("#qde_txt_mob").text("123");
+
+       //li .icon-coapplicant { font-size: 18px; }
+    });
+
+</script>

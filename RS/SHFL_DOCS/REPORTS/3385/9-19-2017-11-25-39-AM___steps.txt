@@ -1,0 +1,22 @@
+Dear sir ,
+
+   Import this Product Production file after integration process.
+
+
+Patch File
+Dear sir,
+ 
+       Run this all script to RANE_PRD database, after that run integration and import product production file.
+
+Steps:
+  
+  1. Run Patch_File Script.
+  2. Run Integration.
+  3. Import Product Production File to Import Transaction Screen.
+  4. Data Preparation.
+  5. Processing.
+    
+Regards.
+
+Jenkins.C
+

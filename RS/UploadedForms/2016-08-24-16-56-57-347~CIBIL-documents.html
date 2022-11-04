@@ -1,0 +1,23 @@
+<div class="document-list">
+     <div class="box-div">
+     <i class="icon-collapse right" onclick="collapse()"></i>
+         <img src="images/cibil.jpg">
+     </div>
+</div>
+<script>
+ $(document).ready(function(){
+     $(".icon-collapse").click(function (e) {
+			$(".content-div").removeClass("center-collapse");
+			$("#div-document-content").hide();
+			$(".expand-icon").show();
+     });
+ });
+
+ function collapse()
+ {
+     $(".content-div").removeClass("center-collapse");
+     $("#div-document-content").hide();
+     $(".expand-icon").show();
+ }
+
+</script>

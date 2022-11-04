@@ -1,0 +1,103 @@
+﻿<custom-component compid="comp-scan-file">
+    <div class="custom-component">
+        <!--<div class="popup-div">-->
+        <!--<div class="icon-close right document-close"></div>-->
+        <div class="scan_clear"></div>
+        <div class="scan_box-div scan_document-div">
+            <div class="scan_document-entry">
+                <div class="scan_div1">
+                    <h2>
+                        Documents
+                    </h2>
+                    <div class="scan_documents-top">
+
+                        <div class="scan_left">
+                            <select class="scan_DocFace">
+                                <option>FlatBed</option>
+                                <option>Duplex</option>
+                                <option>AutoFeeder</option>
+
+                            </select>
+                            <select class="scan_DocColor">
+                                <option>Color</option>
+                                <option>Gray</option>
+                                <option>BlackWhite</option>
+                            </select>
+                        </div>
+                        <input type="button" class="scan_callscan scan_right" value="Scan">
+
+                    </div>
+                    <div class="scan_clear"></div>
+
+                    <div class="scan_preview-icons scan_right">
+                        <!--<i class="scan_icon-list-view"></i>
+                        <i class="scan_icon-thumbnails"></i>-->
+                    </div>
+                    <div class="scan_clear"></div>
+                    <div class="scan_drag-div scan_FileBox"> Drag Drop </div>
+                    <input type="file" style="display:none" class="scan_scan-file-upload" onchange="COMP_SCAN_FILE.fnUploadDoc(this, false)" multiple />
+                </div>
+                <div class="scan_documents">
+                    <ul class="scan_attached-list"></ul>
+                </div>
+                <div class="scan_clear"></div>
+            </div>
+        </div>
+        <style>
+            .custom-component {
+                background: #FFF;
+            }
+
+            .scan_active-image {
+                background: #dbd6d6;
+            }
+
+            .scan_FileBox {
+                margin: 5px 0px;
+                border: 2px dashed #B1B1B1 !important;
+            }
+
+                .scan_FileBox:hover {
+                    border: 2px dashed #888888 !important;
+                    cursor: pointer;
+                }
+            .scan_documents { height:26vh; overflow-y:auto;
+            }
+            
+             .scan_documents ul li {
+                width: 23%;
+                padding: 5px 0;
+                margin: 5px;
+            }
+
+
+            ul.scan_attached-list li img {
+                width: 80px;
+                height: 80px;
+            }
+
+            ul.scan_attached-list {
+                text-align: center;
+                overflow-y: auto;
+            }
+
+            .scan_documents ul li:last-child {
+                padding: 5px 0 0 0;
+            }
+
+            .scan_documents-top {
+                width: 70%;
+                float: right;
+            }
+
+                .scan_documents-top .scan_left {
+                    width: 80%;
+                }
+
+                    .scan_documents-top .scan_left select {
+                        width: 150px;
+                        margin: 0 5px 0 0;
+                    }
+        </style>
+    </div>
+</custom-component>

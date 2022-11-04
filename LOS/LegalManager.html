@@ -1,0 +1,413 @@
+﻿<script src="js/Scrn/legalverification.js"></script>
+<style>
+    /*.address-div.box-div.left, .name-list.right { height: auto; }
+    .name-list.left { margin-top: 5px; }
+    .name-list.left li { width: 98%; }*/
+</style>
+<div class="title">
+    <h1><b>Zonal Ops (DE) : Legal Verification </b></h1>
+</div>
+<div contentchanged ="true" class="content-div" id="Legal_Approver">
+    
+    <form id="PostForm" name="PostForm" action="http://119.226.197.6:8080/omnidocs/integration/foldView/viewFoldList.jsp" method="post" target="newWin">
+        <input type="hidden" name="Application" value="SHFL_LOANS">
+        <input type="hidden" id="fold_nm" name="FolderName" value="">
+        <input type="hidden" name="sessionIndexSet" value="false">
+    </form>
+
+    <div class="box-div lead-information">
+        <ul class="form-controls lv-pop">
+            <div class="div-right"> <i class="icon-plus div-right" title="Omnidox" id="popclose" onclick="fnpop();"></i></div>
+            <div class="left category-icons" id="leg_product">
+                <!--<i class="icon-home-loan"></i>
+                <p>Home Loan</p>-->
+            </div>
+            <div class="width-set4 " id="Legal_topdiv">
+                <li class="width-1 read-only">
+                    <label>Lead ID</label>
+                    <p name="content" id="Leg_leadid"</p>
+                </li>
+                <li class="width-16 read-only">
+                    <label>Applicant</label>
+                    <p name="content" id="leg_applicant"></p>
+                </li>
+                <li class="width-16 read-only">
+                    <label>Application Number</label>
+                    <p name="content" id="leg_appno"></p>
+                </li>
+                <li class="width-15 read-only">
+                    <label>Branch</label>
+                    <p name="content" id="leg_brnch"></p>
+                </li>
+                <li class="width-19 read-only">
+                    <label>Loan amount</label>
+                    <p><i class="icon-indian-rupee font-11" name="content" id="leg_loanamt"></i> </p>
+                </li>
+                <li class="width-11 read-only">
+                    <label>Agency</label>
+                    <p name="content" id="leg_agency"></p>
+                </li>
+                <li class="width-11 read-only">
+                    <span class="bg bg1 cursor div-right" id="ManualDev" onclick="fnOpenManualDev()">Manual Deviation</span>
+                </li>
+            </div>
+            <div class="clear"></div>
+        </ul>
+    </div>
+    <div class="box-div legal-div">
+        <!--<ul class="common-tabs">
+          <li class="active lsr-list">Legal Scrutiny</li>
+        </ul>-->
+        <div id="leg_propDiv">
+            <ul id="legal_ul_prop_tabs" class="common-tabs">
+                <li class="active tab_0" onclick="fnshowprop(this);" proplicount="0">Property1</li>
+            </ul>
+            <div contentchanged="true" id="mainlegal_0" class="tab0-content div_content" val="0" propfk="0" check="">
+                <div class="lsr-div width-set" id="dd" contentchanged="true">
+
+                    <div class="feedback changediv">
+                        <ul class="form-controls">
+                            <li class="width-15">
+                                <label>Date of Report</label>
+                                <input type="text" name="text" id="leg_dob" key="rptdt" disabled /> <!--data-beatpicker="true" data-beatpicker-position="['*','*']"-->
+                            </li>
+                            <li class="width-15">
+                                <label>Reference Number</label>
+                                <input type="text" name="text" key="leg_refno"/>
+                            </li>
+                        </ul>
+                        <div class="div-left">
+                            <div class="status left">
+                                <div class="bg bg1"> <i class="icon-positive" id="rptsts" onclick="fnReprtSts(this);"></i><input name="text" key="leg_status" type="hidden"> </div>
+                            </div>
+                            <textarea name="text" key="leg_Comments" class="left" maxlength="500"></textarea>
+                        </div>
+                        <div class="div-right align-center report">
+                            <i class="icon-document document-expand"></i>
+                            <p>Report</p>
+                        </div>
+                        <div class="div-right align-center report">
+                            <input type="hidden" name="text" key="PrpPk" />
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="div-left grid-33">
+                        <ul class="address-div box-div form-controls">
+                            <h2>Property Address</h2>
+                            <li class="width-4 read-only">
+                                <label>Flat/Door No</label>
+                                <p name="content" key="Leg_flatno"</p>
+                            </li>
+                            <li class="width-13 read-only">
+                                <label>Building</label>
+                                <p name="content" key="Leg_build"</p>
+                            </li>
+                            <div class="clear"></div>
+                            <li class="width-4 read-only">
+                                <label>Plot No</label>
+                                <p name="content" key="Leg_plotno"</p>
+                            </li>
+                            <li class="width-13 read-only">
+                                <label>Street</label>
+                                <p name="content" key="Leg_street"</p>
+                            </li>
+                            <li class="width-34 read-only">
+                                <label>Land Mark</label>
+                                <p name="content" key="Leg_land"</p>
+                            </li>
+                            <li class="width-21 read-only">
+                                <label>Town/Village</label>
+                                <p name="content" key="Leg_town"</p>
+                            </li>
+                            <li class="width-34 read-only">
+                                <label>District/City</label>
+                                <p name="content" key="Leg_district"</p>
+                            </li>
+                            <li class="width-10 read-only">
+                                <label>State</label>
+                                <p name="content" key="Leg_state"</p>
+                            </li>
+                            <li class="width-6 read-only">
+                                <label>PIN</label>
+                                <p name="content" key="Leg_pin"</p>
+                            </li>
+                            <li class="width-6 read-only">
+
+                                <input type="hidden" name="text" key="PrpPk" />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div contentchanged="true" class="name-list div-left width-set3 grid-33" id="propertyval_div">
+                        <ul contentchanged="true" class="box-div form-controls">
+                            <h2>Boundaries As Per Sale Deed</h2>
+                            <li class="width-48p read-only">
+                                <label>East</label>
+                                <input type="text" name="text" key="Leg_lftEst" class="mandatory">
+                            </li>
+                            <li class="width-48p read-only">
+                                <label>West</label>
+                                <input type="text" name="text" key="Leg_lftWst" class="mandatory">
+                            </li>
+                            <li class="width-48p read-only">
+                                <label>North</label>
+                                <input type="text" name="text" key="Leg_lftNor" class="mandatory">
+                            </li>
+                            <li class="width-48p read-only">
+                                <label>South</label>
+                                <input type="text" name="text" key="Leg_lftSou" class="mandatory">
+                            </li>
+                        </ul>
+                        <ul class="box-div form-controls">
+                            <!--<li class="width-48p">
+                                <label>Approval Plan Number</label>
+                                <input type="text" name="text" key="Leg_AppplnNo">
+                            </li>-->
+                            <li class="width-48p">
+                                <label>Search Period (In Yrs)</label>
+                                <input type="text" name="text" key="leg_serachperiod" restrict="number"class="mandatory">
+                            </li>
+                            <li class="width-48p">
+                                <label>Clear and Marketable</label>
+                                <div class="select-focus">
+                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="leg_clrAndMarket" class="autofill mandatory">
+                                    <i class="icon-down-arrow"></i>
+                                    <ul class="custom-select">
+                                        <li class="reltion-yes" val="0">Yes</li>
+                                        <li class="reltion-yes" val="1">No</li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <!--<li class="width-48p">
+                                <label>Ownership Type</label>
+                                <div class="select-focus">
+                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="leg_ownertype" class="autofill" >
+                                    <i class="icon-down-arrow"></i>
+                                    <ul class="custom-select">
+                                        <li val="S">Single</li>
+                                        <li val="J">Joint</li>
+                                    </ul>
+                                </div>
+                            </li>-->
+
+                            <li class="width-48p">
+                                <label>Sarfaesi Act</label>
+                                <div class="select-focus">
+                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="leg_sarAct" class="autofill mandatory">
+                                    <i class="icon-down-arrow"></i>
+                                    <ul class="custom-select">
+                                        <li class="reltion-yes" val="Y">Yes</li>
+                                        <li class="reltion-yes" val="N">No</li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="width-48p">
+                                <label>SubRegistrar</label>
+                                <input type="text" name="text" key="leg_subreg" id="leg_subreg">
+
+                            </li>
+
+                        </ul>
+                        <!--<ul class="box-div width-set2 form-controls" style="padding-bottom:17px;">
+                          <p>Property Valuation</p>
+                            <li class="amount width-48p">
+                                <label>Agreement Value</label>
+                                <input type="text" name="text" key="leg_assetcst" id="leg_assetcst" class="currency mandatory" restrict="number" onkeyup="sum();">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="amount width-48p">
+                                <label>Registration Charges</label>
+                                <input type="text" name="text" key="leg_regChrges" id="leg_regChrges" class="currency mandatory" restrict="number" onkeyup="sum();">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="amount width-48p">
+                                <label>Stamp Duty Charges</label>
+                                <input type="text" name="text" key="leg_StmpdutyChrges" id="leg_StmpdutyChrges" class="currency mandatory" restrict="number" onkeyup="sum();">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="amount width-48p">
+                                <label>Asset Cost</label>
+                                <input type="text" name="text" key="leg_aggreeValue" id="leg_aggreeValue" class="currency mandatory" restrict="number" disabled>
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                          </li>
+                            <li class="read-only width-48p" style="display:none;">
+                                <label>AV LTV %</label>
+                                <p name="content" key="leg_avltv">46.76</p>
+                            </li>
+
+                        </ul>-->
+                    </div>
+                    <div class="div-right grid-33">
+                        <div class="name-list div-left ownershipdivclass" contentchanged id="ownership_div" style="width:100%;">
+                            <ul class="box-div appendul form-controls">
+                                <h2>Property Ownership</h2>
+                                <li class="width-98p">
+                                    <label>Ownership Type</label>
+                                    <div class="select-focus">
+                                        <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="leg_ownertype" class="autofill mandatory">
+                                        <i class="icon-down-arrow"></i>
+                                        <ul class="custom-select">
+                                            <li val="S">Single</li>
+                                            <li val="J">Joint</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="box-div form-controls" style="display:none">
+                                <h2>ROC</h2>
+                                <li class="width-100p">
+                                    <label>Builder Name</label>
+                                    <input type="text" name="text" key="leg_buildername" restrict="alphaspace">
+                                </li>
+                                <li class="width-100p">
+                                    <label>CIN of Builder</label>
+                                    <input type="text" name="text" key="leg_CINBuilder">
+                                </li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <input type="hidden" id="hiddenclass" name="text" key="hiddenkey" />
+                    <input type="hidden" name="text" key="PrpPk" />
+
+                </div>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<div id="div-document-content" class="documents-content" style="display:none;"> </div>
+
+<!--DEVIATION POPUP START-->
+
+<div class="popup-bg" id="manualdevlegal" style="display:none;">
+    <div class="popup-div">
+        <div class="popup-header"> <i class="icon-close div-right"></i> </div>
+        <div class="popup-content">
+            <div id="man_deviation_LM" class="deviation-main">
+                <h2>
+                    Deviations
+                    <i title="Expand/collapse" onclick="fnCollapseAllDeviation('man_deviation_LM')" class="icon-plus right cursor"></i>
+                </h2>
+                <select class="deviation-level" id="ManualDeviationlegal">
+                    <option value="0"> Select </option>
+                    <option value="1"> Level 1 </option>
+                    <option value="2"> Level 2 </option>
+                    <option value="3"> Level 3 </option>
+                    <option value="4"> Level 4 </option>
+                    <option value="5"> Level 5 </option>
+                </select>
+                <input type="search" class="deviation-search" placeholder="Search Deviation" />
+                <div id="man_deviation_div_do" class="deviation-height"></div>
+            </div>
+        </div>
+        <input type="button" value="confirm" onclick="fnCnfmManualDeviation(this)">
+    </div>
+</div>
+<!--DEVIATION POPUP END-->
+
+
+<script src="js/BeatPicker.min.js"></script>
+<script>
+
+    scanDocPreview();
+    calcHeight();
+    scanDocPreview();
+    commontabs();
+    customselect();
+    rightdocument();
+
+    function fnpop() {
+        $("#fold_nm").val(GlobalXml[0].LeadID);
+        window.open("", "newWin", "location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no,left=20,top=20,width=600,height=600");
+        PostForm.submit();
+    }
+
+    $(document).ready(function () {
+        window.legalflg = "A";
+    });
+
+    /* $(document).ready(function () {
+         $(".r1").click(function (e) {
+             $(".r1-content").show();
+             $(".r2-content").hide();
+             $(this).addClass('active');
+             $(this).siblings().removeClass('active');
+         });
+         $(".r2").click(function (e) {
+             $(".r2-content").show();
+             $(".r1-content").hide();
+             $(this).addClass('active');
+             $(this).siblings().removeClass('active');
+         });
+
+         $(".expand-icon").click(function (e) {
+             $(".popup-div,.documents-popup").show();
+             $(".popup-div ul li").click(function (e) {
+                 $(".popup-div,.documents-popup").hide();
+                 $(".content-div").addClass("center-collapse");
+                 $(".expand-icon").show();
+                 $("#div-document-content").show();
+             });
+             $(".icon-collapse").click(function (e) {
+                 $("#div-document-content").hide();
+                 $(".content-div").removeClass("center-collapse");
+             });
+             $(".attach-click").click(function (e) {
+                 $(".document-attach").show();
+                 $(".document-entry").hide();
+             });
+             $(".documents-popup .icon-close").click(function (e) {
+                 $(".pop-bg.documents-popup").hide();
+             });
+         });
+         $(".builder-drop-content").hide();
+         $(".builder-drop").click(function (e) {
+             $(".builder-drop-content").show();
+         });
+         $(".builder").click(function (e) {
+             $(".builder-drop-content").hide();
+         });
+         categoryPopup();
+
+         $('.cust-select').click(function (e) {
+             $(this).children('ul').toggle();
+         });
+         $('.cust-select ul li').click(function (e) {
+             $('.cust-select ul li:first-child').addClass('active');
+             $(this).toggleClass('active');
+             $(this).siblings().removeClass('active');
+             var val = $(this).text();
+             $(this).parent('ul').siblings('span.selected').text(val);
+         });
+         $(".cust-select").mouseleave(function (e) {
+             $(".cust-select ul").hide();
+         });
+
+         var cHeight = function () {
+             var cHeight = $(window).innerHeight();
+             $('#div-user-content .content-div').css({ 'height': cHeight - 130 + 'px' });
+         }
+         cHeight();
+         var dHeight = function () {
+             var dHeight = $(window).innerHeight();
+             $('#div-document-content').css({ 'height': dHeight - 130 + 'px' });
+         }
+         dHeight();
+         $(window).resize(function () {
+             cHeight(); dHeight();
+         }).load(function () {
+             cHeight(); dHeight();
+         });
+
+     });*/
+
+</script>

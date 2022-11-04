@@ -1,0 +1,1065 @@
+﻿<div class="title">
+    <h1>Zonal Ops : Technical Manager(TM)</h1>
+</div>
+<div contentchanged="true" class="content-div" id="Tech_approver">
+    <form id="PostForm" name="PostForm" action="http://119.226.197.6:8080/omnidocs/integration/foldView/viewFoldList.jsp" method="post" target="newWin">
+        <input type="hidden" name="Application" value="SHFL_LOANS">
+        <input type="hidden" id="fold_nm" name="FolderName" value="">
+        <input type="hidden" name="sessionIndexSet" value="false">
+    </form>
+
+    <div class="box-div lead-information" id="lead-technical">
+        <ul class="form-controls">
+            <div class="div-right"> <i class="icon-plus div-right" title="Omnidox" id="popclose" onclick="fnpop();"></i></div>
+            <li class="category-icon" id="tech_product">
+                <!--<i class="icon-home-loan"></i>
+                <p prdfk="0" name ="content" id="PrdName"></p>-->
+            </li>
+            <li class="width-1 read-only">
+                <label>Lead ID</label>
+                <p name="content" id="LeadId"></p>
+            </li>
+            <li class="width-16 read-only">
+                <label>Applicant</label>
+                <p name="content" id="LeadName"></p>
+            </li>
+            <li class="width-16 read-only">
+                <label>Application Number</label>
+                <p name="content" id="Appno"></p>
+            </li>
+            <li class="width-15 read-only">
+                <label>Branch</label>
+                <p branchfk="0" name="content" id="BranchNm"></p>
+            </li>
+            <li style="" class="width-15">
+                <span devpk="0" class="bg bg1 cursor div-right" onclick="fnManualDeviation();">Manual Deviation</span>
+            </li>
+            <div class="clear"></div>
+        </ul>
+    </div>
+
+    <!--<div id=" "></div>-->
+    <div class="box-div">
+        <!--<ul class="common-tabs">
+            <li class="tab1 active">
+                <p>RB Agency</p>
+                <span class="app-type">Agent1</span>
+            </li>
+            <li class="tab2">
+                <p>VB Agency</p>
+                <span class="app-type">Agent1</span>
+            </li>
+            <li><i class="icon-plus"></i></li>
+        </ul>-->
+        <div>
+            <div id="PropTabs">
+                <ul id="tech_ul_prop_tabs" class="common-tabs">
+                    <li class="active tab_0" onclick="fnshowprop(this);" prplicount="0"></li>
+                </ul>
+                <div contentchanged="true" prop="1" valn="1" id="maintechnical_0" class="tab0-content div_content" val="0" propfk="0" check="">
+                    <div class="tab1-content">
+                        <div contentchanged="true" id="common" class="common">
+                            <ul contentchanged="true" class="form-controls">
+                                <li>
+                                    <div class="div-left">
+                                        <div class="status left">
+                                            <div class="bg bg1"> <i class="icon-positive" id="rptsts" onclick="fnReprtSts(this);"></i><input name="text" key="tech_status" type="hidden"> </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="width-15">
+                                    <label>Date of report</label>
+                                    <input type="text" name="text" key="tech_rptdt" data-beatpicker="true" data-beatpicker-position="['*','*']" disabled>
+                                </li>
+                                <li id="ref_no" class="width-15">
+                                    <label>Reference Number</label>
+                                    <input name="text" key="tech_Refno" id="refno">
+                                </li>
+                                <li class="width-15p">
+                                    <label>Approval Plan Number</label>
+                                    <input type="text" name="text" key="tech_AppplnNo"class="mandatory">
+                                </li>
+                                <li class="width-15p">
+                                    <input type="hidden" name="text" key="propfk">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid-33 div-left">
+                            <ul class="box-div form-controls">
+                                <h2>Property Address</h2>
+                                <li class="width-8 read-only">
+                                    <label>Flat/Door No</label>
+                                    <p name="content" key="tech_doorno"></p>
+                                </li>
+                                <li class="width-22 read-only text-overflow">
+                                    <label>Building</label>
+                                    <p name="content" key="tech_building"></p>
+                                </li>
+                                <li class="width-9 read-only text-overflow">
+                                    <label>Plot No</label>
+                                    <p name="content" key="tech_plotno"></p>
+                                </li>
+                                <li class="width-21 read-only">
+                                    <label>Street</label>
+                                    <p name="content" key="tech_street"></p>
+                                </li>
+                                <li class="width-34 read-only">
+                                    <label>Land Mark</label>
+                                    <p name="content" key="tech_landmark"></p>
+                                </li>
+                                <li class="width-21 read-only">
+                                    <label>Town/Village</label>
+                                    <p name="content" key="tech_area"></p>
+                                </li>
+                                <li class="width-34 read-only">
+                                    <label>District/City</label>
+                                    <p name="content" key="tech_district"></p>
+                                </li>
+                                <li class="width-10 read-only">
+                                    <label>State</label>
+                                    <p name="content" key="tech_state"></p>
+                                </li>
+                                <li class="width-6 read-only">
+                                    <label>PIN</label>
+                                    <p name="content" key="tech_pincode"></p>
+                                </li>
+                            </ul>
+                            <div contentchanged="true" id="maindiv-technical_boundary" class="maindiv-technical_boundary">
+                                <ul contentchanged="true" class="div-left box-div form-controls">
+                                    <h2>Boundaries As Per Actuals</h2>
+                                    <li class="width-13">
+                                        <label>East</label>
+                                        <input name="text" key="tech_Est" type="text" class="mandatory">
+                                    </li>
+                                    <li class="width-13">
+                                        <label>West</label>
+                                        <input name="text" key="tech_Wst" type="text" class="mandatory">
+                                    </li>
+                                    <li class="width-13">
+                                        <label>North</label>
+                                        <input name="text" key="tech_Nor" type="text" class="mandatory">
+                                    </li>
+                                    <li class="width-13">
+                                        <label>South</label>
+                                        <input name="text" key="tech_Sou" type="text" class="mandatory">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div contentchanged="true" id="maindiv-technical">
+                        <div class="grid-66 div-right">
+                            <div class="box-div">
+                                <ul class="common-tabs propdetul">
+                                    <li class="active tab3_0" onclick="fnshowpropdetails(this);">Property Valuation</li>
+                                    <li class="tab4_0" onclick="fnshowpropdetails(this);">Property Details</li>
+                                    <li class="tab5_0" onclick="fnshowpropdetails(this);">Construction Details</li>
+                                </ul>
+                                <div>
+
+                                    <ul contentchanged="true" class="tab3-content form-controls">
+                                        <div contentchanged="true" id="maindiv-technical_prpval" class="maindiv-technical_prpval">
+                                            <li class="width-19 amount">
+                                                <label>Market value</label>
+                                                <input type="text" name="text" key="tech_mktval" id="mktval" class="currency mandatory" restrict="number">
+                                                <i class="icon-indian-rupee"></i>
+                                            </li>
+                                            <!--<li class="width-19 amount">
+                                    <label>Amenities amount</label>
+                                    <input type="text" name="text" key="tech_amenamt" class="currency" restrict="number">
+                                    <i class="icon-indian-rupee"></i>
+                                </li>-->
+                                            <li>
+                                                <input type="hidden" name="text" key="tech_prpPk" />
+                                                <input type="hidden" name="text" key="tech_agtFk" />
+                                            </li>
+
+                                            <textarea rows="10" name="text" key="tech_propremarks" maxlength="500"></textarea>
+                                        </div>
+                                    </ul>
+
+                                    <ul contentchanged="true" class="form-controls tab4-content" style="display:none;">
+                                        <div contentchanged="true" id="finalcrm">
+                                            <span contentchanged="true" id="maindiv-technical_prptype" class="maindiv-technical_prptype">
+                                                <span contentchanged="true">
+                                                    <li class="width-12">
+                                                        <label>Type of Property</label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="Select" onkeydown="return false" selval="-1" id="tech_proptyp" key="tech_proptyp" class="autofill mandatory">
+                                                            <i class="icon-down-arrow"></i>
+                                                            <!--<span class="selected">Medium</span><i class="arrow"></i>-->
+                                                            <ul id="seltypprop" class="seltypprop custom-select">
+                                                                <li val="0" class="pro-flat" dvid="0" onclick="fnPrpTypeSelection(this);">Flat</li>
+                                                                <li val="1" class="pro-plot" dvid="0" onclick="fnPrpTypeSelection(this);">Plot</li>
+                                                                <li val="2" class="pro-independant" dvid="0" onclick="fnPrpTypeSelection(this);">Independant</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </span>
+                                            </span>
+                                            <span contentchanged="true" id="maindiv-technical_flat" class="maindiv-technical_flat">
+                                                <span contentchanged="true">
+                                                    <li class="width-15 flat">
+                                                        <label>Demolition Risk </label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="Select" onkeydown="return false" selval="-1" id="tech_demolrisk" key="tech_demolrisk" class="autofill mandatory">
+                                                            <i class="icon-down-arrow"></i>
+
+                                                            <!--<span class="selected">Medium</span><i class="arrow"></i>-->
+                                                            <ul class="custom-select">
+                                                                <li val="0">High</li>
+                                                                <li val="1">Medium</li>
+                                                                <li val="2">Low</li>
+                                                                <li val="3">No</li>
+                                                            </ul>
+
+                                                        </div>
+
+                                                    </li>
+                                                    <li class="width-15 flat">
+                                                        <label>UDS/Land Area</label>
+                                                        <input type="text" name="text" key="tech_UDSarea" restrict="number">
+                                                    </li>
+                                                    <li class="width-15 flat">
+                                                        <label>Measurement</label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="" onkeydown="return false" selval="-1" id="tech_udsmmt" key="tech_udsmmt" class="autofill">
+                                                            <i class="icon-down-arrow"></i>
+
+                                                            <!--<span class="selected">Sq Feet</span><i class="arrow"></i>-->
+                                                            <ul class="custom-select">
+                                                                <li val="0">Sq Feet</li>
+                                                                <li val="1">Sq Yard</li>
+                                                                <li val="2">Sq Meter</li>
+                                                                <li val="3">Acre</li>
+                                                                <li val="4">Hectare</li>
+                                                                <li val="5">Ground</li>
+                                                                <li val="6">Cent</li>
+                                                            </ul>
+
+                                                        </div>
+                                                    </li>
+                                                    <li class="width-15 amount flat">
+                                                        <label>UDS/Land Value </label>
+                                                        <input type="text" name="text" key="tech_UDSval" class="currency" restrict="number">
+                                                        <i class="icon-indian-rupee"></i>
+                                                    </li>
+                                                    <li class="width-15 flat">
+                                                        <label>Super Build Up Area</label>
+                                                        <input type="text" name="text" id="superbldupval" key="tech_supbuildarea" restrict="number">
+                                                    </li>
+                                                    <li class="width-15 flat">
+                                                        <label>Measurement</label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="" onkeydown="return false" selval="-1" id="tech_supbuildmmt" key="tech_supbuildmmt" class="autofill">
+                                                            <i class="icon-down-arrow"></i>
+                                                            <!--<span class="selected">Sq Feet</span><i class="arrow"></i>-->
+                                                            <ul class="custom-select">
+                                                                <li val="0">Sq Feet</li>
+                                                                <li val="1">Sq Yard</li>
+                                                                <li val="2">Sq Meter</li>
+                                                                <li val="3">Acre</li>
+                                                                <li val="4">Hectare</li>
+                                                                <li val="5">Ground</li>
+                                                                <li val="6">Cent</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="width-15 flat">
+                                                        <label>Build Up Area</label>
+                                                        <input type="text" id="buildupval" name="text" key="tech_buildarea" restrict="number">
+                                                    </li>
+                                                    <li class="width-15 flat">
+                                                        <label>Measurement</label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="" onkeydown="return false" selval="-1" id="tech_buildupmmt" key="tech_buildupmmt" class="autofill">
+                                                            <i class="icon-down-arrow"></i>
+
+                                                            <!--<span class="selected">Select</span><i class="arrow"></i>-->
+                                                            <ul class="custom-select">
+                                                                <li val="0">Sq Feet</li>
+                                                                <li val="1">Sq Yard</li>
+                                                                <li val="2">Sq Meter</li>
+                                                                <li val="3">Acre</li>
+                                                                <li val="4">Hectare</li>
+                                                                <li val="5">Ground</li>
+                                                                <li val="6">Cent</li>
+                                                            </ul>
+
+                                                        </div>
+                                                    </li>
+                                                    <li class="width-15 flat">
+                                                        <label>Carpet Area</label>
+                                                        <input type="text" name="text" key="tech_carpetarea" id="carpetval" restrict="number">
+                                                    </li>
+                                                    <li class="width-15 flat">
+                                                        <label>Measurement</label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="" onkeydown="return false" selval="-1" id="tech_carpetmmt" key="tech_carpetmmt" class="autofill">
+                                                            <i class="icon-down-arrow"></i>
+
+                                                            <!--<span class="selected">Select</span><i class="arrow"></i>-->
+                                                            <ul class="custom-select">
+                                                                <li val="0">Sq Feet</li>
+                                                                <li val="1">Sq Yard</li>
+                                                                <li val="2">Sq Meter</li>
+                                                                <li val="3">Acre</li>
+                                                                <li val="4">Hectare</li>
+                                                                <li val="5">Ground</li>
+                                                                <li val="6">Cent</li>
+                                                            </ul>
+
+                                                        </div>
+                                                    </li>
+                                                    <li class="width-15 amount flat">
+                                                        <label>Estimate </label>
+                                                        <span>
+                                                            <input type="text" name="text" key="tech_estimate" restrict="number" class="currency">
+                                                            <i class="icon-indian-rupee"></i>
+                                                        </span>
+                                                    </li>
+                                                </span>
+                                            </span>
+                                            <span contentchanged="true" id="maindiv-technical_plot" class="maindiv-technical_plot">
+                                                <span contentchanged="true">
+                                                    <li class="width-15 plot" style="display:none;">
+                                                        <label>Land Area</label>
+                                                        <input type="text" name="text" key="tech_landarea" restrict="number" class="mandatory">
+                                                    </li>
+                                                    <li class="width-15 plot" style="display:none;">
+                                                        <label>Measurement</label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="" onkeydown="return false" selval="-1" id="tech_landmmt" key="tech_landmmt" class="autofill mandatory">
+                                                            <i class="icon-down-arrow"></i>
+
+                                                            <!--<span class="selected">Select</span><i class="arrow"></i>-->
+                                                            <ul class="custom-select">
+                                                                <li val="0">Sq Feet</li>
+                                                                <li val="1">Sq Yard</li>
+                                                                <li val="2">Sq Meter</li>
+                                                                <li val="3">Acre</li>
+                                                                <li val="4">Hectare</li>
+                                                                <li val="5">Ground</li>
+                                                                <li val="6">Cent</li>
+                                                            </ul>
+
+                                                        </div>
+                                                    </li>
+                                                    <li class="width-9 amount plot" style="display:none;">
+                                                        <label>Land value</label>
+                                                        <input type="text" name="text" key="tech_landvalue" class="currency mandatory" restrict="number">
+                                                        <i class="icon-indian-rupee"></i>
+                                                    </li>
+                                                </span>
+                                            </span>
+                                            <span contentchanged="true" id="maindiv-technical_independant" class="maindiv-technical_independant">
+                                                <span contentchanged="true">
+                                                    <li class="width-15 independant" style="display:none;">
+                                                        <label>Demolition Risk </label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="Select" onkeydown="return false" selval="-1" id="tech_demolrisk" key="tech_demolrisk" class="autofill mandatory">
+                                                            <i class="icon-down-arrow"></i>
+
+                                                            <!--<span class="selected">Select</span><i class="arrow"></i>-->
+                                                            <ul class="custom-select">
+                                                                <li val="0">High</li>
+                                                                <li val="1">Medium</li>
+                                                                <li val="2">Low</li>
+                                                                <li val="3">No</li>
+                                                            </ul>
+                                                        </div>
+
+                                                    </li>
+                                                    <li class="width-15 independant" style="display:none;">
+                                                        <label>Land Area</label>
+                                                        <input type="text" name="text" key="tech_landarea" restrict="number">
+                                                    </li>
+                                                    <li class="width-15 independant" style="display:none;">
+                                                        <label>Measurement</label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="" onkeydown="return false" selval="-1" id="tech_landmmt" key="tech_landmmt" class="autofill">
+                                                            <i class="icon-down-arrow"></i>
+
+                                                            <!--<span class="selected">Select</span><i class="arrow"></i>-->
+                                                            <ul class="custom-select">
+                                                                <li val="0">Sq Feet</li>
+                                                                <li val="1">Sq Yard</li>
+                                                                <li val="2">Sq Meter</li>
+                                                                <li val="3">Acre</li>
+                                                                <li val="4">Hectare</li>
+                                                                <li val="5">Ground</li>
+                                                                <li val="6">Cent</li>
+                                                            </ul>
+
+                                                        </div>
+                                                    </li>
+                                                    <li class="width-15 independant" style="display:none;">
+                                                        <label>Super Build Up Area</label>
+                                                        <input type="text" name="text" id="superbldupval" key="tech_supbuildarea" restrict="number">
+                                                    </li>
+                                                    <li class="width-15 independant" style="display:none;">
+                                                        <label>Measurement</label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="" onkeydown="return false" selval="-1" id="tech_supbuildmmt" key="tech_supbuildmmt" class="autofill">
+                                                            <i class="icon-down-arrow"></i>
+
+                                                            <!--<span class="selected">Select</span><i class="arrow"></i>-->
+                                                            <ul class="custom-select">
+                                                                <li val="0">Sq Feet</li>
+                                                                <li val="1">Sq Yard</li>
+                                                                <li val="2">Sq Meter</li>
+                                                                <li val="3">Acre</li>
+                                                                <li val="4">Hectare</li>
+                                                                <li val="5">Ground</li>
+                                                                <li val="6">Cent</li>
+                                                            </ul>
+
+                                                        </div>
+                                                    </li>
+                                                    <li class="width-15 independant" style="display:none;">
+                                                        <label>Build Up Area</label>
+                                                        <input type="text" name="text" id="buildupval" key="tech_buildarea" restrict="number">
+                                                    </li>
+                                                    <li class="width-15 independant" style="display:none;">
+                                                        <label>Measurement</label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="" onkeydown="return false" selval="-1" id="tech_buildupmmt" key="tech_buildupmmt" class="autofill">
+                                                            <i class="icon-down-arrow"></i>
+
+                                                            <!--<span class="selected">Select</span><i class="arrow"></i>-->
+                                                            <ul class="custom-select">
+                                                                <li val="0">Sq Feet</li>
+                                                                <li val="1">Sq Yard</li>
+                                                                <li val="2">Sq Meter</li>
+                                                                <li val="3">Acre</li>
+                                                                <li val="4">Hectare</li>
+                                                                <li val="5">Ground</li>
+                                                                <li val="6">Cent</li>
+                                                            </ul>
+
+                                                        </div>
+                                                    </li>
+                                                    <li class="width-15 independant" style="display:none;">
+                                                        <label>Carpet Area</label>
+                                                        <input type="text" name="text" id="carpetval" key="tech_carpetarea" restrict="number">
+                                                    </li>
+                                                    <li class="width-15 independant" style="display:none;">
+                                                        <label>Measurement</label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="" onkeydown="return false" selval="-1" id="tech_carpetmmt" key="tech_carpetmmt" class="autofill">
+                                                            <i class="icon-down-arrow"></i>
+
+                                                            <!--<span class="selected">Select</span><i class="arrow"></i>-->
+                                                            <ul class="custom-select">
+                                                                <li val="0">Sq Feet</li>
+                                                                <li val="1">Sq Yard</li>
+                                                                <li val="2">Sq Meter</li>
+                                                                <li val="3">Acre</li>
+                                                                <li val="4">Hectare</li>
+                                                                <li val="5">Ground</li>
+                                                                <li val="6">Cent</li>
+                                                            </ul>
+
+                                                        </div>
+                                                    </li>
+                                                    <li class="width-15 amount independant" style="display:none;">
+                                                        <label>Land Value</label>
+                                                        <input type="text" name="text" key="tech_landvalue" class="currency" restrict="number">
+                                                        <i class="icon-indian-rupee"></i>
+                                                    </li>
+                                                    <li class="width-15 amount independant" style="display:none;">
+                                                        <label>Estimate </label>
+                                                        <input type="text" name="text" key="tech_estimate" class="currency" restrict="number">
+                                                        <i class="icon-indian-rupee"></i>
+                                                    </li>
+                                                </span>
+                                            </span>
+                                            <span contentchanged="true" id="maindiv-technical_common" class="maindiv-technical_common">
+                                                <span contentchanged="true">
+                                                    <!--Changes On 30/11/2016-->
+                                                    <!--<li class="width-12">
+                                            <label>Ownership Type</label>
+                                            <div class="select-focus">
+                                                <input name="select" placeholder="Select" onkeydown="return false" selval="-1" id="tech_ownertype" key="tech_ownertype" class="autofill mandatory">
+                                                <i class="icon-down-arrow"></i>
+
+                                                <span class="selected">Select</span><i class="arrow"></i>
+                                                <ul class="custom-select">
+                                                    <li val="0">Single</li>
+                                                    <li val="1">Joint</li>
+                                                </ul>
+
+                                            </div>
+                                        </li>-->
+                                                    <!--end-->
+                                                    <li class="width-20">
+                                                        <label>Possession Type</label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="Select" onkeydown="return false" selval="-1" id="tech_possessiontyp" key="tech_possessiontyp" class="autofill mandatory">
+                                                            <i class="icon-down-arrow"></i>
+                                                            <ul class="custom-select">
+                                                                <li class="free-hold" val="0" onclick="fnleaseperChange(this);">Free Hold</li>
+                                                                <li class="lease-list" val="1" onclick="fnleaseperChange(this);">Lease Hold</li>
+                                                            </ul>
+                                                        </div>
+
+                                                    </li>
+                                                    <li class="width-10 lease-period" style="display:none;">
+                                                        <label>Lease Period</label>
+                                                        <input type="text" name="text" restrict="number" key="tech_leasepriod">
+                                                    </li>
+                                                    <li class="width-28">
+                                                        <label>Survey Number</label>
+                                                        <input type="text" name="text" key="tech_surveyno"class="mandatory">
+                                                    </li>
+                                                    <li class="width-15">
+                                                        <label>Location Type</label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="Select" onkeydown="return false" selval="-1" id="tech_loctyp" key="tech_loctyp" class="autofill mandatory">
+                                                            <i class="icon-down-arrow"></i>
+
+                                                            <!--<span class="selected">Select</span><i class="arrow"></i>-->
+                                                            <ul class="custom-select">
+                                                                <li val="0">Rural</li>
+                                                                <li val="1">Urban</li>
+                                                                <!--<li val="2">Semi Urban</li>
+                                                    <li val="3">Metro</li>-->
+                                                            </ul>
+
+                                                        </div>
+                                                    </li>
+                                                    <li class="width-15">
+                                                        <label>Approved Land Use</label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="Select" onkeydown="return false" selval="-1" id="tech_landuse" key="tech_landuse" class="autofill mandatory">
+                                                            <i class="icon-down-arrow"></i>
+
+                                                            <!--<span class="selected">Select</span><i class="arrow"></i>-->
+                                                            <ul class="custom-select">
+                                                                <li val="0">Residential</li>
+                                                                <li val="1">Commercial</li>
+                                                            </ul>
+                                                        </div>
+
+                                                    </li>
+                                                    <li class="width-12">
+                                                        <label>Land Approval Authority</label>
+                                                        <input type="text" name="text" key="tech_apprauth" restrict="alphaspace" class="mandatory">
+                                                    </li>
+                                                    <span id="plotdisp" class="plotdisp">
+                                                        <li class="width-12">
+                                                            <label>Building Approval Authority</label>
+                                                            <input type="text" name="text" key="tech_buildapprauth" restrict="alphaspace"class="mandatory">
+                                                        </li>
+                                                        <li class="width-15 amount">
+                                                            <label>Distress Value</label>
+                                                            <input type="text" name="text" key="tech_distressval" restrict="number" class="currency">
+                                                            <i class="icon-indian-rupee"></i>
+                                                        </li>
+                                                    </span>
+                                                    <li class="width-20 commonOccup">
+                                                        <label>Property Occupancy</label>
+                                                        <div class="select-focus">
+                                                            <input name="select" placeholder="Select" onkeydown="return false" selval="-1" key="tech_propoccupy" class="autofill mandatory">
+                                                            <i class="icon-down-arrow"></i>
+                                                            <ul class="custom-select occupancy"></ul>
+                                                        </div>
+                                                    </li>
+                                                    <textarea rows="10" name="text" key="tech_prpdtlsremarks" maxlength="500"></textarea>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </ul>
+
+                                    <ul contentchanged="true" id="plotconst" class="form-controls tab5-content plotconst" style="display:none;">
+                                        <div contentchanged="true" id="maindiv-technical_Construction" class="maindiv-technical_Construction">
+                                            <li class="width-3">
+                                                <label>Age of Building</label>
+                                                <input type="text" name="text" key="tech_buildingage" id="buildage"restrict="number">
+                                            </li>
+                                            <li class="width-12">
+                                                <label>Estimated Future Life of Building</label>
+                                                <input type="text" name="text" key="tech_estimatebuilding" restrict="number"class="mandatory">
+                                            </li>
+                                            <li class="width-29">
+                                                <label>Type of Structure</label>
+                                                <input type="text" name="text" key="tech_structyp"class="mandatory">
+                                            </li>
+                                            <li class="width-4">
+                                                <label>Number of Floors</label>
+                                                <input type="text" name="text" key="tech_nooffloor" restrict="number">
+                                            </li>
+                                            <li class="width-3">
+                                                <label>Stage of Construction (%)</label>
+                                                <input type="text" id="stgofConst" name="text" key="tech_construction" class="mandatory" restrict="number" placeholder="">
+                                            </li>
+                                            <li class="width-15">
+                                                <label>Mumty</label>
+                                                <div class="select-focus">
+                                                    <input name="select" placeholder="Select" onkeydown="return false" selval="-1" key="tech_mumty" class="autofill">
+                                                    <i class="icon-down-arrow"></i>
+                                                    <ul class="custom-select">
+                                                        <li val="0">Yes</li>
+                                                        <li val="1">No</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="width-15p extension" style="display:none">
+                                                <label>Existing Construction Value</label>
+                                                <input type="text" id="ExsConsVal" name="text" key="tech_ExsConsVal" class="currency" restrict="number" placeholder="">
+                                                <i class="icon-indian-rupee"></i>
+                                            </li>
+                                            <li class="width-15p extension" style="display:none">
+                                                <label>Proposed Construction Value</label>
+                                                <input type="text" id="ProposConstVal" name="text" key="tech_ProposConstVal" class="currency"restrict="number" placeholder="">
+                                                <i class="icon-indian-rupee"></i>
+                                            </li>
+                                            <textarea rows="10" name="text" key="tech_constremarks" maxlength="500"></textarea>
+                                        </div>
+                                    </ul>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!--<div class="tab2-content" style="display:none;">
+                <ul class="fomr-controls">
+                    <li class="width-15">
+                        <label>Date of report</label>
+                        <input type="text">
+                    </li>
+                </ul>
+                <div class="grid-33 div-left">
+                    <ul class="box-div form-controls">
+                        <h2>Property Address</h2>
+                        <li class="width-8 read-only">
+                            <label>Flat/Door No</label>
+                            <p>NO 1/77</p>
+                        </li>
+                        <li class="width-22 read-only text-overflow">
+                            <label>Building</label>
+                            <p>SUDHARSAN NAGAR 1st STREET</p>
+                        </li>
+                        <li class="width-9 read-only text-overflow">
+                            <label>Plot No</label>
+                            <p>S NO 307/3A1</p>
+                        </li>
+                        <li class="width-21 read-only">
+                            <label>Street</label>
+                            <p>MAMBAKKAM</p>
+                        </li>
+                        <li class="width-34 read-only">
+                            <label>Land Mark</label>
+                            <p>MAMBAKKAM</p>
+                        </li>
+                        <li class="width-21 read-only">
+                            <label>Town/Village</label>
+                            <p>KOLAPAKKAM</p>
+                        </li>
+                        <li class="width-34 read-only">
+                            <label>District/City</label>
+                            <p>CHENNAI</p>
+                        </li>
+                        <li class="width-10 read-only">
+                            <label>State</label>
+                            <p>TAMIL NADU</p>
+                        </li>
+                        <li class="width-6 read-only">
+                            <label>PIN</label>
+                            <p>600127</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid-66 div-right">
+                    <div class="box-div">
+                        <ul class="common-tabs">
+                            <li class="active tab3">Property Valuation</li>
+                            <li class="tab4">Property Details</li>
+                            <li class="tab5">Construction Details</li>
+                        </ul>
+                        <div>
+                            <ul class="tab3-content form-controls">
+                                <li class="width-19 amount">
+                                    <label>Market value</label>
+                                    <input type="text" class="currency" restrict="number">
+                                    <i class="icon-indian-rupee"></i>
+                                </li>
+                                <li class="width-19 amount">
+                                    <label>Amenities amount</label>
+                                    <input type="text" class="currency" restrict="number">
+                                    <i class="icon-indian-rupee"></i>
+                                </li>
+                            </ul>
+                            <ul class="form-controls tab4-content" style="display:none;">
+                                <li class="width-12">
+                                    <label>Type of Property</label>
+                                    <div class="cust-select">
+                                        <span class="selected">Flat</span><i class="arrow"></i>
+                                        <ul>
+                                            <li class="pro-flat">Flat</li>
+                                            <li class="pro-plot">Plot</li>
+                                            <li class="pro-independant">Independant</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-15 flat">
+                                    <label>Demolition Risk </label>
+                                    <div class="cust-select">
+                                        <span class="selected">Medium</span><i class="arrow"></i>
+                                        <ul>
+                                            <li>High</li>
+                                            <li>Medium</li>
+                                            <li>Low</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-15 flat">
+                                    <label>UDS Area</label>
+                                    <input type="text" placeholder="" value="">
+                                </li>
+                                <li class="width-15 flat">
+                                    <label>Measurement</label>
+                                    <div class="cust-select">
+                                        <span class="selected">Sq Feet</span><i class="arrow"></i>
+                                        <ul>
+                                            <li>Sq Feet</li>
+                                            <li>Sq Yard</li>
+                                            <li>Sq Meter</li>
+                                            <li>Acre</li>
+                                            <li>Hectare</li>
+                                            <li>Ground</li>
+                                            <li>Cent</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-15 amount flat">
+                                    <label>UDS Value </label>
+                                    <input type="text" class="currency" restrict="number">
+                                    <i class="icon-indian-rupee"></i>
+                                </li>
+                                <li class="width-15 flat">
+                                    <label>Super Build Up Area</label>
+                                    <input type="text" placeholder="" value="">
+                                </li>
+                                <li class="width-15 flat">
+                                    <label>Measurement</label>
+                                    <div class="cust-select">
+                                        <span class="selected">Sq Feet</span><i class="arrow"></i>
+                                        <ul>
+                                            <li>Sq Feet</li>
+                                            <li>Sq Yard</li>
+                                            <li>Sq Meter</li>
+                                            <li>Acre</li>
+                                            <li>Hectare</li>
+                                            <li>Ground</li>
+                                            <li>Cent</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-15 flat">
+                                    <label>Build Up Area</label>
+                                    <input type="text" value="869">
+                                </li>
+                                <li class="width-15 flat">
+                                    <label>Measurement</label>
+                                    <div class="cust-select">
+                                        <span class="selected">Select</span><i class="arrow"></i>
+                                        <ul>
+                                            <li>Sq Feet</li>
+                                            <li>Sq Yard</li>
+                                            <li>Sq Meter</li>
+                                            <li>Acre</li>
+                                            <li>Hectare</li>
+                                            <li>Ground</li>
+                                            <li>Cent</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-15 flat">
+                                    <label>Carpet Area</label>
+                                    <input type="text">
+                                </li>
+                                <li class="width-15 flat">
+                                    <label>Measurement</label>
+                                    <div class="cust-select">
+                                        <span class="selected">Select</span><i class="arrow"></i>
+                                        <ul>
+                                            <li>Sq Feet</li>
+                                            <li>Sq Yard</li>
+                                            <li>Sq Meter</li>
+                                            <li>Acre</li>
+                                            <li>Hectare</li>
+                                            <li>Ground</li>
+                                            <li>Cent</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-15 amount flat">
+                                    <label>Estimate </label>
+                                    <span>
+                                        <input type="text" placeholder="" value="" class="currency">
+                                        <i class="icon-indian-rupee"></i>
+                                    </span>
+                                </li>
+                                <li class="width-15 plot" style="display:none;">
+                                    <label>Land Area</label>
+                                    <input type="text">
+                                </li>
+                                <li class="width-15 plot" style="display:none;">
+                                    <label>Measurement</label>
+                                    <div class="cust-select">
+                                        <span class="selected">Select</span><i class="arrow"></i>
+                                        <ul>
+                                            <li>Sq Feet</li>
+                                            <li>Sq Yard</li>
+                                            <li>Sq Meter</li>
+                                            <li>Acre</li>
+                                            <li>Hectare</li>
+                                            <li>Ground</li>
+                                            <li>Cent</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-9 amount plot" style="display:none;">
+                                    <label>Land value</label>
+                                    <input type="text"class="currency" restrict="number">
+                                    <i class="icon-indian-rupee"></i>
+                                </li>
+                                <li class="width-15 independant" style="display:none;">
+                                    <label>Demolition Risk </label>
+                                    <div class="cust-select">
+                                        <span class="selected">Sq Feet</span><i class="arrow"></i>
+                                        <ul>
+                                            <li>High</li>
+                                            <li>Medium</li>
+                                            <li>Low</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-15 independant" style="display:none;">
+                                    <label>Land Area</label>
+                                    <input type="text">
+                                </li>
+                                <li class="width-15 independant" style="display:none;">
+                                    <label>Measurement</label>
+                                    <div class="cust-select">
+                                        <span class="selected">Select</span><i class="arrow"></i>
+                                        <ul>
+                                            <li>Sq Feet</li>
+                                            <li>Sq Yard</li>
+                                            <li>Sq Meter</li>
+                                            <li>Acre</li>
+                                            <li>Hectare</li>
+                                            <li>Ground</li>
+                                            <li>Cent</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-15 independant" style="display:none;">
+                                    <label>Super Build Up Area</label>
+                                    <input type="text">
+                                </li>
+                                <li class="width-15 independant" style="display:none;">
+                                    <label>Measurement</label>
+                                    <div class="cust-select">
+                                        <span class="selected">Select</span><i class="arrow"></i>
+                                        <ul>
+                                            <li>Sq Feet</li>
+                                            <li>Sq Yard</li>
+                                            <li>Sq Meter</li>
+                                            <li>Acre</li>
+                                            <li>Hectare</li>
+                                            <li>Ground</li>
+                                            <li>Cent</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-15 independant" style="display:none;">
+                                    <label>Build Up Area</label>
+                                    <input type="text">
+                                </li>
+                                <li class="width-15 independant" style="display:none;">
+                                    <label>Measurement</label>
+                                    <div class="cust-select">
+                                        <span class="selected">Select</span><i class="arrow"></i>
+                                        <ul>
+                                            <li>Sq Feet</li>
+                                            <li>Sq Yard</li>
+                                            <li>Sq Meter</li>
+                                            <li>Acre</li>
+                                            <li>Hectare</li>
+                                            <li>Ground</li>
+                                            <li>Cent</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-15 independant" style="display:none;">
+                                    <label>Carpet Area</label>
+                                    <input type="text">
+                                </li>
+                                <li class="width-15 independant" style="display:none;">
+                                    <label>Measurement</label>
+                                    <div class="cust-select">
+                                        <span class="selected">Select</span><i class="arrow"></i>
+                                        <ul>
+                                            <li>Sq Feet</li>
+                                            <li>Sq Yard</li>
+                                            <li>Sq Meter</li>
+                                            <li>Acre</li>
+                                            <li>Hectare</li>
+                                            <li>Ground</li>
+                                            <li>Cent</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-15 amount independant" style="display:none;">
+                                    <label>Land Value</label>
+                                    <input type="text" class="currency" restrict="number">
+                                    <i class="icon-indian-rupee"></i>
+                                </li>
+                                <li class="width-15 amount independant" style="display:none;">
+                                    <label>Estimate </label>
+                                    <input type="text" class="currency" restrict="number">
+                                    <i class="icon-indian-rupee"></i>
+                                </li>
+                                <li class="width-12">
+                                    <label>Ownership Type</label>
+                                    <div class="cust-select">
+                                        <span class="selected">Single</span><i class="arrow"></i>
+                                        <ul>
+                                            <li>Single</li>
+                                            <li>Joint</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-20">
+                                    <label>Possession Type</label>
+                                    <div class="cust-select">
+                                        <span class="selected">Free Hold</span><i class="arrow"></i>
+                                        <ul>
+                                            <li>Free Hold</li>
+                                            <li class="lease-list">Lease Hold</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-10 lease-period" style="display:none;">
+                                    <label>Lease Period</label>
+                                    <input type="text">
+                                </li>
+                                <li class="width-28">
+                                    <label>Survey Number</label>
+                                    <input type="text" placeholder="" value="S NO 307/3A1">
+                                </li>
+                                <li class="width-15">
+                                    <label>Location Type</label>
+                                    <div class="cust-select">
+                                        <span class="selected">Rural</span><i class="arrow"></i>
+                                        <ul>
+                                            <li>Rural</li>
+                                            <li>Urban</li>
+                                            <li>Semi Urban</li>
+                                            <li>Metro</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-15">
+                                    <label>Approved Land Use</label>
+                                    <div class="cust-select">
+                                        <span class="selected">Residential</span><i class="arrow"></i>
+                                        <ul>
+                                            <li>Residential</li>
+                                            <li>Commercial</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-12">
+                                    <label>Approval Authority</label>
+                                    <input type="text" placeholder="" value="MAMBAKKAM PANCHAYAT">
+                                </li>
+                            </ul>
+                            <ul class="form-controls tab5-content" style="display:none;">
+                                <li class="width-3">
+                                    <label>Age of Building</label>
+                                    <input type="text" placeholder="" value="13">
+                                </li>
+                                <li class="width-12">
+                                    <label>Estimated Future Life of Building</label>
+                                    <input type="text" placeholder="" value="47">
+                                </li>
+                                <li class="width-29">
+                                    <label>Type of Structure</label>
+                                    <input type="text" placeholder="" value="RCC">
+                                </li>
+                                <li class="width-4">
+                                    <label>Number of Floors</label>
+                                    <input type="text" placeholder="" value="1">
+                                </li>
+                                <li class="width-3">
+                                    <label>% Construction</label>
+                                    <input type="text" placeholder="" value="100">
+                                </li>
+                            </ul>
+                        </div>
+                        <textarea rows="10">Remarks</textarea>
+                    </div>
+                </div>
+            </div>-->
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--<input type="button" value="test" onclick="fntechapprconfirmscreen();"/>-->
+</div>
+<div id="div-document-content" class="documents-content" style="display:none;"> </div>
+
+<!--DEVIATION POPUP START-->
+
+<div class="popup-bg" id="manualdev" style="display:none;">
+    <div class="popup-div">
+        <div class="popup-header"> <i class="icon-close div-right"></i> </div>
+        <div class="popup-content">
+            <div id="man_deviation_TM" class="deviation-main">
+                <h2>
+                    Deviations
+                    <i title="Expand/collapse" onclick="fnCollapseAllDeviation('man_deviation_TM')" class="icon-plus right cursor"></i>
+                </h2>
+                <select class="deviation-level" id="ManualDeviationTech">
+                    <option value="0"> Select </option>
+                    <option value="1"> Level 1 </option>
+                    <option value="2"> Level 2 </option>
+                    <option value="3"> Level 3 </option>
+                    <option value="4"> Level 4 </option>
+                    <option value="5"> Level 5 </option>
+                </select>
+                <input type="search" class="deviation-search" placeholder="Search Deviation" />
+                <div id="man_deviation_div_do" class="deviation-height"></div>
+            </div>
+        </div>
+        <input type="button" value="confirm" onclick="fnConfirmDeviation(this)">
+    </div>
+</div>
+<!--DEVIATION POPUP END-->
+<script>
+    calcHeight(); /*window height for all div*/
+    scanDocPreview(); /*Scand or Attached Document image Preview*/
+    commontabs();
+    customselect();
+    rightdocument();
+    $(document).ready(function () {
+        window.techflg = "A";
+    });
+    function fnpop() {
+        $("#fold_nm").val(GlobalXml[0].LeadID);
+        window.open("", "newWin", "location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no,left=20,top=20,width=600,height=600");
+        PostForm.submit();
+    }
+</script>
+<script src="js/Scrn/technical-verification-approver.js"></script>
+<script src="js/BeatPicker.min.js"></script>

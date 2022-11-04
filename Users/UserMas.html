@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <!-- Jquery JS -->
+    <script src="../COMMON/js/jquery-1.11.1.js?$$$v=1.0.0$$$"></script>
+    <script src="../COMMON/js/Scrn/CommonFns.js?$$$v=1.0.0$$$"></script>
+    <!-- Jquery JS -->
+
+    <script src="../COMMON/js/devp-js/ProDataAccesScript.js"></script>
+    <script src="../COMMON/js/devp-js/ProLOSDataAccesScript.js"></script>
+    <script src="js/Scrn/UserScript.js"></script>
+
+    <script>
+        setLocalStorage("BpmUrl", "http://172.31.244.22//PRICING_RS//");
+		setLocalStorage("LosUrl", "http://172.31.244.22/BPM/BPM/CommonRS//");
+    </script>
+
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/fonts/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="user-master">
+
+       
+            <div class="box-div">
+                <div class="grid-50">
+                    <p id="head"></p>
+                    <h2>USER MASTER</h2>
+
+                    <ul class="form-controls">
+                        <li>
+                            <label> User Code:</label>
+                            <input type="text" id="UserCde" />
+                        </li>
+                        <li>
+                            <label> User Name: </label>
+                            <input id="UserNm" type="text" />
+                        </li>
+                        <div class="clear"></div>
+                        <li>
+                            <label>User Password: </label>
+                            <input id="UserPwd" type="password" />
+                            <input type="hidden" id="pk_id" />
+                        </li>
+                    </ul>
+
+
+                    <ul class="common-tabs">
+                        <li class="tab1 active">Role</li>
+                        <li class="tab2">Location</li>
+                    </ul>
+                    <div>
+                        <div class="tab1-content">
+                            <div class="role-div">
+                                <select id="usrRolDetails" class="sel"></select>
+                                <input type="button" value="Add" id="addrole" onclick="fnInsRole();" />
+                            </div>
+
+                            <table id="UsrRolTbl" style="border: 1px solid #c8c8c8; border-collapse: collapse; " class="Details" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr class="head"><td><h3> USER ROLE DETAILS</h3></td></tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+
+                        </div>
+                        <div class="tab2-content" style="display:none;">
+                            <div class="role-div">
+                                <select id="UsrGeoDetails" class="sel"></select>
+                                <input type="button" value="Add" onclick="fnInsGeo();" /><input type="button" value="clr" onclick="fnclear();" />
+                            </div>
+                            <table id="UsrGeoTbl" style="border: 1px solid #c8c8c8; border-collapse: collapse;" class="Details" cellspacing="0" width="100%">
+
+                                <thead>
+                                    <tr class="head"><td><h3> USER GEO DETAILS</h3></td></tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>                        
+                    </div>
+                </div>
+                <input id="SaveBtn" type="button" value="Save" onclick=" fnInsUpd();" />
+                <input id="DeleteBtn" type="button" value="Delete" onclick="fnDeleteData();" />
+                <input id="ClearBtn" type="button" value="Clear" onclick="fnclr();" />
+                <div class="">
+                    <div class="table-half-height">
+                        <table id="UserTbl" style="border: 1px solid #c8c8c8; border-collapse: collapse; text-align: left;" class="Details" cellspacing="0" width="100%">
+                            <caption></caption>
+                        </table>
+                    </div>
+                </div>
+
+                </div>
+         
+
+    </div>
+    <script>
+
+        $(".common-tabs li").click(function (e) {
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+        });
+        /*for(var n=1; n<10; n++){
+            }*/
+        $(".tab1").click(function (e) {
+            $(".tab1-content").show().siblings().hide();
+        });
+        $(".tab2").click(function (e) {
+            $(".tab2-content").show().siblings().hide();
+        });
+    </script>
+</body>
+</html>

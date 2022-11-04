@@ -1,0 +1,160 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SVS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="SVS_Prototype/css/fonts/style.css">
+</head>
+<body>
+<div class="main-wrapper">
+  <!--<div class="header-div"> <img src="images/logo_shriram.png">
+    <div class="right"><i class="icon-home" onclick="location.href='dashboard.html'"></i> <i class="icon-logout" onclick="location.href='login.html'"></i> </div>
+  </div>-->
+  <div class="content-wrapper">
+    <div class="accordion">
+      <div class="div-left">
+        <h2>Purchase Request - Recommend
+          <div class="right"><span class="expand">Expand</span> <span class="collapse" style="display:none;">Collapse</span></div>
+        </h2>
+        <ul>
+            <li>
+                <div class="accordion-list">
+                    <div class="left">
+                        <i class="icon-login"></i>
+                        <div>
+                            <h5>Sigamani - Approval</h5>
+                            <!--<p>Remarks Content comes here Remarks Content comes here Remarks Content comes here</p>-->
+                        </div>
+                    </div>
+                    <div class="right">
+                        <p class="date-time"><i class="icon-date"></i> <span>1 March 2017 </span></p>
+                        <i class="icon-dropdown-down"></i>
+                        <!--<div><span class="tag green-bg">Approve</span></div>-->
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="accordion-list-content">
+                    <ul class="form-controls">
+                        <li>
+                            <label>Date</label>
+                            <input type="text" placeholder="Date" value="01/03/2017">
+                        </li>
+                        <li class="right">
+                            <label>Supplier</label>
+                            <input type="text" placeholder="Supplier" value="TAKE">
+                        </li>
+                        <li>
+                            <label>Cost Center</label>
+                            <input type="text" placeholder="Cost Center" value="IT">
+                        </li>
+                        <li class="right">
+                            <label>Cost of Purchase</label>
+                            <input type="text" placeholder="Cost of Purchase" value="100000">
+                        </li>
+                        <label>Description</label>
+                        <textarea placeholder="Description">software</textarea>
+                        <!--<div class="right">
+                  <input type="button" value="Approve" class="green-bg">
+                  <input type="button" value="Reject" class="gray-bg">
+                  <input type="button" value="Hold" class="gray-bg">
+                </div>-->
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="accordion-list">
+                    <div class="left">
+                        <i class="icon-login"></i>
+                        <div>
+                            <h5>Prakash - Initiation</h5>
+                            <!--<p>Remarks Content comes here Remarks Content comes here Remarks Content comes here</p>-->
+                        </div>
+                    </div>
+                    <div class="right">
+                        <!--<span class="tag green-bg">Approved</span>-->
+                        <p class="date-time"><i class="icon-date"></i> <span>1 March 2017 </span></p>
+                        <i class="icon-dropdown-down"></i>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="accordion-list-content">
+                    <ul class="form-controls">
+                        <li>
+                            <label>Date</label>
+                            <input type="text" placeholder="Date" value="01/03/2017">
+                        </li>
+                        <li class="right">
+                            <label>Supplier</label>
+                            <input type="text" placeholder="Supplier" value="TAKE">
+                        </li>
+                        <li>
+                            <label>Cost Center</label>
+                            <input type="text" placeholder="Cost Center" value="IT">
+                        </li>
+                        <li class="right">
+                            <label>Cost of Purchase</label>
+                            <input type="text" placeholder="Cost of Purchase" value="100000">
+                        </li>
+                        <label>Description</label>
+                        <textarea placeholder="Description">software</textarea>
+                        <!--<div class="right">
+                  <input type="button" value="Approve" class="green-bg">
+                  <input type="button" value="Reject" class="gray-bg">
+                  <input type="button" value="Hold" class="gray-bg">
+                </div>-->
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+      </div>
+      <div class="div-right">
+        <ul class="document-list">
+          <h2>List of Documents <i class="icon-plus right"></i></h2>
+          <li> No Document Attached</a></li>
+          <!--<li><a href="images/SVS_revamp.xlsx" target="_blank"><i class="icon-excel"></i> ExpenseEstimate.xl</a></li>
+          <li><a href="images/proactive-new.pdf" target="_blank"><i class="icon-word"></i> Turnplan.pdf</a></li>
+          <li><a href="images/proactive-new.pdf" target="_blank"><i class="icon-word"></i> Turnplan.pdf</a></li>-->
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="popup-bg" id="document-popup" style="display:none;">
+    <div class="popup-div">
+      <h2>&nbsp; <i class="icon-close right"></i></h2>
+      <ul class="form-controls">
+        <label>Upload Document</label>
+        <input type="file">
+        <!--<input type="button" value="Save" class="right">-->
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+// $(".accordion-list-content").hide();
+$('.icon-plus').click(function(e) {
+  $("#document-popup").show();
+});
+$('.icon-close').click(function(e) {
+  $(this).parents(".popup-bg").hide();
+});
+$(".expand").click(function(e) {
+   $(".accordion-list-content,.collapse").show(); 
+   $(".expand").hide();
+});
+$(".collapse").click(function(e) {
+   $(".accordion-list-content").hide(); 
+   $(".expand").show();
+   $(".collapse").hide();
+});
+$(".accordion-list i.icon-dropdown-down").click(function(e) {
+	$(".accordion-list-content").toggle();
+	$(this).parent().siblings().parent().parent().siblings().children(".accordion-list-content").hide();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{55106474-93A5-4181-A5E5-227FA122A938}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BPM</RootNamespace>
+    <AssemblyName>BPM</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bower_components\bpmn-js\.bower.json" />
+    <Content Include="bower_components\bpmn-js\.gitignore" />
+    <Content Include="bower_components\bpmn-js\bower.json" />
+    <Content Include="bower_components\bpmn-js\dist\assets\bpmn-font\css\bpmn-embedded.css" />
+    <Content Include="bower_components\bpmn-js\dist\assets\bpmn-font\css\bpmn.css" />
+    <Content Include="bower_components\bpmn-js\dist\assets\bpmn-font\font\bpmn.eot" />
+    <Content Include="bower_components\bpmn-js\dist\assets\bpmn-font\font\bpmn.svg" />
+    <Content Include="bower_components\bpmn-js\dist\assets\bpmn-font\font\bpmn.ttf" />
+    <Content Include="bower_components\bpmn-js\dist\assets\bpmn-font\font\bpmn.woff" />
+    <Content Include="bower_components\bpmn-js\dist\assets\diagram-js.css" />
+    <Content Include="bower_components\bpmn-js\dist\bpmn-modeler.js" />
+    <Content Include="bower_components\bpmn-js\dist\bpmn-modeler.js.map" />
+    <Content Include="bower_components\bpmn-js\dist\bpmn-modeler.min.js" />
+    <Content Include="bower_components\bpmn-js\dist\bpmn-modeler_.js" />
+    <Content Include="bower_components\bpmn-js\dist\bpmn-navigated-viewer.js" />
+    <Content Include="bower_components\bpmn-js\dist\bpmn-navigated-viewer.js.map" />
+    <Content Include="bower_components\bpmn-js\dist\bpmn-navigated-viewer.min.js" />
+    <Content Include="bower_components\bpmn-js\dist\bpmn-viewer.js" />
+    <Content Include="bower_components\bpmn-js\dist\bpmn-viewer.js.map" />
+    <Content Include="bower_components\bpmn-js\dist\bpmn-viewer.min.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\.eslintrc" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\.gitignore" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\.travis.yml" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\assets\diagram-js.css" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\CONTRIBUTING.md" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\example\app\app.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\example\app\ExampleContextPadProvider.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\example\app\ExamplePaletteProvider.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\example\app\ExampleRuleProvider.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\example\app\index.html" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\example\docs\screenshot.png" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\example\Gruntfile.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\example\package.json" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\example\README.md" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\Gruntfile.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\command\CommandHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\command\CommandInterceptor.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\command\CommandStack.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\command\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\core\Canvas.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\core\ElementFactory.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\core\ElementRegistry.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\core\EventBus.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\core\GraphicsFactory.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\core\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\Diagram.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\draw\BaseRenderer.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\draw\DefaultRenderer.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\draw\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\draw\Styles.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\align-elements\AlignElements.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\align-elements\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\attach-support\AttachSupport.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\attach-support\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\auto-resize\AutoResize.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\auto-resize\AutoResizeProvider.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\auto-resize\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\auto-scroll\AutoScroll.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\auto-scroll\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\bendpoints\BendpointMove.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\bendpoints\Bendpoints.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\bendpoints\BendpointSnapping.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\bendpoints\BendpointUtil.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\bendpoints\ConnectionSegmentMove.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\bendpoints\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\change-support\ChangeSupport.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\change-support\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\clipboard\Clipboard.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\clipboard\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\connect\Connect.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\connect\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\context-pad\ContextPad.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\context-pad\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\copy-paste\CopyPaste.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\copy-paste\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\create\Create.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\create\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\distribute-elements\DistributeElements.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\distribute-elements\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\dragging\Dragging.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\dragging\HoverFix.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\dragging\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\editor-actions\EditorActions.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\editor-actions\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\global-connect\GlobalConnect.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\global-connect\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\hand-tool\HandTool.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\hand-tool\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\interaction-events\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\interaction-events\InteractionEvents.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\keyboard\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\keyboard\Keyboard.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\label-support\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\label-support\LabelSupport.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\lasso-tool\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\lasso-tool\LassoTool.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\AlignElementsHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\AppendShapeHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\CreateConnectionHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\CreateLabelHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\CreateShapeHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\DeleteConnectionHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\DeleteElementsHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\DeleteShapeHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\DistributeElementsHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\helper\AnchorsHelper.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\helper\MoveHelper.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\LayoutConnectionHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\MoveConnectionHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\MoveElementsHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\MoveShapeHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\NoopHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\PasteHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\ReconnectConnectionHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\ReplaceShapeHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\ResizeShapeHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\SpaceToolHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\ToggleShapeCollapseHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\UpdateAttachmentHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\cmd\UpdateWaypointsHandler.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\modeling\Modeling.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\mouse-tracking\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\mouse-tracking\MouseTracking.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\move\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\move\Move.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\move\MovePreview.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\ordering\OrderingProvider.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\outline\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\outline\Outline.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\overlays\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\overlays\Overlays.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\palette\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\palette\Palette.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\popup-menu\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\popup-menu\PopupMenu.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\popup-menu\PopupMenuProvider.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\preview-support\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\preview-support\PreviewSupport.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\replace\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\replace\Replace.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\resize\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\resize\Resize.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\resize\ResizeHandles.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\resize\ResizePreview.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\resize\ResizeUtil.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\rules\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\rules\RuleProvider.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\rules\Rules.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\search-pad\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\search-pad\SearchPad.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\selection\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\selection\Selection.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\selection\SelectionBehavior.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\selection\SelectionVisuals.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\snapping\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\snapping\SnapContext.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\snapping\Snapping.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\snapping\SnapUtil.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\space-tool\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\space-tool\SpaceTool.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\space-tool\SpaceToolPreview.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\space-tool\SpaceUtil.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\tool-manager\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\tool-manager\ToolManager.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\tooltips\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\tooltips\Tooltips.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\touch\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\touch\TouchFix.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\features\touch\TouchInteractionEvents.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\i18n\I18N.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\i18n\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\i18n\translate\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\i18n\translate\translate.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\layout\BaseLayouter.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\layout\ConnectionDocking.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\layout\CroppingConnectionDocking.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\layout\LayoutUtil.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\layout\ManhattanLayout.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\model\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\navigation\movecanvas\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\navigation\movecanvas\MoveCanvas.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\navigation\touch\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\navigation\zoomscroll\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\navigation\zoomscroll\ZoomScroll.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\navigation\zoomscroll\ZoomUtil.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\AttachUtil.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\ClickTrap.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\Collections.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\CopyPasteUtil.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\Cursor.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\Elements.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\Event.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\Geometry.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\GraphicsUtil.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\IdGenerator.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\Intersection.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\LineIntersection.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\Math.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\Mouse.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\Platform.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\PositionUtil.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\Removal.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\RenderUtil.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\SvgTransformUtil.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\lib\util\Text.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\LICENSE" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\package.json" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\README.md" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\config\karma.unit.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\helper\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\matchers\BoundsMatchers.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\matchers\BoundsMatchersSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\matchers\ConnectionMatchers.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\matchers\ConnectionMatchersSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\command\CommandInterceptorSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\command\CommandStackSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\core\CanvasSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\core\ElementRegistrySpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\core\EventBusSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\core\GraphicsFactorySpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\DiagramSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\draw\DefaultRendererSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\draw\StylesSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\environment\MockingSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\align-elements\AlignElementsSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\attach-support\AttachSupportSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\attach-support\rules\AttachRules.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\attach-support\rules\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\auto-resize\AutoResizeSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\auto-scroll\AutoScrollSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\bendpoints\BendpointsMoveSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\bendpoints\BendpointsSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\bendpoints\ConnectionSegmentMoveSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\bendpoints\rules\BendpointRules.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\bendpoints\rules\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\change-support\ChangeSupportSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\clipboard\ClipboardSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\connect\ConnectSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\connect\rules\ConnectRules.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\connect\rules\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\context-pad\ContextPadProvider.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\context-pad\ContextPadSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\context-pad\resources\a.png" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\context-pad\resources\b.png" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\context-pad\resources\c.png" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\copy-paste\CopyPasteSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\copy-paste\rules\CopyPasteRules.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\copy-paste\rules\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\create\CreateSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\create\rules\CreateRules.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\create\rules\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\distribute-elements\DistributeElementsSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\dragging\DraggingSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\dragging\HoverFixSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\editor-actions\EditorActionsSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\editor-actions\rules\CustomRules.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\editor-actions\rules\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\global-connect\GlobalConnectSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\hand-tool\HandToolSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\interaction-events\InteractionEventsSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\keyboard\KeyboardSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\label-support\LabelSupportSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\label-support\rules\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\label-support\rules\LabelSupportRules.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\lasso-tool\LassoToolSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\AppendShapeSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\CreateConnectionSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\CreateLabelSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\CreateShapeSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\custom\CustomLayouter.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\custom\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\DeleteConnectionSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\DeleteElementsSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\DeleteShapeSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\DropShapeSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\LayoutConnectionSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\MoveConnectionSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\MoveElementsSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\MoveShapeSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\ReconnectConnectionSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\ReplaceShapeSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\ResizeShapeSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\ToggleShapeCollapseSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\modeling\UpdateAttachmentSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\move\MovePreviewSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\move\MoveSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\move\rules\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\move\rules\MoveRules.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\ordering\OrderingProviderSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\ordering\provider\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\ordering\provider\TestOrderingProvider.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\outline\OutlineSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\overlays\OverlaysIntegrationSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\overlays\OverlaysSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\palette\PaletteSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\popup-menu\PopupMenuSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\popup-menu\resources\a.png" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\replace\ReplaceSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\resize\ResizeSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\resize\ResizeUtilSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\resize\rules\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\resize\rules\ResizeRules.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\rules\priority-rules\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\rules\priority-rules\PriorityRules.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\rules\RuleProviderSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\rules\rules\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\rules\rules\TestRules.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\rules\say-no-rules\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\rules\say-no-rules\SayNoRules.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\search-pad\SearchPadSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\selection\SelectionSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\selection\SelectionVisualsSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\snapping\SnappingSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\space-tool\auto-resize\CustomAutoResizeProvider.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\space-tool\auto-resize\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\space-tool\rules\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\space-tool\rules\SpaceRules.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\space-tool\SpaceToolSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\tool-manager\ToolManagerSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\tooltips\TooltipsSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\features\touch\TouchInteractionEventsSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\i18n\I18NSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\i18n\translate\custom-translate\custom-translate.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\i18n\translate\custom-translate\index.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\i18n\translate\translateSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\layout\CroppingConnectionDockingSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\layout\LayoutUtilSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\layout\ManhattanLayoutSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\model\ModelSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\navigation\movecanvas\MoveCanvasSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\navigation\touch\TouchInteractionSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\navigation\zoomscoll\ZoomScrollSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\snapping\SnapContextSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\snapping\SnappingSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\util\AttachUtilSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\util\CopyPasteUtil.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\util\ElementIntegrationSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\util\ElementsSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\util\IdGeneratorSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\util\IntersectionSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\util\LineIntersectionSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\spec\util\TextSpec.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\TestHelper.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\util\KeyEvents.js" />
+    <Content Include="bower_components\bpmn-js\dist\node_modules\diagram-js\test\util\MockEvents.js" />
+    <Content Include="bower_components\bpmn-js\LICENSE" />
+    <Content Include="bower_components\bpmn-js\README.md" />
+    <Content Include="DB OBJECTS\Functions\dbo.fnAllocWS.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.gefgDMY.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.gefgGetDecPass.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.gefgGetDelFlg.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.gefgGetDesc.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.gefgGetElementFk.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.gefgGetPadZero.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.gefgGetProcType.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.getAttRoleFk.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.getFlowNm.sql" />
+    <Content Include="DB OBJECTS\Functions\dbo.Split.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.GeoDetails.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.GeoMapDetails.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcArriveSeqTreeId.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcBpmArvNextsq.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcBpmDevMatrix.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcGenUsrMaster.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcLeadListing.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcParseJSON.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflBpmProcess.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflBpm_Build.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflBpm_Chat.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.PrcShflBpm_Proj.sql" />
+    <Content Include="DB OBJECTS\Procedures\dbo.RoleDetails.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShfl_GenGEOhelp.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShfl_GenGEO_Maphelp.sql" />
+    <Content Include="DB OBJECTS\Procedures\PrcShfl_Rolehelp.sql" />
+    <Content Include="DB OBJECTS\Scripts\BPM Insert Scripts - Production - 240217\2.BPMVersion Script.sql" />
+    <Content Include="DB OBJECTS\Scripts\BPM Insert Scripts - Production - 240217\3.dbo.BpmFlow_Script.sql" />
+    <Content Include="DB OBJECTS\Scripts\BPM Insert Scripts - Production - 240217\4.dbo.BpmObjInOut_Script.sql" />
+    <Content Include="DB OBJECTS\Scripts\BPM Insert Scripts - Production - 240217\5.dbo.BpmUiDefn_Script.sql" />
+    <Content Include="DB OBJECTS\Scripts\BPM Insert Scripts - Production - 240217\6.dbo.ShflPgRightsDtls_Script.sql" />
+    <Content Include="DB OBJECTS\Scripts\BPM Insert Scripts - SNIPPET\1.dbo.BpmMas.sql" />
+    <Content Include="DB OBJECTS\Scripts\BPM Insert Scripts - SNIPPET\2.dbo.BpmVersions.sql" />
+    <Content Include="DB OBJECTS\Scripts\BPM Insert Scripts - SNIPPET\3.dbo.BpmFlow.sql" />
+    <Content Include="DB OBJECTS\Scripts\BPM Insert Scripts - SNIPPET\4.dbo.BpmObjInOut.sql" />
+    <Content Include="DB OBJECTS\Scripts\BPM Insert Scripts - SNIPPET\5.dbo.BpmUiDefn.sql" />
+    <Content Include="DB OBJECTS\Scripts\BPM Insert Scripts - SNIPPET\6.dbo.ShflPgRightsDtls.sql" />
+    <Content Include="DB OBJECTS\Scripts\dbo.DelExtraBpmDatas.sql" />
+    <Content Include="DB OBJECTS\Scripts\dbo.PrcFlushBpmData.sql" />
+    <Content Include="DB OBJECTS\Scripts\dbo.PrcGetLeadHis.sql" />
+    <Content Include="DB OBJECTS\Scripts\StartUp\1. New Create Script.sql" />
+    <Content Include="DB OBJECTS\Scripts\StartUp\2. CompMas.sql" />
+    <Content Include="DB OBJECTS\Scripts\StartUp\3. General Tables.sql" />
+    <Content Include="DB OBJECTS\Scripts\StartUp\4. Query Table Create Script.sql" />
+    <Content Include="DB OBJECTS\Scripts\StartUp\5. LOS Tables Script.sql" />
+    <Content Include="debug.log" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="home.html" />
+    <Content Include="js\Scrn\CommonScript.js" />
+    <Content Include="js\Scrn\modeler.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50514</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55323/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

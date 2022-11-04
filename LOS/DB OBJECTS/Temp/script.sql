@@ -1,0 +1,1 @@
+UPDATE LosDeviation SET LdvRmks = 'UPDATED REMARKS' WHERE ISNULL(LdvRmks,'') = ''

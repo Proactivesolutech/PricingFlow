@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHFL</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/fonts/style.css">
+<link href="css/datepicker.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main-wrapper">
+  <div class="left-panel bg-blue"> <i class="icon-menu"></i>
+    <ul class="nav-menu">
+      <li><a href="javascript:void(0)" onClick="LoadHtmlDiv('lead-list.html')" title="Lead List"><i class="icon-list"></i><span>Lead List</span></a></li>
+      <li><a href="javascript:void(0)" onClick="LoadHtmlDiv('lead-entry.html')" title="Lead Entry"><i class="icon-file"></i><span>Lead Entry</span></a></li>
+      <li><a href="javascript:void(0)" onClick="LoadHtmlDiv('quick-entry.html')" title="Quick Entry"><i class="icon-line-chart"></i><span>Quick Entry</span></a></li>
+      <li><a href="javascript:void(0)" onClick="LoadHtmlDiv('detail-entry.html')" title="Detail Entry"><i class="icon-business"></i><span>Detail Entry</span></a></li>
+      <li><a href="javascript:void(0)" onClick="LoadHtmlDiv('basic-credit.html')" title="Basic Credit"><i class="icon-credit"></i><span>Basic Credit</span></a></li>
+      <li><a href="javascript:void(0)" onClick="LoadHtmlDiv('pbp-calculator.html')" title="PBP Calculator"><i class="icon-calculator"></i><span>PBP Calculator</span></a></li>
+      <li><a href="javascript:void(0)" onClick="LoadHtmlDiv('post-sanction.html')" title="Post Sanction"><i class="icon-house"></i><span>Post Sanction</span></a></li>
+    </ul>
+  </div>
+  <div class="center-panel">
+    <div class="top-panel"> 
+      <a href="#" ><img src="images/logo.jpg" alt="SHFL" title="SHFL" width="60" height="30" class="left"></a> 
+      
+      <div class="right">
+        <!--<div class="history-click" onClick="LoadHtmlHistory('history.html')"><i class="icon-view"></i></div>
+        <div id="div-history-content"></div>
+        -->
+        <div class="history-click"><i class="icon-view"></i></div>
+        <a href="#"><img src="images/customer.jpg" alt="" title="" class="user"></a>
+      </div>
+      
+      <div class="clear"></div>
+    </div>
+    <div class="content-panel" id="div-user-content"></div>
+  </div>
+  <div class="right-panel">
+    <ul class="right-icons">
+      <li><i class="icon-chat"></i><span class="count">99</span></li>
+    </ul>
+    <ul class="notification-div">
+      <li>
+        <div class="notification-title"> <img src="images/customer.jpg" alt="" title="">
+          <p> Title comes here Title comes here </p>
+        </div>
+        <p>Content comes here Content comes here Content comes here Content comes here Content comes here Content comes here Content comes here Content comes here Content comes here Content comes here </p>
+        <div class="date-comment">
+          <div class="time-date"> <span>20/07/2016</span> <span>4.32 PM</span> </div>
+          <div class="comment-icon"><i class="icon-chat"></i> <span>5</span></div>
+        </div>
+        <div class="comment-expand">
+          <ul class="comment-list">
+            <li>
+              <div class="left"><img src="images/customer.jpg" alt="" title=""></div>
+              <div class="right">
+                <p>Content comes here Content comes here Content comes here Content </p>
+                <div class="time-date">
+                  <div class="left"><span>20/07/2016</span> <span>4.32 PM</span> </div>
+                  <i class="icon-reply right"></i></div>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li>
+              <div class="left"><img src="images/customer.jpg" alt="" title=""></div>
+              <div class="right">
+                <p>Content comes here Content comes here Content comes here Content </p>
+                <div class="time-date"> <span>20/07/2016</span> <span>4.32 PM</span> <i class="icon-reply right"></i></div>
+              </div>
+              <div class="clear"></div>
+            </li>
+          </ul>
+          <div class="comment-div">
+            <input type="text" placeholder="To">
+            <textarea rows="3">Write Comment</textarea>
+            <input type="button" value="Comment" class="left">
+            <input type="button" value="Clear" class="right">
+          </div>
+          <div class="clear"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<script src="js/jquery.js"></script> 
+<script src="js/common-script.js"></script> 
+<script src="js/jquery.slimscroll.js"></script>
+<script src="js/datepicker.min.js"></script>
+<!-- Include English language -->
+<script src="js/datepicker.en.js"></script> 
+<script>
+function LoadHtmlDiv(HtmlPage){
+    $("#div-user-content").empty();	
+	$("#div-user-content").load(HtmlPage);
+}
+/*function LoadHtmlDiv(HtmlPage){
+	
+    $("#div-user-content").empty();
+    $("#div-user-content").load(HtmlPage, function (responseText, textStatus, req) {
+		LoadHtmlDiv('lead-list.html');
+		$(".icon-view").css('cursor','pointer');
+		$("#div-history-content").hide();
+		
+		$('.icon-view').click(function(){			
+			if($("#div-history-content").css('display') == "block"){
+				$(".content-panel").removeClass("content-height");
+			}
+			else{
+				$('.content-panel').addClass("content-height");				
+			}
+			$("#div-history-content").toggle();
+			contentHeight(); centerHeight();
+		});
+	});
+}*/
+function LoadHtmlHistory(HtmlPage){
+    $("#div-history-content").empty();	
+	$("#div-history-content").load(HtmlPage);
+}
+$(document).ready(function(){
+	  LoadHtmlDiv('lead-list.html');
+});
+</script>
+</body>
+</html>

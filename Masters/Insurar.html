@@ -1,0 +1,52 @@
+﻿<script src="../Masters/js/Scrn/insurarmas.js"></script>
+<div class="title">
+    <h1>
+        Insurar:Master
+        <h2>
+            Cases
+            <!--<i title="Insurar Master" id="Insurar_close" style="display: block;" class="icon-close right" onclick="LoadHtmlDiv('cases.html')"></i>-->
+        </h2>
+    </h1>
+</div>
+
+
+<div class="box-div">
+    <div class="tab1-content div_content insurar_info" contentchanged="true" id="insurar">
+        <ul class="form-controls">
+            <li class="width-12">
+                <label>Insurar Code</label>
+                <input type="text" name="text" key="Inscode" />
+            </li>
+            <li class="width-12">
+                <label>Insurar Name</label>
+                <input type="text" name="text" key="InsName" />
+            </li>
+            <li class="width-12">
+                <label>Insurar Display Name</label>
+                <input type="text" name="text" key="InsDispName" />
+            </li>
+            <li>
+                <input type="hidden" name="text" id="InPk" key="InPk" />
+            </li>
+            <li class="width-12">
+                <label></label>
+                <input type="button" value="Confirm" name="Confirm" onclick="fnconfirmdetails()" />
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <comp-help id="comp-help" txtcol="InsurerName" valcol="InPk" onrowclick="Searchclick" prcname="PrcShflInsurardisplayhelp" width="100%" comp-hidden="true">
+                </comp-help>
+                <input type="button" value="Search" id="searchbutton" onclick="Searchonclick();">
+            </li>
+        </ul>
+        <!--<table>
+            <thead>
+            <td><h1>Insurar Code</h1></td>
+            <td><h1>Insurar Name</h1></td>
+            <td><h1>Insurar DisplayName</h1></td>
+            </thead>
+            <tbody id="griddiv"></tbody>
+        </table>-->
+    </div>
+</div>

@@ -1,0 +1,1113 @@
+﻿<div class="title">
+    <h1>Zonal QC : Proposal Entry</h1>
+</div>
+<div class="content-div proposal-entry-page" id="SanctionDet-div">
+    <form id="PostForm" name="PostForm" action="http://119.226.197.6:8080/omnidocs/integration/foldView/viewFoldList.jsp" method="post" target="newWin">
+        <input type="hidden" name="Application" value="SHFL_LOANS">
+        <input type="hidden" id="fold_nm" name="FolderName" value="">
+        <input type="hidden" name="sessionIndexSet" value="false">
+    </form>
+
+
+    <div class="lead-information box-div">
+        <ul class="form-controls">
+            <h2>Lead Information <i class="icon-plus div-right" title="Omnidox" id="popclose" onclick="fnpop();"></i></h2>
+            <li class="category-icons div-left">
+                <label><i id="prdicon"></i></label>
+                <p id="prdcode"></p>
+            </li>
+            <li class="width-1 read-only">
+                <label>Lead ID</label>
+                <p id="psq_LeadId"></p>
+            </li>
+            <li class="width-17 read-only">
+                <label>Application Number</label>
+                <p id="psq_AppNo"></p>
+            </li>
+            <li class="width-19 read-only">
+                <label>Sanction Number</label>
+                <p key="psq_SancNo" name="content" id="psq_SancNo"></p>
+            </li>
+            <li class="width-15 read-only">
+                <label>Branch</label>
+                <p id="psq_Branch"></p>
+            </li>
+            <li class="width-19 read-only">
+                <label>Loan amount</label>
+                <p><i class="icon-indian-rupee" style="font-size:11px; padding-right:2px;"></i><span key="psq_Lnamt" name="content" class="currency" restrict="number"></span></p>
+            </li>
+            <li class="width-15 read-only">
+                <label>Tenure(months)</label>
+                <p key="psq_Tenure" name="content"></p>
+            </li>
+            <li class="width-15 read-only">
+                <label>ROI(%)</label>
+                <p key="psq_ROI" name="content"></p>
+            </li>
+            <li class="width-15 read-only">
+                <label>Spread(%)</label>
+                <p key="psq_Spread" name="content"></p>
+            </li>
+            <li class="width-15 read-only">
+                <label>SHPLR(%)</label>
+                <p key="psq_Shplr" name="content"></p>
+            </li>
+        </ul>
+    </div>
+    <div class="box-div">
+        <input type="button" onclick="fnrePaymtMx();" value="Repayment Matrix" class="div-right" />
+        <div class="postsanction-property" id="PostSancProperty">
+            <ul id="psq_ul_prop_tabs" class="common-tabs">
+                <li class="active tab_0 propDiv" licount="0" onclick="fnshowprop(this);">Property1</li>
+            </ul>
+            <h2>Property Information</h2>
+            <div id="psq_prop_div_0" val="0" propfk="0" class="tab0-content div_content property" contentchanged="true">
+                <input type="hidden" value="0" name="text" key="psq_AstCstPK" />
+                <div class=" div-left grid-50">
+                    <ul class="box-div form-controls">
+                        <h2>Property Details</h2>
+                        <li class="width-10">
+                            <label>Type of Property</label>
+                            <div id="dvprptype" class="dvprptype">
+                                <select name="select2" key="psq_proptyp" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">Flat</option>
+                                    <option value="1">Plot</option>
+                                    <option value="2">Independant</option>
+                                </select>
+                            </div>
+                        </li>
+                        <span id="dvflat" class="dvflat">
+                            <li class="width-47 flat">
+                                <label>Demolition Risk </label>
+                                <select name="select2" key="psq_demolrisk" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">High</option>
+                                    <option value="1">Medium</option>
+                                    <option value="2">Low</option>
+                                    <option value="2">No</option>
+                                </select>
+                            </li>
+                            <li class="width-47 flat">
+                                <label>UDS Area</label>
+                                <input type="text" name="text" key="psq_UDSarea" restrict="number" readonly>
+                            </li>
+                            <li class="width-47 flat">
+                                <label>Measurement</label>
+                                <select name="select2" key="psq_udsmmt" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">Sq Feet</option>
+                                    <option value="1">Sq Yard</option>
+                                    <option value="2">Sq Meter</option>
+                                    <option value="3">Acre</option>
+                                    <option value="4">Hectare</option>
+                                    <option value="5">Ground</option>
+                                    <option value="6">Cent</option>
+                                </select>
+                            </li>
+                            <li class="width-47 amount flat">
+                                <label>UDS Value </label>
+                                <input type="text" name="text" key="psq_UDSval" class="currency" restrict="number" readonly>
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="width-47 flat">
+                                <label>Super Build Up Area</label>
+                                <input type="text" name="text" id="superbldupval" key="psq_supbuildarea" restrict="number" readonly>
+                            </li>
+                            <li class="width-47 flat">
+                                <label>Measurement</label>
+                                <select name="select2" key="psq_supbuildmmt" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">Sq Feet</option>
+                                    <option value="1">Sq Yard</option>
+                                    <option value="2">Sq Meter</option>
+                                    <option value="3">Acre</option>
+                                    <option value="4">Hectare</option>
+                                    <option value="5">Ground</option>
+                                    <option value="6">Cent</option>
+                                </select>
+                            </li>
+                            <li class="width-47 flat">
+                                <label>Build Up Area</label>
+                                <input type="text" id="buildupval" name="text" key="psq_buildarea" restrict="number" readonly>
+                            </li>
+                            <li class="width-47 flat">
+                                <label>Measurement</label>
+                                <select name="select2" key="psq_buildupmmt" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">Sq Feet</option>
+                                    <option value="1">Sq Yard</option>
+                                    <option value="2">Sq Meter</option>
+                                    <option value="3">Acre</option>
+                                    <option value="4">Hectare</option>
+                                    <option value="5">Ground</option>
+                                    <option value="6">Cent</option>
+                                </select>
+                            </li>
+                            <li class="width-47 flat">
+                                <label>Carpet Area</label>
+                                <input type="text" name="text" key="psq_carpetarea" id="psq_carpetarea" restrict="number" readonly>
+                            </li>
+                            <li class="width-47 flat">
+                                <label>Measurement</label>
+                                <select name="select2" key="psq_carpetmmt" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">Sq Feet</option>
+                                    <option value="1">Sq Yard</option>
+                                    <option value="2">Sq Meter</option>
+                                    <option value="3">Acre</option>
+                                    <option value="4">Hectare</option>
+                                    <option value="5">Ground</option>
+                                    <option value="6">Cent</option>
+                                </select>
+                            </li>
+                            <li class="width-47 amount flat">
+                                <label>Estimate </label>
+                                <input type="text" name="text" key="psq_estimate" restrict="number" class="currency" readonly>
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                        </span>
+                        <span id="dvplot" class="dvplot">
+                            <li class="width-47 plot" style="display:none;">
+                                <label>Land Area</label>
+                                <input type="text" name="text" key="psq_landarea" restrict="number" readonly>
+                            </li>
+                            <li class="width-47 plot" style="display:none;">
+                                <label>Measurement</label>
+                                <select name="select2" key="psq_landmmt" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">Sq Feet</option>
+                                    <option value="1">Sq Yard</option>
+                                    <option value="2">Sq Meter</option>
+                                    <option value="3">Acre</option>
+                                    <option value="4">Hectare</option>
+                                    <option value="5">Ground</option>
+                                    <option value="6">Cent</option>
+                                </select>
+                            </li>
+                            <li class="width-47 amount plot" style="display:none;">
+                                <label>Land value</label>
+                                <input type="text" name="text" key="psq_landvalue" class="currency" restrict="number" readonly>
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                        </span>
+                        <span id="dvindependant" class="dvindependant">
+                            <li class="width-47 independant" style="display:none;">
+                                <label>Demolition Risk </label>
+                                <select name="select2" key="psq_demolrisk" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">High</option>
+                                    <option value="1">Medium</option>
+                                    <option value="2">Low</option>
+                                    <option value="3">No</option>
+                                </select>
+                            </li>
+                            <li class="width-47 independant" style="display:none;">
+                                <label>Land Area</label>
+                                <input type="text" name="text" key="psq_landarea" restrict="number" readonly>
+                            </li>
+                            <li class="width-47 independant" style="display:none;">
+                                <label>Measurement</label>
+                                <select name="select2" key="psq_landmmt" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">Sq Feet</option>
+                                    <option value="1">Sq Yard</option>
+                                    <option value="2">Sq Meter</option>
+                                    <option value="3">Acre</option>
+                                    <option value="4">Hectare</option>
+                                    <option value="5">Ground</option>
+                                    <option value="6">Cent</option>
+                                </select>
+                            </li>
+                            <li class="width-47 independant" style="display:none;">
+                                <label>Super Build Up Area</label>
+                                <input type="text" name="text" id="superbldupval" key="psq_supbuildarea" restrict="number" readonly>
+                            </li>
+                            <li class="width-47 independant" style="display:none;">
+                                <label>Measurement</label>
+                                <select name="select2" key="psq_supbuildmmt" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">Sq Feet</option>
+                                    <option value="1">Sq Yard</option>
+                                    <option value="2">Sq Meter</option>
+                                    <option value="3">Acre</option>
+                                    <option value="4">Hectare</option>
+                                    <option value="5">Ground</option>
+                                    <option value="6">Cent</option>
+                                </select>
+                            </li>
+                            <li class="width-47 independant" style="display:none;">
+                                <label>Build Up Area</label>
+                                <input type="text" name="text" id="buildupval" key="psq_buildarea" restrict="number" readonly>
+                            </li>
+                            <li class="width-47 independant" style="display:none;">
+                                <label>Measurement</label>
+                                <select name="select2" key="psq_buildupmmt" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">Sq Feet</option>
+                                    <option value="1">Sq Yard</option>
+                                    <option value="2">Sq Meter</option>
+                                    <option value="3">Acre</option>
+                                    <option value="4">Hectare</option>
+                                    <option value="5">Ground</option>
+                                    <option value="6">Cent</option>
+                                </select>
+                            </li>
+                            <li class="width-47 independant" style="display:none;">
+                                <label>Carpet Area</label>
+                                <input type="text" name="text" id="psq_carpetarea" key="psq_carpetarea" restrict="number" readonly>
+                            </li>
+                            <li class="width-47 independant" style="display:none;">
+                                <label>Measurement</label>
+                                <select name="select2" key="psq_carpetmmt" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">Sq Feet</option>
+                                    <option value="1">Sq Yard</option>
+                                    <option value="2">Sq Meter</option>
+                                    <option value="3">Acre</option>
+                                    <option value="4">Hectare</option>
+                                    <option value="5">Ground</option>
+                                    <option value="6">Cent</option>
+                                </select>
+                            </li>
+                            <li class="width-47 amount independant" style="display:none;">
+                                <label>Land value</label>
+                                <input type="text" name="text" key="psq_landvalue" class="currency" restrict="number" readonly>
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="width-47 amount independant" style="display:none;">
+                                <label>Estimate </label>
+                                <input type="text" name="text" key="psq_estimate" class="currency" restrict="number" readonly>
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                        </span>
+                        <span id="dvCommon" class="dvCommon">
+                            <li class="width-10">
+                                <label>Ownership Type</label>
+                                <select name="select2" key="psq_ownertype" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="S">Single</option>
+                                    <option value="J">Joint</option>
+                                </select>
+                            </li>
+                            <li class="width-15">
+                                <label>Possession Type</label>
+                                <select name="select2" key="psq_possessiontyp" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">Free Hold</option>
+                                    <option value="1">Lease Hold</option>
+                                </select>
+                            </li>
+                            <li class="width-10 lease-period" style="display:none;">
+                                <label>Lease Period</label>
+                                <input type="text" name="text" key="psq_leasepriod" readonly>
+                            </li>
+                            <li class="width-10">
+                                <label>Survey Number</label>
+                                <input type="text" name="text" key="psq_surveyno" readonly>
+                            </li>
+                            <li class="width-15">
+                                <label>Location Type</label>
+                                <select name="select2" key="psq_loctyp" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">Rural</option>
+                                    <option value="1">Urban</option>
+                                </select>
+                            </li>
+                            <li class="width-15">
+                                <label>Approved Land Use</label>
+                                <select name="select2" key="psq_landuse" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">Residential</option>
+                                    <option value="1">Commercial</option>
+                                </select>
+                            </li>
+                            <li class="width-12">
+                                <label>Land Approval Authority</label>
+                                <input type="text" name="text" key="psq_apprauth" restrict="alphaspace" readonly>
+                            </li>
+                            <span id="plotdisp" class="plotdisp">
+                                <li class="width-12">
+                                    <label>Building Approval Authority</label>
+                                    <input type="text" name="text" key="psq_buildapprauth" restrict="alphaspace" readonly>
+                                </li>
+                                <li class="width-15 amount">
+                                    <label>Distress Value</label>
+                                    <input type="text" name="text" key="psq_distressval" restrict="number" class="currency" readonly>
+                                    <i class="icon-indian-rupee"></i>
+                                </li>
+                            </span>
+                            <li class="width-15">
+                                <label>Property Occupancy</label>
+                                <select name="select2" key="psq_propoccupy" class="select ulpropoccupancy" disabled></select>
+                            </li>
+                            <li class="width-12">
+                                <label>Approval Plan Number</label>
+                                <input type="text" name="text" key="psq_apprvalplanno" readonly>
+                            </li>
+                        </span>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <div class="div-right grid-50">
+                    <ul class="box-div form-controls">
+                        <div id="dvConstruction" class="dvConstruction">
+                            <h2>Construction Details</h2>
+                            <li class="width-4">
+                                <label>Age of Building</label>
+                                <input type="text" name="text" key="psq_buildingage" restrict="number" readonly>
+                            </li>
+                            <li class="width-17">
+                                <label>Estimated Future Life of Building</label>
+                                <input type="text" name="text" key="psq_estimatebuilding" readonly>
+                            </li>
+                            <li class="width-17">
+                                <label>Type of Structure</label>
+                                <input type="text" name="text" key="psq_structyp" readonly>
+                            </li>
+                            <li class="width-4">
+                                <label>Number of Floors</label>
+                                <input type="text" name="text" key="psq_nooffloor" readonly>
+                            </li>
+                            <li class="width-10">
+                                <label>% Construction</label>
+                                <input type="text" id="stgofConst" name="text" key="psq_construction" restrict="number" readonly>
+                            </li>
+                            <li class="width-15">
+                                <label>Mumty</label>
+                                <select name="select2" key="psq_mumty" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="0">Yes</option>
+                                    <option value="1">No</option>
+                                </select>
+                            </li>
+                        </div>
+                    </ul>
+                    <ul class="box-div form-controls">
+                        <h2>Property Valuation</h2>
+                        <div id="dvpropvaluation" class="dvpropvaluation">
+                            <li class="width-31 amount">
+                                <label>Agreement Value</label>
+                                <input type="text" name="text" key="psq_aggreeValue" id="psq_aggreeValue" class="currency mandatory" restrict="number" onkeyup="sum(this);">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="width-31 amount">
+                                <label>Registration Charges</label>
+                                <input type="text" name="text" key="psq_regChrges" id="psq_regChrges" class="currency" restrict="number" onkeyup="sum(this);">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="width-31 amount">
+                                <label>Stamp Duty Charges</label>
+                                <input type="text" name="text" key="psq_StmpdutyChrges" id="psq_StmpdutyChrges" class="currency" restrict="number" onkeyup="sum(this);">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="width-31 amount">
+                                <label>Amenities amount</label>
+                                <input type="text" name="text" key="psq_amenamt" class="currency" restrict="number" onkeyup="sum(this);">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="width-31 amount">
+                                <label>Estimation amount</label>
+                                <input type="text" name="text" key="psq_LegEstimate" class="currency" restrict="number" onkeyup="sum(this);">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="width-31 amount">
+                                <label>Asset Cost</label>
+                                <input type="text" name="text" key="psq_assetcst" id="psq_assetcst" class="currency mandatory" restrict="number" disabled>
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="width-31 amount">
+                                <label>Market value</label>
+                                <input type="text" name="text" id="psq_mktval" key="psq_mktval" class="currency" restrict="number" onkeyup="fnLTVCalc();" readonly>
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                        </div>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+                <div class="postsanction-seller box-div" id="PostSancSeller">
+                    <h2>Seller Details</h2>
+                    <ul id="psq_ul_seller_tabs" class="common-tabs">
+                        <li value="0" class="active tab_0 common" onclick="fnshowseller(this);">Seller1</li>                 
+                    </ul>
+                    <div id="psq_seller_div_0_0" val="0" propfk="0" sellerpk="0" class="tab0-content div_content seller_div psq_seller_div_0_0" contentchanged="true">
+                        <ul class="form-controls" contentchanged="true">
+                            <li class="width-7 seller">
+                                <label>Type of Seller</label>
+                                <select name="select2" key="psq_SellerType" class="select" disabled>
+                                    <option value="-1">Select</option>
+                                    <option value="B">Builder</option>
+                                    <option value="S">Seller</option>
+                                </select>
+                            </li>
+
+                            <li class="width-12 buildermas">
+                                <!--<label>Name</label>-->
+                                <!--<comp-help id="comp-help" txtcol="BuilderName" valcol="GPk" onrowclick="builderclick" prcname="PrcShflBuilderhelp" width="100%"></comp-help>
+                    <input type="hidden" class="mandatory" valtext="" name="text" key="psq_SellerName">-->
+                            </li>
+                            <li class="width-12" id="psq_buildercin" style="display:none;">
+                                <label>CIN</label>
+                                <input type="text" placeholder="" name="text" key="psq_CIN" readonly>
+                            </li>
+                        </ul>
+                        <ul class="form-controls UlSellerAddr" id="UlSellerAddr" contentchanged="true" style="display:none">
+                            <h2>Address</h2>
+                            <li class="width-8">
+                                <label>Flat/Door No</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerFLatNo"  maxlength="20" readonly>
+                            </li>
+                            <li class="width-21">
+                                <label>Building</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerBuild" maxlength="100" readonly>
+                            </li>
+                            <li class="width-8">
+                                <label>Plot No</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerPlotNo" maxlength="20" readonly >
+                            </li>
+                            <li class="width-54">
+                                <label>Street</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerSt" maxlength="150" readonly>
+                            </li>
+                            <li class="width-54">
+                                <label>Land Mark</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerLndMrk" maxlength="250" readonly >
+                            </li>
+                            <li class="width-54 city">
+                                <label>Town/Village/City</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerTown" maxlength="150" readonly >
+                            </li>
+                            <li class="width-54 district">
+                                <label>District</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerDist" maxlength="100" readonly >
+                            </li>
+                            <li class="width-21 state">
+                                <label>State</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerState" maxlength="100" readonly>
+                            </li>
+                            <li class="width-6">
+                                <label>PIN</label>
+                                <comp-help id="comp-help" txtcol="Pincode" valcol="PinPk" onrowclick="Pinclick" prcname="PrcShflPincodehelp" width="100%" readonly></comp-help>
+                                <input type="hidden" placeholder="" name="text" key="psq_SellerPin" restrict="number" maxlength="6" readonly>
+                            </li>
+
+                        </ul>
+                        <ul class="form-controls" id="chkagent" contentchanged="true">
+                            <li class="checkbox width-54" id="checkAgt">
+                                <input type="checkbox" name="checkbox" key="psq_check_agt" onclick="fncheckAgt(this);" disabled>
+                                Trigger Agency
+                            </li>
+
+                            <li class="width-54 psq-SelAGent" id="psq_SelAGent">
+                                <label>Seller Agent</label>
+                                <comp-help id="Seller_help" txtcol="AgentName" valcol="Agtpk" helpfk="0" onrowclick="agtclick" prcname="PrcShfl_AgentMas_help" width="100%" readonly></comp-help>
+                                <input type="hidden" placeholder="" name="text" key="psq_agnttype">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="ltvAndPf-val">
+            <div class="grid-50 div-left">
+                <ul class="box-div form-controls">
+                    <h2>Property Valuation</h2>
+                    <li class="width-47">
+                        <label>MV LTV %</label>
+                        <input type="text" name="text" id="psq_mvltv" key="psq_mvltv" readonly>
+                    </li>
+                    <li class="width-47">
+                        <label>AV LTV %</label>
+                        <input type="text" name="text" id="psq_avltv" key="psq_avltv" readonly>
+                    </li>
+                    <li class="width-47" id="liCombMvLtv" style="display:none;">
+                        <label>Combined MV LTV %</label>
+                        <input type="text" name="text" id="psq_combmvltv" key="psq_combmvltv" readonly>
+                    </li>
+                    <li class="width-47" id="liCombAvLtv" style="display:none;">
+                        <label>Combined AV LTV %</label>
+                        <input type="text" name="text" id="psq_combavltv" key="psq_combavltv" readonly>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid-50 div-right">
+                <ul class="box-div form-controls" contentchanged="true">
+                    <h2>PF Details</h2>
+                    <li class="life-checkbox width-100p">
+                        <input type="checkbox" name="checkbox" key="psq_pfamt_DedFrmLn">
+                        Adjust PF with Loan
+                    </li>
+                    <li>
+                        <div id="dvTotPF" class="box-sum bg8">
+                            <h5>Total PF</h5>
+                            <p><i class="icon-indian-rupee"></i><span key="psq_totpfamt" name="content" class="income-amount currency" restrict="number"></span></p>
+                        </div>
+                        <div class="box-sum">
+                            <h5>waiver amount</h5>
+                            <div class="amount widthout-label">
+                                <i class="icon-indian-rupee"></i>
+                                <input class="for-currency" key="psq_waiveramt" name="text" type="text" readonly>
+                            </div>
+                        </div>
+
+                        <div id="dvColPF" class="box-sum bg1">
+                            <h5>Collected PF</h5>
+                            <p><i class="icon-indian-rupee"></i><span key="psq_colpfamt" name="content" class="income-amount currency" restrict="number"></span></p>
+                            <p>Received</p>
+                        </div>
+                        <div id="dvRemPF" class="box-sum bg8" onclick="fnRemPFCalc();">
+                            <h5>Remaining PF</h5>
+                            <p><i class="icon-indian-rupee"></i><span key="psq_balpfamt" name="content" class="income-amount currency" restrict="number"></span></p>
+                        </div>
+                    </li>                  
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="insurance-div">
+            <div class="grid-50 div-left">
+                <div class="box-div">
+                    <h2>Life Insurance</h2>
+                    <ul id="ulLyfInsDet" class="form-controls" contentchanged="true">
+                        <li class="life-checkbox width-100p">
+                            <input type="checkbox" name="checkbox" key="psq_LyfInsur_AddtoLn" onclick="fnEMICalc()">
+                            Add Life Insurance to EMI
+                        </li>
+                        <li class="width-50p">
+                            <label>Insured Person ID</label>
+                            <select name="select2" key="psq_sel_LyfInsur_Per" class="select mandatory psq_sel_LyfInsur_Per" onchange="BindApplName(this, 'LI');"></select>
+                        </li>
+                        <li class="width-50p">
+                            <label>Insured Person Name</label>
+                            <input id="LyfInsur_PerNm_Selected" name="text" key="psq_LyfInsuredPer_Name" type="text" placeholder="" class="mandatory" readonly>
+                        </li>
+                        <li class="width-50p">
+                            <label>Insurer</label>
+                            <comp-help id="comp-help" txtcol="ShortDescription" valcol="InPk" onrowclick="Insurarclick" prcname="PrcShflInsurarhelp" width="100%"></comp-help>
+                            <input name="text" key="psq_LyfInsurerName" id="psq_LyfInsurerName" class="insname" type="hidden" placeholder="" />
+                            <input name="text" key="psq_LyfInsurerPk" type="hidden" class="insPk" placeholder="">
+                        </li>
+                        <li class="width-50p">
+                            <label>Single/Joint</label>
+                            <select name="select2" key="psq_sel_LyfInsurFor" class="select mandatory">
+                                <option value="-1">Select</option>
+                                <option value="0">Single</option>
+                                <option value="1">Joint</option>
+                            </select>
+                        </li>
+                        <li class="width-50p amount">
+                            <i class="icon-indian-rupee"></i>
+                            <label>Sum Assured</label>
+                            <input name="text" key="psq_LyfInsurAmt" id="psq_LyfInsurAmt" type="text" class="currency mandatory" restrict="number">
+                        </li>
+                        <li class="width-50p amount">
+                            <i class="icon-indian-rupee"></i>
+                            <label>Premium</label>
+                            <input name="text" key="psq_LyfInsurPremium" id="psq_LyfInsurPremium" type="text" class="currency mandatory" restrict="number" onblur="fnEMICalc()">
+                        </li>
+                    </ul>
+                    <div id="dvLiNomDet" class="linominee-div grid-type" contentchanged="true">
+                        <h2>Nominee</h2>
+                        <ul class="form-controls">
+                            <li class="width-19">
+                                <label>Name of the Nominee</label>
+                            </li>
+                            <li class="width-6a">
+                                <label>Age</label>
+                            </li>
+                            <li class="width-6">
+                                <label>Gender</label>
+                            </li>
+                            <li class="width-8c">
+                                <label>Relatioship</label>
+                            </li>
+                            <li class="width-15">
+                                <label>Guardian Name</label>
+                            </li>
+                            <li class="width-9">
+                                <label>Guardian Relationship</label>
+                            </li>
+                            <li>
+                                <label onclick="fnAddGrid('LI')"><i class="icon-plus"></i></label>
+                            </li>
+                        </ul>
+                        <ul class="form-controls rowGrid linominee-div-ul">
+                            <li class="width-19">
+                                <input type="text" placeholder="" name="text" colkey="psq_LINomnee_Nm" class="mandatory" restrict="alphaspace">
+                            </li>
+                            <li class="width-6a">
+                                <input type="text" placeholder="" name="text" colkey="psq_LINomnee_Age" class="mandatory" restrict="number" maxlength="2">
+                            </li>
+                            <li class="width-6">
+                                <select name="select2" colkey="psq_LINomnee_Gender" class="select mandatory">
+                                    <option value="-1">Select</option>
+                                    <option value="0">Male</option>
+                                    <option value="1">Female</option>
+                                </select>
+                            </li>
+                            <li class="width-8c">
+                                <select name="select2" colkey="psq_LINomnee_Relation" class="select mandatory">
+                                    <option value="-1">Select</option>
+                                    <option value="Father">Father</option>
+                                    <option value="Mother">Mother</option>
+                                    <option value="Spouse">Spouse</option>
+                                    <option value="Son">Son</option>
+                                    <option value="Daughter">Daughter</option>
+                                    <option value="Brother">Brother</option>
+                                    <option value="Sister">Sister</option>
+                                </select>
+                            </li>
+                            <li class="width-15">
+                                <input type="text" placeholder="" name="text" colkey="psq_LINomnee_GuardNm" restrict="alphaspace">
+                            </li>
+                            <li class="width-15">
+                                <select name="select2" colkey="psq_LINomnee_GuardRel" class="select">
+                                    <option value="-1">Select</option>
+                                    <option value="Father">Father</option>
+                                    <option value="Mother">Mother</option>
+                                    <option value="Spouse">Spouse</option>
+                                    <option value="Son">Son</option>
+                                    <option value="Daughter">Daughter</option>
+                                    <option value="Brother">Brother</option>
+                                    <option value="Sister">Sister</option>
+                                </select>
+                            </li>
+                            <li> <i class="icon-close" onclick="fnDelGridRow(this, 'LI')"></i> </li>
+                            <li style="display:none;">
+                                <input type="text" placeholder="" name="text" colkey="psq_LINomnee_PK">
+                                <input type="text" value="LI" name="text" colkey="psq_LINomnee_InsType">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-50 div-right">
+                <div class="box-div dvGenIns">
+                    <h2>General Insurance</h2>
+                    <ul id="ulGenInsDet" class="form-controls" contentchanged="true">
+                        <li class="life-checkbox width-100p">
+                            <input type="checkbox" name="checkbox" key="psq_GenInsur_AddtoLn" onclick="fnEMICalc()">
+                            Add General Insurance to EMI
+                        </li>
+                        <li class="width-50p">
+                            <label>Insured Person ID</label>
+                            <select name="select2" key="psq_sel_GenInsur_Per" class="select mandatory psq_sel_GenInsur_Per" onchange="BindApplName(this, 'GI');"></select>
+                        </li>
+                        <li class="width-50p">
+                            <label>Insured Person Name</label>
+                            <input id="GenInsur_PerNm_Selected" name="text" key="psq_GenInsuredPer_Name" type="text" placeholder="" class="mandatory" restrict="alphaspace" readonly>
+                        </li>
+                        <li class="width-50p">
+                            <label>Insurer</label>
+                            <comp-help id="comp-help" txtcol="ShortDescription" valcol="InPk" onrowclick="Insurarclick" prcname="PrcShflInsurarhelp" width="100%"></comp-help>
+                            <input name="text" key="psq_GenInsurerName" id="psq_GenInsurerName" type="hidden" placeholder="" class="insname" />
+                            <input name="text" key="psq_GenInsurerPk" type="hidden" class="insPk" placeholder="">
+                        </li>
+                        <li class="width-50p amount">
+                            <i class="icon-indian-rupee"></i>
+                            <label>Sum Assured</label>
+                            <input name="text" key="psq_GenInsurAmt" id="psq_GenInsurAmt" type="text" class="currency mandatory" restrict="number">
+                        </li>
+                        <li class="width-32 amount">
+                            <i class="icon-indian-rupee"></i>
+                            <label>Premium</label>
+                            <input name="text" key="psq_GenInsurPremium" id="psq_GenInsurPremium" type="text" class="currency mandatory" restrict="number" onblur="fnEMICalc()">
+                        </li>
+                        <li class="width-11">
+                            <label>Policy Period(months)</label>
+                            <input name="text" key="psq_GenInsur_Period" type="text" placeholder="" class="mandatory" restrict="number" maxlength="3">
+                        </li>
+                        <li class="width-3">
+                            <label>Personal Accident Cover</label>
+                            <select name="select2" key="psq_sel_AccidentCover" class="select mandatory">
+                                <option value="-1">Select</option>
+                                <option value="0">Yes</option>
+                                <option value="1">No</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <div id="dvGiNomDet" class="ginominee-div grid-type" contentchanged="true">
+                        <h2>Nominee</h2>
+                        <ul class="form-controls">
+                            <li class="width-19">
+                                <label>Name of the Nominee</label>
+                            </li>
+                            <li class="width-6a">
+                                <label>Age</label>
+                            </li>
+                            <li class="width-6">
+                                <label>Gender</label>
+                            </li>
+                            <li class="width-8c">
+                                <label>Relatioship</label>
+                            </li>
+                            <li class="width-15">
+                                <label>Guardian Name</label>
+                            </li>
+                            <li class="width-9">
+                                <label>Guardian Relationship</label>
+                            </li>
+                            <li>
+                                <label onclick="fnAddGrid('GI')"><i class="icon-plus"></i></label>
+                            </li>
+                        </ul>
+                        <ul class="form-controls rowGrid ginominee-div-ul">
+                            <li class="width-19">
+                                <input type="text" placeholder="" name="text" colkey="psq_GINomnee_Nm" class="mandatory" restrict="alphaspace">
+                            </li>
+                            <li class="width-6a">
+                                <input type="text" placeholder="" name="text" colkey="psq_GINomnee_Age" class="mandatory" restrict="number" maxlength="2">
+                            </li>
+                            <li class="width-6">
+                                <select name="select2" colkey="psq_GINomnee_Gender" class="select mandatory">
+                                    <option value="-1">Select</option>
+                                    <option value="0">Male</option>
+                                    <option value="1">Female</option>
+                                </select>
+                            </li>
+                            <li class="width-8c">
+                                <select name="select2" colkey="psq_GINomnee_Relation" class="select mandatory">
+                                    <option value="-1">Select</option>
+                                    <option value="Father">Father</option>
+                                    <option value="Mother">Mother</option>
+                                    <option value="Spouse">Spouse</option>
+                                    <option value="Son">Son</option>
+                                    <option value="Daughter">Daughter</option>
+                                    <option value="Brother">Brother</option>
+                                    <option value="Sister">Sister</option>
+                                </select>
+                            </li>
+                            <li class="width-15">
+                                <input type="text" placeholder="" name="text" colkey="psq_GINomnee_GuardNm" restrict="alphaspace">
+                            </li>
+                            <li class="width-15">
+                                <select name="select2" colkey="psq_GINomnee_GuardRel" class="select">
+                                    <option value="-1">Select</option>
+                                    <option value="Father">Father</option>
+                                    <option value="Mother">Mother</option>
+                                    <option value="Spouse">Spouse</option>
+                                    <option value="Son">Son</option>
+                                    <option value="Daughter">Daughter</option>
+                                    <option value="Brother">Brother</option>
+                                    <option value="Sister">Sister</option>
+                                </select>
+                            </li>
+                            <li> <i class="icon-close" onclick="fnDelGridRow(this, 'GI')"></i> </li>
+                            <li style="display:none;">
+                                <input name="text" placeholder="" name="text" colkey="psq_GINomnee_PK">
+                                <input type="text" value="GI" name="text" colkey="psq_GINomnee_InsType">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    
+    <div class="box-div">
+        <div>
+            <div class="grid-50 div-left">
+                <div class="box-div">
+                    <ul class="common-tabs">
+                        <li class="active buyer-list">Repayment Mode</li>
+                        <li class="seller-list">Seller / Builder / Insurer</li>
+                    </ul>
+                    <div class="buyer-dt" contentchanged="true">
+                        <ul class="form-controls">
+                            <li class="width-15">
+                                <label>EMI Due Date</label>
+                                <select name="select2" key="psq_EmiDueDt" class="select mandatory">
+                                    <option value="-1">Select</option>
+                                    <option value="7">7</option>
+                                    <option value="15">15</option>
+                                </select>
+                            </li>
+                            <li class="amount width-15">
+                                <label>EMI Amount</label>
+                                <span>
+                                    <input type="text" class="mandatory" placeholder="" name="text" key="psq_EmiAmt" id="psq_EmiAmt" onkeydown="return false;">
+                                </span>
+                            </li>
+                        </ul>
+                        <div id="dvbankdet" class="bankdet-div grid-type" contentchanged="true">
+                            <h2></h2>
+                            <ul class="form-controls">
+                                <li class="width-48">
+                                    <label>Mode Of Payment</label>
+                                </li>
+                                <li class="width-9">
+                                    <label>Bank Name</label>
+                                </li>
+                                <li class="width-51">
+                                    <label>IFSC Code</label>
+                                </li>
+                                <li class="width-48">
+                                    <label>Account Number</label>
+                                </li>
+                                <li class="width-8">
+                                    <label>No. of PDC</label>
+                                </li>
+                                <li class="width-8a">
+                                    <label>Min No. of SPDC</label>
+                                </li>
+                                <li>
+                                    <label onclick="fnAddGrid('BanDet')"><i class="icon-plus"></i></label>
+                                </li>
+                            </ul>
+                            <ul class="form-controls rowGrid bankdet-div-ul">
+                                <li class="width-48">
+                                    <select name="select2" colkey="psq_sel_PayMode" class="select mandatory" onchange="fnChequeMandate(this);">
+                                        <option value="-1">Select</option>
+                                        <option value="P">PDC</option>
+                                        <option value="E">ECS</option>
+                                        <option value="N">NACH</option>
+                                    </select>
+                                </li>
+                                <li class="width-9">
+                                    <select name="select2" colkey="psq_sel_BankName" class="select mandatory psq_sel_BankName" onchange="BindBankDet(this);"></select>
+                                </li>
+                                <li class="read-only width-51">
+                                    <input type="text" placeholder="" name="text" colkey="psq_IfscCode" readonly>
+                                </li>
+                                <li class="width-48">
+                                    <input type="text" placeholder="" name="text" colkey="psq_AccNo" class="mandatory"readonly>
+                                </li>
+                                <li class="width-8">
+                                    <input type="text" placeholder="" name="text" colkey="psq_ChqNo" restrict="number" maxlength="3">
+                                </li>
+                                <li class="width-8a">
+                                    <input type="text" placeholder="" name="text" colkey="psq_MinChqNo" restrict="number" maxlength="3">
+                                </li>
+                                <li> <i class="icon-close" onclick="fnDelGridRow(this, 'BankDet')"></i> </li>
+                                <li style="display:none;">
+                                    <input name="text" placeholder="" name="text" colkey="psq_appchq_PK">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="dvSellerPaymentDet" class="seller-dt grid-type paydet-div" contentchanged="true" style="display:none;">
+                        <h2>Payment Details</h2>
+                        <ul class="form-controls">
+                            <li class="width-9">
+                                <label>Payable To</label>
+                            </li>
+                            <li class="width-9">
+                                <label>Instrument Type</label>
+                            </li>
+                            <li class="width-15">
+                                <label>Amount</label>
+                            </li>
+                            <li class="width-19">
+                                <label>Infavour</label>
+                            </li>
+                            <li>
+                                <label onclick="fnAddGrid('PayDet')"><i class="icon-plus"></i></label>
+                            </li>
+                        </ul>
+                        <ul class="form-controls rowGrid paydet-div-ul">
+                            <li class="width-9">
+                                <select name="select2" colkey="psq_PayableTo" class="select mandatory psq_PayableTo" onchange="BindInFavorDet(this);"></select>
+                            </li>
+                            <li class="width-9">
+                                <select name="select2" colkey="psq_InstruType" class="select mandatory">
+                                    <option value="-1">Select</option>
+                                    <option value="C">Cheque</option>
+                                    <option value="D">DD</option>
+                                    <option value="N">NEFT</option>
+                                    <option value="R">RTGS</option>
+                                </select>
+                            </li>
+                            <li class="amount without-label width-15">
+                                <input type="text" placeholder="" name="text" colkey="psq_InstruAmt" class="currency mandatory" restrict="number">
+                                <i class="icon-indian-rupee"></i>
+                            </li>                      
+                            <li class="width-19 infavIns">
+                                <input type="hidden" placeholder="" name="text" colkey="psq_InFavour" class="mandatory">
+                                <input type="text" placeholder="" name="text" onfocusout="fnInfatxt(this);">
+                            </li>
+                            <li class="width-12 infavSeller" style="display:none">
+
+                                <div class="select-focus">
+                                    <input name="select" placeholder="Select" onkeydown="return false" selval="" colkey="psq_InFavour_seller" class="autofill" onchange="fnChangeseller(this);">
+                                    <i class="icon-down-arrow"></i>
+                                    <!--<span class="selected">Medium</span><i class="arrow"></i>-->
+                                    <ul id="infavoursel" class="custom-select"></ul>
+                                </div>
+                            </li>
+                            <li> <i class="icon-close" onclick="fnDelGridRow(this, 'PayDet')"></i> </li>
+                            <li style="display:none;">
+                                <input name="text" placeholder="" name="text" colkey="psq_paydet_PK">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-50 div-right" style="display:block;">
+                <div class="box-div">
+                    <h2>Collateral</h2>
+                    <div id="Main_Content" class="MainTab-div">
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+    <!--Vishali (Documnents Insert)-->
+    <div class="box-div">
+        <div id="Document_div">
+            <div class="Doc_div" contentchanged="true">
+                <h2><h2>Post Approval Documents</h2></h2>
+                <ul class="grid-controls">
+                    <li class="width-9">
+                        <label>Type of Proof</label>
+                    </li>
+                    <li class="width-11">
+                        <label>Document Name</label>
+                    </li>
+                    <li class="width-9">
+                        <label>Documents Status</label>
+                    </li>
+                    <li class="width-9">
+                        <label>Document Reference No</label>
+                    </li>
+                    <li class="width-9">
+                        <label>Received Date</label>
+                    </li>
+                    <li class="width-9">
+                        <label>Reference Date</label>
+                    </li>
+                    <li class="width-9">
+                        <label>Valid Upto</label>
+                    </li>
+                    <li class="width-9">
+                        <label>Remarks</label>
+                    </li>
+                    <li>
+                        <i class="icon-plus" onclick="fnAdddoc()"></i>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+                <!--<ul class="grid-controls rowGrid box-doc-ul">
+                    <li class="width-9">
+                        <select name="select2" colkey="Com_Doctype" class="select" onchange="fncheckDoc(this)">
+                            <option value="-1">Select</option>
+                            <option value="O">Original</option>
+                            <option value="P">Photocopy</option>
+                            <option value="C">Certified</option>
+                        </select>
+                    </li>
+                    <li class="width-11">
+                        <comp-help id="comp-help" txtcol="DocumentName" valcol="DocPk" onrowclick="Docclick" prcname="PrcShflDocumenthhelp" width="100%"></comp-help>
+                        <input type="hidden" placeholder="" name="text" colkey="Com_Docname" value="">
+                        <input type="hidden" placeholder="" name="text" colkey="Com_DoctPk" value="">
+                    </li>
+                    <li class="width-9">
+                        <select name="select2" colkey="Com_Docstatus" class="select" onchange="fnchange(this)">
+                            <option value="-1">Select</option>
+                            <option value="R">Received</option>
+                            <option value="N">Not-Received</option>
+                            <option value="E">Recorded</option>
+                        </select>
+                    </li>
+                    <li class="width-9">
+                        <input type="text" placeholder="" name="text" colkey="Com_Refno" style="display:inline-block" class="reference" restrict="alphanumeric">
+                    </li>
+                    <li class="width-9">
+                        <input type="text" placeholder="" name="text" colkey="Com_RecDate" style="display:inline-block" class="datepickerdef">
+                    </li>
+                    <li class="width-9 refdate">
+                        <input type='text' placeholder="" name="text" colkey="Com_refDate" class="datepickerdef" />
+                    </li>
+                    <li class="width-9">
+                        <input type="text" placeholder="" name="text" colkey="Com_ValidDate" style="display:inline-block" class="datepickerdef">
+                    </li>
+                    <li class="Com_icon"> <i class="icon-chat-o" txtval=""></i> </li>
+                    <li style="display:none;" class="Com_notes">
+                        <input type="text" name="text" colkey="Com_notes" value="">
+                    </li>
+                    <li>
+                        <input type="hidden" placeholder="" name="text" colkey="Com_rowPk" value="">
+                    </li>
+
+                </ul>-->
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <input type="hidden" name="text" key="psq_hdn_Gipk" value="0">
+    <input type="hidden" name="text" key="psq_hdn_Lipk" value="0">
+    <!--<input type="hidden" name="text" key="psq_hdn_Sellerpk" value="0">-->
+    <input type="hidden" name="text" key="psq_hdn_BalPF_Wout_Tax" value="0" id="balPf_wout_Tax">
+    <input type="hidden" name="text" key="psq_hdn_new" value="1" />
+    <input type="hidden" name="text" id="psq_hdn_confirm" key="psq_hdn_confirm" value="0" />
+    <input type="hidden" name="text" key="psq_hdn_ltvlnamt" value="0" />
+    <input type="hidden" name="text" key="psq_hdn_finalLnAmt" value="0" />
+</div>
+<div id="div-document-content" class="documents-content" style="display:none;"> </div>
+
+ <!-- PostSanction Repayment Popup Starts -->
+
+<div class="popup-bg documents-popup matrix-popup" id="rePaymtMx" style="display:none;">
+    <div class="popup-div">
+        <div class="popup-header"><h2>Repayment Matrix <i onclick="$('#rePaymtMx').hide();" class="icon-close div-right"></i></h2></div>
+        <div class="popup-content"><table id="RepayMatrix"></table></div>
+    </div>
+</div>
+
+<!--  PostSanction Repayment Popup  Ends -->
+
+ <!--Document popup-->
+<div class="popup-bg pop_bg Doc_remarks" id="comment-chat" style="display:none;">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2>Remarks <i class="icon-close div-right"></i></h2>
+        </div>
+        <div class="popup-content">
+            <textarea id="Com_Docrem" maxlength="250"></textarea>
+        </div>
+    </div>
+</div>
+
+<script>
+    GlobalXml[0].PostSanc_Frm = "PostSancCopy";
+    calcHeight(); //Viewport Height Function Starts
+    rightdocument(); /*Document Popup*/
+    popupclose(); /*close popup function*/
+    commontabs(); //Common tab style
+    customselect(); /*Custom select Function*/
+    fnDrawDefaultDatePicker();
+    $(".Doc_div .datepickerdef").each(function () {
+        fnRestrictDate($(this));
+    });
+
+    $(document).on("click", ".Doc_div .icon-chat-o", function () {
+        $(".Doc_remarks").show();
+    });
+    /*Buyer seller Tab*/
+    $(".buyer-list").click(function (e) {
+        $(".buyer-dt").show();
+        $(".seller-dt").hide();
+        $(this).addClass('active');
+        $(this).siblings().removeClass('active');
+    });
+    $(".seller-list").click(function (e) {
+        $(".seller-dt").show();
+        $(".buyer-dt").hide();
+        $(this).addClass('active');
+        $(this).siblings().removeClass('active');
+    });
+
+    function fnpop() {
+        $("#fold_nm").val(GlobalXml[0].LeadID);
+        window.open("", "newWin", "location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no,left=20,top=20,width=600,height=600");
+        PostForm.submit();
+    }
+
+</script>
+
+<script src="js/Scrn/post-sanction-qc.js"></script>

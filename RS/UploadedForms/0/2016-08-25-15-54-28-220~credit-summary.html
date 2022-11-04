@@ -1,0 +1,3722 @@
+<style>
+.trigger-div ul li{ display:block;}
+.trigger-div ul li label, .trigger-div ul li span, .trigger-div ul li input{ display:inline-block;}  
+.trigger-div ul li label{ width:40%;}
+.trigger-div ul li span{ width:40%; font-size:18px; color:#888; }
+.trigger-div ul li span input{ width:70%; padding-left:5px; }
+.trigger-div ul li input.green{ background-color:rgba(73,131,26,1.00);}
+</style>
+<div class="title">
+  <h1><b><i class="icon-zonal-credit"></i> Credit Officer / Credit Approver : Appraisal / Approval</b></h1>
+</div>
+<div class="content-div">
+  <div class="detail-entry">
+    <div class="clear"></div>
+    <div class="credit-div box-div">
+      <ul class="dt-lead-info">
+        <h2><img src="images/copy.png" class="right expand-icon"></h2>
+        <li class="width-1 read-only">
+          <label>Lead ID</label>
+          <p>SHFC11765689</p>
+        </li>
+        <li class="width-16 read-only">
+          <label>Application Number</label>
+          <p>CHAPP267488</p>
+        </li>
+        <li class="width-15 read-only">
+          <label>Branch</label>
+          <p>Chennai</p>
+        </li>
+        <li class="width-12 read-only">
+           <label>Purpose of purchase</label>
+           <p>New House</p>
+          </li>
+        <div class="right category-icons">
+          <li class="">
+            <label><i class="icon-home-loan" style="font-size:38px;"></i></label>
+            <p>Home Loan</p>
+          </li>
+          <li class="">
+            <label><i class="icon-salaried" style="font-size:38px;"></i></label>
+            <p>Salaried</p>
+          </li>
+          <li class="">
+            <label><i class="icon-no-proof" style="font-size:38px;"></i></label>
+            <p>Collateral</p>
+          </li>
+        </div>
+        
+        <!--<li class="width-20">
+          <label>Credit-Promo-Scheme</label>
+          <div class="cust-select"> <span class="selected">Select</span><i class="arrow"></i>
+            <ul class="credit-income">
+              <li class="income-salary">Salaried Income</li>
+              <li class="income-self-income">Self Employed Income</li>
+              <li class="income-self-noincome">Self Employed No Income</li>
+              <li class="income-bank">Banking Sorrogate</li>
+            </ul>
+          </div>
+        </li>-->
+        <div class="clear"></div>
+      </ul>
+      <div class="clear"></div>
+      
+      <!--<ul class="common-tabs">
+        <li class="active">Applicant</li>
+        <li><i class="icon-plus"></i></li>
+      </ul>
+      <ul class="customer-info per-dts">
+        <div class="toggle-div special-numbers">
+          <div class="box-div left">
+            <h3>25<sup>yrs</sup></h3>
+            <p>Age</p>
+          </div>
+          <div class="left read-only">
+            <p>Applicant</p>
+            <p>Saranya</p>
+            <p>9876543210</p>
+          </div>
+          <div class="box-div right">
+            <h3>80 <sup>%</sup> </h3>
+            <p>Bureau Score</p>
+          </div>
+        </div>
+      </ul>
+      <div class="clear"></div>
+      <div class="credit-align">
+        <div class="left">
+          <ul class="common-tabs">
+            <li class="income-salaried active">
+              <div class="income-tab">
+                <p><i class="icon-salaried"></i> <span class="credit-title">Salary</span></p>
+                <h4><i class="icon-indian-rupee"></i> 56789</h4>
+              </div>
+            </li>
+            <li class="income-seproof">
+              <div class="income-tab">
+                <p><i class="icon-self-employed"></i> <span class="credit-title">Business</span></p>
+                <h4><i class="icon-indian-rupee"></i> 56789</h4>
+              </div>
+            </li>
+            <li class="income-senoproof"> <i class="icon-close"></i>
+              <div class="income-tab">
+                <p><i class="icon-no-proof"></i> <span class="credit-title">Cash</span></p>
+                <h4><i class="icon-indian-rupee"></i> 56789</h4>
+              </div>
+            </li>
+            <li class="income-banking">
+              <div class="income-tab">
+                <p><i class="icon-bank"></i> <span class="credit-title">Bank</span></p>
+                <h4><i class="icon-indian-rupee"></i> 56789</h4>
+              </div>
+            </li>
+            <div class="clear"></div>
+          </ul>
+          <div class="clear"></div>
+          <div class="salaried-div basic-div">
+            <div class=""> </div>
+            <div class="box-div">
+              <div class="clear"></div>
+              <textarea>Remarks</textarea>
+              <div class="income-breakup form-div1 credit-breakup">
+                <div class="income-scroll">
+                  <ul>
+                    <li>Particulars</li>
+                    <li class="switch">
+                      <div class="onoffswitch2 left">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                      </div>
+                      <div class="price-range range left">
+                        <p>Basic
+                          <input type="text" id="price1">
+                        </p>
+                        <div id="slider-1"></div>
+                      </div>
+                    </li>
+                    <li class="switch">
+                      <div class="onoffswitch2 left">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                      </div>
+                      <div class="price-range range left">
+                        <p>DA
+                          <input type="text" id="price2">
+                        </p>
+                        <div id="slider-2"></div>
+                      </div>
+                    </li>
+                    <li class="switch">
+                      <div class="onoffswitch2 left">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                      </div>
+                      <div class="price-range range left">
+                        <p>HRA
+                          <input type="text" id="price3">
+                        </p>
+                        <div id="slider-3"></div>
+                      </div>
+                    </li>
+                    <li class="switch">
+                      <div class="onoffswitch2 left">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                      </div>
+                      <div class="price-range range left">
+                        <p>Conveyance
+                          <input type="text" id="price4">
+                        </p>
+                        <div id="slider-4"></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="left"></div>
+                      <div class="left">
+                        <p>Gross</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="left"></div>
+                      <div class="left">
+                        <p>PF(-)</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="left"></div>
+                      <div class="left">
+                        <p>Net</p>
+                      </div>
+                    </li>
+                    <div class="clear"></div>
+                  </ul>
+                  <ul>
+                    <li>
+                      <p>May-2016 </p>
+                      <h4><i class="icon-indian-rupee"></i> 5689577</h4>
+                      <i class="icon-close"></i></li>
+                    <li>
+                      <input type="text">
+                    </li>
+                    <li>
+                      <input type="text">
+                    </li>
+                    <li>
+                      <input type="text">
+                    </li>
+                    <li>
+                      <input type="text">
+                    </li>
+                    <li>
+                      <input type="text">
+                    </li>
+                    <li>
+                      <input type="text">
+                    </li>
+                    <li>
+                      <input type="text">
+                    </li>
+                    <div class="clear"></div>
+                  </ul>
+                  <ul>
+                    <li>June-2016
+                      <h4><i class="icon-indian-rupee"></i> 5689577</h4>
+                      <i class="icon-close"></i></li>
+                    <li>
+                      <input type="text">
+                    </li>
+                    <li>
+                      <input type="text">
+                    </li>
+                    <li>
+                      <input type="text">
+                    </li>
+                    <li>
+                      <input type="text">
+                    </li>
+                    <li>
+                      <input type="text">
+                    </li>
+                    <li>
+                      <input type="text">
+                    </li>
+                    <li>
+                      <input type="text">
+                    </li>
+                    <div class="clear"></div>
+                  </ul>
+                  <ul class="bg-none">
+                    <li><i class="icon-plus"></i></li>
+                  </ul>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="self-employed-div basic-div" style="display: none;">
+            <div class="">
+              <div class="clear"></div>
+              <div class="box-div">
+                <textarea>Remarks</textarea>
+                <div class="income-breakup form-div1 credit-breakup">
+                  <div class="income-scroll">
+                    <ul>
+                      <li>Particulars</li>
+                      <li class="switch">
+                        <div class="onoffswitch2 left">
+                          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                          <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                        </div>
+                        <div class="price-range range left">
+                          <p>Net Profit
+                            <input type="text" id="price5">
+                          </p>
+                          <div id="slider-5"></div>
+                        </div>
+                      </li>
+                      <li class="switch">
+                        <div class="onoffswitch2 left">
+                          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                          <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                        </div>
+                        <div class="price-range range left">
+                          <p>Depreciation
+                            <input type="text" id="price6">
+                          </p>
+                          <div id="slider-6"></div>
+                        </div>
+                      </li>
+                      <li class="switch">
+                        <div class="onoffswitch2 left">
+                          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                          <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                        </div>
+                        <div class="price-range range left">
+                          <p>Rent
+                            <input type="text" id="price7">
+                          </p>
+                          <div id="slider-7"></div>
+                        </div>
+                      </li>
+                      <li class="switch">
+                        <div class="onoffswitch2 left">
+                          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                          <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                        </div>
+                        <div class="price-range range left">
+                          <p>Interest
+                            <input type="text" id="price8">
+                          </p>
+                          <div id="slider-8"></div>
+                        </div>
+                      </li>
+                      <li class="switch">
+                        <div class="onoffswitch2 left">
+                          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                          <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                        </div>
+                        <div class="price-range range left">
+                          <p>Other Income
+                            <input type="text" id="price9">
+                          </p>
+                          <div id="slider-9"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="left"></div>
+                        <div class="left">
+                          <p>Total Income</p>
+                        </div>
+                      </li>
+                      <div class="clear"></div>
+                    </ul>
+                    <ul>
+                      <li>
+                        <p>Yr. 2015-16 </p>
+                        <h4><i class="icon-indian-rupee"></i> 5689577</h4>
+                        <i class="icon-close"></i></li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <div class="clear"></div>
+                    </ul>
+                    <ul class="bg-none">
+                      <li><i class="icon-plus"></i></li>
+                    </ul>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="self-employed-noincome-div basic-div" style="display: none;">
+            <div class="">
+              <div class="box-div">
+                <textarea>Remarks</textarea>
+                <div class="income-scroll">
+                  <div class="income-breakup form-div1 credit-breakup">
+                    <ul>
+                      <li>Particulars</li>
+                      <li class="switch">
+                        <div class="onoffswitch2 left">
+                          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                          <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                        </div>
+                        <div class="price-range range left">
+                          <p>Sales
+                            <input type="text" id="price10">
+                          </p>
+                          <div id="slider-10"></div>
+                        </div>
+                      </li>
+                      <li class="switch">
+                        <div class="onoffswitch2 left">
+                          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                          <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                        </div>
+                        <div class="price-range range left">
+                          <p>Purchases
+                            <input type="text" id="price11">
+                          </p>
+                          <div id="slider-11"></div>
+                        </div>
+                      </li>
+                      <li class="switch">
+                        <div class="onoffswitch2 left">
+                          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                          <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                        </div>
+                        <div class="price-range range left">
+                          <p>Expenses
+                            <input type="text" id="price12">
+                          </p>
+                          <div id="slider-12"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="left"></div>
+                        <div class="left">
+                          <p>Gross Profit</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="left"></div>
+                        <div class="left">
+                          <p>Net</p>
+                        </div>
+                      </li>
+                      <div class="clear"></div>
+                    </ul>
+                    <ul>
+                      <li>
+                        <p>Yr. 2015-16 </p>
+                        <h4><i class="icon-indian-rupee"></i> 5689577</h4>
+                        <i class="icon-close"></i></li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <div class="clear"></div>
+                    </ul>
+                    <ul class="bg-none">
+                      <li><i class="icon-plus"></i></li>
+                    </ul>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="bank-surrogate basic-div" style="display: none;">
+            <div class="">
+              <div class="clear"></div>
+              <div class="box-div">
+                <textarea>Remarks</textarea>
+                <div class="income-scroll">
+                  <div class="income-breakup form-div1 credit-breakup">
+                    <ul>
+                      <li style="text-align:left;">Balance as of</li>
+                      <li>On 5th</li>
+                      <li>On 15th</li>
+                      <li>On 25th</li>
+                      <li>On 30th</li>
+                      <li>Total</li>
+                    </ul>
+                    <ul>
+                      <li>
+                        <p>May-2016 </p>
+                        <h4><i class="icon-indian-rupee"></i> 5689577</h4>
+                        <i class="icon-close"></i></li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <li>
+                        <input type="text">
+                      </li>
+                      <div class="clear"></div>
+                    </ul>
+                    <ul class="bg-none">
+                      <li><i class="icon-plus"></i></li>
+                    </ul>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="liability-div">
+            <div class="common-title">
+              <h2 class="switch-title"></h2>
+              <div class="switch-right">
+                <div class="onoffswitch1">
+                  <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchcc" checked>
+                  <label class="onoffswitch-label" for="myonoffswitchcc"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                </div>
+              </div>
+            </div>
+            <div class="total-income">
+              <p>Liability</p>
+              <h4><i class="icon-indian-rupee"></i> 56789</h4>
+            </div>
+            <div class="clear"></div>
+            <div class="box-div">
+              <textarea>Remarks</textarea>
+              <div class="income-scroll">
+                <ul>
+                  <li class="width-6a"></li>
+                  <li class="width-6b">
+                    <label>Loan</label>
+                  </li>
+                  <li class="width-8">
+                    <label>Bank / Source</label>
+                  </li>
+                  <li class="width-8c">
+                    <label>Reference No.</label>
+                  </li>
+                  <li class="width-8 amount">
+                    <label>EMI</label>
+                  </li>
+                  <li class="width-9 amount">
+                    <label>Outstanding Amount</label>
+                  </li>
+                  <li class="width-8a">
+                    <label>Remaining Terms</label>
+                  </li>
+                </ul>
+                <ul>
+                  <li class="width-6a">
+                    <div class="onoffswitch3">
+                      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                      <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                    </div>
+                  </li>
+                  <li class="width-6b">
+                    <label>
+                    <i class="icon-auto-loan"></i> <span class="svs-img">
+                    <input id="img-switcher" type="checkbox">
+                    <label for="img-switcher"></label>
+                    </span>
+                    </label>
+                  </li>
+                  <li class="width-8">
+                    <input type="text">
+                  </li>
+                  <li class="width-8">
+                    <input type="text">
+                  </li>
+                  <li class="width-8 amount without-label"> <span>
+                    <input type="text">
+                    </span> </li>
+                  <li class="width-9 amount without-label"> <span>
+                    <input type="text">
+                    </span> </li>
+                  <li class="width-8a">
+                    <input type="text">
+                  </li>
+                </ul>
+                <ul>
+                  <li class="width-6a">
+                    <div class="onoffswitch3">
+                      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                      <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                    </div>
+                  </li>
+                  <li class="width-6b">
+                    <label>
+                    <i class="icon-car-loan"></i><span class="svs-img">
+                    <input id="img-switcher1" type="checkbox">
+                    <label for="img-switcher1"></label>
+                    </span>
+                    </label>
+                  </li>
+                  <li class="width-8">
+                    <input type="text">
+                  </li>
+                  <li class="width-8">
+                    <input type="text">
+                  </li>
+                  <li class="width-8 amount without-label"> <span>
+                    <input type="text">
+                    </span> </li>
+                  <li class="width-9 amount without-label"> <span>
+                    <input type="text">
+                    </span> </li>
+                  <li class="width-8a">
+                    <input type="text">
+                  </li>
+                </ul>
+                <ul>
+                  <li class="width-6a">
+                    <div class="onoffswitch3">
+                      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                      <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                    </div>
+                  </li>
+                  <li class="width-6b">
+                    <label>
+                    <i class="icon-two-wheeler-loan"></i> <span class="svs-img">
+                    <input id="img-switcher2" type="checkbox">
+                    <label for="img-switcher2"></label>
+                    </span>
+                    </label>
+                  </li>
+                  <li class="width-8">
+                    <input type="text">
+                  </li>
+                  <li class="width-8">
+                    <input type="text">
+                  </li>
+                  <li class="width-8 amount without-label"> <span>
+                    <input type="text">
+                    </span> </li>
+                  <li class="width-9 amount without-label"> <span>
+                    <input type="text">
+                    </span> </li>
+                  <li class="width-8a">
+                    <input type="text">
+                  </li>
+                </ul>
+                <ul>
+                  <li class="width-6a">
+                    <div class="onoffswitch3">
+                      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                      <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                    </div>
+                  </li>
+                  <li class="width-6b">
+                    <label>
+                    <i class="icon-home-loan"></i> <span class="svs-img">
+                    <input id="img-switcher3" type="checkbox">
+                    <label for="img-switcher3"></label>
+                    </span>
+                    </label>
+                  </li>
+                  <li class="width-8">
+                    <input type="text">
+                  </li>
+                  <li class="width-8">
+                    <input type="text">
+                  </li>
+                  <li class="width-8 amount without-label"> <span>
+                    <input type="text">
+                    </span> </li>
+                  <li class="width-9 amount without-label"> <span>
+                    <input type="text">
+                    </span> </li>
+                  <li class="width-8a">
+                    <input type="text">
+                  </li>
+                </ul>
+                <ul>
+                  <li class="width-6a">
+                    <div class="onoffswitch3">
+                      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                      <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                    </div>
+                  </li>
+                  <li class="width-6b">
+                    <label>
+                    <i class="icon-lap"></i> <span class="svs-img">
+                    <input id="img-switcher4" type="checkbox">
+                    <label for="img-switcher4"></label>
+                    </span>
+                    </label>
+                  </li>
+                  <li class="width-8">
+                    <input type="text">
+                  </li>
+                  <li class="width-8">
+                    <input type="text">
+                  </li>
+                  <li class="width-8 amount without-label"> <span>
+                    <input type="text">
+                    </span> </li>
+                  <li class="width-9 amount without-label"> <span>
+                    <input type="text">
+                    </span> </li>
+                  <li class="width-8a">
+                    <input type="text">
+                  </li>
+                </ul>
+                <ul>
+                  <li class="width-6a">
+                    <div class="onoffswitch3">
+                      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                      <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                    </div>
+                  </li>
+                  <li class="width-6b">
+                    <label>
+                    <i class="icon-gold-loan"></i> <span class="svs-img">
+                    <input id="img-switcher5" type="checkbox">
+                    <label for="img-switcher5"></label>
+                    </span>
+                    </label>
+                  </li>
+                  <li class="width-8">
+                    <input type="text">
+                  </li>
+                  <li class="width-8">
+                    <input type="text">
+                  </li>
+                  <li class="width-8 amount without-label"> <span>
+                    <input type="text">
+                    </span> </li>
+                  <li class="width-9 amount without-label"> <span>
+                    <input type="text">
+                    </span> </li>
+                  <li class="width-8a">
+                    <input type="text">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>-->
+      
+      <div class="summary-div">
+        <div class="credit-summary">
+          <h2>Applicants</h2>
+          <div class="box-div"> <i class="icon-proof right"></i>
+            <div class="left"> <img src="images/photo.jpg">
+              <p>SIVARAMA KRISHNAN S</p>
+            </div>
+            <div class="left">
+              <p class="color-gray">Applicant</p>
+              <p>Self Employed</p>
+              <div class="clear"></div>
+              <div class="amount">
+                <p class="amount amount-18"><i class="icon-indian-rupee"></i> <span>66,459</span></p>
+                <p class="amount amount-14 amount-ssize"><i class="icon-indian-rupee"></i> <span>6,567</span></p>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            <div class="appliant-verifications"> <span class="bg bg1">35</span> <span onclick="PD_click()" class="bg bg1">PD</span> <span class="bg bg1" onclick="FI_click()" >FI</span> <span class="bg bg3" onclick="DV_click()">DV</span> <span class="bg bg2" onclick="TV_click()">TE</span> </div>
+            <div class="cibil-score"> <span onclick="cibil_click()">653</span>
+              <p>Cibil</p>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="box-div"> <i class="icon-proof right"></i>
+            <div class="left"> <img src="images/photo.jpg">
+              <p>KRISHNAVENI</p>
+            </div>
+            <div class="left">
+              <p class="color-gray">Co-Applicant</p>
+              <p>Salaried</p>
+              <div class="clear"></div>
+              <div class="amount">
+                <p class="amount amount-18"><i class="icon-indian-rupee"></i> <span>17,244</span></p>
+                <p class="amount amount-14 amount-ssize"><i class="icon-indian-rupee"></i> <span>0</span></p>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+             <div class="appliant-verifications"> <span class="bg bg1">32</span> <span onclick="PD_click()" class="bg bg1">PD</span> <span class="bg bg1" onclick="FI_click()">FI</span> <span class="bg bg3" onclick="DV_click()">DV</span> <span class="bg bg2" onclick="TV_click()">TE</span> </div>
+            <div class="cibil-score"> <span>623</span>
+              <p>Cibil</p>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <!--<div class="box-div"> <i class="icon-no-proof right"></i>
+            <div class="left"> <img src="images/photo.jpg">
+              <p>A</p>
+            </div>
+           <div class="left">
+              <p class="color-gray">Garantor</p>
+              <p>Occupation</p>
+              <div class="clear"></div>
+              <div class="amount">
+                <p class="amount amount-18"><i class="icon-indian-rupee"></i> <span>0</span></p>
+                <p class="amount amount-14 amount-ssize"><i class="icon-indian-rupee"></i> <span>0</span></p>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+           <div class="appliant-verifications">
+            <span class="bg bg1">PD</span>
+             <span class="bg bg1">FI</span>
+             <span class="bg bg3">DV</span>
+             <span class="bg bg2">TV</span>
+            </div>
+            <div class="cibil-score"> <span>0</span>
+              <p>Cibil</p>
+            </div>
+            <div class="clear"></div>
+          </div> --> 
+        </div>
+        <div class="summary-toggle">
+          <div class="toggle-div special-numbers">
+            <div class="credit-status">
+              <h1>Property</h1>
+              <div class="box-div gray credit-labels">
+                <p>Market</p>
+                <h3><i class="icon-indian-rupee"></i>69.37<span>L</span></h3>
+                <p class="credit-label-list"><span class="bg bg1" onclick="LV_click()">LV</span> <span class="bg bg1" onclick="TVal_click()">TV</span></p>
+                <i class="icon-warning"></i> </div>
+              <div class="box-div gray status-height">
+                <p>Agreement</p>
+                <h3><i class="icon-indian-rupee"></i>70.00<span>L</span></h3>
+                <i class="icon-warning"></i> </div>
+              <div class="box-div gray iir1">
+                <p>LTV</p>
+                <h3><i ></i>46.70 <span></span></h3>
+                <div>
+                  <input type="text" id="range17" value="" name="range" />
+                </div>
+                <i class="icon-warning"></i> </div>
+              <div class="clear"></div>
+            </div>
+            <div class="credit-status">
+              <h1>Yield</h1>
+              <div class="box-div green iir1 status-height">
+                <p>Loan</p>
+                <h3><i class="icon-indian-rupee"></i> 32.4<span>L</span></h3>
+                <div>
+                  <input type="text" id="range14" value="" name="range" />
+                </div>
+               
+              </div>
+              <!--<div class="box-div green status-height">
+                <p>Age</p>
+                <h3>35 <sup>yrs</sup></h3>
+                <i class="icon-warning"></i> </div>-->
+              <div class="box-div yellow iir1">
+                <p>Tenure</p>
+                <h3>240 <sup>mo</sup></h3>
+                <div>
+                  <input type="text" id="range15" value="" name="range" />
+                </div>
+                <i class="icon-warning"></i>
+              </div>
+              
+              <div class="box-div green iir1 status-height">
+                <p>ROI</p>
+                <h3>16 <sup>%</sup></h3>
+                <div>
+                  <input type="text" id="range16" value="" name="range" />
+                </div>
+                </div>
+              
+              
+              <!--<div class="box-div gray iir1">
+                <p>Loan Amount</p>
+                <h3><i class="icon-indian-rupee"></i> 32.4<span>Lakhs</span></h3>
+                <div>
+                  <input type="text" id="range14" value="" name="range" />
+                </div>
+              </div>
+              <div class="box-div gray iir1">
+                <p>EMI</p>
+                <h3><i class="icon-indian-rupee"></i>45,077<span></span></h3>
+                <div>
+                  <input type="text" id="range18" value="" name="range" />
+                </div>
+              </div>-->
+              
+              <div class="clear"></div>
+            </div>
+            <div class="credit-status">
+              <h1>Income</h1>
+              <div class="box-div red status-height">
+                <p>Bureau Score</p>
+                <h3>653</h3>
+                <i class="icon-warning"></i>
+              </div>
+              <div class="box-div gray">
+                <p>Income</p>
+                <h3><i class="icon-indian-rupee"></i>83,703</h3>
+                <i class="icon-warning"></i>
+                <div class="reg-amt">
+                  <h3><i class="icon-indian-rupee"></i>6,567<span></span></h3>
+                </div>
+                <i class="icon-warning"></i>
+              </div>
+              <div class="box-div yellow iir">
+                <div class="switch-iir">
+                  <input type="radio" class="switch-input" name="view" value="IIR" id="IIR" checked>
+                  <label for="IIR" class="switch-label switch-label-off">IIR</label>
+                  <input type="radio" class="switch-input" name="view" value="FOIR" id="FOIR">
+                  <label for="FOIR" class="switch-label switch-label-on">FOIR</label>
+                  <span class="switch-selection"></span> </div>
+                <h3>53.85</h3>
+                <div>
+                  <input type="text" id="range13" value="" name="range" />
+                </div>
+                <i class="icon-warning"></i>
+                <!-- <p>IIR / FOIR</p>
+                <h3>80 <sup>%</sup> <sub>65%</sub></h3>--> 
+              </div>
+              
+              <!--<div class="box-div green">
+                <p>Legal</p>
+                <h3>Positive</h3>
+              </div>
+              
+              <div class="box-div green">
+                <p>Collection</p>
+                <h3>Positive</h3>
+              </div>-->
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="summary-toggle summary-toggle1">
+          <div class="toggle-div special-numbers"> 
+          <h1>Recommended</h1>
+            <div class="credit-status">
+             <div class="box-div gray iir1 status-height">
+                <p>Loan</p>
+                <h3><i class="icon-indian-rupee"></i> 32.4<span>L</span></h3>
+                <!--<div>
+                  <input type="text" id="range14" value="" name="range" />
+                </div>-->
+               
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="credit-status">
+            <div class="box-div gray iir1 status-height">
+                <p>ROI</p>
+                <h3>16 <sup>%</sup></h3>
+                <!--<div>
+                  <input type="text" id="range16" value="" name="range" />
+                </div>-->
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="credit-status">
+            <div class="box-div gray iir1 status-height">
+                <p>EMI</p>
+                <h3><i class="icon-indian-rupee"></i>45,077<span></span></h3>
+                <!--<div>
+                  <input type="text" id="range18" value="" name="range" />
+                </div>-->
+               
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="summary-toggle summary-toggle1">
+          <div class="toggle-div special-numbers">
+             <h1>Expectation</h1>
+             <div class="credit-status">
+               <div class="box-div gray iir1 status-height">
+                <p>Loan</p>
+                <h3><i class="icon-indian-rupee"></i> 35<span>L</span></h3>
+                <!--<div>
+                  <input type="text" id="range14" value="" name="range" />
+                </div>-->
+               
+              </div>
+              <div class="clear"></div>
+             </div>
+             
+             <div class="credit-status">
+               <div class="box-div gray iir1 status-height">
+                <p>ROI</p>
+                <h3> <span class="size-1x">15-</span>16<sup>%</sup></h3>
+                <!--<div>
+                  <input type="text" id="range16" value="" name="range" />
+                </div>-->
+                </div>
+                <div class="clear"></div>
+             </div>
+             
+             <div class="credit-status">
+               <div class="box-div gray iir1 status-height">
+                <p>EMI</p>
+                <h3><i class="icon-indian-rupee"></i>50,000<span></span></h3>
+                <!--<div>
+                  <input type="text" id="range18" value="" name="range" />
+                </div>-->
+               
+              </div>
+              <div class="clear"></div>
+             </div>
+          
+            
+          </div>
+        </div>
+        
+        <!--<div class="summary-toggle">
+          <div class="toggle-div special-numbers">
+            <div class="credit-status">
+              <h1>Eligibility</h1>
+              <div class="box-div green">
+                <p>Age</p>
+                <h3>35 <sup>yrs</sup><sub>55</sub></h3>
+              </div>
+              <div class="box-div red">
+                <p>Bureau Score</p>
+                <h3>653</h3>
+              </div>
+              <div class="box-div yellow iir">
+                <div class="switch-iir">
+                  <input type="radio" class="switch-input" name="view" value="IIR" id="IIR" checked>
+                  <label for="IIR" class="switch-label switch-label-off">IIR</label>
+                  <input type="radio" class="switch-input" name="view" value="FOIR" id="FOIR">
+                  <label for="FOIR" class="switch-label switch-label-on">FOIR</label>
+                  <span class="switch-selection"></span> </div>
+                
+                <h3>53.85</h3>
+                <div>
+                  <input type="text" id="range13" value="" name="range" />
+                </div>
+              </div>
+              <div class="box-div gray iir1">
+                <p>LTV</p>
+                <h3><i class="icon-indian-rupee"></i>46.70 <span></span></h3>
+                <div>
+                  <input type="text" id="range17" value="" name="range" />
+                </div>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="credit-status">
+              <h1>Offering</h1>
+              <div class="box-div gray iir1">
+                <p>Loan Amount</p>
+                <h3><i class="icon-indian-rupee"></i> 32.4<span>Lakhs</span></h3>
+                <div>
+                  <input type="text" id="range14" value="" name="range" />
+                </div>
+              </div>
+              <div class="box-div yellow iir1">
+                <p>Tenure</p>
+                <h3>240 <sup>mo</sup></h3>
+                <div>
+                  <input type="text" id="range15" value="" name="range" />
+                </div>
+              </div>
+              <div class="box-div red iir1">
+                <p>ROI</p>
+                <h3>16 <sup>%</sup></h3>
+                <div>
+                  <input type="text" id="range16" value="" name="range" />
+                </div>
+              </div>
+              <div class="box-div gray iir1">
+                <p>EMI</p>
+                <h3><i class="icon-indian-rupee"></i>45,077<span></span></h3>
+                <div>
+                  <input type="text" id="range18" value="" name="range" />
+                </div>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="credit-status">
+              <h1>Property</h1>
+              <div class="box-div green">
+                <p>Legal</p>
+                <h3>Positive</h3>
+              </div>
+              <div class="box-div register-amount gray">
+                <p>Market Value</p>
+                <h3><i class="icon-indian-rupee"></i>69,37,800<span></span></h3>
+                <div class="reg-amt">
+                  <p>Registration Value</p>
+                  <h3><i class="icon-indian-rupee"></i>70,00,000<span></span></h3>
+                </div>
+              </div>
+              <div class="box-div green">
+                <p>Collection</p>
+                <h3>Positive</h3>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>--> 
+        
+        <!--<div class="customer-commit box-div">
+          <h2>Customer Commitment</h2>
+           <ul>
+             <li class="read-only">
+              <label>Loan Amount</label>
+              <p><i class="icon-indian-rupee"></i>32,40,000</p>
+             </li>
+             <li class="read-only">
+              <label>Tenure</label>
+              <p>240 <span>mo</span></p>
+             </li>
+             <li class="read-only">
+              <label>ROI</label>
+              <p>13-14.5%</p>
+             </li>
+           </ul>
+        </div>-->
+        
+        <div class="credit-chat box-div">
+          <ul class="common-tabs">
+            <li class="proposal-list active">Final Proposal</li>
+            <li class="note-list">Notes</li>
+            <li class="performance-list">Agent</li>
+            <li class="query-list">Queries</li>
+            <li class="sub-list">Subjective Conditions</li>
+          </ul>
+          <div class="clear"></div>
+          <div class="proposal-content">
+             <ul class="proposal-list-div">
+               <div class="proposal-amount">
+               <li>
+                <p>IIR</p>
+                <h3>53.85<span>%</span></h3>
+               </li>
+               <li>
+                <p>LTV</p>
+                <h3>46.70<span>%</span></h3>
+               </li>
+               <li>
+                <p>ROI</p>
+                <h3>16<span>%</span></h3>
+               </li>
+               <div class="clear"></div>
+               <li class="toggle-div">
+                <p>Loan</p>
+                <h3><i class="icon-indian-rupee"></i>32.40<span>L</span></h3>
+               </li>
+               <li>
+                <p>LI</p>
+                <h3><i class="icon-indian-rupee"></i>1,12,248</h3>
+               </li>
+               <li>
+                <p>GI</p>
+                <h3><i class="icon-indian-rupee"></i>12,257</h3>
+               </li>
+               </div>
+                <div class="clear"></div>
+                <div class="high-amount">
+               <li class="bg-blue">
+                <p>EMI</p>
+                <h3><i class="icon-indian-rupee"></i>45,077</h3>
+               </li>
+               <li class="gray">
+                <p>EMI(GI + LI)</p>
+                <h3><i class="icon-indian-rupee"></i>46,809</h3>
+               </li>
+               <li class="gray">
+                <p>EMI + GI</p>
+                <h3><i class="icon-indian-rupee"></i>45,248</h3>
+               </li>
+               <li class="gray">
+                <p>EMI + LI</p>
+                <h3><i class="icon-indian-rupee"></i>46,639</h3>
+               </li>
+               </div>
+                <div class="clear"></div>
+                <div class="high-amount">
+               <li class="gray pf-div">
+                <p>PF</p>
+                <h3><i class="icon-indian-rupee"></i>48,600</h3>
+                <p>1.5<span>%</span></p>
+               </li>
+               <li class="green pf-div">
+                <p>PF</p>
+                <h3><i class="icon-indian-rupee"></i>8,600</h3>
+                <p>Received</p>
+               </li>
+               <li class="amount widthout-label">
+                 <input type="checkbox"> Waiver
+                 <span><input type="text"></span>
+               </li>
+               </div>
+               <div class="clear"></div>
+                <div>
+                  <input type="checkbox">
+                  Processing Payable can be adjusted against the loan amount during disbursal
+                </div>
+             </ul>
+          </div>
+          
+          <div class="notes-content" style="display:none;">
+            <ul class="notes-content-div">
+              <li> 
+                <div class="left"> <img src="images/customer.jpg"> <span class="green">Saranya</span></div>
+                <div class="nt-ct"> 
+                  <p><span class="gray">Property</span> <span class="info-icons"><i class="icon-warning"></i></span></p>
+                  <p>25/07.2016 6.30 PM</p>
+                  <p>Notes content comes here Notes content comes here Notes content comes here Notes </p>
+                </div>
+                
+              </li>
+              
+              <li> 
+                <div class="left"> <img src="images/customer.jpg"> <span class="green">Saranya</span></div>
+                <div class="nt-ct"> 
+                  <p><span class="gray">IIR</span> <span class="info-icons"><i class="icon-info"></i></span></p>
+                  <p>25/07.2016 6.30 PM</p>
+                  <p>Notes content comes here Notes content comes here Notes content comes here Notes </p>
+                </div>
+                
+              </li>
+              
+              <li> 
+                <div class="left"> <img src="images/customer.jpg"> <span class="green">Saranya</span></div>
+                <div class="nt-ct"> 
+                  <p><span class="gray">LTV</span> <span class="info-icons"><i class="icon-info"></i></span></p>
+                  <p>25/07.2016 6.30 PM</p>
+                  <p>Notes content comes here Notes content comes here Notes content comes here Notes </p>
+                </div>
+                
+              </li>
+            </ul>
+          </div>
+          <div class="performance-content" style="display:none;">
+          
+             <ul class="proposal-list-div">
+               <div class="proposal-amount">
+               <li>
+                <p>Approval</p>
+                <h3><i class="icon-positive"></i>45<span>%</span></h3>
+               </li>
+               <li>
+                <p>LTV</p>
+                <h3>80<span>%</span></h3>
+                <p>L 60</p>
+               </li>
+               <li>
+                <p>ROI</p>
+                <h3>16<span>%</span></h3>
+                <p>L 60</p>
+               </li>
+               <div class="clear"></div>
+               <li>
+                <p>BT(&lt;2yrs)</p>
+                <h3>2<span>%</span></h3>
+               </li>
+               <li>
+                <p>Deliguency(60+)</p>
+                <h3>2<span>%</span></h3>
+                <p>FPD 2%</p>
+               </li>
+               </div>
+             </ul>
+          
+            <img src="images/roi-chart.jpg">
+          </div>
+          
+          <div class="query-content" style="display:none;">
+             <ul class="notes-content-div">
+              <li> 
+                <div class="left"> <img src="images/customer.jpg"> <span class="bg-blue">Branch Ops</span></div>
+                <div class="nt-ct"> 
+                  <p><span class="gray">Document Missing</span> <span class="info-icons green"><i class="icon-positive"></i> Resolved</span></p>
+                  <p>25/07.2016 6.30 PM</p>
+                  <p>Notes content comes here Notes content comes here Notes content comes here Notes </p>
+                </div>
+                
+              </li>
+              
+              <li> 
+                <div class="left"> <img src="images/customer.jpg"> <span class="bg-blue">RCU</span> </div>
+                <div class="nt-ct"> 
+                  <p><span class="gray">Property Document</span> <span class="info-icons red"><i class="icon-negative"></i> Un resolved</span></p>
+                  <p>25/07.2016 6.30 PM</p>
+                  <p>Notes content comes here Notes content comes here Notes content comes here Notes </p>
+                </div>
+                
+              </li>
+              
+              <li> 
+                <div class="left"> <img src="images/customer.jpg"> <span class="bg-blue">Legal</span></div>
+                <div class="nt-ct"> 
+                  <p><span class="gray">LTV</span> <span class="info-icons yellow"><i class="icon-pending"></i>Waiver</span></p>
+                  <p>25/07.2016 6.30 PM</p>
+                  <p>Notes content comes here Notes content comes here Notes content comes here Notes </p>
+                </div>
+                
+              </li>
+            </ul>
+          </div>
+          
+          <div class="sub-content" style="display:none;">
+          <i class="icon-plus"></i>
+          <div class="clear"></div>
+          </div>
+          
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <!--<div class="credit-verification">
+    <div class="box-div left">
+      <ul>
+        <h2>Tele Verification</h2>
+        <li class="width-10">
+          <label>Date of Tele Verification</label>
+          <input type="text" placeholder="">
+        </li>
+        <li class="width-28">
+          <label>Comments</label>
+          <input type="text">
+        </li>
+      </ul>
+    </div>
+    <div class="box-div right">
+      <ul>
+        <h2>Personal Discussion</h2>
+        <li class="width-6">
+          <label>Date of PD</label>
+          <input type="text" placeholder="">
+        </li>
+        <li class="width-54">
+          <label>Comments</label>
+          <input type="text">
+        </li>
+        <li class="width-1">
+          <label>Document Upload</label>
+          <input type="button" value="Attach" style="display:block;">
+        </li>
+      </ul>
+    </div>
+  </div>--> 
+</div>
+<div id="div-document-content" style="display:none;"></div>
+<div class="clear"></div>
+<div class="center form-btns"> 
+  <!--<input type="button" value="Back" onClick="LoadHtmlDiv('credit-officer.html')">
+  <input type="button" value="Confirm" onClick="LoadHtmlDiv('post-sanction.html')">-->
+  
+  <!--<input type="button" value="Details" id="credit-offier-p">-->
+  
+  <div class="drop-button">
+    <input type="button" value="Approve">
+    <i class="icon-down-arrow"></i>
+    <ul class="drop-list">
+      <li class="lead-dd1">Approve</li>
+      <li class="lead-dd1">Decline</li>
+      <li class="lead-dd1">Forward</li>
+    </ul>
+  </div>
+  <!--<input type="button" value="CAM">-->
+  <input type="button" value="Agency Verification" class="trigger-popup">
+  
+</div>
+
+<div class="pop-bg category-popup1" id="credit-officer" style="display: none;">
+    <div class="popup-div">
+        <div class="icon-close right"></div>
+        <div class="clear"></div>
+        <div class="box-div category-div">
+            <h2>Products</h2>
+            <ul>
+                <li>
+                    <i class="icon-lap"></i>
+                    <p>LAP</p>
+                </li>
+                <li>
+                    <i class="icon-home-loan"></i>
+                    <p>Home Loan</p>
+                </li>
+                <li>
+                    <i class="icon-balance-transfer"></i>
+                    <p>Balance Transfer</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box-div category-div">
+            <h2>Customer Classification</h2>
+            <ul>
+                <li>
+                    <i class="icon-salaried"></i>
+                    <p>Salaried </p>
+                </li>
+                <li>
+                    <i class="icon-self-employed"></i>
+                    <p> Self Employed</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box-div category-div">
+            <h2>Income Classification</h2>
+            <ul>
+                <li>
+                    <i class="icon-proof"></i>
+                    <p>Proof </p>
+                </li>
+                <li>
+                    <i class="icon-no-proof"></i>
+                    <p>Collateral</p>
+                </li>
+                <li>
+                    <i class="icon-sorrogate"></i>
+                    <p>Sorrogate</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- popup -->
+<div class="pop-bg trigger-pop-content" style="display: none;">
+  <div class="popup-div">
+    <div class="icon-close right"></div>
+    <div class="clear"></div>
+    <div class="box-div trigger-div">
+      <h2>Agency Verification</h2>
+      <ul>
+        <li>
+          <label>Field investigation </label>
+          <span class="icon-sales-manager"><input type="text" placeholder="Agent Name"></span>
+          <input type="button" value="Initiate">
+        </li>
+        <li>
+          <label>Document Verification</label>
+          <span class="icon-sales-manager"><input type="text" placeholder="Agent Name"></span>
+          <input type="button" value="Initiate">
+        </li>
+        <li>
+          <label>Legal Verification</label>
+          <span class="icon-sales-manager"><input type="text" placeholder="Agent Name"></span>
+          <input type="button" value="Initiate">
+        </li>
+        <li>
+          <label>Technical Verification</label>
+          <span class="icon-sales-manager"><input type="text" placeholder="Agent Name"></span>
+          <input type="button" value="Initiate">
+        </li>
+        <!--<li>
+          <label>Collection Feedback</label>
+          <span class="icon-sales-manager"><input type="text" placeholder="Agent Name"></span>
+          <input type="button" value="Trigger">
+        </li>-->
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- popup end -->
+
+<div class="pop-bg" style="display:none;" id="credid-office-popup">
+  <div class="popup-div">
+    <i class="icon-close right"></i>
+    <div class="clear"></div>
+    <div class="detail-entry">
+        <div class="clear"></div>
+        <div class="credit-div box-div">
+            <ul class="dt-lead-info">
+                <h2><img src="images/copy.png" class="right expand-icon"></h2>
+                <li class="width-1 read-only">
+                    <label>Lead ID</label>
+                    <p>SHFC11765689</p>
+                </li>
+                <li class="width-16 read-only">
+                    <label>Application Number</label>
+                    <p>CHAPP267488</p>
+                </li>
+                <li class="width-15 read-only">
+                    <label>Branch</label>
+                    <p>Chennai</p>
+                </li>
+                <div class="right category-icons">
+                    <li class="">
+                        <label><i class="icon-home-loan" style="font-size:38px;"></i></label>
+                        <p>Home Loan</p>
+                    </li>
+                    <li class="">
+                        <label><i class="icon-self-employed" style="font-size:38px;"></i></label>
+                        <p>Self Employed</p>
+                    </li>
+                    <li class="">
+                        <label><i class="icon-no-proof" style="font-size:38px;"></i></label>
+                        <p>Collateral</p>
+                    </li>
+                </div>
+                <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
+            <ul class="common-tabs">
+                <li class="active app-credit-officer-list1">Applicant</li>
+                <li class="app-credit-officer-list2">Co-Applicant</li>
+                <li><i class="icon-plus"></i></li>
+            </ul>
+            <div class="app-credit-officer1">
+                <ul class="customer-info per-dts">
+                    <div class="toggle-div special-numbers">
+                        <div class="left read-only">
+                            <p>SIVARAMA KRISHNAN S</p>
+                            <p>9884972659</p>
+                        </div>
+                        <div class="right">
+                            <div class="box-div">
+                                <h3>35<sup>yrs</sup></h3>
+                                <p>Age</p>
+                            </div>
+                            <div class="box-div">
+                                <h3>653 </h3>
+                                <p>Bureau Score</p>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+                <div class="clear"></div>
+                <div class="credit-align">
+                    <div class="left">
+                        <ul class="common-tabs">
+                            <li class="income-seproof active">
+                                <div class="income-tab">
+                                    <p><i class="icon-self-employed"></i> <span class="credit-title">Business</span></p>
+                                    <h4><i class="icon-indian-rupee"></i>66,459</h4>
+                                </div>
+                            </li>
+                            <li class="income-salaried" style="display:none">
+                                <div class="income-tab">
+                                    <p><i class="icon-salaried"></i> <span class="credit-title">Salary</span></p>
+                                    <h4><i class="icon-indian-rupee"></i>0</h4>
+                                </div>
+                            </li>
+                            <li class="income-senoproof" style="display:none">
+                                <i class="icon-close"></i>
+                                <div class="income-tab">
+                                    <p><i class="icon-no-proof"></i> <span class="credit-title">Cash</span></p>
+                                    <h4><i class="icon-indian-rupee"></i>0</h4>
+                                </div>
+                            </li>
+                            <li class="income-banking" style="display:none">
+                                <div class="income-tab">
+                                    <p><i class="icon-bank"></i> <span class="credit-title">Bank</span></p>
+                                    <h4><i class="icon-indian-rupee"></i>0</h4>
+                                </div>
+                            </li>
+                            <li><i onclick="fnOpenOptionsToOpen('app-credit-officer1')" class="icon-plus"></i></li>
+                            <div class="clear"></div>
+                        </ul>
+                        <div class="clear"></div>
+                        <div class="salaried-div basic-div" style="display:none;">
+                            <div class=""> </div>
+                            <div class="box-div">
+                                <div class="clear"></div>
+                                <textarea>Remarks</textarea>
+                                <div class="income-breakup form-div1 credit-breakup">
+                                    <div class="income-scroll">
+                                        <ul>
+                                            <li>Particulars</li>
+                                            <li class="switch">
+                                                <div class="onoffswitch2 left">
+                                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                    <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                </div>
+                                                <div class="price-range range left">
+                                                    <p>Basic </p>
+                                                    <input type="text" id="range" value="" name="range" />
+                                                </div>
+                                            </li>
+                                            <li class="switch">
+                                                <div class="onoffswitch2 left">
+                                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                    <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                </div>
+                                                <div class="price-range range left">
+                                                    <p>DA </p>
+                                                    <input type="text" id="range1" value="" name="range" />
+                                                </div>
+                                            </li>
+                                            <li class="switch">
+                                                <div class="onoffswitch2 left">
+                                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                    <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                </div>
+                                                <div class="price-range range left">
+                                                    <p>HRA </p>
+                                                    <input type="text" id="range2" value="" name="range" />
+                                                </div>
+                                            </li>
+                                            <li class="switch">
+                                                <div class="onoffswitch2 left">
+                                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                    <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                </div>
+                                                <div class="price-range range left">
+                                                    <p>Conveyance </p>
+                                                    <input type="text" id="range3" value="" name="range" />
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left"></div>
+                                                <div class="left">
+                                                    <p>Gross</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left"></div>
+                                                <div class="left">
+                                                    <p>PF(-)</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left"></div>
+                                                <div class="left">
+                                                    <p>Net</p>
+                                                </div>
+                                            </li>
+                                            <div class="clear"></div>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <p>Month1</p>
+                                                <h4><i class="icon-indian-rupee"></i> 0</h4>
+                                                <i class="icon-close"></i>
+                                            </li>
+                                            <li>
+                                                <input type="text">
+                                            </li>
+                                            <li>
+                                                <input type="text">
+                                            </li>
+                                            <li>
+                                                <input type="text">
+                                            </li>
+                                            <li>
+                                                <input type="text">
+                                            </li>
+                                            <li>
+                                                <input type="text">
+                                            </li>
+                                            <li>
+                                                <input type="text">
+                                            </li>
+                                            <li>
+                                                <input type="text">
+                                            </li>
+                                            <div class="clear"></div>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                Month2
+                                                <h4><i class="icon-indian-rupee"></i> 0</h4>
+                                                <i class="icon-close"></i>
+                                            </li>
+                                            <li>
+                                                <input type="text">
+                                            </li>
+                                            <li>
+                                                <input type="text">
+                                            </li>
+                                            <li>
+                                                <input type="text">
+                                            </li>
+                                            <li>
+                                                <input type="text">
+                                            </li>
+                                            <li>
+                                                <input type="text">
+                                            </li>
+                                            <li>
+                                                <input type="text">
+                                            </li>
+                                            <li>
+                                                <input type="text">
+                                            </li>
+                                            <div class="clear"></div>
+                                        </ul>
+                                        <ul class="bg-none">
+                                            <li><i class="icon-plus"></i></li>
+                                        </ul>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="self-employed-div basic-div">
+                            <div class="">
+                                <div class="clear"></div>
+                                <div class="box-div">
+                                    <textarea>Remarks</textarea>
+                                    <div class="income-breakup form-div1 credit-breakup">
+                                        <div class="income-scroll">
+                                            <ul>
+                                                <li>Particulars</li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Net Profit </p>
+                                                        <input type="text" id="range4" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Depreciation </p>
+                                                        <input type="text" id="range5" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Rent </p>
+                                                        <input type="text" id="range6" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Interest </p>
+                                                        <input type="text" id="range7" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Other Income </p>
+                                                        <input type="text" id="range8" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="left"></div>
+                                                    <div class="left">
+                                                        <p>Total Income</p>
+                                                    </div>
+                                                </li>
+                                                <div class="clear"></div>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <p>2014-15</p>
+                                                    <h4><i class="icon-indian-rupee"></i> 7,97,508</h4>
+                                                    <i class="icon-close"></i>
+                                                </li>
+                                                <li class="amount">
+                                                    <span><input type="text" value="10,00,000"></span>
+                                                </li>
+                                                <li class="amount">
+                                                    <span><input type="text" value="57,492"></span>
+                                                </li>
+                                                <li class="amount">
+                                                    <span><input type="text" value="70,000"></span>
+                                                </li>
+                                                <li class="amount">
+                                                    <span><input type="text" value="75,000"></span>
+                                                </li>
+                                                <li class="amount">
+                                                    <span><input type="text" value="0"></span>
+                                                </li>
+                                                <li class="amount">
+                                                    <span><input type="text" value="7,97,508"></span>
+                                                </li>
+                                                <div class="clear"></div>
+                                            </ul>
+                                            <ul class="bg-none">
+                                                <li><i class="icon-plus"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="self-employed-noincome-div basic-div" style="display: none;">
+                            <div class="">
+                                <div class="box-div">
+                                    <textarea>Remarks</textarea>
+                                    <div class="income-scroll">
+                                        <div class="income-breakup form-div1 credit-breakup">
+                                            <ul>
+                                                <li>Particulars</li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Sales </p>
+                                                        <input type="text" id="range9" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Purchases </p>
+                                                        <input type="text" id="range10" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Margin </p>
+                                                        <input type="text" id="range13" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Gross Profit </p>
+                                                        <input type="text" id="range13" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Expenses </p>
+                                                        <input type="text" id="range14" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="left"></div>
+                                                    <div class="left">
+                                                        <p>Net</p>
+                                                    </div>
+                                                </li>
+                                                <div class="clear"></div>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <p>Year1</p>
+                                                    <h4><i class="icon-indian-rupee"></i> 0</h4>
+                                                    <i class="icon-close"></i>
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <div class="clear"></div>
+                                            </ul>
+                                            <ul class="bg-none">
+                                                <li><i class="icon-plus"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="bank-surrogate basic-div" style="display: none;">
+                            <div class="">
+                                <div class="clear"></div>
+                                <div class="box-div">
+                                    <textarea>Remarks</textarea>
+                                    <div class="income-scroll">
+                                        <div class="income-breakup form-div1 credit-breakup">
+                                            <ul>
+                                                <li style="text-align:left;">Balance as of</li>
+                                                <li>On 5th</li>
+                                                <li>On 15th</li>
+                                                <li>On 25th</li>
+                                                <li>On 30th</li>
+                                                <li>Total</li>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <p>Month1 </p>
+                                                    <h4><i class="icon-indian-rupee"></i> 0</h4>
+                                                    <i class="icon-close"></i>
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <div class="clear"></div>
+                                            </ul>
+                                            <ul class="bg-none">
+                                                <li><i class="icon-plus"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="liability-div">
+                            <div class="common-title">
+                                <h2 class="switch-title"></h2>
+                            </div>
+                            <div class="total-income credit-liability">
+                                <p>Liability</p>
+                                <h4><i class="icon-indian-rupee"></i>0</h4>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="box-div">
+                                <textarea>Remarks</textarea>
+                                <div class="income-scroll">
+                                    <ul>
+                                        <li class="width-6a"></li>
+                                        <li class="width-6b">
+                                            <label>Loan</label>
+                                        </li>
+                                        <li class="width-8">
+                                            <label>Bank / Source</label>
+                                        </li>
+                                        <li class="width-8c">
+                                            <label>Reference No.</label>
+                                        </li>
+                                        <li class="width-8 amount">
+                                            <label>EMI</label>
+                                        </li>
+                                        <li class="width-9 amount">
+                                            <label>Outstanding Amount</label>
+                                        </li>
+                                        <li class="width-8a">
+                                            <label>Remaining Terms</label>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="width-6a">
+                                            <div class="onoffswitch3">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                                                <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                            </div>
+                                        </li>
+                                        <li class="width-6b">
+                                            <label>
+                                                <i class="icon-auto-loan"></i> <span class="svs-img">
+                                                    <input id="img-switcher" type="checkbox">
+                                                    <label for="img-switcher"></label>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-9 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-8a">
+                                            <input type="text">
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="width-6a">
+                                            <div class="onoffswitch3">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                                                <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                            </div>
+                                        </li>
+                                        <li class="width-6b">
+                                            <label>
+                                                <i class="icon-car-loan"></i><span class="svs-img">
+                                                    <input id="img-switcher1" type="checkbox">
+                                                    <label for="img-switcher1"></label>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-9 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-8a">
+                                            <input type="text">
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="width-6a">
+                                            <div class="onoffswitch3">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                                                <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                            </div>
+                                        </li>
+                                        <li class="width-6b">
+                                            <label>
+                                                <i class="icon-two-wheeler-loan"></i> <span class="svs-img">
+                                                    <input id="img-switcher2" type="checkbox">
+                                                    <label for="img-switcher2"></label>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-9 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-8a">
+                                            <input type="text">
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="width-6a">
+                                            <div class="onoffswitch3">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                                                <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                            </div>
+                                        </li>
+                                        <li class="width-6b">
+                                            <label>
+                                                <i class="icon-home-loan"></i> <span class="svs-img">
+                                                    <input id="img-switcher3" type="checkbox">
+                                                    <label for="img-switcher3"></label>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-9 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-8a">
+                                            <input type="text">
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="width-6a">
+                                            <div class="onoffswitch3">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                                                <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                            </div>
+                                        </li>
+                                        <li class="width-6b">
+                                            <label>
+                                                <i class="icon-lap"></i> <span class="svs-img">
+                                                    <input id="img-switcher4" type="checkbox">
+                                                    <label for="img-switcher4"></label>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-9 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-8a">
+                                            <input type="text">
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="width-6a">
+                                            <div class="onoffswitch3">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                                                <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                            </div>
+                                        </li>
+                                        <li class="width-6b">
+                                            <i class="icon-gold-loan"></i>
+                                            <span class="svs-img">
+                                                <input id="img-switcher5" type="checkbox">
+                                                <label for="img-switcher5"></label>
+                                            </span>
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-9 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-8a">
+                                            <input type="text">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+                
+                <div class="clear"></div>
+                <div class="box-div nhb">
+      <ul class="left">
+                    <h2>NHB CLSS</h2>
+                        <li class="width-10">
+                            <label>NHB CLSS Applicable</label>
+          <div class="cust-select"> <span class="selected">No</span><i class="arrow"></i>
+                                <ul>
+                                    <li>Yes</li>
+                                    <li>No</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="width-10">
+                            <label>Borrower Having Pucca House</label>
+          <div class="cust-select"> <span class="selected">Select</span><i class="arrow"></i>
+                                <ul>
+                                    <li>Yes</li>
+                                    <li>No</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="width-10">
+                            <label>House Hold Category</label>
+          <div class="cust-select"> <span class="selected">Select</span><i class="arrow"></i>
+                                <ul>
+                                    <li>LIG</li>
+                                    <li>EWS</li>
+                                    <li>MIG</li>
+                                    <li>HIG</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="amount width-10">
+                            <label>House Hold Annual Income</label>
+          <span>
+          <input type="text">
+          </span> </li>
+                        <li class="width-9">
+                            <label>Location Code</label>
+          <span>
+          <input type="text">
+          </span> </li>
+        <li class="width-10">
+          <label>Location Name</label>
+          <span>
+          <input type="text">
+          </span> </li>
+      </ul>
+      <div class="right">
+        <h2>Dependent Details</h2>
+          <ul>
+            <li class="width-12">
+              <label>Dependent</label>
+            </li>
+            <li class="width-10">
+              <label>Reference No.</label>
+            </li>
+            <li class="width-15">
+              <label>Proof</label>
+            </li>
+          </ul>
+          <ul>
+            <li class="width-12">
+              <input type="text">
+            </li>
+            <li class="width-10">
+              <input type="text">
+            </li>
+            <li class="width-15">
+              <input type="text">
+            </li>
+          </ul>
+          <ul>
+            <li class="width-12">
+              <input type="text">
+            </li>
+            <li class="width-10">
+              <input type="text">
+            </li>
+            <li class="width-15">
+              <input type="text">
+            </li>
+          </ul>
+          <ul>
+            <li class="width-12">
+              <input type="text">
+                        </li>
+                        <li class="width-10">
+              <input type="text">
+            </li>
+            <li class="width-15">
+              <input type="text">
+                        </li>
+                    </ul>
+                </div>
+        <div class="clear"></div>
+    </div>
+            </div>
+
+            <div class="app-credit-officer2" style="display:none;">
+                <ul class="customer-info per-dts">
+                    <div class="toggle-div special-numbers">
+                        <div class="left read-only">
+                            <p>KRISHNAVENI</p>
+                            <p>9176210806</p>
+                        </div>
+                        <div class="right">
+                            <div class="box-div">
+                                <h3>33<sup>yrs</sup></h3>
+                                <p>Age</p>
+                            </div>
+                            <div class="box-div">
+                                <h3>623 </h3>
+                                <p>Bureau Score</p>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+                <div class="clear"></div>
+                <div class="credit-align">
+                    <div class="left">
+                        <ul class="common-tabs">
+                            <li class="income-salaried active">
+                                <div class="income-tab">
+                                    <p><i class="icon-salaried"></i> <span class="credit-title">Salary</span></p>
+                                    <h4><i class="icon-indian-rupee"></i>17,244</h4>
+                                </div>
+                            </li>                          
+                            <li class="income-seproof" style="display:none">
+                                <div class="income-tab">
+                                    <p><i class="icon-self-employed"></i> <span class="credit-title">Business</span></p>
+                                    <h4><i class="icon-indian-rupee"></i>0</h4>
+                                </div>
+                            </li>
+                            <li class="income-senoproof" style="display:none">
+                                <i class="icon-close"></i>
+                                <div class="income-tab">
+                                    <p><i class="icon-no-proof"></i> <span class="credit-title">Cash</span></p>
+                                    <h4><i class="icon-indian-rupee"></i>0</h4>
+                                </div>
+                            </li>
+                            <li class="income-banking" style="display:none">
+                                <div class="income-tab">
+                                    <p><i class="icon-bank"></i> <span class="credit-title">Bank</span></p>
+                                    <h4><i class="icon-indian-rupee"></i>0</h4>
+                                </div>
+                            </li>
+                            <li><i onclick="fnOpenOptionsToOpen2('app-credit-officer2')" class="icon-plus"></i></li>
+                            <div class="clear"></div>
+                        </ul>
+                        <div class="clear"></div>
+                        <div class="self-employed-div basic-div" style="display:none;">
+                            <div class="">
+                                <div class="clear"></div>
+                                <div class="box-div">
+                                    <textarea>Remarks</textarea>
+                                    <div class="income-breakup form-div1 credit-breakup">
+                                        <div class="income-scroll">
+                                            <ul>
+                                                <li>Particulars</li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Net Profit </p>
+                                                        <input type="text" id="range19" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Depreciation </p>
+                                                        <input type="text" id="range20" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Rent </p>
+                                                        <input type="text" id="range21" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Interest </p>
+                                                        <input type="text" id="range22" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Other Income </p>
+                                                        <input type="text" id="range23" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="left"></div>
+                                                    <div class="left">
+                                                        <p>Total Income</p>
+                                                    </div>
+                                                </li>
+                                                <div class="clear"></div>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <p>Year1</p>
+                                                    <h4><i class="icon-indian-rupee"></i> 0</h4>
+                                                    <i class="icon-close"></i>
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <div class="clear"></div>
+                                            </ul>
+                                            <ul class="bg-none">
+                                                <li><i class="icon-plus"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="salaried-div basic-div">
+                            <div class=""> </div>
+                            <div class="box-div">
+                                <div class="clear"></div>
+                                <textarea>Remarks</textarea>
+                                <div class="income-breakup form-div1 credit-breakup">
+                                    <div class="income-scroll">
+                                        <ul>
+                                            <li>Particulars</li>
+                                            <li class="switch">
+                                                <div class="onoffswitch2 left">
+                                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                    <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                </div>
+                                                <div class="price-range range left">
+                                                    <p>Basic </p>
+                                                    <input type="text" id="range15" value="" name="range" />
+                                                </div>
+                                            </li>
+                                            <li class="switch">
+                                                <div class="onoffswitch2 left">
+                                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                    <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                </div>
+                                                <div class="price-range range left">
+                                                    <p>DA </p>
+                                                    <input type="text" id="range16" value="" name="range" />
+                                                </div>
+                                            </li>
+                                            <li class="switch">
+                                                <div class="onoffswitch2 left">
+                                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                    <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                </div>
+                                                <div class="price-range range left">
+                                                    <p>HRA </p>
+                                                    <input type="text" id="range17" value="" name="range" />
+                                                </div>
+                                            </li>
+                                            <li class="switch">
+                                                <div class="onoffswitch2 left">
+                                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                    <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                </div>
+                                                <div class="price-range range left">
+                                                    <p>Conveyance </p>
+                                                    <input type="text" id="range18" value="" name="range" />
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left"></div>
+                                                <div class="left">
+                                                    <p>Gross</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left"></div>
+                                                <div class="left">
+                                                    <p>PF(-)</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left"></div>
+                                                <div class="left">
+                                                    <p>Net</p>
+                                                </div>
+                                            </li>
+                                            <div class="clear"></div>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <p>Jun 16</p>
+                                                <h4><i class="icon-indian-rupee"></i>17,244</h4>
+                                                <i class="icon-close"></i>
+                                            </li>
+                                            <li class="amount">
+                                                <span><input type="text" value="10,000"></span>
+                                            </li>
+                                            <li class="amount">
+                                                <span><input type="text" value="3,000"></span>
+                                            </li>
+                                            <li class="amount">
+                                                <span><input type="text" value="5,000"></span>
+                                            </li>
+                                            <li class="amount">
+                                                <span><input type="text" value="800"></span>
+                                            </li>
+                                            <li class="amount">
+                                                <span><input type="text" value="18,800"></span>
+                                            </li>
+                                            <li class="amount">
+                                                <span><input type="text" value="1,556"></span>
+                                            </li>
+                                            <li class="amount">
+                                                <span><input type="text" value="17,244"></span>
+                                            </li>
+                                            <div class="clear"></div>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                Jul 16
+                                                <h4><i class="icon-indian-rupee"></i>17,244</h4>
+                                                <i class="icon-close"></i>
+                                            </li>
+                                            <li class="amount">
+                                                <span><input type="text" value="10,000"></span>
+                                            </li>
+                                            <li class="amount">
+                                                <span><input type="text" value="3,000"></span>
+                                            </li>
+                                            <li class="amount">
+                                                <span><input type="text" value="5,000"></span>
+                                            </li>
+                                            <li class="amount">
+                                                <span><input type="text" value="800"></span>
+                                            </li>
+                                            <li class="amount">
+                                                <span><input type="text" value="18,800"></span>
+                                            </li>
+                                            <li class="amount">
+                                                <span><input type="text" value="1,556"></span>
+                                            </li>
+                                            <li class="amount">
+                                                <span><input type="text" value="17,244"></span>
+                                            </li>
+                                            <div class="clear"></div>
+                                        </ul>
+                                        <ul class="bg-none">
+                                            <li><i class="icon-plus"></i></li>
+                                        </ul>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>                       
+                        <div class="self-employed-noincome-div basic-div" style="display: none;">
+                            <div class="">
+                                <div class="box-div">
+                                    <textarea>Remarks</textarea>
+                                    <div class="income-scroll">
+                                        <div class="income-breakup form-div1 credit-breakup">
+                                            <ul>
+                                                <li>Particulars</li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Sales </p>
+                                                        <input type="text" id="range24" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Purchases </p>
+                                                        <input type="text" id="range25" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Margin </p>
+                                                        <input type="text" id="range26" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Gross Profit </p>
+                                                        <input type="text" id="range27" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li class="switch">
+                                                    <div class="onoffswitch2 left">
+                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchb" checked>
+                                                        <label class="onoffswitch-label" for="myonoffswitchb"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                                    </div>
+                                                    <div class="price-range range left">
+                                                        <p>Expenses </p>
+                                                        <input type="text" id="range28" value="" name="range" />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="left"></div>
+                                                    <div class="left">
+                                                        <p>Net</p>
+                                                    </div>
+                                                </li>
+                                                <div class="clear"></div>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <p>Year1</p>
+                                                    <h4><i class="icon-indian-rupee"></i> 0</h4>
+                                                    <i class="icon-close"></i>
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <div class="clear"></div>
+                                            </ul>
+                                            <ul class="bg-none">
+                                                <li><i class="icon-plus"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="bank-surrogate basic-div" style="display: none;">
+                            <div class="">
+                                <div class="clear"></div>
+                                <div class="box-div">
+                                    <textarea>Remarks</textarea>
+                                    <div class="income-scroll">
+                                        <div class="income-breakup form-div1 credit-breakup">
+                                            <ul>
+                                                <li style="text-align:left;">Balance as of</li>
+                                                <li>On 5th</li>
+                                                <li>On 15th</li>
+                                                <li>On 25th</li>
+                                                <li>On 30th</li>
+                                                <li>Total</li>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <p>Month1 </p>
+                                                    <h4><i class="icon-indian-rupee"></i> 0</h4>
+                                                    <i class="icon-close"></i>
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <li>
+                                                    <input type="text">
+                                                </li>
+                                                <div class="clear"></div>
+                                            </ul>
+                                            <ul class="bg-none">
+                                                <li><i class="icon-plus"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="liability-div">
+                            <div class="common-title">
+                                <h2 class="switch-title"></h2>
+                            </div>
+                            <div class="total-income credit-liability">
+                                <p>Liability</p>
+                                <h4><i class="icon-indian-rupee"></i>0</h4>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="box-div">
+                                <textarea>Remarks</textarea>
+                                <div class="income-scroll">
+                                    <ul>
+                                        <li class="width-6a"></li>
+                                        <li class="width-6b">
+                                            <label>Loan</label>
+                                        </li>
+                                        <li class="width-8">
+                                            <label>Bank / Source</label>
+                                        </li>
+                                        <li class="width-8c">
+                                            <label>Reference No.</label>
+                                        </li>
+                                        <li class="width-8 amount">
+                                            <label>EMI</label>
+                                        </li>
+                                        <li class="width-9 amount">
+                                            <label>Outstanding Amount</label>
+                                        </li>
+                                        <li class="width-8a">
+                                            <label>Remaining Terms</label>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="width-6a">
+                                            <div class="onoffswitch3">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                                                <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                            </div>
+                                        </li>
+                                        <li class="width-6b">
+                                            <label>
+                                                <i class="icon-auto-loan"></i> <span class="svs-img">
+                                                    <input id="img-switcher" type="checkbox">
+                                                    <label for="img-switcher"></label>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-9 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-8a">
+                                            <input type="text">
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="width-6a">
+                                            <div class="onoffswitch3">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                                                <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                            </div>
+                                        </li>
+                                        <li class="width-6b">
+                                            <label>
+                                                <i class="icon-car-loan"></i><span class="svs-img">
+                                                    <input id="img-switcher1" type="checkbox">
+                                                    <label for="img-switcher1"></label>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-9 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-8a">
+                                            <input type="text">
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="width-6a">
+                                            <div class="onoffswitch3">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                                                <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                            </div>
+                                        </li>
+                                        <li class="width-6b">
+                                            <label>
+                                                <i class="icon-two-wheeler-loan"></i> <span class="svs-img">
+                                                    <input id="img-switcher2" type="checkbox">
+                                                    <label for="img-switcher2"></label>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-9 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-8a">
+                                            <input type="text">
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="width-6a">
+                                            <div class="onoffswitch3">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                                                <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                            </div>
+                                        </li>
+                                        <li class="width-6b">
+                                            <label>
+                                                <i class="icon-home-loan"></i> <span class="svs-img">
+                                                    <input id="img-switcher3" type="checkbox">
+                                                    <label for="img-switcher3"></label>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-9 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-8a">
+                                            <input type="text">
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="width-6a">
+                                            <div class="onoffswitch3">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                                                <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                            </div>
+                                        </li>
+                                        <li class="width-6b">
+                                            <label>
+                                                <i class="icon-lap"></i> <span class="svs-img">
+                                                    <input id="img-switcher4" type="checkbox">
+                                                    <label for="img-switcher4"></label>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-9 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-8a">
+                                            <input type="text">
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="width-6a">
+                                            <div class="onoffswitch3">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitchia" checked>
+                                                <label class="onoffswitch-label" for="myonoffswitchia"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                            </div>
+                                        </li>
+                                        <li class="width-6b">
+                                            <i class="icon-gold-loan"></i>
+                                            <span class="svs-img">
+                                                <input id="img-switcher5" type="checkbox">
+                                                <label for="img-switcher5"></label>
+                                            </span>
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8">
+                                            <input type="text">
+                                        </li>
+                                        <li class="width-8 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-9 amount without-label">
+                                            <span>
+                                                <input type="text">
+                                            </span>
+                                        </li>
+                                        <li class="width-8a">
+                                            <input type="text">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+                
+                <div class="clear"></div>
+                <div class="box-div nhb">
+                    <h2>NHB CLSS</h2>
+                    <ul>
+                        <li class="width-10">
+                            <label>NHB CLSS Applicable</label>
+                            <div class="cust-select">
+                                <span class="selected">No</span><i class="arrow"></i>
+                                <ul>
+                                    <li>Yes</li>
+                                    <li>No</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="width-10">
+                            <label>Borrower Having Pucca House</label>
+                            <div class="cust-select">
+                                <span class="selected">Select</span><i class="arrow"></i>
+                                <ul>
+                                    <li>Yes</li>
+                                    <li>No</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="width-10">
+                            <label>House Hold Category</label>
+                            <div class="cust-select">
+                                <span class="selected">Select</span><i class="arrow"></i>
+                                <ul>
+                                    <li>LIG</li>
+                                    <li>EWS</li>
+                                    <li>MIG</li>
+                                    <li>HIG</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="amount width-10">
+                            <label>House Hold Annual Income</label>
+                            <span><input type="text"></span>
+                        </li>
+                        <li class="width-9">
+                            <label>Location Code</label>
+                            <span><input type="text"></span>
+                        </li>
+                        <li class="width-10">
+                            <label>Location Name</label>
+                            <span><input type="text"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+  </div>
+</div>
+
+<div class="pop-bg" style="display:none;" id="warning-popup">
+  <div class="popup-div">
+    <i class="icon-close right"></i>
+     <div class="clear"></div>
+     <div class="notify-div">
+      <div class="notify-cnt">
+        <div>
+          <div class="left"> <img src="images/customer.png" alt="" title=""></div>
+          <div class="left read-only">
+            <div class="left">
+              <p class="bg bg4">Document missing</p>
+            </div>
+            <div class="right">
+              <label>SHFC11765689</label>
+              <p>Saranya </p>
+            </div>
+          </div>
+          <div class="right"> <i class="icon-home-loan"></i>
+            <p><i class="icon-down-arrow"></i></p>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div>
+          <p class="bg-blue left">Zonal Ops</p>
+          <div class="time-date left"> <span>20 Jun 2016</span> <span>4.32 PM</span></div>
+        </div>
+        <div class="clear"></div>
+        <div class="comment-div">
+          <textarea rows="3">Write Comment</textarea>
+          <div>
+            <input type="button" value="Send" class="right">
+            <div class="left">
+              <input type="button" value="Attachments" class="">
+            </div>
+            <div class="left bg bg1 resolved" style="display:none;"><i class="icon-positive"></i> Resolved</div>
+            <script>
+            $(".pending").click(function(e) {
+                $(".resolved").show();
+				$(".pending").hide();
+            });
+			$(".resolved").click(function(e) {
+                $(".pending").show();
+				$(".resolved").hide();
+            });
+          </script> 
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="pop-bg" style="display:none;" id="plus-popup-sub">
+  <div class="popup-div">
+    <i class="icon-close right"></i>
+     <div class="clear"></div>
+     <div class="notify-div">
+      <div class="notify-cnt">
+        <div>
+          <div class="left"> <img src="images/customer.png" alt="" title=""></div>
+          <div class="left read-only">
+            <div class="left">
+              <p class="bg bg4">Document missing</p>
+            </div>
+            <div class="right">
+              <label>SHFC11765689</label>
+              <p>Saranya </p>
+            </div>
+          </div>
+          <div class="right"> <i class="icon-home-loan"></i>
+            <p><i class="icon-down-arrow"></i></p>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div>
+          <p class="bg-blue left">Credit Officer</p>
+          <div class="time-date left"> <span>20 Jun 2016</span> <span>4.32 PM</span></div>
+        </div>
+        <div class="clear"></div>
+        <div class="comment-div">
+          <textarea rows="3">Write Comment</textarea>
+          <div>
+            <input type="button" value="Save" class="right">
+            
+            <div class="left bg bg1 resolved" style="display:none;"><i class="icon-positive"></i> Resolved</div>
+            <script>
+            $(".pending").click(function(e) {
+                $(".resolved").show();
+				$(".pending").hide();
+            });
+			$(".resolved").click(function(e) {
+                $(".pending").show();
+				$(".resolved").hide();
+            });
+          </script> 
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="css/range.css">
+<script src="js/jquery.js"></script> 
+<!--<script src="js/highcharts.js"></script>--> 
+<script src="js/range.js"></script> 
+
+<!--<script src="js/exporting.js"></script> --> 
+<script>
+jQuery(document).ready(function(){
+categoryPopup();
+dropButton();
+
+$(".sub-content .icon-plus").click(function(e) {
+  $("#plus-popup-sub").show();  
+});
+$("#plus-popup-sub .icon-close").click(function(e) {
+  $("#plus-popup-sub").hide();  
+});
+
+$(".credit-status .icon-warning").click(function(e) {
+  $("#warning-popup").show();  
+});
+$("#warning-popup .icon-close").click(function(e) {
+  $("#warning-popup").hide();  
+});
+
+ $(".trigger-popup").click(function (e) {
+        $(".trigger-pop-content").show();
+        $(".trigger-pop-content .icon-close").click(function (e) {
+            $(".pop-bg.trigger-pop-content").hide();
+        });
+		$(".trigger-pop-content input[type='button'").click(function (e) {
+            $(this).toggleClass('green');
+        });
+    });
+
+$(".credit-summary .box-div .amount").click(function(e) {
+  $("#credid-office-popup").show();  
+});
+
+$("#credid-office-popup .icon-close").click(function(e) {
+  $("#credid-office-popup").hide();  
+});
+
+$(".proposal-list").click(function(e) {
+  $(".proposal-content").show();
+  $(".notes-content,.performance-content,.query-content,.sub-content").hide();
+  $(this).addClass('active');
+$(this).siblings().removeClass('active');
+});
+
+$(".note-list").click(function(e) {
+  $(".notes-content").show();
+  $(".proposal-content,.performance-content,.query-content,.sub-content").hide();
+  $(this).addClass('active');
+$(this).siblings().removeClass('active');
+});
+		$(".performance-list").click(function(e) {
+			$(".performance-content").show();
+  $(".proposal-content,.notes-content,.query-content,.sub-content").hide();
+  $(this).addClass('active');
+$(this).siblings().removeClass('active');
+});	
+
+$(".query-list").click(function(e) {
+			$(".query-content").show();
+  $(".proposal-content,.notes-content,.performance-content,.sub-content").hide();
+  $(this).addClass('active');
+$(this).siblings().removeClass('active');
+});	
+$(".sub-list").click(function(e) {
+			$(".sub-content").show();
+  $(".proposal-content,.notes-content,.performance-content,.query-content").hide();
+  $(this).addClass('active');
+$(this).siblings().removeClass('active');
+});	
+
+$(".category-popup").hide();
+function categoryPopup(){
+    $(".category-icons").click(function (e) {
+        $(".category-popup1").show();
+        $(".category-popup1 .icon-close").click(function (e) {
+            $(".pop-bg.category-popup1").hide();
+        });
+    });
+}
+
+$(".expand-icon").click(function(e) {
+    $(".popup-div,.documents-popup").show();
+	$(".popup-div ul li").click(function(e) {
+		$(".popup-div,.documents-popup").hide();
+        $(".content-div").addClass("center-collapse");
+		$(".expand-icon").hide();
+		$("#div-document-content").show();
+    });
+	        $(".icon-collapse").click(function (e) {
+	            alert("12321");
+		    $("#div-document-content").hide();
+			$(".content-div").removeClass("center-collapse");
+			});
+			
+			$(".icon-collapse").click(function(e) {
+		    $("#div-document-content").hide();
+			$(".content-div").removeClass("center-collapse");
+			});
+			
+			$(".attach-click").click(function(e) {
+				$(".document-attach").show();
+				$(".document-entry").hide();
+				});
+				$(".documents-popup .icon-close").click(function(e) {
+                    $(".pop-bg.documents-popup").hide();
+                });
+});
+var cHeight = function() {
+		var cHeight = $(window).innerHeight();
+		//alert(cHeight);
+		$('#div-user-content .content-div').css({'height': cHeight-130+'px'});
+	}
+	cHeight();
+	var dHeight = function() {
+		var dHeight = $(window).innerHeight();
+		$('#div-document-content').css({'height': dHeight-130+'px'});
+	}
+	dHeight();
+$(window).resize(function() {
+     cHeight();dHeight();
+      }).load(function() {
+ cHeight();dHeight();
+ });
+ $("#range13").ionRangeSlider({min: 0, max: 100,from: 70});
+ $("#range14").ionRangeSlider({ min: 0, max: 100,from: 50});
+ $("#range15").ionRangeSlider({ min: 0,max: 100,from: 90});
+ $("#range16").ionRangeSlider({min: 0, max: 100,from: 40});
+ $("#range17").ionRangeSlider({min: 0,max: 100,from: 40});
+ $("#range18").ionRangeSlider({min: 0,max: 100,from: 40});
+ 
+/* charts*/ 
+ $('#container').highcharts({
+        xAxis: {
+            min: 5,
+        },
+        yAxis: {
+            min: 10,
+			title: {
+				text: 'ROI'
+			},
+        },
+        title: {
+            text: 'ROI'
+        },
+		legend:{
+			itemStyle:{fontWeight:'normal'}
+		},
+        series: [{
+            type: 'line',
+            name: 'Zone',
+            data: [[5, 14], [25, 14]],
+            marker: {
+                enabled: false
+            },
+            states: {
+                hover: {
+                    lineWidth: 0
+                }
+            },
+            enableMouseTracking: false
+        }, 
+		{
+            type: 'line',
+            name: 'Branch',
+            data: [[5, 13], [25, 13]],
+            marker: {
+                enabled: false
+            },
+            states: {
+                hover: {
+                    lineWidth: 0
+                }
+            },
+            enableMouseTracking: false
+        }, 
+		{
+            type: 'scatter',
+            name: 'ROI',
+            data: [[5, 13], [10, 14.5], [15, 16], [20, 15.5], [22, 14], [25, 17]],
+            marker: {
+                radius: 4
+            }
+        }]
+    });
+	//category popup 
+$(".category-popup").hide();
+function categoryPopup(){
+    $(".category-icons").click(function (e) {
+        $(".category-popup1").show();
+        $(".category-popup1 .icon-close").click(function (e) {
+            $(".pop-bg.category-popup1").hide();
+        });
+    });
+}
+      $("#SelectType .icon-close").click(function () {
+            $("#SelectType").hide();
+        });
+		 $("#SelectType2 .icon-close").click(function () {
+            $("#SelectType2").hide();
+        });
+
+
+        $(".category-icons").click(function () {
+            $("#credit-officer").show();
+        });
+
+
+        $(".app-credit-officer-list1").click(function () {
+            $(".app-credit-officer1").show();
+            $(".app-credit-officer2").hide();
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+        });
+
+        $(".app-credit-officer-list2").click(function () {
+            $(".app-credit-officer2").show();
+            $(".app-credit-officer1").hide();
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+        });
+
+
+
+        $(function () {
+            $("#range").ionRangeSlider({ min: 0, max: 100, from: 100 });
+            $("#range1").ionRangeSlider({ min: 0, max: 100, from: 90 });
+            $("#range2").ionRangeSlider({ min: 0, max: 100, from: 80 });
+            $("#range3").ionRangeSlider({ min: 0, max: 100, from: 70 });
+            $("#range4").ionRangeSlider({ min: 0, max: 100, from: 60 });
+            $("#range5").ionRangeSlider({ min: 0, max: 100, from: 50 });
+            $("#range6").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range7").ionRangeSlider({ min: 0, max: 100, from: 30 });
+            $("#range8").ionRangeSlider({ min: 0, max: 100, from: 20 });
+            $("#range9").ionRangeSlider({ min: 0, max: 100, from: 10 });
+            $("#range10").ionRangeSlider({ min: 0, max: 100, from: 20 });
+            $("#range11").ionRangeSlider({ min: 0, max: 100, from: 30 });
+            $("#range12").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range13").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range14").ionRangeSlider({ min: 0, max: 100, from: 40 });
+
+            $("#range15").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range16").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range17").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range18").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range19").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range20").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range21").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range22").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range23").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range24").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range25").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range26").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range27").ionRangeSlider({ min: 0, max: 100, from: 40 });
+            $("#range28").ionRangeSlider({ min: 0, max: 100, from: 40 });
+        });
+        $(".income-salaried").click(function (e) {
+            $(".salaried-div").show();
+            $(".self-employed-div,.self-employed-noincome-div,.bank-surrogate").hide();
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+        });
+
+        $(".income-seproof").click(function (e) {
+            $(".self-employed-div").show();
+            $(".salaried-div,.self-employed-noincome-div,.bank-surrogate").hide();
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+        });
+
+        $(".income-senoproof").click(function (e) {
+            $(".self-employed-noincome-div").show();
+            $(".salaried-div,.self-employed-div,.bank-surrogate").hide();
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+        });
+
+        $(".income-banking").click(function (e) {
+            $(".bank-surrogate").show();
+            $(".salaried-div,.self-employed-div,.self-employed-noincome-div").hide();
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+        });
+        $(".select").change(function () {
+            var val = $(this).val();
+            if (val == 0) {
+                $(".salaried-div").show();
+                $(".self-employed-div,.self-employed-noincome-div,.bank-surrogate").hide();
+            }
+            if (val == 1) {
+                $(".self-employed-div").show();
+                $(".salaried-div,.self-employed-noincome-div,.bank-surrogate").hide();
+            }
+            if (val == 2) {
+                $(".self-employed-noincome-div").show();
+                $(".salaried-div,.self-employed-div,.bank-surrogate").hide();
+            }
+            if (val == 3) {
+                $(".bank-surrogate").show();
+                $(".salaried-div,.self-employed-div,.self-employed-noincome-div").hide();
+            }
+        });
+        /*Custom Select starts*/
+        $('.cust-select').click(function (e) {
+            $(this).children('ul').toggle();
+        });
+        $('.cust-select ul li').click(function (e) {
+            $('.cust-select ul li:first-child').addClass('active');
+            $(this).toggleClass('active');
+            $(this).siblings().removeClass('active');
+            var val = $(this).text();
+            $(this).parent('ul').siblings('span.selected').text(val);
+        });
+        $(".cust-select").mouseleave(function (e) {
+            $(".cust-select ul").hide();
+        });
+        /*Custom Select ends*/
+        $(".icon-settings").click(function (e) {
+            $(".pop-bg.income-popup").toggle();
+        });
+        $(".icon-close").click(function (e) {
+            $(".pop-bg").hide();
+        });
+        $(function () {
+
+
+            $("#slider-1").slider({
+                range: true,
+                min: 0,
+                max: 100,
+                step: 10,
+                values: [0, 60],
+                slide: function (event, ui) {
+                    $("#price1").val(ui.values[1]);
+                }
+            });
+            $("#price1").val($("#slider-1").slider("values", 1));
+
+            $("#slider-2").slider({
+                range: true,
+                min: 0,
+                max: 100,
+                step: 10,
+                values: [0, 40],
+                slide: function (event, ui) {
+                    $("#price2").val(ui.values[1]);
+                }
+            });
+            $("#price2").val($("#slider-2").slider("values", 1));
+
+            $("#slider-3").slider({
+                range: true,
+                min: 0,
+                max: 100,
+                step: 10,
+                values: [0, 60],
+                slide: function (event, ui) {
+                    $("#price3").val(ui.values[1]);
+                }
+            });
+            $("#price3").val($("#slider-3").slider("values", 1));
+
+            $("#slider-4").slider({
+                range: true,
+                min: 0,
+                max: 100,
+                step: 10,
+                values: [0, 90],
+                slide: function (event, ui) {
+                    $("#price4").val(ui.values[1]);
+                }
+            });
+            $("#price4").val($("#slider-4").slider("values", 1));
+            $("#slider-5").slider({
+                range: true,
+                min: 0,
+                max: 100,
+                step: 10,
+                values: [0, 80],
+                slide: function (event, ui) {
+                    $("#price5").val(ui.values[1]);
+                }
+            });
+            $("#price5").val($("#slider-5").slider("values", 1));
+            $("#slider-6").slider({
+                range: true,
+                min: 0,
+                max: 100,
+                step: 10,
+                values: [0, 70],
+                slide: function (event, ui) {
+                    $("#price6").val(ui.values[1]);
+                }
+            });
+            $("#price6").val($("#slider-6").slider("values", 1));
+            $("#slider-7").slider({
+                range: true,
+                min: 0,
+                max: 100,
+                step: 10,
+                values: [0, 60],
+                slide: function (event, ui) {
+                    $("#price7").val(ui.values[1]);
+                }
+            });
+            $("#price7").val($("#slider-7").slider("values", 1));
+            $("#slider-8").slider({
+                range: true,
+                min: 0,
+                max: 100,
+                step: 10,
+                values: [0, 50],
+                slide: function (event, ui) {
+                    $("#price8").val(ui.values[1]);
+                }
+            });
+            $("#price8").val($("#slider-8").slider("values", 1));
+            $("#slider-9").slider({
+                range: true,
+                min: 0,
+                max: 100,
+                step: 10,
+                values: [0, 30],
+                slide: function (event, ui) {
+                    $("#price9").val(ui.values[1]);
+                }
+            });
+            $("#price9").val($("#slider-9").slider("values", 1));
+            $("#slider-10").slider({
+                range: true,
+                min: 0,
+                max: 100,
+                step: 10,
+                values: [0, 70],
+                slide: function (event, ui) {
+                    $("#price10").val(ui.values[1]);
+                }
+            });
+            $("#price10").val($("#slider-10").slider("values", 1));
+
+            $("#slider-11").slider({
+                range: true,
+                min: 0,
+                max: 100,
+                step: 10,
+                values: [0, 60],
+                slide: function (event, ui) {
+                    $("#price11").val(ui.values[1]);
+                }
+            });
+            $("#price11").val($("#slider-11").slider("values", 1));
+            $("#slider-12").slider({
+                range: true,
+                min: 0,
+                max: 100,
+                step: 30,
+                values: [0, 80],
+                slide: function (event, ui) {
+                    $("#price12").val(ui.values[1]);
+                }
+            });
+            $("#price12").val($("#slider-12").slider("values", 1));
+        });
+        $(".expand-icon").click(function (e) {
+            $(".popup-div,.documents-popup").show();
+            $(".popup-div ul li").click(function (e) {
+                $(".popup-div,.documents-popup").hide();
+                $(".content-div").addClass("center-collapse");
+                $(".expand-icon").hide();
+                $("#div-document-content").show();
+            });
+           
+
+            $(".attach-click").click(function (e) {
+                $(".document-attach").show();
+                $(".document-entry").hide();
+            });
+            $(".documents-popup .icon-close").click(function (e) {
+                $(".pop-bg.documents-popup").hide();
+            });
+        });
+        var cHeight = function () {
+            var cHeight = $(window).innerHeight();
+            $('#div-user-content .content-div').css({ 'height': cHeight - 130 + 'px' });
+        }
+        cHeight();
+        var dHeight = function () {
+            var dHeight = $(window).innerHeight();
+            $('#div-document-content').css({ 'height': dHeight - 130 + 'px' });
+        }
+        dHeight();
+    });
+    $(window).resize(function () {
+        cHeight(); dHeight();
+    }).load(function () {
+        cHeight(); dHeight();
+    });
+
+    var whichDiv = "";
+    function fnOpenOptionsToOpen(div) {
+        whichDiv = div;
+        $("#SelectType").show();
+    }
+
+    function fnOpenOptionsToOpen2(div) {
+        whichDiv = div;
+        $("#SelectType2").show();
+    }
+
+    function fnOpenTab() {
+        var incometype = $("#select-income-type").val();
+        $("." + whichDiv).find("." + incometype).show();
+        $("." + whichDiv).find("." + incometype).click();
+        $("#SelectType").hide();
+    }
+
+    function fnOpenTab2() {
+        var incometype = $("#select-income-type2").val();
+        $("." + whichDiv).find("." + incometype).show();
+        $("." + whichDiv).find("." + incometype).click();
+        $("#SelectType2").hide();
+    }
+
+    function cibil_click()
+    {
+        $(".content-div").addClass("center-collapse");
+        $("#div-document-content").show();
+        LoadHtmldoc('CIBIL-documents.html');
+    }
+
+    function PD_click() {
+        $(".content-div").addClass("center-collapse");
+        $("#div-document-content").show();
+        LoadHtmldoc('PD-documents.html');
+    }
+
+    function FI_click() {
+        $(".content-div").addClass("center-collapse");
+        $("#div-document-content").show();
+        LoadHtmldoc('FI-documents.html');
+    }
+
+    function DV_click() {
+        $(".content-div").addClass("center-collapse");
+        $("#div-document-content").show();
+        LoadHtmldoc('DV-documents.html');
+    }
+
+    function TV_click() {
+        $(".content-div").addClass("center-collapse");
+        $("#div-document-content").show();
+        LoadHtmldoc('TV-documents.html');
+    }
+	
+	function LV_click() {
+        $(".content-div").addClass("center-collapse");
+        $("#div-document-content").show();
+        LoadHtmldoc('Legal-documents.html');
+    }
+	
+	function TVal_click() {
+        $(".content-div").addClass("center-collapse");
+        $("#div-document-content").show();
+        LoadHtmldoc('technical-documents.html');
+    }
+
+</script>

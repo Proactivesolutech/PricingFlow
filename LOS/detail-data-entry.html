@@ -1,0 +1,2273 @@
+<script src="js/Scrn/DDE.js"></script>
+
+<div class="title">
+    <h1>Zonal Ops (DE) : Detailed Data Entry</h1>
+</div>
+<div class="content-div detail-entry-page">
+    <div class="box-div" id="dde_content_Pg">
+        <!-- Lead Information -->
+        <div class="lead-information" id="dde_div_top_leadinfo">
+            <ul class="form-controls" contentchanged="true">
+                <h2>
+                    Lead Information <i class="icon-document div-right"></i>
+                    <i class="icon-plus div-right" title="Omnidox" id="popclose" onclick="fnpop();"></i>
+                </h2>
+                <li class="category-icon">
+                    <div id="prddiv">
+
+                    </div>
+                </li>
+                <li class="width-15 read-only">
+                    <input type="hidden" id="leadpk" pcd="">
+                    <input type="hidden" id="LeadPrdPk">
+                </li>
+                <li class="width-1 read-only">
+                    <label>Lead ID</label>
+                    <p name="content" id="dde_leadid"</p>
+                </li>
+                <li class="width-13 read-only">
+                    <label>Application Number</label>
+                    <p name="content" id="dde_appno"></p>
+                </li>
+                <li class="width-13 read-only">
+                    <label>Branch</label>
+                    <p name="content" id="dde_brnch"></p>
+                </li>
+                <!--<li class="width-16 read-only">
+                    <label>Purpose of Loan</label>
+                    <div class="select-focus">
+                        <input name="select" placeholder="Select" onkeydown="return false" selval="-1" id="dde_LnPur" key="dde_LnPur" class="autofill mandatory">
+                        <i class="icon-down-arrow"></i>
+                        <ul class="custom-select">
+                            <li val="0">Take over of existing Housing Loan</li>
+                            <li val="1">Extend Renovate Repair of House Flat</li>
+                            <li val="2">Construction</li>
+                            <li val="3">Plot And Construction</li>
+                            <li val="4">Flat New</li>
+                            <li val="5">Flat ReSale</li>
+                            <li val="6">House New</li>
+                            <li val="7">House ReSale</li>
+                            <li val="8">Refinance</li>
+                            <li val="9">House Old</li>
+                            <li val="10">Additional Finance</li>
+                            <li val="11">House Extension</li>
+                        </ul>
+                    </div>
+                </li>-->
+                <li class="width-10 read-only">
+                    <label>Physical Application Number</label>
+                    <input type="text" name="text" id="dde_PAppNo" key="dde_PAppNo" />
+                </li>
+                <li class="width-15 read-only saleofz">
+                    <label>Sales Office</label>
+                    <comp-help id="comp-help" txtcol="Location" valcol="GblPk" onrowclick="SaleOfzclick" prcname="PrcShflsaleOfzhelp" width="100%" extraparam=""></comp-help>
+                    <input type="hidden" name="text" valtext="" key="dde_builoc" id="dde_builoc" />
+                </li>
+
+                <li class="width-17 read-only" >
+                    <label>How did you get to know about us?</label>
+                    <div class="select-focus">
+                        <input placeholder="Select" onkeydown="return false" selval="-1" name="select" id="dde_Abtus" key="dde_Abtus" class="autofill" />
+                        <i class="icon-down-arrow"></i>
+                        <ul class="custom-select">
+                            <li val="0">Leaflet</li>
+                            <li val="1">Newspaper</li>
+                            <li val="2">Website</li>
+                            <li val="3">Wall painting</li>
+                            <li val="4">Friends/Relatives</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- Lead Information -->
+        <!-- Lead Detailed Info -->
+        <div class="detail-data-entry-content" id="dde_content">
+            <!-- Tabs -->
+            <ul id="dde_ul_app_tabs" class="common-tabs"></ul>
+            <!-- Tabs -->
+            <!-- Tab Content -->
+            <div id="dde_whole_div_0" class="tab1-content div_content highlight-applicant-details" val="0" actornm="Applicant" lapfk="">
+                <!-- 1st Horizontal div-->
+                <div>
+                    <!-- First div-->
+                   
+                    <div id="firstdivid" class="grid-66 div-left dde_cont frstdiv" contentchanged="false">
+                        <input type="hidden" name="text" key="dde_First_hidden" value="" />
+                        <div class="box-div personal-info">
+                            <input type="hidden" name="text" class="dde_docgen_hidden" key="dde_docgen_hidden" value="" />
+                            <input type="hidden" name="text" class="dde_doc_hidden" key="dde_doc_hidden" value="" />
+                            <input type="hidden" name="text" class="dde_kyc_hidden" key="dde_kyc_hidden" value="" />
+                            <div class="div-left"> <img src="images/photo.jpg"> </div>
+                            <div class="div-right">
+                                <ul class="form-controls">
+                                    <li class="width-6">
+                                        <label>Title</label>
+                                        <div class="select-focus">
+                                            <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_title" class="autofill" onchange="validatetitle(this)">
+                                            <i class="icon-down-arrow"></i>
+
+                                            <ul class="custom-select">
+
+                                                <li val="0">Mr</li>
+                                                <li val="1">Ms</li>
+                                                <li val="2">Mrs</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="width-16">
+                                        <label>Preferred Name</label>
+                                        <input type="text" name="text" key="dde_Pref" placeholder="" restrict="alphaspace" maxlength="250" >
+                                    </li>
+                                    <li class="width-12">
+                                        <label>Relation with Applicant</label>
+                                        <div class="select-focus">
+                                            <input placeholder="Select" id="rel_wit_app" onkeydown="return false" selval="" name="select" key="dde_app_relation" class="autofill mandatory" onclick="validaterel()">
+                                            <i class="icon-down-arrow"></i>
+                                            <ul class="custom-select">
+                                                <li class="remove" val='Self'>Self</li>
+                                                <li val="Father">Father</li>
+                                                <li val="Mother">Mother</li>
+                                                <li val="Son">Son</li>
+                                                <li val="Spouse">Spouse</li>
+                                                <li val="Daughter">Daughter</li>
+                                                <li val="Brother">Brother</li>
+                                                <li val="Sister">Sister</li>
+                                                <li val="GrandSon">GrandSon</li>
+                                                <li val="Daughter-in-Law">Daughter-in-Law</li>
+                                                <li val="Father-in-Law">Father-in-Law</li>
+                                                <li val="Mother-in-Law">Mother-in-Law</li>
+                                                <li val="Son-in-Law">Son-in-Law</li>
+                                                <li val="Proprietorship Firm">Proprietorship Firm</li>
+                                                <li val="Private Sector Co">Private Sector Co</li>
+                                                <li val="Partnership Firm">Partnership Firm</li>
+                                                <li val="Sister-in-Law">Sister-in-Law</li>
+                                                <li val="Guarantor">Guarantor</li>
+                                                <li val="Director">Director</li>
+                                                <li val="Brother-in-Law">Brother-in-Law</li>
+                                                <li val="Uncle">Uncle</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="width-30">
+                                        <label>First Name</label>
+                                        <input type="text" placeholder="" class="mandatory" name="text" key="dde_Fname" restrict="alphaspace" maxlength="100" onchange="validatebank()">
+                                    </li>
+                                    <li class="width-30">
+                                        <label>Middle Name</label>
+                                        <input type="text" placeholder="" name="text" key="dde_Mname" restrict="alphaspace" maxlength="100" onchange="validatebank()">
+                                    </li>
+                                    <li class="width-30">
+                                        <label>Last Name</label>
+                                        <input type="text" placeholder="" name="text" key="dde_Lname" restrict="alphaspace" maxlength="100" onchange="validatebank()">
+                                    </li>
+                                    <li class="width-15">
+                                        <label>Gender</label>
+                                        <div class="select-focus">
+                                            <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_gender" class="autofill" onchange="validategender(this)">
+                                            <i class="icon-down-arrow"></i>
+                                            <ul class="custom-select">
+                                                <li val="0">Male</li>
+                                                <li val="1">Female</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="width-15">
+                                        <label>DOB</label>
+                                        <input type='text' placeholder="" name="text" key="dde_dob" class="mandatory datepicker dob" />
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <!-- First div ends here-->
+                    <!-- Second div-->
+                    <div class="grid-33 div-right dde_cont seconddiv" contentchanged="false">
+                        <div class="box-div">
+                            <ul class="form-controls">
+                                <li class="width-21">
+                                    <input type="checkbox" name="checkbox" key="dde_chk_doc" onclick="fnDocChk(this);">
+                                    <label>Other Documents Available</label>
+                                </li>
+                                <li class="width-48p">
+                                    <label>Aadhaar Number</label>
+                                    <input type="text" name="text" class="adhar" key="dde_adr_no" maxlength="20">
+                                </li>
+                                <li class="width-48p">
+                                    <label>PAN</label>
+                                    <input type="text" placeholder="" name="text" key="dde_pan_no" maxlength="20" onblur="validatepan()">
+                                </li>
+                                <li class="width-48p">
+                                    <label>Driving License</label>
+                                    <input type="text" name="text" key="dde_dl" maxlength="20">
+                                </li>
+                                <li class="width-48p">
+                                    <label>Voter ID</label>
+                                    <input type="text" name="text" key="dde_vot_id" maxlength="20">
+                                </li>
+                                <li class="width-48p">
+                                    <label>Passport Number</label>
+                                    <input type="text" name="text" key="dde_pass_no" maxlength="20">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!-- 1st Horizontal div ends here!-->
+                <!-- 2nd Horizontal div-->
+                <div class="detailed-content">
+                    <div class="box-div">
+                        <ul class="common-tabs">
+                            <li pk="0" val="20" onclick="fnDdeConfirmScreen('D',this)" class="applicant-list active">Personal</li>
+                            <li pk="0" val="21" onclick="fnDdeConfirmScreen('D', this)" class="official-list">Occupation</li>
+                            <li pk="0" val="22" onclick="fnDdeConfirmScreen('D', this)" class="bank-list">Bank</li>
+                            <li pk="0" val="23" onclick="fnDdeConfirmScreen('D', this)" class="asset-list">Asset</li>
+                            <li pk="0" val="24" onclick="fnDdeConfirmScreen('D', this)" class="obligation-list">Obligations</li>
+                            <li pk="0" val="25" onclick="fnDdeConfirmScreen('D', this)" class="credit-list">Credit Card</li>
+                            <li pk="0" val="26" onclick="fnDdeConfirmScreen('D', this)" class="Kyc-list">Kyc Document Details</li>
+                            <li pk="0" val="27" onclick="fnDdeConfirmScreen('D', this)" class="Document-list">Pre Approval Documents</li>
+                        </ul>
+                        <!--personal Div starts-->
+                        <div class="per_div dde_cont det-content1 det_content" val="20" contentchanged="false">
+                            <input type="hidden" name="text" key="dde_Personal_hidden" value="" />
+                            <div class="personal-div">
+                                <div class="grid-66 div-left">
+                                    <div class="box-div">
+                                        <ul class="form-controls">
+                                            <li class="width-9">
+                                                <label>Education</label>
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_Per_education" class="autofill" onchange="validateedu(this)">
+                                                    <i class="icon-down-arrow"></i>
+
+                                                    <ul class="custom-select">
+                                                        <li val="0">Matriculate</li>
+                                                        <li val="1">Undergraduate</li>
+                                                        <li val="2">Graduate</li>
+                                                        <li val="3">Post graduate</li>
+                                                        <li val="5">Illiterate</li>
+                                                        <li val="4">Others</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="width-9 educlass" style="display:none;" id="lieduother">
+                                                <label>Others</label>
+                                                <input type="text" placeholder="" name="text" key="dde_Per_edu_others" id="eduothertxtid" maxlength="50">
+                                            </li>
+                                            <li class="width-9" id="dde_univer_id">
+                                                <label>Institute / University</label>
+                                                <input type="text" placeholder="" name="text" key="dde_ins_uni">
+                                            </li>
+                                            <li class="width-15">
+                                                <label>Mobile</label>
+                                                <input type="text" placeholder="" class="mobile mandatory" name="text" key="dde_Per_Mobile" restrict="number" maxlength="10">
+                                            </li>
+                                            <li class="width-15">
+                                                <label>Alternate MobileNo</label>
+                                                <input type="text" name="text" class="mobile" key="dde_Per_alt" maxlength="10" restrict="number">
+                                            </li>
+                                            <li class="width-15">
+                                                <label>Residence PhoneNo</label>
+                                                <input type="text" name="text" class="phone" key="dde_Per_res" maxlength="15" restrict="number">
+                                            </li>
+                                            <li class="width-54">
+                                                <label>Email</label>
+                                                <input type="text" name="text" class="email" key="dde_Per_Email" maxlength="100">
+                                            </li>
+
+                                            <li class="width-9">
+                                                <label>Nationality</label>
+                                                <input type="text" placeholder="" class="mandatory" name="text" key="dde_Per_Nationality" restrict="alphaspace" maxlength="50">
+                                            </li>
+                                            <li class="width-9">
+                                                <label>Religion</label>
+                                                <!--<input type="text" placeholder="" name="text" class="mandatory" key="dde_Per_Religion" restrict="alphaonly">-->
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_Per_Religion" class="autofill" onchange="validateothers(this)">
+                                                    <i class="icon-down-arrow"></i>
+                                                    <ul class="custom-select">
+                                                        <li val="H">Hindu</li>
+                                                        <li val="M">Muslim</li>
+                                                        <li val="C">Christian</li>
+                                                        <li val="S">Sikh</li>
+                                                        <li val="B">Buddhist</li>
+                                                        <li val="J">Jain</li>
+                                                        <li val="O">Others</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="width-9 otherclass" style="display:none;">
+                                                <label>Others</label>
+                                                <input type="text" placeholder="" name="text" key="dde_Per_religion_other" maxlength="50">
+                                            </li>
+                                            <li class="width-9">
+                                                <label>Caste</label>
+
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_Per_community" class="autofill" onchange="validatecom(this)">
+                                                    <i class=" icon-down-arrow"></i>
+                                                    <ul class="custom-select">
+                                                        <li val="0">General</li>
+                                                        <li val="1">SC</li>
+                                                        <li val="2">ST</li>
+                                                        <li val="3">OBC</li>
+                                                        <li val="4">NT</li>
+                                                        <li val="5" class="others">Others</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="width-9 comclass" style="display:none;" id="licommother">
+                                                <label>Others</label>
+                                                <input type="text" placeholder="" name="text" key="dde_Per_community_other" id="Comotherid" maxlength="50">
+                                            </li>
+                                            <h3>Father/ Husband</h3>
+                                            <li class="width-28">
+                                                <label></label>
+                                                <input type="text" placeholder="First Name"  name="text" key="dde_Per_Fat_hus_Fname" restrict="alphaspace">
+                                            </li>
+                                            <li class="width-28">
+                                                <label></label>
+                                                <input type="text" placeholder="Middle Name" name="text" key="dde_Per_Fat_hus_Midname" restrict="alphaspace">
+                                            </li>
+                                            <li class="width-28">
+                                                <label></label>
+                                                <input type="text" placeholder="Last Name" name="text" key="dde_Per_Fat_hus_Lastname" restrict="alphaspace">
+                                            </li>
+                                            <h3>Mother Maiden Name</h3>
+                                            <li class="width-28">
+                                                <label></label>
+                                                <input type="text" placeholder="First Name" name="text" key="dde_Per_mom_Fname" restrict="alphaspace">
+                                            </li>
+                                            <li class="width-28">
+                                                <label></label>
+                                                <input type="text" placeholder="Middle Name" name="text" key="dde_Per_mom_Midname" restrict="alphaspace">
+                                            </li>
+                                            <li class="width-28">
+                                                <label></label>
+                                                <input type="text" placeholder="Last Name" name="text" key="dde_Per_mom_lastname" restrict="alphaspace">
+                                            </li>
+                                            <li class="width-15">
+                                                <label>Marital Status</label>
+
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_Per_marital_status" class="autofill">
+                                                    <i class="icon-down-arrow"></i>
+                                                    <ul class="custom-select">
+                                                        <li val="0">Married</li>
+                                                        <li val="1">Single</li>
+                                                        <li val="2">Divorcee</li>
+                                                        <li val="3">Widower</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="width-9">
+                                                <label>No of Dependant</label>
+                                                <input type="text" placeholder="" name="text" restrict="number" key="dde_Per_noOfDependent">
+                                            </li>
+                                            <li class="width-9">
+                                                <label>Relation with Shriram</label>
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_Per_relationwitSvs" class="autofill" onchange="validateref(this)">
+                                                    <i class="icon-down-arrow"></i>
+                                                    <ul class="custom-select">
+                                                        <li val="Y">Yes</li>
+                                                        <li val="N">No</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="width-9 refclass" style="display:none;">
+                                                <label>Reference No.</label>
+                                                <input type="text" placeholder="" name="text" key="dde_Per_refNO" maxlength="50">
+                                            </li>
+                                            <li class="width-12">
+                                                <label>Communication Address</label>
+
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_Per_Comm_addr" class="autofill">
+                                                    <i class="icon-down-arrow"></i>
+
+                                                    <ul class="custom-select">
+                                                        <li val="0">Present Address</li>
+                                                        <li val="1">Permanent Address</li>
+                                                        <li val="2">Office (or) Business Address</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="grid-33 div-right">
+                                    <div class="box-div present_permanent_div">
+                                        <ul class="common-tabs address-list">
+                                            <li val="0" onclick="fnDdeConfirmScreen('A', this)" class="active">Present Address</li>
+                                            <li val="1" onclick="fnDdeConfirmScreen('A', this)">Permanent Address</li>
+                                        </ul>
+                                        <ul class="form-controls present-aaddress dde_cont address-div" val="0" contentchanged="false">
+                                            <input type="hidden" name="text" key="dde_pre_per_hidden" value="" />
+                                            <li class="width-98p">
+                                                <label>Accomodation Type</label>
+
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_Per_acc" class="autofill" onchange="callrental(this)">
+                                                    <i class="icon-down-arrow"></i>
+
+                                                    <ul class="custom-select">
+                                                        <li val="0">Rental</li>
+                                                        <li val="1">Parental</li>
+                                                        <li val="2">Paying Guest</li>
+                                                        <li val="3">Self-owned</li>
+                                                        <li val="4">Employer provided</li>
+                                                    </ul>
+
+
+                                            </li>
+                                            <li class="width-8">
+                                                <label>Flat/Door No</label>
+                                                <input type="text" class="dde_flat" placeholder="" name="text" key="dde_doorno" maxlength="20" restrict="address">
+                                            </li>
+                                            <li class="width-21 div-right">
+                                                <label>Building</label>
+                                                <input type="text" class="dde_build" placeholder="" class="mandatory" name="text" key="dde_building" maxlength="100" restrict="address">
+                                            </li>
+                                            <li class="width-8">
+                                                <label>Plot No</label>
+                                                <input type="text" name="text" class="dde_plot" key="dde_plotno" maxlength="20" restrict="address">
+                                            </li>
+                                            <li class="width-21 div-right">
+                                                <label>Street</label>
+                                                <input type="text" placeholder="" class="dde_strt" name="text" key="dde_street" maxlength="150" restrict="address">
+                                            </li>
+                                            <li class="width-98p">
+                                                <label>Land Mark</label>
+                                                <input type="text" placeholder="" class="dde_lnd" name="text" key="dde_lndmrk" maxlength="250" restrict="address">
+                                            </li>
+                                            <li class="width-98p city">
+                                                <label>Town/Village/City</label>
+                                                <input type="text" placeholder="" class="dde_twn mandatory" name="text" key="dde_twn_vil" maxlength="150" restrict="address">
+                                            </li>
+                                            <li class="width-98p district">
+                                                <label>District</label>
+                                                <input type="text" placeholder="" class="dde_dsrt mandatory" name="text" key="dde_dis_city" maxlength="100" restrict="address">
+                                            </li>
+                                            <li class="width-21 state">
+                                                <label>State</label>
+                                                <input type="text" placeholder="" class="dde_stat mandatory" name="text" key="dde_state" maxlength="100" restrict="address">
+                                            </li>
+                                            <!--  Vishali-->
+                                            <li class="width-6 div-right">
+                                                <label>PIN</label>
+                                                <comp-help id="comp-help" txtcol="Pincode" valcol="PinPk" onrowclick="Pinclick" prcname="PrcShflPincodehelp" width="100%"></comp-help>
+                                                <input type="hidden" placeholder="" restrict="number" class="dde_pin mandatory" name="text" key="dde_pin" maxlength="6">
+                                            </li>
+                                            <li class="inline-textbox residing">
+                                                <label>No. of Years Residing</label>
+                                                <input type="text" placeholder="" class="right" restrict="number" name="text" key="dde_residing_yrs" id="residingId">
+                                            </li>
+                                            <li class="inline-textbox rental" style="display:none;">
+                                                <label>Rental Amount</label>
+                                                <input type="text" placeholder="" class="currency right" restrict="number" name="text" key="dde_rental" maxlength="13">
+                                            </li>
+                                            <li class="inline-textbox chcktypeclass">
+                                                <input type="checkbox" name="checkbox" onclick="fnAddpermanent(this)" key="dde_pre_IsSameAdr">
+                                                <label>Present Address Same as Permanent </label>
+
+                                            </li>
+                                        </ul>
+                                        <ul class="form-controls premenent-aaddress dde_cont address-div" val="1" contentchanged="false">
+                                            <input type="hidden" name="text" key="dde_pre_per_hidden" value="" />
+                                            <li class="width-8">
+                                                <label>Flat/Door No</label>
+                                                <input type="text" placeholder="" class="dde_pflat" name="text" key="dde_permanent_doorno" restrict="address" maxlength="20">
+                                            </li>
+                                            <li class="width-21 div-right">
+                                                <label>Building</label>
+                                                <input type="text" placeholder="" class="dde_pbuild mandatory" name="text" key="dde_permanent_building" restrict="address" maxlength="100">
+                                            </li>
+                                            <li class="width-8">
+                                                <label>Plot No</label>
+                                                <input type="text" name="text" class="dde_pPlot" key="dde_permanent_plotno" restrict="address" maxlength="20">
+                                            </li>
+                                            <li class="width-21 div-right">
+                                                <label>Street</label>
+                                                <input type="text" placeholder="" name="text" class="dde_pstrt mandatory" key="dde_permanent_street" restrict="address" maxlength="150">
+                                            </li>
+                                            <li class="width-98p">
+                                                <label>Land Mark</label>
+                                                <input type="text" placeholder="" name="text" class="dde_plnd" key="dde_permanent_lndmrk" restrict="address" maxlength="250">
+                                            </li>
+                                            <li class="width-98p city">
+                                                <label>Town/Village/City</label>
+                                                <input type="text" placeholder="" name="text" class="dde_ptwn mandatory" key="dde_permanent_twn_vil" restrict="address" maxlength="150">
+                                            </li>
+                                            <li class="width-98p district">
+                                                <label>District</label>
+                                                <input type="text" placeholder="" name="text" class="dde_pdist mandatory" key="dde_permanent_dis_city" restrict="address" maxlength="100">
+                                            </li>
+                                            <li class="width-21 state">
+                                                <label>State</label>
+                                                <input type="text" placeholder="" name="text" class="dde_pstat mandatory" key="dde_permanent_state" restrict="address" maxlength="100">
+                                            </li>
+                                            <li class="width-6 div-right">
+                                                <label>PIN</label>
+                                                <comp-help id="comp-help" txtcol="Pincode" valcol="PinPk" onrowclick="Pinclick" prcname="PrcShflPincodehelp" width="100%"></comp-help>
+                                                <input type="hidden" placeholder="" restrict="number" name="text" class="dde_pPin mandatory" key="dde_permanent_pin" maxlength="6">
+
+                                            </li>
+
+                                            <div class="clear"></div>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <!--Personal Div Ends-->
+                        <!--Occupation Div starts-->
+                        <div class="dde_cont det-content2 det_content" style="display:none;" val="21" contentchanged="false">
+                            <input type="hidden" name="text" key="dde_Occ_hidden" value="" />
+                            <div class="occupation-div">
+                                <ul class="form-controls">
+                                    <li class="width-54">
+                                        <label>Customer Category</label>
+
+                                        <div class="select-focus ss">
+                                            <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_occ_typeOfEmployment" class="occSelect autofill" onclick="callchange(this)" id="type_emp_id">
+                                            <i class="icon-down-arrow"></i>
+                                            <ul class="custom-select ">
+                                                <li val="0" class="emp-salaried">Salaried</li>
+                                                <li val="1" class="emp-self-prof">Self Employed</li>
+                                                <li val="2" class="emp-housewife">Housewife</li>
+                                                <li val="3" class="emp-pensioner">Pensioner</li>
+                                                <li val="4" class="emp-student">Student</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!--Occupation salaried Div starts-->
+                                <div class="salaried-div dde_cont emp_Content" contentchanged="false">
+                                    <div class="grid-66 div-left salaried-clear">
+                                        <ul class="box-div form-controls">
+                                            <li class="width-54">
+                                                <label>Name of Organization</label>
+                                                <input type="text" placeholder="" class="mandatory" name="text" key="dde_occ_org"><!--onfocusout="fnchkemptyp(this)-->
+                                            </li>
+                                            <li class="width-54">
+                                                <label>Type of organization</label>
+
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_occSal_typeOfOrg" class="autofill">
+                                                    <i class="icon-down-arrow"></i>
+                                                    <ul class="custom-select">
+                                                        <li val="0">Public</li>
+                                                        <li val="1">Private</li>
+                                                        <li val="2">State Government</li>
+                                                        <li val="3">Central Government</li>
+                                                        <li val="4">Semi Government</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="width-54">
+                                                <label>Nature of Employer</label>
+                                                <input type="text" name="text" key="dde_occsal_nature_of_emp" maxlength="100">
+                                            </li>
+                                            <li class="width-54">
+                                                <label>Designation</label>
+                                                <input type="text" placeholder="" class="mandatory" name="text" key="dde_occSal_desig" restrict="alphaspace" maxlength="100">
+                                            </li>
+                                            <li class="width-13">
+                                                <label>No. of Month Employed</label>
+                                                <input type="text" placeholder="" class="mandatory noyrssal" restrict="number" name="text" key="dde_occSal_no_of_month">
+                                            </li>
+                                            <li class="width-13">
+                                                <label>Total Employment(In Months)</label>
+                                                <input type="text" placeholder="" name="text" class="mandatory totyrssal" restrict="number" key="dde_occSal_tot_emp">
+                                            </li>
+                                            <li class="width-54">
+                                                <label>Official Email ID.</label>
+                                                <input type="text" placeholder="" name="text" class="email" key="dde_occSal_officialemail" maxlength="100">
+                                            </li>
+                                            <li class="width-15">
+                                                <label>Official Phone No.</label>
+                                                <input type="text" placeholder="" name="text" class="phone" key="dde_occSal_officialphno" restrict="number" maxlength="15">
+                                            </li>
+                                            <li class="width-15">
+                                                <label>Employee ID</label>
+                                                <input type="text" placeholder="" name="text" key="dde_occSal_emp_id">
+                                            </li>
+                                            <li class="width-15 amount">
+                                                <label>Monthly Income</label>
+                                                <i class="icon-indian-rupee"></i><input type="text" placeholder="" class="currency" restrict="number" name="text" key="dde_occSal_MonIncome">
+                                            </li>
+                                            <li class="width-15 amount">
+                                                <label>Other Income</label>
+                                                <i class="icon-indian-rupee"></i> <input type="text" placeholder="" class="currency" restrict="number" name="text" key="dde_occsal_otherIncome">
+                                            </li>
+                                            <li class="width-12" style="display:none;">
+                                                <label>Source of Other Income</label>
+                                                <input type="text" placeholder="" class="currency" name="text" key="dde_occSal_SrcOfotherIncome">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="grid-33 div-right">
+                                        <ul class="box-div form-controls address-div">
+                                            <h2>Office Address</h2>
+                                            <li class="width-8">
+                                                <label>Flat/Door No</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_doorno" restrict="address" maxlength="20">
+                                            </li>
+                                            <li class="width-21 div-right">
+                                                <label>Building</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_building" class="mandatory" restrict="address" maxlength="100">
+                                            </li>
+                                            <li class="width-8">
+                                                <label>Plot No</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_plotno" restrict="address" maxlength="20">
+                                            </li>
+                                            <li class="width-21 div-right">
+                                                <label>Street</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_strt" restrict="address" maxlength="150">
+                                            </li>
+                                            <li class="width-98p">
+                                                <label>Land Mark</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_Landmark" restrict="address" maxlength="250">
+                                            </li>
+                                            <li class="width-98p city">
+                                                <label>Town/Village/City</label>
+                                                <input type="text" name="text" class="mandatory" key="dde_occSal_offAddr_twn_vil" restrict="address" maxlength="150">
+                                            </li>
+                                            <li class="width-98p district">
+                                                <label>District</label>
+                                                <input type="text" name="text" class="mandatory" key="dde_occSal_offAddr_dis_city" restrict="address" maxlength="100">
+                                            </li>
+                                            <li class="width-21 state">
+                                                <label>State</label>
+                                                <input type="text" name="text" class="mandatory" key="dde_occSal_offAddr_state" restrict="address" maxlength="100">
+                                            </li>
+                                            <li class="width-6 div-right">
+                                                <label>PIN</label>
+                                                <comp-help id="comp-help" txtcol="Pincode" valcol="PinPk" onrowclick="Pinclick" prcname="PrcShflPincodehelp" width="100%"></comp-help>
+                                                <input type="hidden" placeholder="" class="mandatory" restrict="number" name="text" key="dde_occSal_offAddr_pin" maxlength="6">
+                                            </li>
+                                            <div class="clear"></div>
+                                        </ul>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <!--Occupation salaried Div Ends-->
+                                <!--Occupation self Employed Div starts-->
+                                <div class="selfemp-div dde_cont emp_Content" contentchanged="false" style="display:none;">
+                                    <div class="grid-66 div-left selfemp-clear">
+                                        <ul class="box-div form-controls">
+                                            <li class="width-54">
+                                                <label>Type of Business</label>
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_occSelf_typOfbus" class="autofill" onchange="callselfemp(this)">
+                                                    <i class="icon-down-arrow"></i>
+
+                                                    <ul class="custom-select">
+                                                        <li val="0" class="self-prof">Professional</li>
+                                                        <li val="1" class="self-non-prof">Non Professional</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <!--<li class="self-non-prof-hide width-54 liorgan">
+                                        <label>Type of Organisation</label>
+
+                                        <div class="select-focus">
+                                            <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_occSelf_typOfOrg" class="autofill">
+                                            <i class="icon-down-arrow"></i>
+
+                                            <ul class="custom-select">
+                                                <li val="0">Public</li>
+                                                <li val="1">Private</li>
+                                            </ul>
+                                        </div>
+                                    </li>-->
+                                            <li class="width-54">
+                                                <label>Business Name</label>
+                                                <input type="text" placeholder="" name="text" key="dde_occSelf_bus" class="mandatory">
+                                            </li>
+                                            <!--30/11/2016  Changes-->
+                                            <li class="width-54">
+                                                <label>Nature of Business</label>
+                                                <!--<input type="text" placeholder="" name="text" key="dde_occSelf_NaturOfBus">-->
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_occSelf_NaturOfBus" class="autofill" onchange="validatenature(this)">
+                                                    <i class="icon-down-arrow"></i>
+                                                    <ul class="custom-select">
+                                                        <li val="0">Trader</li>
+                                                        <li val="1">Manufacturer</li>
+                                                        <li val="2">Services</li>
+                                                        <li val="3">Contractor</li>
+                                                        <li val="4">Transporter</li>
+                                                        <li val="5">Real Estate</li>
+                                                        <li val="6">Shop Keeper</li>
+                                                        <li val="7">Consultancy</li>
+                                                        <li val="8">Others</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="width-9 othercls" style="display:none;">
+                                                <label>Others</label>
+                                                <input type="text" placeholder="" name="text" key="dde_occSelf_NaturOfBus_others" maxlength="50">
+                                            </li>
+                                            <!--30/11/2016  Changes-->
+                                            <li class="width-54">
+                                                <label>Business Ownership</label>
+
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_occSelf_bus_ownershp" class="autofill">
+                                                    <i class="icon-down-arrow"></i>
+
+                                                    <ul class="custom-select">
+                                                        <li val="0">Partnership</li>
+                                                        <li val="1">Sole Proprietorship</li>
+                                                        <li val="2">HUF</li>
+                                                        <li val="3">Company</li>
+                                                        <li val="4">Private</li>
+                                                        <li val="5">Public</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="width-13">
+                                                <label>Year of Incorporation</label>
+                                                <input type="text" placeholder="" name="text" restrict="number" key="dde_occSelf_yrOfIncorp">
+                                            </li>
+                                            <li class="width-13">
+                                                <label>No.ofYears in Current Business</label>
+                                                <input type="text" class="noyrs mandatory" placeholder="" restrict="number" name="text" key="dde_occSelf_noOfyrsCurrent">
+                                            </li>
+                                            <li class="width-13">
+                                                <label>Total Business Period</label>
+                                                <input type="text" class="totyrs mandatory" placeholder="" name="text" restrict="number" key="dde_occSelf_tot_bus">
+                                            </li>
+                                            <li class="width-12">
+                                                <label>Business Email</label>
+                                                <input type="text" placeholder="" name="text" class="email" key="dde_occSelf_bus_em" maxlength="100">
+                                            </li>
+                                            <li class="width-15">
+                                                <label>Business Phone No.</label>
+                                                <input type="text" placeholder="" name="text" class="phone" key="dde_occSelf_Busphno" restrict="number" maxlength="15">
+                                            </li>
+                                            <li class="width-1">
+                                                <label>CIN</label>
+                                                <input type="text" placeholder="" restrict="number" name="text" key="dde_occSelf_cin">
+                                            </li>
+
+                                            <li class="width-1">
+                                                <label>Type of Enterprise</label>
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_occSelf_msme" class="autofill">
+                                                    <i class="icon-down-arrow"></i>
+                                                    <ul class="custom-select">
+                                                        <li val="O">Micro</li>
+                                                        <li val="T">Micro II</li>
+                                                        <li val="S">Small</li>
+                                                        <li val="M">Medium</li>
+                                                    </ul>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="grid-33 div-right">
+                                        <ul class="box-div form-controls address-div">
+                                            <li class="inline-textbox">
+                                                <input type="checkbox" name="checkbox" onclick="fnAddresi(this)" key="dde_sameas_prt">
+                                                <label>Business address Same as Present address</label>
+                                            </li>
+                                            <h2>Business Address</h2>
+                                            <li class="width-8">
+                                                <label>Flat/Door No</label>
+                                                <input type="text" name="text" class="ddeBflatno" key="dde_occSal_offAddr_doorno" restrict="address" maxlength="20">
+                                            </li>
+                                            <li class="width-21 div-right">
+                                                <label>Building</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_building" class="ddeBbuild mandatory" restrict="address" maxlength="100">
+                                            </li>
+                                            <li class="width-8">
+                                                <label>Plot No</label>
+                                                <input type="text" name="text" class="ddeBPlot" key="dde_occSal_offAddr_plotno" restrict="address" maxlength="20">
+                                            </li>
+                                            <li class="width-21 div-right">
+                                                <label>Street</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_strt" restrict="address" class="ddeBStrt" maxlength="150">
+                                            </li>
+                                            <li class="width-98p">
+                                                <label>Land Mark</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_Landmark" restrict="address" class="ddeBlandmark" maxlength="250"> 
+                                            </li>
+                                            <li class="width-98p city">
+                                                <label>Town/Village/City</label>
+                                                <input type="text" name="text" class="mandatory ddeBtwn" key="dde_occSal_offAddr_twn_vil" restrict="address" maxlength="150">
+                                            </li>
+                                            <li class="width-98p district">
+                                                <label>District</label>
+                                                <input type="text" name="text" class="mandatory ddeBdistrict" key="dde_occSal_offAddr_dis_city" restrict="address" maxlength="100">
+                                            </li>
+                                            <li class="width-21 state">
+                                                <label>State</label>
+                                                <input type="text" name="text" class="mandatory ddeBstate" key="dde_occSal_offAddr_state" restrict="address" maxlength="100"> 
+                                            </li>
+                                            <li class="width-6 div-right">
+                                                <label>PIN</label>
+                                                <comp-help id="comp-help" txtcol="Pincode" valcol="PinPk" onrowclick="Pinclick" prcname="PrcShflPincodehelp" width="100%"></comp-help>
+                                                <input type="hidden" placeholder="" class="mandatory ddeBpin" restrict="number" name="text" key="dde_occSal_offAddr_pin" maxlength="6">
+                                            </li>
+                                            <div class="clear"></div>
+                                        </ul>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <!--Occupation self Employed Div Ends-->
+                                <!--Occupation student Div starts-->
+                                <div class="student-div dde_cont emp_Content" contentchanged="false" style="display:none;">
+                                    <!--30/11/2016  Changes-->
+                                    <!--<div class="grid-66 div-left">
+                                <ul class="box-div form-controls">
+                                    <li class="width-54">
+                                        <label>University Name</label>
+                                        <input type="text" placeholder="" name="text" key="dde_occStud_UniversityName" restrict="alphaspace">
+                                    </li>
+                                </ul>
+                            </div>-->
+                                    <div class="grid-33 div-right">
+                                        <ul class="box-div form-controls address-div">
+                                            <h2>Address</h2>
+                                            <li class="width-8">
+                                                <label>Flat/Door No</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_doorno" restrict="address" maxlength="20">
+                                            </li>
+                                            <li class="width-21 div-right">
+                                                <label>Building</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_building" restrict="address" maxlength="100">
+                                            </li>
+                                            <li class="width-8">
+                                                <label>Plot No</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_plotno" restrict="address" maxlength="20">
+                                            </li>
+                                            <li class="width-21 div-right">
+                                                <label>Street</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_strt" restrict="address" maxlength="150">
+                                            </li>
+                                            <li class="width-98p">
+                                                <label>Land Mark</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_Landmark" restrict="address" maxlength="250">
+                                            </li>
+                                            <li class="width-98p city">
+                                                <label>Town/Village/City</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_twn_vil" restrict="address" maxlength="150">
+                                            </li>
+                                            <li class="width-98p district">
+                                                <label>District</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_dis_city" restrict="address" maxlength="100">
+                                            </li>
+                                            <li class="width-21 state">
+                                                <label>State</label>
+                                                <input type="text" name="text" key="dde_occSal_offAddr_state" restrict="address" maxlength="100">
+                                            </li>
+                                            <li class="width-6 div-right">
+                                                <label>PIN</label>
+                                                <comp-help id="comp-help" txtcol="Pincode" valcol="PinPk" onrowclick="Pinclick" prcname="PrcShflPincodehelp" width="100%"></comp-help>
+                                                <input type="hidden" placeholder="" restrict="number" name="text" key="dde_occSal_offAddr_pin" maxlength="6">
+                                            </li>
+                                            <div class="clear"></div>
+                                        </ul>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <!--Occupation student Div Ends-->
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <!--Occupation Div Ends-->
+                        <!--Bank Div starts-->
+                        <div class="dde_cont det-content3 det_content" style="display:none;" val="22" contentchanged="false">
+                            <input type="hidden" name="text" key="dde_Bank_hidden" value="" id="bank_hid_id">
+                            <div class="bank-div box-div grid-type">
+                                <ul class="grid-controls">
+                                    <li class="width-10 read-only">
+                                        <label>Name of A/C Holder</label>
+                                    </li>
+                                    <li class="width-10">
+                                        <label>Account type</label>
+                                    </li>
+                                    <li class="width-10">
+                                        <label>Account Number</label>
+                                    </li>
+                                    <li class="width-10">
+                                        <label>Operative Since</label>
+                                    </li>
+                                    <li class="width-10">
+                                        <label>Bank</label>
+                                    </li>
+                                    <li class="width-10">
+                                        <label>Branch</label>
+                                    </li>
+                                    <li>
+                                        <i class="icon-plus" onclick="fnAddBank()"></i>
+                                        <!--<label onclick="fnAddBank()">Add</label>-->
+                                    </li>
+                                </ul>
+                                <ul class="grid-controls rowGrid bank-div-ul">
+                                    <li class="width-10">
+                                        <input type="text" placeholder="" name="text" class="mandatory" colkey="dde_Bank_Name1" restrict="alphaspace" maxlength="100">
+                                    </li>
+                                    <li class="width-10">
+                                        <div class="select-focus">
+                                            <input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="dde_Bank_AcType1" class="autofill">
+                                            <i class="icon-down-arrow"></i>
+
+                                            <ul class="custom-select">
+                                                <li val="0">Current</li>
+                                                <li val="1">Saving</li>
+                                                <li val="2">Overdraft</li>
+                                                <li val="3">Cash Credit</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="width-10">
+                                        <input type="text" placeholder="" name="text" class="mandatory" colkey="dde_Bank_AcNum1" maxlength="100">
+                                    </li>
+                                    <li class="width-10">
+                                        <input type="text" placeholder="" name="text" colkey="dde_op_since1" class="datepickerdef" restrict="number">
+                                    </li>
+                                    <li class="width-10 bank">
+                                        <comp-help id="comp-help" txtcol="BankName" valcol="Bankpk" onrowclick="Bnkclick" prcname="PrcShflScanBankhelp" width="100%"></comp-help>
+                                        <input type="hidden" placeholder="" name="text" class="mandatory" colkey="dde_Bank_bnkName1" restrict="alphaspace" maxlength="100">
+                                        <input type="hidden" placeholder="" name="text" class="mandatory" colkey="dde_Bank_bnkName2" restrict="alphaspace" maxlength="100">
+                                    </li>
+                                    <li class="width-10 branch">
+                                        <comp-help id="comp-help" txtcol="Location" valcol="Brnchpk" helpfk='0' onrowclick="Brnchclick" prcname="PrcShflscanBranchhelp" width="100%"></comp-help>
+                                        <input type="hidden" placeholder="" name="text" class="mandatory" colkey="dde_Bank_branch1" restrict="alphaspace" maxlength="100">
+                                        <input type="hidden" placeholder="" name="text" class="mandatory" colkey="dde_Bank_branch2" restrict="alphaspace" maxlength="100">
+                                    </li>
+                                    <!--<li>
+                                <i class="icon-close" onclick="fnCloseBank(this)"></i>
+                            </li>-->
+                                    <li style="display:none;" class="width-52">
+                                        <input name="text" value="0" colkey="dde_bank_pk">
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <!--Bank Div Ends-->
+                        <!--Asset Div starts-->
+                        <div class="dde_cont det-content4 det_content ass_cont" style="display:none;" val="23" contentchanged="false">
+                            <input type="hidden" name="text" key="dde_Asset_hidden" value="" />
+                            <div class="asset-div">
+                                <div class="asset-header">
+                                    <div class="div-left">
+                                        <input type="hidden" name="text" value="0" key="dde_Astnotes_Pk">
+                                        <textarea name="text" key="dde_Asset_Remarks" maxlength="500">Remarks</textarea>
+                                    </div>
+                                    <div class="asset-income div-right addicon">
+                                        <p>Asset</p>
+                                        <h4><i class="icon-indian-rupee"></i>0</h4>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="asset-content">
+                                    <div class="div-left grid-type asset_grid">
+                                        <ul class="grid-controls">
+                                            <li class="width-280">
+                                                <label>Type</label>
+                                            </li>
+                                            <li class="width-57">
+                                                <label>Description</label>
+                                            </li>
+                                            <li class="width-10 amount">
+                                                <label>Amount</label>
+                                            </li>
+                                            <li>
+
+                                                <i class="icon-plus" onclick="fnAddAsset('AddClick')"></i>
+                                                <!--<label onclick="fnAddAsset()">Add</label>-->
+                                            </li>
+                                        </ul>
+                                        <ul class="grid-controls rowGrid asset_grid_ul">
+                                            <li class="width-280">
+
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="dde_Asset_type1" class="autofill">
+                                                    <i class="icon-down-arrow"></i>
+
+                                                    <ul class="custom-select">
+                                                        <li class="selected" val="0">Bank Saving</li>
+                                                        <li val="1">Immovable property</li>
+                                                        <li val="2">Shares and securities</li>
+                                                        <li val="3">Insurance/ sum Assured</li>
+                                                        <li val="4">PF/PPF Balance</li>
+                                                        <li val="5">Fixed Deposits</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="width-57">
+                                                <input type="text" name="text" colkey="dde_Asset_des1">
+                                            </li>
+                                            <li class="width-10 amount without-label amt">
+                                                <i class="icon-indian-rupee"></i>
+                                                <input type="text" name="text" class="currency" restrict="number" colkey="dde_Asset_amt1">
+                                            </li>
+                                            <li style="display:none;" class="width-52">
+                                                <input name="text" value="0" restrict="number" colkey="dde_Ast_Pk">
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    <div class="div-right dde_Assettype_div">
+                                        <ul class="form-controls">
+                                            <li class="width-10">
+                                                <label>Car</label>
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_Asset_car" class="autofill">
+                                                    <i class="icon-down-arrow"></i>
+
+                                                    <ul class="custom-select">
+                                                        <li val="0">Yes</li>
+                                                        <li val="1">No</li>
+                                                    </ul>
+                                                </div>
+                                                <!--<div class="select-focus">
+                                            <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_Asset_car" class="autofill">
+                                            <i class="icon-down-arrow"></i>
+
+                                            <ul class="custom-select">
+                                                <li val="0">Yes</li>
+                                                <li val="1">No</li>
+                                            </ul>
+                                        </div>-->
+                                            </li>
+                                            <li class="width-10">
+                                                <label>Two Wheeler</label>
+
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_Asset_twowheelr" class="autofill">
+                                                    <i class="icon-down-arrow"></i>
+
+                                                    <ul class="custom-select">
+                                                        <li val="0">Yes</li>
+                                                        <li val="1">No</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="width-10">
+                                                <label>Three Wheeler</label>
+                                                <div class="select-focus">
+                                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_Asset_threewheelr" class="autofill">
+                                                    <i class="icon-down-arrow"></i>
+
+                                                    <ul class="custom-select">
+                                                        <li val="0">Yes</li>
+                                                        <li val="1">No</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Asset Div Ends-->
+                        <!--Obligation Div starts-->
+                        <div class="dde_cont det-content5 det_content obligation_cont" style="display:none;" val="24" contentchanged="false">
+                            <input type="hidden" name="text" key="dde_Obli_hidden" value="" />
+                            <div class="obligation-div">
+                                <div class="asset-header">
+                                    <div class="div-left">
+                                        <input type="hidden" name="text" value="0" key="dde_OBnotes_Pk">
+                                        <textarea name="text" key="dde_ob_remarks" maxlength="500">Remarks</textarea>
+                                    </div>
+                                    <div class="asset-income div-right addicon">
+                                        <p>Obligation</p>
+                                        <h4><i class="icon-indian-rupee"></i>0</h4>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="width-24 icon_add" style="display:block;">
+                                    <label><i class="icon-plus"></i></label>
+                                </div>
+                                <!--<input type="button" value="OK" id="remarks">-->
+                                <div class="obligation-content grid-type obligation_grid" style="display:none;">
+                                    <ul class="grid-controls">
+                                        <li class="width-6a">
+                                        </li>
+                                        <li class="width-5">
+                                            <label>Loan</label>
+                                        </li>
+                                        <li class="width-36">
+                                            <label>Bank/Source</label>
+                                        </li>
+                                        <li class="width-9">
+                                            <label>Reference No.</label>
+                                        </li>
+                                        <li class="width-10">
+                                            <label>Loan Amount</label>
+                                        </li>
+                                        <li class="width-10 amount">
+                                            <label>EMI</label>
+                                        </li>
+                                        <li class="width-10 amount">
+                                            <label>Outstanding Amount</label>
+                                        </li>
+                                        <li class="width-10">
+                                            <label>Remaining Terms</label>
+                                        </li>
+                                        <li>
+                                            <label>Remarks</label>
+                                        </li>
+
+                                    </ul>
+                                    <ul class="grid-controls rowGrid Ob_grid">
+                                        <li class="width-6a">
+                                            <div class="onoffswitch2">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox IsInclOnOff" onchange="fnOnChangeCall('O','')" id="myonoffswitchia" checked="checked">
+                                                <label class="onoffswitch-label" for="myonoffswitchia">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="width-5">
+                                            <label>
+                                                <i class="cls_Type"></i> <span class="svs-img">
+                                                    <input class="img-switcher IsShri" id="img-switcher" type="checkbox">
+                                                    <label class="imgli" for="img-switcher"></label>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li class="width-36">
+                                            <input type="text" name="text" class="mandatory" colkey="dde_ob_bank1">
+                                        </li>
+                                        <li class="width-9">
+                                            <input type="text" name="text" class="mandatory" colkey="dde_ob_refno1" maxlength="100">
+                                        </li>
+                                        <li class="width-10 amount without-label">
+                                            <i class="icon-indian-rupee"></i>
+                                            <input type="text" name="text" class="currency" restrict="number" colkey="dde_ob_lnamt1">
+                                        </li>
+                                        <li class="width-10 amount without-label emi">
+                                            <i class="icon-indian-rupee"></i>
+                                            <input type="text" name="text" class="currency mandatory" restrict="number" colkey="dde_ob_emi1">
+                                        </li>
+
+                                        <li class="width-10 amount without-label">
+                                            <i class="icon-indian-rupee"></i>
+                                            <input type="text" name="text" class="currency mandatory" colkey="dde_ob_outstnd1" restrict="number">
+                                        </li>
+
+                                        <li class="width-10">
+                                            <input type="text" name="text" class="mandatory" colkey="dde_ob_bal1" restrict="number">
+                                        </li>
+                                        <li class="icn"> <i class="icon-chat-o" txtval=""></i> </li>
+
+                                        <li style="display:none;" class="dde_ob_IsIncl">
+                                            <input type="text" name="text" colkey="dde_ob_IsIncl" value="0">
+                                        </li>
+                                        <li style="display:none;" class="dde_ob_typofloan">
+                                            <input type="text" name="text" colkey="dde_ob_typofloan" value="">
+                                        </li>
+                                        <li style="display:none;" class="dde_ob_IsShri">
+                                            <input type="text" name="text" colkey="dde_ob_IsShri" value="1">
+                                        </li>
+                                        <li style="display:none;" class="dde_ob_notes">
+                                            <input type="text" name="text" colkey="dde_ob_notes" value="">
+                                        </li>
+                                        <li>
+                                            <i class="icon-close" onclick="fnCloseObligation(this);"></i>
+                                        </li>
+
+                                        <li style="display:none;" class="width-52">
+                                            <input type="text" name="text" value="0" colkey="dde_obl_Pk">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Obligation Div Ends-->
+                        <!--Credit Card Div starts-->
+                        <div class="dde_cont det-content6 det_content credit_cont" style="display:none;" val="25" contentchanged="false">
+                            <input type="hidden" name="text" key="dde_CrediCard_hidden" value="" />
+                            <div class="credit-div">
+                                <div class="asset-header">
+                                    <div class="div-left">
+                                        <input type="hidden" name="text" value="0" key="dde_ccnotes_Pk">
+                                        <textarea name="text" key="dde_cc_remarks" maxlength="500">Remarks</textarea>
+                                    </div>
+                                    <div class="asset-income div-right addicon">
+                                        <p>Credit Card</p>
+                                        <h4><i class="icon-indian-rupee"></i>0</h4>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="credit-content grid-type credit_grid">
+                                    <ul class="grid-controls">
+                                        <li class="width-54">
+                                            <label>Card Type</label>
+                                        </li>
+                                        <li class="width-36">
+                                            <label>Issuing bank</label>
+                                        </li>
+                                        <li class="width-12">
+                                            <label>Limit</label>
+                                        </li>
+                                        <li class="width-36">
+                                            <label>Credit card number</label>
+                                        </li>
+                                        <li>
+                                            <label onclick="fnAddCc('AddClick')"><i class="icon-plus"></i></label>
+                                        </li>
+                                    </ul>
+                                    <ul class="grid-controls rowGrid credit_grid_ul">
+                                        <li class="width-54">
+                                            <!--<input type="text" name="text" colkey="dde_cc_ctype1">-->
+                                            <div class="select-focus">
+                                                <input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="dde_cc_ctype1" class="autofill">
+                                                <i class="icon-down-arrow"></i>
+
+                                                <ul class="custom-select">
+                                                    <li val="0">Platinum card</li>
+                                                    <li val="1">Visa card</li>
+                                                    <li val="2">Titanium card</li>
+                                                    <li val="3">Platinum Identity card</li>
+                                                </ul>
+                                            </div>
+
+                                        </li>
+                                        <li class="width-36 bank">
+                                            <input type="hidden" name="text" colkey="dde_cc_issuingbnk1">
+                                            <input type="hidden" name="text" colkey="dde_cc_issuingbnk2">
+                                            <comp-help id="comp-help" txtcol="BankName" valcol="Bankpk" onrowclick="ISSUEBnkclick" prcname="PrcShflScanBankhelp" width="100%"></comp-help>
+
+                                        </li>
+                                        <li class="width-12 amount without-label lim">
+                                            <input type="text" name="text" colkey="dde_cc_limit1" class="currency" maxlength="13" restrict="number">
+                                            <i class=" icon-indian-rupee"></i>
+                                        </li>
+                                        <li class="width-36">
+                                            <input type="text" name="text" restrict="number" colkey="dde_cc_cno1" maxlength="50">
+                                        </li>
+                                        <li style="display:none;" class="width-52">
+                                            <input name="text" value="0" colkey="dde_crd_Pk">
+                                        </li>
+                                        <!--<li>
+                                    <i class="icon-close" onclick="fnCloseCreditcard(this)"></i>
+                                </li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Credit Card Div Ends-->
+                        <div class="dde_cont det-content7 det_content Kyc_cont" style="display:none;" val="26" contentchanged="false">
+                            <div class="box-div">
+                                <div class="Kyc_div dde_cont det-content" contentchanged="false">
+                                    <ul class="grid-controls">
+                                        <li class="width-10">
+                                            <label>Type of Proof</label>
+                                        </li>
+                                        <li class="width-10">
+                                            <label>Document Name</label>
+                                        </li>
+                                        <li class="width-10">
+                                            <label>Document Reference No</label>
+                                        </li>
+                                        <li class="width-10">
+                                            <label>Reference Date</label>
+                                        </li>
+                                        <li class="width-10 datecaption">
+                                            <label>Validity Date</label>
+                                        </li>
+                                        <li class="width-10">
+                                            <label>Remarks</label>
+                                        </li>
+                                        <div class="clear"></div>
+                                    </ul>
+                                    <ul class="grid-controls rowGrid box-kyc-ul">
+                                        <li class="width-10">
+                                            <div class="select-focus">
+                                                <input placeholder="Select" onkeydown="return false" selval="A" name="select" colkey="dde_KycProof" class="autofill">
+                                                <i class="icon-down-arrow_1"></i>
+                                                <ul class="custom-select">
+                                                    <li val="A">Address Proof</li>
+                                                    <li val="I">Id Proof</li>
+                                                    <li val="D">DOB Proof</li>
+                                                    <li val="S">Signature Proof</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="width-10" onfocusout="fncleardata(this)">
+                                            <comp-help id="comp-help" txtcol="DocumentName" valcol="DocPk" helpfk='0' onrowclick="Docclick" prcname="PrcShflKychhelp" width="100%"></comp-help>
+                                            <input type="hidden" placeholder="" name="text" colkey="dde_KycDocument">
+                                            <input type="hidden" placeholder="" name="text" colkey="dde_KycPk">
+                                        </li>
+                                        <li class="width-10">
+                                            <input type='text' placeholder="" name="text" colkey="dde_KycRefno" restrict="alphanumeric" class="reference" />
+                                        </li>
+                                        <li class="width-10 refdate">
+                                            <input type='text' placeholder="" name="text" colkey="dde_KycrefDate" class="datepickerdef" />
+                                        </li>
+                                        <li class="width-10 date" style="visibility:hidden">
+                                            <input type='text' placeholder="" name="text" colkey="dde_KycDate" class="datepickerdef" />
+                                        </li>
+                                        <li class="Kyc_icon"> <i class="icon-chat-o" txtval=""></i> </li>
+                                        <li style="display:none;" class="dde_kyc_notes">
+                                            <input type="text" name="text" colkey="dde_kyc_notes" value="">
+                                        </li>
+                                        <li>
+                                            <input type="hidden" placeholder="" name="text" colkey="dde_DOCPK">
+                                        </li>
+                                    </ul>
+                                    <ul class="grid-controls rowGrid box-kyc-ul">
+                                        <li class="width-10">
+                                            <div class="select-focus">
+                                                <input placeholder="Select" onkeydown="return false" selval="I" name="select" colkey="dde_KycProof" class="autofill">
+                                                <i class="icon-down-arrow_1"></i>
+                                                <ul class="custom-select">
+                                                    <li val="A">Address Proof</li>
+                                                    <li val="I">Id Proof</li>
+                                                    <li val="D">DOB Proof</li>
+                                                    <li val="S">Signature Proof</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="width-10" onclick="fncleardata(this)">
+                                            <comp-help id="comp-help" txtcol="DocumentName" valcol="DocPk" helpfk='0' onrowclick="Docclick" prcname="PrcShflKychhelp" width="100%"></comp-help>
+                                            <input type="hidden" placeholder="" name="text" colkey="dde_KycDocument">
+                                            <input type="hidden" placeholder="" name="text" colkey="dde_KycPk">
+                                        </li>
+                                        <li class="width-10">
+                                            <input type='text' placeholder="" name="text" colkey="dde_KycRefno" restrict="alphanumeric" class="reference" />
+                                        </li>
+                                        <li class="width-10 refdate">
+                                            <input type='text' placeholder="" name="text" colkey="dde_KycrefDate" class="datepickerdef" />
+                                        </li>
+                                        <li class="width-10 date" style="visibility:hidden">
+                                            <input type='text' placeholder="" name="text" colkey="dde_KycDate" class="datepickerdef" />
+                                        </li>
+                                        <li class="Kyc_icon"> <i class="icon-chat-o" txtval=""></i> </li>
+                                        <li style="display:none;" class="dde_kyc_notes">
+                                            <input type="text" name="text" colkey="dde_kyc_notes" value="">
+                                        </li>
+                                        <li>
+                                            <input type="hidden" placeholder="" name="text" colkey="dde_DOCPK">
+                                        </li>
+
+                                    </ul>
+                                    <ul class="grid-controls rowGrid box-kyc-ul">
+                                        <li class="width-10">
+                                            <div class="select-focus">
+                                                <input placeholder="Select" onkeydown="return false" selval="D" name="select" colkey="dde_KycProof" class="autofill" />
+                                                <i class="icon-down-arrow_1"></i>
+                                                <ul class="custom-select">
+                                                    <li val="A">Address Proof</li>
+                                                    <li val="I">Id Proof</li>
+                                                    <li val="D">DOB Proof</li>
+                                                    <li val="S">Signature Proof</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="width-10" onclick="fncleardata(this)">
+                                            <comp-help id="comp-help" txtcol="DocumentName" valcol="DocPk" helpfk='0' onrowclick="Docclick" prcname="PrcShflKychhelp" width="100%"></comp-help>
+                                            <input type="hidden" placeholder="" name="text" colkey="dde_KycDocument">
+                                            <input type="hidden" placeholder="" name="text" colkey="dde_KycPk">
+                                        </li>
+                                        <li class="width-10">
+                                            <input type='text' placeholder="" name="text" colkey="dde_KycRefno" restrict="alphanumeric" class="reference" />
+                                        </li>
+                                        <li class="width-10 refdate">
+                                            <input type='text' placeholder="" name="text" colkey="dde_KycrefDate" class="datepickerdef" />
+                                        </li>
+                                        <li class="width-10 date" style="visibility:hidden">
+                                            <input type='text' placeholder="" name="text" colkey="dde_KycDate" class="datepickerdef" />
+                                        </li>
+                                        <li class="Kyc_icon"> <i class="icon-chat-o" txtval=""></i> </li>
+                                        <li style="display:none;" class="dde_kyc_notes">
+                                            <input type="text" name="text" colkey="dde_kyc_notes" value="">
+                                        </li>
+                                        <li>
+                                            <input type="hidden" placeholder="" name="text" colkey="dde_DOCPK">
+                                        </li>
+
+                                    </ul>
+                                    <ul class="grid-controls rowGrid box-kyc-ul">
+                                        <li class="width-10">
+                                            <div class="select-focus">
+                                                <input placeholder="Select" onkeydown="return false" selval="S" name="select" colkey="dde_KycProof" class="autofill">
+                                                <i class="icon-down-arrow_1"></i>
+                                                <ul class="custom-select">
+                                                    <li val="A">Address Proof</li>
+                                                    <li val="I">Id Proof</li>
+                                                    <li val="D">DOB Proof</li>
+                                                    <li val="S">Signature Proof</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="width-10" onclick="fncleardata(this)">
+                                            <comp-help id="comp-help" txtcol="DocumentName" valcol="DocPk" helpfk='0' onrowclick="Docclick" prcname="PrcShflKychhelp" width="100%"></comp-help>
+                                            <input type="hidden" placeholder="" name="text" colkey="dde_KycDocument">
+                                            <input type="hidden" placeholder="" name="text" colkey="dde_KycPk">
+                                        </li>
+                                        <li class="width-10">
+                                            <input type='text' placeholder="" name="text" colkey="dde_KycRefno" restrict="alphanumeric" class="reference" />
+                                        </li>
+                                        <li class="width-10 refdate">
+                                            <input type='text' placeholder="" name="text" colkey="dde_KycrefDate" class="datepickerdef" />
+                                        </li>
+                                        <li class="width-10 date" style="visibility:hidden">
+                                            <input type='text' placeholder="" name="text" colkey="dde_KycDate" class="datepickerdef" />
+                                        </li>
+                                        <li class="Kyc_icon"> <i class="icon-chat-o" txtval=""></i> </li>
+                                        <li style="display:none;" class="dde_kyc_notes">
+                                            <input type="text" name="text" colkey="dde_kyc_notes" value="">
+                                        </li>
+                                        <li>
+                                            <input type="hidden" placeholder="" name="text" colkey="dde_DOCPK">
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                                <!--AddnewKycDiv-->
+                                <div class="Kyc_Adddiv dde_cont det-content" val="26" contentchanged="false">
+                                   
+                                    <ul class="grid-controls">
+                                        <li class="width-11"></li>
+                                        <li class="width-11"></li>
+                                        <li class="width-11"></li>
+                                        <li class="width-11"></li>
+                                        <li class="width-11"></li>
+                                        <li class="width-13"></li>
+                                        <li class="width-7"></li>
+                                        <li class="width-11">
+                                            <label onclick="fnAddKyc()"><i class="icon-plus"></i></label>
+                                        </li>
+                                    </ul>
+                                    </div>
+
+                                </div>
+                        </div>
+
+                       
+                        <div class="dde_cont det-content8 det_content Doc_cont" style="display:none;" val="27" contentchanged="false">
+                            <div class="box-div">
+                                <div id="Document_div">
+                                    <div class="Doc_div dde_cont det-content" val="27" contentchanged="false" >
+                                      
+                                        <ul class="grid-controls">
+                                            <li class="width-9">
+                                                <label>Type of Proof</label>
+                                            </li>
+                                            <li class="width-11">
+                                                <label>Document Name</label>
+                                            </li>
+                                            <li class="width-9">
+                                                <label>Documents Status</label>
+                                            </li>
+                                            <li class="width-9">
+                                                <label>Document Reference No</label>
+                                            </li>
+                                            <li class="width-9">
+                                                <label>Received Date</label>
+                                            </li>
+                                            <li class="width-9">
+                                                <label>Reference Date</label>
+                                            </li>
+                                            <li class="width-9">
+                                                <label>Valid Upto</label>
+                                            </li>
+                                            <li class="width-9">
+                                                <label>Remarks</label>
+                                            </li>
+                                            <li class="width-9">
+                                                <i class="icon-plus" onclick="fnAdddoc()"></i>
+                                            </li>
+                                            <div class="clear"></div>
+                                        </ul>
+                                        <!--<ul class="grid-controls rowGrid box-doc-ul">
+            <li class="width-9">
+                <div class="select-focus">
+                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="Com_Doctype" class="autofill" onchange="fncheckDoc(this)">
+                    <i class="icon-down-arrow_1"></i>
+                    <ul class="custom-select">
+                        <li val="O">Original</li>
+                        <li val="P">Photocopy</li>
+                        <li val="C">Certified</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="width-11">
+                <comp-help id="comp-help" txtcol="DocumentName" valcol="DocPk" onrowclick="Comclick" prcname="PrcShflDocumenthhelp" width="100%"></comp-help>
+                <input type="hidden" placeholder="" name="text" colkey="Com_Docname" value="">
+                <input type="hidden" placeholder="" name="text" colkey="Com_DoctPk" value="">
+            </li>
+            <li class="width-9">
+                <div class="select-focus">
+                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="Com_Docstatus" onchange="fnchange(this)" class="autofill">
+                    <i class="icon-down-arrow_1"></i>
+                    <ul class="custom-select">
+                        <li val="R">Received</li>
+                        <li val="N">Not-Received</li>
+                        <li val="E">Recorded</li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="width-9">
+                <input type="text" placeholder="" name="text" colkey="Com_Refno" style="display:inline-block" class="doc_reference" restrict="alphanumeric">
+            </li>
+            <li class="width-9">
+                <input type="text" placeholder="" name="text" colkey="Com_RecDate" style="display:inline-block" class="datepickerdef">
+            </li>
+            <li class="width-9 refdate">
+                <input type='text' placeholder="" name="text" colkey="Com_refDate" class="datepickerdef" />
+            </li>
+            <li class="width-9">
+                <input type="text" placeholder="" name="text" colkey="Com_ValidDate" style="display:inline-block" class="datepickerdef">
+            </li>
+            <li class="Com_icon width-9"> <i class="icon-chat-o" txtval=""></i> </li>
+            <li style="display:none;" class="Com_notes">
+                <input type="text" name="text" colkey="Com_notes" value="">
+            </li>
+            <li>
+                <input type="hidden" placeholder="" name="text" colkey="Com_rowPk" value="">
+            </li>
+
+        </ul>-->
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="detailed-content">
+            <div class="box-div">
+                <div class="Kyc_div dde_cont det-content" contentchanged="false">
+                    <h2>KYC Document Details</h2>
+                    <ul class="grid-controls">
+                        <li class="width-10">
+                            <label>Type of Proof</label>
+                        </li>
+                        <li class="width-10">
+                            <label>Document Name</label>
+                        </li>
+                        <li class="width-10">
+                            <label>Document Reference No</label>
+                        </li>
+                        <li class="width-10">
+                            <label>Reference Date</label>
+                        </li>
+                        <li class="width-10 datecaption">
+                            <label>Validity Date</label>
+                        </li>
+                        <li class="width-10">
+                            <label>Remarks</label>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+                    <ul class="grid-controls rowGrid box-kyc-ul">
+                        <li class="width-10">
+                            <div class="select-focus">
+                                <input placeholder="Select" onkeydown="return false" selval="A" name="select" colkey="dde_KycProof" class="autofill">
+                                <i class="icon-down-arrow_1"></i>
+                                <ul class="custom-select">
+                                    <li val="A">Address Proof</li>
+                                    <li val="I">Id Proof</li>
+                                    <li val="D">DOB Proof</li>
+                                    <li val="S">Signature Proof</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="width-10" onfocusout="fncleardata(this)">
+                            <comp-help id="comp-help" txtcol="DocumentName" valcol="DocPk" helpfk='0' onrowclick="Docclick" prcname="PrcShflKychhelp" width="100%"></comp-help>
+                            <input type="hidden" placeholder="" name="text" colkey="dde_KycDocument">
+                            <input type="hidden" placeholder="" name="text" colkey="dde_KycPk">
+                        </li>
+                        <li class="width-10">
+                            <input type='text' placeholder="" name="text" colkey="dde_KycRefno" restrict="alphanumeric" class="reference" />
+                        </li>
+                        <li class="width-10 refdate">
+                            <input type='text' placeholder="" name="text" colkey="dde_KycrefDate" class="datepickerdef" />
+                        </li>
+                        <li class="width-10 date" style="visibility:hidden">
+                            <input type='text' placeholder="" name="text" colkey="dde_KycDate" class="datepickerdef" />
+                        </li>
+                        <li class="Kyc_icon"> <i class="icon-chat-o" txtval=""></i> </li>
+                        <li style="display:none;" class="dde_kyc_notes">
+                            <input type="text" name="text" colkey="dde_kyc_notes" value="">
+                        </li>
+                        <li>
+                            <input type="hidden" placeholder="" name="text" colkey="dde_DOCPK">
+                        </li>
+                    </ul>
+                    <ul class="grid-controls rowGrid box-kyc-ul">
+                        <li class="width-10">
+                            <div class="select-focus">
+                                <input placeholder="Select" onkeydown="return false" selval="I" name="select" colkey="dde_KycProof" class="autofill">
+                                <i class="icon-down-arrow_1"></i>
+                                <ul class="custom-select">
+                                    <li val="A">Address Proof</li>
+                                    <li val="I">Id Proof</li>
+                                    <li val="D">DOB Proof</li>
+                                    <li val="S">Signature Proof</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="width-10" onclick="fncleardata(this)">
+                            <comp-help id="comp-help" txtcol="DocumentName" valcol="DocPk" helpfk='0' onrowclick="Docclick" prcname="PrcShflKychhelp" width="100%"></comp-help>
+                            <input type="hidden" placeholder="" name="text" colkey="dde_KycDocument">
+                            <input type="hidden" placeholder="" name="text" colkey="dde_KycPk">
+                        </li>
+                        <li class="width-10">
+                            <input type='text' placeholder="" name="text" colkey="dde_KycRefno" restrict="alphanumeric" class="reference" />
+                        </li>
+                        <li class="width-10 refdate">
+                            <input type='text' placeholder="" name="text" colkey="dde_KycrefDate" class="datepickerdef" />
+                        </li>
+                        <li class="width-10 date" style="visibility:hidden">
+                            <input type='text' placeholder="" name="text" colkey="dde_KycDate" class="datepickerdef" />
+                        </li>
+                        <li class="Kyc_icon"> <i class="icon-chat-o" txtval=""></i> </li>
+                        <li style="display:none;" class="dde_kyc_notes">
+                            <input type="text" name="text" colkey="dde_kyc_notes" value="">
+                        </li>
+                        <li>
+                            <input type="hidden" placeholder="" name="text" colkey="dde_DOCPK">
+                        </li>
+
+                    </ul>
+                    <ul class="grid-controls rowGrid box-kyc-ul">
+                        <li class="width-10">
+                            <div class="select-focus">
+                                <input placeholder="Select" onkeydown="return false" selval="D" name="select" colkey="dde_KycProof" class="autofill" />
+                                <i class="icon-down-arrow_1"></i>
+                                <ul class="custom-select">
+                                    <li val="A">Address Proof</li>
+                                    <li val="I">Id Proof</li>
+                                    <li val="D">DOB Proof</li>
+                                    <li val="S">Signature Proof</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="width-10" onclick="fncleardata(this)">
+                            <comp-help id="comp-help" txtcol="DocumentName" valcol="DocPk" helpfk='0' onrowclick="Docclick" prcname="PrcShflKychhelp" width="100%"></comp-help>
+                            <input type="hidden" placeholder="" name="text" colkey="dde_KycDocument">
+                            <input type="hidden" placeholder="" name="text" colkey="dde_KycPk">
+                        </li>
+                        <li class="width-10">
+                            <input type='text' placeholder="" name="text" colkey="dde_KycRefno" restrict="alphanumeric" class="reference" />
+                        </li>
+                        <li class="width-10 refdate">
+                            <input type='text' placeholder="" name="text" colkey="dde_KycrefDate" class="datepickerdef" />
+                        </li>
+                        <li class="width-10 date" style="visibility:hidden">
+                            <input type='text' placeholder="" name="text" colkey="dde_KycDate" class="datepickerdef" />
+                        </li>
+                        <li class="Kyc_icon"> <i class="icon-chat-o" txtval=""></i> </li>
+                        <li style="display:none;" class="dde_kyc_notes">
+                            <input type="text" name="text" colkey="dde_kyc_notes" value="">
+                        </li>
+                        <li>
+                            <input type="hidden" placeholder="" name="text" colkey="dde_DOCPK">
+                        </li>
+
+                    </ul>
+                    <ul class="grid-controls rowGrid box-kyc-ul">
+                        <li class="width-10">
+                            <div class="select-focus">
+                                <input placeholder="Select" onkeydown="return false" selval="S" name="select" colkey="dde_KycProof" class="autofill">
+                                <i class="icon-down-arrow_1"></i>
+                                <ul class="custom-select">
+                                    <li val="A">Address Proof</li>
+                                    <li val="I">Id Proof</li>
+                                    <li val="D">DOB Proof</li>
+                                    <li val="S">Signature Proof</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="width-10" onclick="fncleardata(this)">
+                            <comp-help id="comp-help" txtcol="DocumentName" valcol="DocPk" helpfk='0' onrowclick="Docclick" prcname="PrcShflKychhelp" width="100%"></comp-help>
+                            <input type="hidden" placeholder="" name="text" colkey="dde_KycDocument">
+                            <input type="hidden" placeholder="" name="text" colkey="dde_KycPk">
+                        </li>
+                        <li class="width-10">
+                            <input type='text' placeholder="" name="text" colkey="dde_KycRefno" restrict="alphanumeric" class="reference" />
+                        </li>
+                        <li class="width-10 refdate">
+                            <input type='text' placeholder="" name="text" colkey="dde_KycrefDate" class="datepickerdef" />
+                        </li>
+                        <li class="width-10 date" style="visibility:hidden">
+                            <input type='text' placeholder="" name="text" colkey="dde_KycDate" class="datepickerdef" />
+                        </li>
+                        <li class="Kyc_icon"> <i class="icon-chat-o" txtval=""></i> </li>
+                        <li style="display:none;" class="dde_kyc_notes">
+                            <input type="text" name="text" colkey="dde_kyc_notes" value="">
+                        </li>
+                        <li>
+                            <input type="hidden" placeholder="" name="text" colkey="dde_DOCPK">
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>-->
+                <!--General Document-->
+                <div class="box-div">
+                    <div id="Document_div">
+                        <div class="Doc_Gendiv dde_cont det-content"  val="28" contentchanged="false">
+                            <h2>Pre Approval Document</h2>
+                            <ul class="grid-controls">
+                                <li class="width-9">
+                                    <label>Type of Proof</label>
+                                </li>
+                                <li class="width-11">
+                                    <label>Document Name</label>
+                                </li>
+                                <li class="width-9">
+                                    <label>Documents Status</label>
+                                </li>
+                                <li class="width-9">
+                                    <label>Document Reference No</label>
+                                </li>
+                                <li class="width-9">
+                                    <label>Received Date</label>
+                                </li>
+                                <li class="width-9">
+                                    <label>Reference Date</label>
+                                </li>
+                                <li class="width-9">
+                                    <label>Valid Upto</label>
+                                </li>
+                                <li class="width-9">
+                                    <label>Remarks</label>
+                                </li>
+                                <li class="width-9">
+                                    <i class="icon-plus" onclick="fnAddgendoc()"></i>
+                                </li>
+                                <div class="clear"></div>
+                            </ul>
+                            <!--<ul class="grid-controls rowGrid box-docGEN-ul">
+                                <li class="width-9">
+                                    <div class="select-focus">
+                                        <input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="Com_genDoctype" class="autofill" onchange="fncheckgenDoc(this)">
+                                        <i class="icon-down-arrow_1"></i>
+                                        <ul class="custom-select">
+                                            <li val="O">Original</li>
+                                            <li val="P">Photocopy</li>
+                                            <li val="C">Certified</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="width-11">
+                                    <comp-help id="comp-help" txtcol="DocumentName" valcol="DocPk" onrowclick="Comgenclick" prcname="PrcShflDocumenthhelp" width="100%"></comp-help>
+                                    <input type="hidden" placeholder="" name="text" colkey="Com_genDocname" value="">
+                                    <input type="hidden" placeholder="" name="text" colkey="Com_genDoctPk" value="">
+                                </li>
+                                <li class="width-9">
+                                    <div class="select-focus">
+                                        <input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="Com_genDocstatus" onchange="fngenchange(this)" class="autofill">
+                                        <i class="icon-down-arrow_1"></i>
+                                        <ul class="custom-select">
+                                            <li val="R">Received</li>
+                                            <li val="N">Not-Received</li>
+                                            <li val="E">Recorded</li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="width-9">
+                                    <input type="text" placeholder="" name="text" colkey="Com_genRefno" style="display:inline-block" class="docgen_reference" restrict="alphanumeric">
+                                </li>
+                                <li class="width-9">
+                                    <input type="text" placeholder="" name="text" colkey="Com_genRecDate" style="display:inline-block" class="datepickerdef">
+                                </li>
+                                <li class="width-9 refdate">
+                                    <input type='text' placeholder="" name="text" colkey="Com_genrefDate" class="datepickerdef" />
+                                </li>
+                                <li class="width-9">
+                                    <input type="text" placeholder="" name="text" colkey="Com_genValidDate" style="display:inline-block" class="datepickerdef">
+                                </li>
+                                <li class="Com_icon width-9"> <i class="icon-chat-o" txtval=""></i> </li>
+                                <li style="display:none;" class="Com_gennotes">
+                                    <input type="text" name="text" colkey="Com_gennotes" value="">
+                                </li>
+                                <li>
+                                    <input type="hidden" placeholder="" name="text" colkey="Com_genrowPk" value="">
+                                </li>
+
+                            </ul>-->
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+                    <!-- Tab Content -->
+                </div>
+                <!-- Lead Detailed Info -->
+                <!-- Legal hier-->
+                <div id="legal_hier" class="legal-hier-detail margin-10 dde_cont" val="0" contentchanged="false">
+                    <input type="hidden" name="text" key="dde_Legal_hidden" value="" />
+                    <div class="box-div box-hier grid-type">
+                        <h2>Legal Heir</h2>
+                        <ul class="grid-controls">
+                            <li class="width-12">
+                                <label>Name</label>
+                            </li>
+                            <li class="width-18">
+                                <label>Relationship</label>
+                            </li>
+                            <li class="width-5">
+                                <label>Age</label>
+                            </li>
+                            <li class="width-21">
+                                <label>Employed</label>
+                            </li>
+                            <li class="width-24">
+                                <label>Marital Status</label>
+                            </li>
+                            <li>
+                                <label onclick="fnAddLegalHier('')"><i class="icon-plus"></i></label>
+                            </li>
+                            <div class="clear"></div>
+                        </ul>
+                        <ul class="grid-controls rowGrid box-hier-ul">
+                            <li class="width-12">
+                                <input type="text" name="text" class="mandatory" colkey="dde_Per_Legal_heir_Name1" restrict="alphaspace" maxlength="100">
+                            </li>
+                            <li class="width-18">
+                                <!--<input type="text" name="text" colkey="dde_Per_Legal_heir_Relation1" restrict="alphaonly" maxlength="50">-->
+                                <div class="select-focus">
+                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="dde_Per_Legal_heir_Relation1" class="autofill">
+                                    <i class="icon-down-arrow"></i>
+                                    <ul class="custom-select">
+                                        <li val="Father">Father</li>
+                                        <li val="Mother">Mother</li>
+                                        <li val="Spouse">Spouse</li>
+                                        <li val="Son">Son</li>
+                                        <li val="Daughter">Daughter</li>
+                                        <li val="Brother">Brother</li>
+                                        <li val="Sister">Sister</li>
+                                    </ul>
+                                </div>
+
+                            </li>
+                            <li class="width-5">
+                                <input type="text" name="text" class="mandatory" restrict="number" colkey="dde_Per_Legal_heir_Age1" maxlength="2">
+                            </li>
+                            <li class="width-21">
+                                <div class="select-focus">
+                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="dde_Per_Legal_hier_Proof1" class="autofill">
+                                    <i class="icon-down-arrow"></i>
+
+                                    <ul class="custom-select">
+                                        <li val="0">Yes</li>
+                                        <li val="1">No</li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="width-24">
+                                <div class="select-focus">
+                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" colkey="dde_Per_Legal_heir_Ref1" class="autofill">
+                                    <i class="icon-down-arrow"></i>
+
+                                    <ul class="custom-select">
+                                        <li val="0">Yes</li>
+                                        <li val="1">No</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!--<li>
+                        <i class="icon-close" onclick="fnCloseLegalHiger(this)"></i>
+                    </li>-->
+                            <li style="display:none;" class="width-52">
+                                <input name="text" value="0" colkey="dde_legal_pk">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="source-div grid-type" style="display:none;">
+                        <h2>Sourcing Agent Details</h2>
+                        <ul class="grid-controls">
+                            <li class="width-9">
+                                <label>Sourcing Channel</label>
+                            </li>
+                            <li class="width-8">
+                                <label>Agent Code</label>
+                            </li>
+                            <li class="width-1">
+                                <label>Agent Name</label>
+                            </li>
+                        </ul>
+                        <ul class="grid-controls">
+                            <li class="width-9">
+
+                                <div class="select-focus">
+                                    <input placeholder="Select" onkeydown="return false" selval="-1" name="select" key="dde_Per_sourcing" class="autofill">
+                                    <i class="icon-down-arrow"></i>
+
+                                    <ul class="custom-select">
+                                        <li val="0">SHFL</li>
+                                        <li val="1">CHITS</li>
+                                        <li val="2">SCUF</li>
+                                        <li val="3">Others</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="width-8">
+                                <input type="text" name="text" key="dde_Per_agcode">
+                            </li>
+                            <li class="width-1">
+                                <input type="text" name="text" key="dde_Per_agname">
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Legal hier-->
+                <!-- Reference Detailed Info -->
+
+                <div class="detailed-content" id="dde_div_reference">
+                    <div class="box-div reference-div" id="dde_ref">
+                        <h2>Reference Details</h2>
+                        <ul id="dde_ul_ref_tabs" class="common-tabs">
+                            <li pk="0" onclick="fnDdeConfirmScreen('R',this)" val="30" class="active reftab1">Reference1</li>
+                            <li class="DDERefAdd" onclick="fnddeAddNewRefTab(this,'Add')"><i class="icon-plus"></i></li>
+                        </ul>
+                        <div id="dde_ref_div_30" class="tab1-refcontent ref_content dde_cont" val="30" contentchanged="false">
+                            <input type="hidden" name="text" key="dde_ref_hidden" value="" />
+                            <ul class="form-controls">
+                                <li class="width-54">
+                                    <label>Name</label>
+                                    <input type="text" placeholder="" name="text" key="dde_ref_Name" restrict="alphaspace" maxlength="100">
+                                </li>
+                                <li class="width-12">
+                                    <label>Relation</label>
+                                    <input type="text" placeholder="" name="text" key="dde_ref_relName" restrict="alphaspace" maxlength="50">
+                                </li>
+                                <li class="width-12">
+                                    <label>Occupation</label>
+                                    <input type="text" placeholder="" name="text" key="dde_ref_Occ" restrict="alphaspace" maxlength="100">
+                                </li>
+                                <li class="width-15">
+                                    <label>Mobile No</label>
+                                    <input type="text" placeholder="" name="text" class="mobile mandatory" key="dde_ref_mobno" restrict="number" maxlength="10">
+                                </li>
+                                <li class="width-15">
+                                    <label>Residential Phone No</label>
+                                    <input type="text" placeholder="" name="text" class="phone" key="dde_ref_resphno" restrict="number" maxlength="15">
+                                </li>
+                                <li class="width-15">
+                                    <label>Office Phone No</label>
+                                    <input type="text" placeholder="" class="phone" name="text" key="dde_ref_offphno" restrict="number" maxlength="15">
+                                </li>
+                                <li class="width-54">
+                                    <label>Email</label>
+                                    <input type="text" placeholder="" name="text" class="email" key="dde_ref_email" maxlength="100">
+                                </li>
+                            </ul>
+                            <ul class="box-div form-controls address-div">
+                                <h2>Address</h2>
+                                <li class="width-8">
+                                    <label>Flat/Door No</label>
+                                    <input type="text" placeholder="" name="text" key="dde_ref_doorno" maxlength="20" restrict="address">
+                                </li>
+                                <li class="width-21">
+                                    <label>Building</label>
+                                    <input type="text" name="text" key="dde_ref_building" maxlength="100" restrict="address">
+                                </li>
+                                <li class="width-8">
+                                    <label>Plot No</label>
+                                    <input type="text" name="text" key="dde_ref_plotno" maxlength="20" restrict="address">
+                                </li>
+                                <li class="width-54">
+                                    <label>Street</label>
+                                    <input type="text" placeholder="" name="text" key="dde_ref_street" maxlength="150" restrict="address">
+                                </li>
+                                <li class="width-54">
+                                    <label>Land Mark</label>
+                                    <input type="text" placeholder="" name="text" key="dde_ref_landmark" maxlength="250" restrict="address">
+                                </li>
+                                <li class="width-54 city">
+                                    <label>Town/Village/City</label>
+                                    <input type="text" placeholder="" name="text" key="dde_ref_twn_vil" maxlength="150" restrict="address">
+                                </li>
+                                <li class="width-54 district">
+                                    <label>District</label>
+                                    <input type="text" placeholder="" name="text" key="dde_ref_dis_city" maxlength="100" restrict="address">
+                                </li>
+                                <li class="width-21 state">
+                                    <label>State</label>
+                                    <input type="text" placeholder="" name="text" key="dde_ref_state" maxlength="100" restrict="address">
+                                </li>
+                                <li class="width-6">
+                                    <label>PIN</label>
+                                    <comp-help id="comp-help" txtcol="Pincode" valcol="PinPk" onrowclick="Pinclick" prcname="PrcShflPincodehelp" width="100%"></comp-help>
+                                    <!-- <input type="text" placeholder="" restrict="number" name="text"  key="dde_ref_pin" maxlength="6">-->
+                                    <input type="hidden" placeholder="" name="text" key="dde_pin_ref" maxlength="6" restrict="number">
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- Reference Detailed Info -->
+                </div>
+
+                <!-- Reference Detailed Info -->
+            </div>
+    <form id="PostForm" name="PostForm" action="http://119.226.197.6:8080/omnidocs/integration/foldView/viewFoldList.jsp" method="post" target="newWin">
+        <input type="hidden" name="Application" value="SHFL_LOANS">
+        <input type="hidden" id="fold_nm" name="FolderName" value="">
+        <input type="hidden" name="sessionIndexSet" value="false">
+    </form>
+</div>
+<div id="div-document-content" class="documents-content" style="display:none;"> </div>
+<!-- Applicant Name User Input PopUp Starts -->
+<div id="dde_div_appPop" class="popup-bg popup-typ document-pop-content" style="display:none;">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2>
+                Loan Type<span class="right">
+                </span> <i class="icon-close div-right"></i>
+            </h2>
+            <div class="clear"></div>
+        </div>
+        <div class="category-div">
+            <ul class="liability-loan-type">
+                <li>
+                    <i class="icon-auto-loan" val="0"></i>
+                    <p>Auto Loan </p>
+                </li>
+                <li>
+                    <i class="icon-car-loan" val="1"></i>
+                    <p>Car Loan</p>
+                </li>
+                <li>
+                    <i class="icon-two-wheeler-loan" val="2"></i>
+                    <p>Twowheeler Loan</p>
+                </li>
+                <li>
+                    <i class="icon-home-loan" val="3"></i>
+                    <p>Home Loan</p>
+                </li>
+                <li>
+                    <i class="icon-lap" val="4"></i>
+                    <p>Loan Against Property</p>
+                </li>
+                <li>
+                    <i class="icon-gold-loan" val="5"></i>
+                    <p>Gold Loan</p>
+                </li>
+                <li>
+                    <i class="icon-personal-loan" val="6"></i>
+                    <p>Personal Loan</p>
+                </li>
+                <li>
+                    <i class="icon-business" val="7"></i>
+                    <p>Business Loan</p>
+                </li>
+                <li>
+                    <i class="icon-term" val="8"></i>
+                    <p>Term Loan</p>
+                </li>
+                <li>
+                    <i class="icon-consumer-loan" val="9"></i>
+                    <p>Consumer Loan</p>
+                </li>
+         
+                <li>
+                    <i class="icon-other-loan" val="10"></i>
+                    <p>Other Loan</p>
+                </li>
+            </ul>
+            <!--<ul class="form-controls">
+                <li class="width-98p">
+                    <div class="select-focus">
+                        <input placeholder="Select" onkeydown="return false" selval="-1" name="select" id="dde_ob_typ" class="autofill">
+                        <i class="icon-down-arrow"></i>
+                        <ul class="custom-select">
+                            <li icon="icon-auto-loan" val="0">Auto Loan</li>
+                            <li icon="icon-car-loan" val="1">Car Loan</li>
+                            <li icon="icon-two-wheeler-loan" val="2">TwoWheeler Loan</li>
+                            <li icon="icon-home-loan" val="3">Home Loan</li>
+                            <li icon="icon-lap" val="4">LAP</li>
+                            <li icon="icon-gold-loan" val="5">Gold Loan</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="width-98p">
+                    <input type="button" value="OK" id="dde_btn_Caption">
+                </li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+<!-- Applicant Name User Input PopUp Ends -->
+<!-- Liability Comments Popup Div Starts-->
+<!--Obligation-->
+<div class="popup-bg pop_bg ob_popremarks" id="comment-chat" style="display:none;">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2>Remarks <i class="icon-close div-right"></i></h2>
+        </div>
+        <div class="popup-content">
+            <textarea id="dde_rem" maxlength="250"></textarea>
+        </div>
+    </div>
+</div>
+<!----Kyc-->
+<div class="popup-bg Kycpop_bg Kyc_remarks" id="comment-chat" style="display:none;">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2>Remarks <i class="icon-close div-right"></i></h2>
+        </div>
+        <div class="popup-content">
+            <textarea id="dde_kycrem" maxlength="250"></textarea>
+        </div>
+    </div>
+</div>
+<div class="popup-bg Kycaddpop_bg Kyc_addremarks" id="comment-chat" style="display:none;">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2>Remarks <i class="icon-close div-right"></i></h2>
+        </div>
+        <div class="popup-content">
+            <textarea id="dde_kycaddrem" maxlength="250"></textarea>
+        </div>
+    </div>
+</div>
+<!----Doc-->
+<div class="popup-bg Docpop_bg Doc_remarks" id="comment-chat" style="display:none;">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2>Remarks <i class="icon-close div-right"></i></h2>
+        </div>
+        <div class="popup-content">
+            <textarea id="dde_Docrem" maxlength="250"></textarea>
+        </div>
+    </div>
+</div>
+<div class="popup-bg Docgenpop_bg Doc_genremarks" id="comment-chat" style="display:none;">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2>Remarks <i class="icon-close div-right"></i></h2>
+        </div>
+        <div class="popup-content">
+            <textarea id="dde_Docgenrem" maxlength="250"></textarea>
+        </div>
+    </div>
+</div>
+<!-- Liability Comments Popup Div Ends-->
+<script src="js/BeatPicker.min.js"></script>
+<script>
+    calcHeight(); //Viewport Height Function Starts
+
+
+    //categoryPopup();
+    rightdocument(); /*Document Popup*/
+    popupclose(); /*close popup function*/
+    fnDrawDatePicker();
+    commontabs(); //Common tab style
+    customselect(); /*Custom select Function*/
+    /*Othesr li*/
+    $(".others").click(function (e) {
+        debugger;
+        $(this).parent().parent().siblings().parent().next("li").show();
+    });
+
+    /*Detail Entry Tab*/
+    //$(".applicant-list").click(function () {
+    //    $(".personal-div").show();
+    //    $(".occupation-div,.bank-div,.asset-div,.obligation-div,.credit-div").hide();
+    //});
+    //$(".official-list").click(function () {
+    //    $(".occupation-div").show();
+    //    $(".personal-div,.bank-div,.asset-div,.obligation-div,.credit-div").hide();
+    //});
+    //$(".bank-list").click(function () {
+    //    $(".bank-div").show();
+    //    $(".personal-div,.occupation-div,.asset-div,.obligation-div,.credit-div").hide();
+    //});
+    //$(".asset-list").click(function () {
+    //    $(".asset-div").show();
+    //    $(".personal-div,.occupation-div,.bank-div,.obligation-div,.credit-div").hide();
+    //});
+    //$(".obligation-list").click(function () {
+    //    $(".obligation-div").show();
+    //    $(".personal-div,.occupation-div,.bank-div,.asset-div,.credit-div").hide();
+    //});
+    //$(".credit-list").click(function () {
+    //    $(".credit-div").show();
+    //    $(".personal-div,.occupation-div,.bank-div,.asset-div,.obligation-div").hide();
+    //});
+    /*Address Tab*/
+    $(".premenent-aaddress").hide();
+    //$(".address-list li:first-child").click(function () {
+    //    $(".present-aaddress").show();
+    //    $(".premenent-aaddress").hide();
+    //});
+    //$(".address-list li:last-child").click(function () {
+    //    $(".premenent-aaddress").show();
+    //    $(".present-aaddress").hide();
+    //});
+    /*Occupation Type*/
+    $(document).on("click", ".emp-salaried", function () {
+        $(".salaried-div").show();
+        $(".selfemp-div,.student-div").hide();
+    });
+    $(document).on("click", ".emp-self-prof", function () {
+        $(".selfemp-div").show();
+        $(".salaried-div,.student-div").hide();
+    });
+
+    $(document).on("click", ".emp-student", function () {
+        $(".student-div").show();
+        $(".selfemp-div,.salaried-div").hide();
+    });
+    //$(document).on("click", ".emp-housewife .emp-pensioner", function () {
+    //    $(".selfemp-div .salaried-div .student-div").hide();
+    //});
+    /*Self Employed Professional and Non Professional*/
+
+    $(document).on("click", ".self-non-prof", function () {
+        $(".self-non-prof-hide").hide();
+    });
+    $(document).on("click", ".self-prof", function () {
+        $(".self-non-prof-hide").show();
+    });
+    $(document).on("click", ".obligation-div .icon-chat-o", function () {
+        $(".ob_popremarks").show();
+    });
+    $(document).on("click", ".Kyc_div .icon-chat-o", function () {
+
+        $(".Kyc_remarks").show();
+    });
+    $(document).on("click", ".Doc_div .icon-chat-o", function () {
+
+        $(".Doc_remarks").show();
+    });
+
+    $(document).on("click", ".Kyc_Adddiv .icon-chat-o", function () {
+        $(".Kyc_addremarks").show();
+    });
+
+    $(document).on("click", ".Doc_Gendiv .icon-chat-o", function () {
+
+        $(".Doc_genremarks").show();
+    });
+    $(document).on("click", ".obligation-div .icon_add", function () {
+
+        showdiv();
+
+
+    });
+    //$(document).on("click", ".official-list", function () {
+
+    //        $(".salaried-div.dde_cont.emp_Content").hide();
+
+    //});
+
+</script>

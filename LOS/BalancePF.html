@@ -1,0 +1,172 @@
+﻿
+<div class="title">
+    <h1>Branch Ops : Balance Processing Charge Collection</h1>
+</div>
+<div class="content-div">
+    <div>
+        <div class="box-div" id="LeadDiv">
+            <h2>Lead Information</h2>
+            <ul class="form-controls">
+                <li style="text-align: center;">
+                    <div id="prddiv">
+                        <i id="bal_lead_prdicon"></i>
+                        <p id="bal_lead_prdnm"></p>
+                    </div>
+                </li>
+                <li class="width-1 read-only Lead">
+                    <label>Lead ID</label>
+                    <!--<p id="Scan_LeadId">SHFC11765689</p>-->
+                    <comp-help id="comp-help" txtcol="LeadId" valcol="LeadPk" helpfk='0' onrowclick="Leadclick" prcname="PrcSHFLLosLeadSearch" width="100%"></comp-help>
+                </li>
+                <li class="width-1 read-only LeadPk">
+                    <input type="hidden" name="text" key="LdPk">
+                </li>
+                <li class="width-15 read-only">
+                    <label>Applicant</label>
+                    <p id="Bal_LeadNm"></p>
+                </li>
+                <li class="width-15 read-only">
+                    <label>Branch</label>
+                    <p id="Bal_Branch"></p>
+                </li>
+                <li class="width-1 read-only">
+                    <label>Agent</label>
+                    <p id="Bal_Agt"></p>
+                </li>
+                <li class="width-1 read-only">
+                    <label>Collected PF</label>
+                    <p id="ColPF"></p>
+                </li>
+                <li class="width-1 read-only" style="display:none;">
+                    <label>Balance PF</label>
+                    <p id="BalPF"></p>
+                </li>
+                <li class="width-1 read-only">
+                    <input type="hidden" name="text" key="SanctionNo">
+                </li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <div id="grid" class="box-div document-div" style="display:none">
+            <table class="balance-pf-div"></table>
+        </div>
+        <div id="dvSummary" class="box-div document-div" style="display:none">
+            <h2>PF Summary</h2>
+            <table class="pf-Summary-div"></table>
+            <div class="clear"></div>
+        </div>
+        <div id="div_Process" class="box-div document-div" style="display:none">
+            <div class="document-entry">
+                <h2>
+                    Processing Fee<span class="right">
+                    </span>
+                    <div class="clear"></div>
+                </h2>
+                <div class="clear"></div>
+                <div id="Instdtldiv">
+                    <div contentchanged="true">
+                        <ul class="address-div1 form-controls">
+                            <li class="width-13">
+                                <label>Payment Type</label>
+                                <select id="typpayment" name="select2" key="LpcPayTyp" class="select mandatory" onchange="fnchange();">
+                                    <option value="">Select</option>
+                                    <option value="D">DD</option>
+                                    <option value="C">Cheque</option>
+                                    <option value="R">RTGS</option>
+                                    <option value="N">NEFT</option>
+                                </select>
+                                <!--
+                            <div class="select-focus">
+                                <input id="typpayment" placeholder="Select" onkeydown="return false" selval="-1" name="select" key="LpcPayTyp" class="autofill mandatory" onchange="fnchange();">
+                                <i class="icon-down-arrow"></i>
+                                <ul class="custom-select">
+                                    <li val="D">DD</li>
+                                    <li val="C">Cheque</li>
+                                    <li val="R">RTGS</li>
+                                    <li val="N">NEFT</li>
+                                </ul>
+                            </div>
+                                    -->
+                            </li>
+                            <li class="width-13" id="SancNoli" style="display:none">
+                                <label>Sanction No</label>
+                                <select id="selsancNo" name="select2" key="LpcSancNo" class="select"></select>
+                            </li>
+                            <li class="width-13">
+                                <label>Instrument No</label>
+                                <!--/*CHANGE 30/11/2016*/-->
+                                <input type="text" name="text" key="LpcInstrNo" class="mandatory" id="InsmtNoId">
+                            </li>
+                            <li class="width-13">
+                                <label>Instrument Date</label>
+                                <input id="datecheck" data-beatpicker="true" data-beatpicker-position="['*','*']" type="text" name="text" key="LpcInstrDt" class="mandatory">
+                            </li>
+                            <li class="width-13 amount">
+                                <label>Instrument Amount</label>
+                                <input type="text" name="text" key="LpcInstrAmt" class="mandatory currency" restrict="number">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+
+                            <li class="width-13 bank">
+                                <label>Bank name</label>
+                                <comp-help id="comp-help" txtcol="BankName" valcol="Bankpk" onrowclick="Bnkclick" prcname="PrcShflScanBankhelp" width="100%"></comp-help>
+                            </li>
+
+                            <li class="width-13 branch">
+                                <label>Branch name</label>
+                                <comp-help id="comp-help" txtcol="Location" valcol="Brnchpk" helpfk='0' onrowclick="Brnchclick" prcname="PrcShflscanBranchhelp" width="100%"></comp-help>
+                            </li>
+                            <li class="width-13 depo_bank">
+                                <label>Deposited Bank</label>
+                                <comp-help id="help_dep_bank" txtcol="Code" valcol="Gblpk" onrowclick="DepsitedBankclick" prcname="PrcShflDepositebankhelp" width="100%"></comp-help>
+                                <input type="hidden" name="text" key="dep_bank">
+                            </li>
+                            <li class="width-13">
+                                <label>Instrument Deposit Date</label>
+                                <input id="datecheck" data-beatpicker="true" data-beatpicker-position="['*','*']" type="text" name="text" key="LpcInstrdepoDt" class="mandatory">
+                            </li>
+                            <li class="width-1 read-only bnkpk">
+                                <input type="hidden" name="text" key="bnfk">
+                            </li>
+
+                            <li class="width-1 read-only brnchpk">
+                                <input type="hidden" name="text" key="bbmfk">
+                            </li>
+                            <li class="width-1 read-only LpcLedFk">
+                                <input type="hidden" id="LedFk" name="text" key="LeadFk">
+                            </li>
+                            <li class="width-1 read-only LpcAgtFk">
+                                <input type="hidden" id="AgtFk" name="text" key="DocAgtPk">
+                            </li>
+                            <li class="width-1 read-only LpcBGeoFk">
+                                <input type="hidden" id="BgeoFk" name="text" key="DocBGeoFk">
+                            </li>
+                            <li class="width-1 read-only">
+                                <input type="hidden" id="UsrDispNm" name="text" key="UsrDispNm">
+                            </li>
+                        </ul>
+                    </div>
+                    <form id="PostForm" name="PostForm" action="http://119.226.197.6:8080/omnidocs/integration/foldView/viewFoldList.jsp" method="post" target="newWin">
+                        <input type="hidden" name="Application" value="SHFL_LOANS">
+                        <input type="hidden" id="fold_nm" name="FolderName" value="">
+                        <input type="hidden" name="sessionIndexSet" value="false">
+                    </form>
+                </div>
+                <h2>
+                    <span class="right">
+                    </span>
+                    <div class="clear"></div>
+                </h2>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<script src="js/BeatPicker.min.js"></script>
+<script src="js/Scrn/BalancePF.js"></script>
+<script>
+calcHeight(); categoryPopup();  /*window height for all div*/
+    selectfocus(); /* Custom Select2 plugin Function*/
+</script> 

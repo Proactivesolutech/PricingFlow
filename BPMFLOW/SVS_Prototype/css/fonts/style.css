@@ -1,0 +1,76 @@
+@font-face { font-family: 'icomoon'; src: url('icomoon.eot?krv7vp'); src: url('icomoon.eot?krv7vp#iefix') format('embedded-opentype'),  url('icomoon.ttf?krv7vp') format('truetype'),  url('icomoon.woff?krv7vp') format('woff'),  url('icomoon.svg?krv7vp#icomoon') format('svg'); font-weight: normal; font-style: normal; }
+[class^="icon-"], [class*=" icon-"] { /* use !important to prevent issues with browser extensions that change fonts */
+font-family: 'icomoon' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; /* Better Font Rendering =========== */
+-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.icon-login:before { content: "\e900"; }
+.icon-customer:before { content: "\e901"; }
+.icon-user:before { content: "\e902"; }
+.icon-password:before { content: "\e903"; }
+.icon-menu:before { content: "\e904"; }
+.icon-notification:before { content: "\e905"; }
+.icon-settings:before { content: "\e906"; }
+.icon-attach:before { content: "\e907"; }
+.icon-download:before { content: "\e908"; }
+.icon-new-file:before { content: "\e909"; }
+.icon-search:before { content: "\e90a"; }
+.icon-document:before { content: "\e90b"; }
+.icon-save:before { content: "\e90c"; }
+.icon-delete:before { content: "\e90d"; }
+.icon-refresh:before { content: "\e90e"; }
+.icon-close:before { content: "\e90f"; }
+.icon-tick:before { content: "\e910"; }
+.icon-plus:before { content: "\e911"; }
+.icon-minus:before { content: "\e912"; }
+.icon-bill:before { content: "\e913"; }
+.icon-advance:before { content: "\e914"; }
+.icon-indian-rupee:before { content: "\e915"; }
+.icon-info:before { content: "\e916"; }
+.icon-location:before { content: "\e917"; }
+.icon-location2:before { content: "\e918"; }
+.icon-view:before { content: "\e919"; }
+.icon-warning:before { content: "\e91a"; }
+.icon-approved:before { content: "\e91b"; }
+.icon-decline:before { content: "\e91c"; }
+.icon-pending:before { content: "\e91d"; }
+.icon-expense-type:before { content: "\e91e"; }
+.icon-printer:before { content: "\e91f"; }
+.icon-computer:before { content: "\e920"; }
+.icon-internet:before { content: "\e921"; }
+.icon-staffwelfare:before { content: "\e922"; }
+.icon-amc:before { content: "\e923"; }
+.icon-vendor:before { content: "\e924"; }
+.icon-repair-office:before { content: "\e925"; }
+.icon-repair-office-equipments:before { content: "\e926"; }
+.icon-mobile:before { content: "\e927"; }
+.icon-make-payment:before { content: "\e928"; }
+.icon-credit:before { content: "\e929"; }
+.icon-debit:before { content: "\e92a"; }
+.icon-date:before { content: "\e92b"; }
+.icon-home:before { content: "\e92c"; }
+.icon-employee:before { content: "\e92d"; }
+.icon-up-line-arrow:before { content: "\e92e"; }
+.icon-down-line-arrow:before { content: "\e92f"; }
+.icon-left-line-arrow:before { content: "\e930"; }
+.icon-right-line-arrow:before { content: "\e931"; }
+.icon-dropdown-down:before { content: "\e932"; }
+.icon-dropdown-up:before { content: "\e933"; }
+.icon-down-arrow:before { content: "\e934"; }
+.icon-up-arrow:before { content: "\e935"; }
+.icon-left-arrow:before { content: "\e936"; }
+.icon-right-arrow:before { content: "\e937"; }
+.icon-logout:before { content: "\e938"; }
+.icon-excel:before { content: "\e9a0"; }
+.icon-word:before { content: "\e939"; }
+.icon-pdf:before { content: "\e93a"; }
+
+
+
+
+.fa-lg { font-size: 1.33333333em; line-height: 0.75em; vertical-align: -15%; }
+.fa-1x { font-size: 1.5em; vertical-align: middle; }
+.fa-2x { font-size: 2em; vertical-align: middle; }
+.fa-3x { font-size: 3em; }
+.fa-4x { font-size: 4em; }
+.fa-5x { font-size: 5em; }
+.fa-fw { width: 1.28571429em; text-align: center; }
+@font-face { font-family: 'robotoregular'; src: url('roboto-regular.eot'); src: url('roboto-regular.eot?#iefix') format('embedded-opentype'), url('roboto-regular.woff2') format('woff2'), url('roboto-regular.woff') format('woff'), url('roboto-regular.ttf') format('truetype'), url('roboto-regular.svg#robotoregular') format('svg'); font-weight: normal; font-style: normal; }

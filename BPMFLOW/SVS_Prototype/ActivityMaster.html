@@ -1,0 +1,625 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <!--<link  href="../CSS/Roboto.css" rel="stylesheet">
+    <link  href="../CSS/Icons.css" rel="stylesheet">
+    <link  href="../CSS/font-awesome.min.css" rel="stylesheet">
+    <link  href="../CSS/HelpCompStyleSheet.css" rel="stylesheet" type="text/css"/>
+    <link  href="../CSS/CommonCss.css" rel="stylesheet"/>
+    <link  href="../CSS/GridComponent.css" rel="stylesheet"/>
+    <link  href="../CSS/jquery-ui.css" rel="stylesheet">
+    <script src="../Js/CommonScript.js"></script>
+    <script src="../Js/GridComponent.js"></script>
+    <script src="../Js/HelpComponent.js" type="text/javascript"></script>
+    <script src="../Js/jquery.js"></script>
+    <script src="../Js/jquery-ui.js"></script>
+    <script src="../Js/jqueryForm.js"></script>-->
+
+
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+       
+
+        .displayTable {
+            font-size: 13px;
+            display: table;
+            height: 26%;
+            width: 27%;
+            overflow: auto;
+            padding: 1%;
+
+        }
+
+        .displayRow {
+            height: 10%;
+            display: table-row;
+
+        }
+
+        .displayCell {
+            display: table-cell;
+        }
+
+        .label {
+            min-width: 186px;
+        }
+
+        .Text {
+            min-width: 256px;
+        }
+
+            .Text > input {
+                min-width: 256px;
+                margin-top: 4px;
+            }
+            .ui-tabs .ui-tabs-nav {
+                    background-color: white;
+                    border: none;
+            }
+            .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+                background: #00A4A6;
+                border-color:#00A4A6;
+            }
+            .liAttrImg{
+                list-style: none;
+                padding: 4px;
+            }
+            .liAttrImg:hover{
+                background-color: #B2DFDB;
+                cursor: pointer;
+            }
+
+            .liAttrImg .label{
+                min-width: 186px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                max-width: 186px;
+            }
+            .liAttrImg em{
+                min-width: 186px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                max-width: 186px;
+            }
+            .gridTabContent {
+                height: 80%;
+                width: 100%;
+                overflow: auto;
+                position: absolute;
+            }
+            .gridAction{
+                   cursor:pointer;
+                   height: 8%;
+                   margin-bottom: 9px;
+                   margin-top: -20px;
+               }
+    </style>
+</head>
+<body>
+    <div id="ActMaster-Body" style=" height: 99%; width: 98%; border: 1px solid silver; position: absolute; padding-left: 2%; ">
+        <div class="HeaderDiv"><span>Activity Master</span></div>
+        <div style="border: 1px solid silver;
+        width: 85%;
+        margin-top: 10px;
+        box-shadow: 2px 2px 4px 2px silver;margin-left: 2%;">
+            <div id="PrdPage" class="displayTable" style="height:25%;">
+                <div class="displayRow">
+                    <div class="displayCell label">
+                        <label>
+                            CODE
+                        </label>
+                    </div>
+                    <div class="displayCell Text">
+                        <input id="Act_Code" data-validation="txt-20" onkeyup="Maxlength(this)" data-tabname="TABLE-0" data-colname="CODE" data-validate="true" type="text">
+                    </div>
+                </div>
+                <div class="displayRow">
+                    <div class="displayCell label">
+                        <label class="displayLabel">
+                            DESCRIPTION
+                        </label>
+                    </div>
+                    <div class="displayCell Text">
+                        <input id="Act_Des" data-tabname="TABLE-0" data-colname="DESCRIPTION" data-validate="true" type="text" data-validation="" onkeyup="Maxlength(this)">
+                    </div>
+                </div>
+                <div class="displayRow">
+                    <div class="displayCell label">
+                        <label>
+                            TYPE
+                        </label>
+                    </div>
+                    <div class="displayCell Text">
+                        <select id="Act_Typelist" data-tabname="TABLE-0" data-colname="TYPE" data-validate="true" type="text" style="margin-top: 5px;margin-left: 33px;width: 175px;margin-left: 1px; ">
+                            <option value="None">None</option>
+                            <option value="0">Unit</option>
+                            <option value="1">Batch</option>
+                            <option value="2">Product</option>
+                            <option value="3">Facility</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="displayRow">
+                    <div class="displayCell label">
+                        <label>
+                            COST TYPE
+                        </label>
+                    </div>
+                    <div class="displayCell Text">
+                        <select id="Act_CosTypelist" data-tabname="TABLE-0" data-colname="COSTTYPE" data-validate="true" type="text" style="margin-top: 5px;margin-left: 33px;width: 175px;margin-left: 1px; ">
+                            <option value="None">None</option>
+                            <option value="0">Production</option>
+                            <option value="1">Customer</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="displayRow">
+                    <div class="displayCell label">
+                        <label>
+                            VAL TYPE
+                        </label>
+                    </div>
+                    <div class="displayCell">
+
+                        <input type="radio" name="ActType" data-value="0" value="0" data-validate="true" data-tabname="TABLE-0" data-colname="VALTYPE"><label for="ValueAdded"> Value Added</label>
+                        <input type="radio" name="ActType" data-value="1" value="1" checked data-validate="true" data-tabname="TABLE-0" data-colname="VALTYPE"> <label for="NonValueAdded">Non Value Added</label>
+                    </div>
+                    <div class="displayCell label">
+                        <label class="displayLabel">
+                            ACT ORDER
+                        </label>
+                    </div>
+                    <div class="displayCell Text">
+                        <input id="Act_Ord" data-validation="num-0" onkeyup="Maxlength(this)" data-tabname="TABLE-0" data-colname="ORD" type="text">
+                    </div>
+
+                </div>
+                <div class="displayRow">
+                    <div class="displayCell label">
+                        <label class="displayLabel">
+                            ACT GROUP
+                        </label>
+                    </div>
+                    <div class="displayCell Text">
+                        <input id="Act_Group" data-tabname="TABLE-0" data-colname="GROUPTYPE" type="text" onfocus="fn_CustomHelp(this,'S')" onkeyup="fn_CustomHelp(this,'S')">
+                    </div>
+                </div>
+                <input type="hidden" id="HDN_GRPID" />
+            </div>
+
+
+        </div>
+        <div id="AttrTab" style=" height: 51%;   width: 85%;      box-shadow: 2px 2px 4px 2px silver;  margin-top: 1%;    margin-left: 2%;">
+            <ul>
+                <li><a style="padding: 1px 2px;" href="#ActivityMasterGrid">Attributes</a></li>
+                <li><a style="padding: 1px 2px;" href="#ActivityGrp">Attach Driver</a></li>
+            </ul>
+            <div id="ActivityMasterGrid" style="  padding:3px;  width: 96%;    height: 55%;"></div>
+            <div id="ActivityGrp" style="  padding:3px;  width: 96%;    height: 55%;"></div>
+
+        </div>
+
+        <input type="hidden" id="HDN_ID" />
+    </div>
+
+
+    <script>
+        var TableData = [{
+            Display: 'ATTRIBUTE',
+            Name: 'ATTR_NAME',
+            HelpText: false,
+            Flag: 'ActivityMasterGrid',
+            width: 130,
+            TabWidth: 300,
+            Focus: false,
+            Type: "text",
+            Mode: "Read",
+            HelpTextBind: true,
+        }, {
+            Display: 'VALUE',
+            Name: 'ATTR_VAL',
+            HelpText: false,
+            Flag: 'ActivityMasterGrid',
+            width: 130,
+            TabWidth: 300,
+            Focus: false,
+            Type: "text",
+            Mode: "Write",
+            HelpTextBind: true,
+            Style: 'lengthfield',
+        }, {
+            Display: 'HDN_ATTRID',
+            Name: 'HDN_ATTRID',
+            HelpText: false,
+            Flag: 'hidden',
+            width: 0,
+            TabWidth: 0,
+            Focus: false,
+            Type: "hidden",
+            HelpTextBind: true,
+        }, {
+            Display: 'HDN_ID ',
+            Name: 'HDN_ID',
+            HelpText: false,
+            Flag: 'hidden',
+            width: 0,
+            TabWidth: 0,
+            Focus: false,
+            Type: "hidden",
+            HelpTextBind: true,
+        }, {
+            Display: 'HD_ID ',
+            Name: 'HD_ID',
+            HelpText: false,
+            Flag: 'hidden',
+            width: 0,
+            TabWidth: 0,
+            Focus: false,
+            Type: "hidden",
+            HelpTextBind: true,
+        }];
+
+        var TableData1 = [{
+            Display: 'DRIVERCODE',
+            Name: 'DRIVERCODE',
+            HelpText: true,
+            Flag: 'ActivityGrp',
+            width: 100,
+            TabWidth: 200,
+            Focus: false,
+            Type: "text",
+            Mode: "Write",
+            HelpTextBind: true,
+        }, {
+            Display: 'DESCRIPTION',
+            Name: 'DESCRIPTION',
+            HelpText: false,
+            Flag: 'ActivityGrp',
+            width: 100,
+            TabWidth: 200,
+            Focus: false,
+            Type: "text",
+            Mode: "Read",
+            HelpTextBind: true,
+        }, {
+            Display: 'AVAILABILITYCAPACITY',
+            Name: 'AVAILABILITYCAPACITY',
+            HelpText: false,
+            Flag: 'ActivityGrp',
+            width: 100,
+            TabWidth: 200,
+            Focus: false,
+            Type: "text",
+            Mode: "Write",
+            HelpTextBind: false,
+            Style: 'number',
+        },
+        {
+            Display: 'PRACTICALCAPACITY',
+            Name: 'PRACTICALCAPACITY',
+            HelpText: false,
+            Flag: 'ActivityGrp',
+            width: 100,
+            TabWidth: 200,
+            Focus: false,
+            Type: "text",
+            Mode: "Write",
+            HelpTextBind: false,
+            Style: 'number',
+        }, {
+            Display: 'HDN_ID',
+            Name: 'HDN_ID',
+            HelpText: false,
+            Flag: 'hidden',
+            width: 0,
+            TabWidth: 0,
+            Focus: false,
+            Type: "hidden",
+            HelpTextBind: false,
+        }, {
+            Display: 'HDNDRV_ID',
+            Name: 'HDNDRV_ID',
+            HelpText: false,
+            Flag: 'hidden',
+            width: 0,
+            TabWidth: 0,
+            Focus: false,
+            Type: "hidden",
+            HelpTextBind: true,
+        }];
+        $(document).ready(function () { CallReadyFunc(); });
+        $('#AttrTab').tabs({ active: 0 });
+        fnLoadGrid('ActivityMasterGrid', TableData, "Fixed");
+        fnLoadGrid('ActivityGrp', TableData1, "freegrid");
+
+
+        var CUID = "";
+        var CUSER = "";
+        var CCMPID = "";
+        var CLOCID = "";
+        var CCMY = "";
+        var CLOC = "";
+
+
+        if (document.cookie != "") {
+            var allCookie = decodeURIComponent(document.cookie).split('&');
+            console.log(allCookie);
+            CUID = allCookie[1].split('=');
+            CUID = CUID[1];
+            CUSER = allCookie[2].split('=');
+            CUSER = CUSER[1];
+            CCMPID = allCookie[3].split('=');
+            CCMPID = CCMPID[1];
+            CLOCID = allCookie[4].split('=');
+            CLOCID = CLOCID[1];
+            CCMY = allCookie[5].split('=');
+            CCMY = CCMY[1];
+            CLOC = allCookie[6].split('=');
+            CLOC = CLOC[1];
+        }
+
+        function fnSearchIcon() {
+
+            fnStartLoad()
+            var Method = "Act_Mas", Action = 'List', HeaderGridXml = 0, MasterXml = 0
+                , RowId = 0, OldRowId = 0, DocRef = 0, DpdRef = 0, AddParam1, AddParam2 = 'Searchfill', AddParam3 = 0;
+            AddParam1 = '<xml><SrchIntQryText> </SrchIntQryText><UserId>' + sessionStorage.UserId + '</UserId><CompanyID>' + sessionStorage.CmpID + '</CompanyID><LocationID>' + sessionStorage.LocID + '</LocationID></xml>'
+            fnSearchWindow(Method, Action, HeaderGridXml, MasterXml, RowId, OldRowId, DocRef, DpdRef, AddParam1, AddParam2, AddParam3)
+
+        }
+
+        function fnSearchKeyUp() {
+
+            var Method = "Act_Mas", Action = 'List', HeaderGridXml = 0, MasterXml = 0
+                , RowId = 0, OldRowId = 0, DocRef = 0, DpdRef = 0, AddParam2 = 'Searchfill', AddParam3 = 0;
+            AddParam1 = '<xml><SrchIntQryText> ' + $('#InternalText').val() + '</SrchIntQryText><UserId>' + sessionStorage.UserId + '</UserId><CompanyID>' + sessionStorage.CmpID + '</CompanyID><LocationID>' + sessionStorage.LocID + '</LocationID></xml>'
+            fnSearchWindow(Method, Action, HeaderGridXml, MasterXml, RowId, OldRowId, DocRef, DpdRef, AddParam1, AddParam2, AddParam3)
+        }
+
+        function fn_CustomHelp(obj, flag, evt) {
+            var currevt = event
+            xmldata = 3
+            help_Text_Box(obj, "Act_Mas", [{ Act_Group: 'DESCRIPTION', HDN_GRPID: 'HDN_ID' }], xmldata, [{ GridId: "ActivityMasterGrid", GridData: "TABLE-0" }], [{}], currevt, [{ width: 150 }, { width: 300 }])
+
+        }
+
+        function fnTextGenerator(Elem) {
+
+            var LimitValue = parseInt($(Elem).val());
+            if (this.event.keyCode == "13") {
+                if (LimitValue >= 20) {
+                    $(Elem).val(20);
+                    LimitValue = 20;
+                }
+
+                for (var i = 0; i < $($('#AttrPage').find($('[type="text"]'))).length; i++) {
+                    if (i < LimitValue) {
+                        $($($('#AttrPage').find($('[type="text"]'))[i]).parents()[1]).css({ 'visibility': 'visible' });
+
+                    } else {
+                        $($($('#AttrPage').find($('[type="text"]'))[i]).parents()[1]).css({ 'visibility': 'hidden' });
+                    }
+                }
+
+            }
+        }
+
+        function mainTextValidator(focusElem) {
+            for (i = 0; i <= $($('#GrpPage').find($('[type="text"]'))).length; i++) {
+                if (focusElem.id == $($('#GrpPage').find($('[type="text"]'))[i]).attr('id')) {
+                    break;
+                }
+                else if ($($('#GrpPage').find($('[type="text"]'))[i]).val() == "") {
+                    $($('#GrpPage').find($('[type="text"]'))[i]).focus();
+                    fnAlert("Fill The Required Details First", '#F22613');
+                    //alert("Fill The Required Details First")
+                    break;
+                }
+            }
+        }
+
+        function textValidator(focusElem) {
+            for (i = 0; i <= $($('#AttrPage').find($('[type="text"]'))).length; i++) {
+                if (focusElem.id == $($('#AttrPage').find($('[type="text"]'))[i]).attr('id')) {
+                    break;
+                }
+                else if ($($('#AttrPage').find($('[type="text"]'))[i]).val() == "") {
+                    $($('#AttrPage').find($('[type="text"]'))[i]).focus();
+                    fnAlert("Fill The Required Details First", '#F22613');
+                    //alert("Fill The Required Details First")
+                    break;
+                }
+            }
+        }
+
+
+        /*GRID AND TEXTBOX FILLING ONCLICK SEARCH WINDOW*/
+        function fnFillSearchData(filldata) {
+            $('#Hdn_RowId').val(filldata.Table[0]['HDNROWID']);
+            $('#HDN_GRPID').val(filldata.Table[0]['HDN_GRPID']);
+            fnFillTextBox('TABLE-0', filldata.Table); // to fill header
+            fnFillGridValue('ActivityMasterGrid', filldata.Table1);//Activity Grid
+            fnFillGridValue('ActivityGrp', filldata.Table2);//Activity Grid
+            $('#Act_Code').attr("disabled", true);
+        }
+        /* CLEARS THE TEXTBOX DATA*/
+        function fnClearIcon() {
+            $('#PrdPage').find('input').val('')
+            $('[class="gridRow Data"]').remove();
+            $('[class="gridRow Data gridRowSelect"]').remove();
+            $('input[type="hidden"]').val('');
+            $('input[type="hidden"]').attr('data-mode', 'A');
+            $('[type="file"]').val("")
+            $('[type="text"]').val("")
+            $('#AttrImgList').html("");
+            $('#Act_Code').removeAttr("disabled", true);
+            FileNames = [];
+            // $('select').val(0);
+        }
+
+
+        function fnSaveIcon() {
+
+            var sessionid = sessionStorage.UserId;
+            var CmpID = sessionStorage.CmpID;
+            var LocID = sessionStorage.LocID;
+
+            var ProcState = true;
+
+            $('[ data-validate="true"]')[0]
+            for (i = 0; i < $('[ data-validate="true"]').length; i++) {
+                if ($($('[ data-validate="true"]')[i]).val() == "" || $($('[ data-validate="true"]')[i]).val() == null) {
+                    ProcState = false;
+                    break;
+                }
+            }
+            ProcState = fnValidateGrid();
+
+            if (ProcState) {
+                fnStartLoad()
+                if ($('#Hdn_PkId').attr('data-mode') == "A") {
+                    Action = "A";
+                    internaldata = '<HeaderDeatils><CODE>' + $('#Act_Code').val() + '</CODE><DESCRIPTION>' + $('#Act_Des').val() + '</DESCRIPTION><TYPE>' + $('#Act_Typelist').val() + '</TYPE><COSTTYPE>' + $('#Act_CosTypelist').val() + '</COSTTYPE><ORD>' + $('#Act_Ord').val() + '</ORD><GROUPTYPE>' + $('#HDN_GRPID').val() + '</GROUPTYPE><VALTYPE>' + $('input[name=ActType]:checked').val() + '</VALTYPE><HdnPkId>0</HdnPkId></HeaderDeatils>';
+                    internaldata1 = '<MasterDeatils><CREATEDBY>' + sessionid + '</CREATEDBY><CompanyID>' + CmpID + '</CompanyID><LocationID>' + LocID + '</LocationID></MasterDeatils>';
+                    PrimeXmlData = "<GridAttr>" + fnSaveData("ActivityMasterGrid") + "</GridAttr>";
+                    PrimeXmlData1 = "<GrdActGrp>" + fnSaveData("ActivityGrp") + "</GrdActGrp>";
+                    PrimeXmlData = "<GridDetails>" + PrimeXmlData + PrimeXmlData1 + "</GridDetails>";
+                    var HeaderGridXml = "<xml>" + internaldata + PrimeXmlData + "</xml>";
+                    var MasterXml = "<xml>" + internaldata1 + "</xml>";
+                    var RowId = 0;
+                    var OldRowId = 0;
+                    var DocRef = 0;
+                    var DpdRef = 0;
+                    var AddParam1 = 0;
+                    var AddParam2 = 0;
+                    var AddParam3 = 0;
+                    var type = 0
+                }
+                else {
+                    Action = "E";
+                    internaldata = '<HeaderDeatils><CODE>' + $('#Act_Code').val() + '</CODE><DESCRIPTION>' + $('#Act_Des').val() + '</DESCRIPTION><TYPE>' + $('#Act_Typelist').val() + '</TYPE><COSTTYPE>' + $('#Act_CosTypelist').val() + '</COSTTYPE><ORD>' + $('#Act_Ord').val() + '</ORD><GROUPTYPE>' + $('#HDN_GRPID').val() + '</GROUPTYPE><VALTYPE>' + $('input[name=ActType]:checked').val() + '</VALTYPE><HdnPkId>' + $('#Hdn_PkId').val() + '</HdnPkId></HeaderDeatils>';
+                    internaldata1 = '<MasterDeatils><MODIFIEDBY>' + sessionid + '</MODIFIEDBY><CompanyID>' + CmpID + '</CompanyID><LocationID>' + LocID + '</LocationID></MasterDeatils>';
+                    PrimeXmlData = "<GridAttr>" + fnSaveData("ActivityMasterGrid") + "</GridAttr>";
+                    PrimeXmlData1 = "<GrdActGrp>" + fnSaveData("ActivityGrp") + "</GrdActGrp>";
+                    PrimeXmlData = "<GridDetails>" + PrimeXmlData + PrimeXmlData1 + "</GridDetails>";
+                    var HeaderGridXml = "<xml>" + internaldata + PrimeXmlData + "</xml>";
+                    var MasterXml = "<xml>" + internaldata1 + "</xml>";
+                    var RowId = 0;
+                    var OldRowId = $('#Hdn_RowId').val();
+                    var DocRef = 0;
+                    var DpdRef = 0;
+                    var AddParam1 = 0;
+                    var AddParam2 = 0;
+                    var AddParam3 = 0;
+                }
+                var obj = { method: "Act_Mas", action: Action, headergridxml: HeaderGridXml, masterxml: MasterXml, rowid: RowId, oldrowid: OldRowId, docref: DocRef, dpdref: DpdRef, addparam1: AddParam1, addparam2: AddParam2, addparam3: AddParam3, DBInfo: sessionStorage["DBInfo"] }
+                $.ajax({
+                    url: sessionStorage["URL"],
+                    type: "POST",
+                    data: JSON.stringify(obj),
+                    dataType: "json",
+                    contentType: "application/json; charset=UTF-8",
+                    success: function (data) {
+                        var datavalue = data.d;
+                        var data = JSON.parse(datavalue)
+                        fnStopLoad()
+                        try {
+                            if (data.Table[0]['ACTION'] == "A") {
+                                fnClearIcon()
+                                fnAlert("Saved Successfully", 'green')
+
+                            }
+                            else if (data.Table[0]['ACTION'] == "E") {
+                                fnClearIcon()
+                                fnAlert("Updated Successfully", 'green')
+                            }
+                        }
+                        catch (errr) {
+                            fnAlert(data[0]['Message'], 'red')
+                        }
+
+                    },
+
+                    error: function (xmlhttprequest, errorthrown) {
+
+                        fnAlert(errorthrown, 'red')
+                    }
+                });
+            }
+            else {
+
+                fnAlert('Fill Details', 'red')
+            }
+        }
+
+        function fnDeleteIcon() {
+            if ($('#Hdn_PkId').attr('data-mode') == "A") {
+                fnAlert("You Cannot Delete", 'green')
+            }
+            else if ($('#Hdn_PkId').attr('data-mode') == "E") {
+                fnStartLoad();
+                Action = "D";
+                var HeaderGridXml = '<xml><DeleteKey><HdnPkId>' + $('#Hdn_PkId').val() + '</HdnPkId></DeleteKey></xml>';
+                var MasterXml = 0;
+                var RowId = 0;
+                var OldRowId = $('#Hdn_RowId').val();
+                var DocRef = 0;
+                var DpdRef = 0;
+                var AddParam1 = 0;
+                var AddParam2 = 0;
+                var AddParam3 = 0;
+
+                var obj = { method: "Act_Mas", action: Action, headergridxml: HeaderGridXml, masterxml: MasterXml, rowid: RowId, oldrowid: OldRowId, docref: DocRef, dpdref: DpdRef, addparam1: AddParam1, addparam2: AddParam2, addparam3: AddParam3, DBInfo: sessionStorage["DBInfo"] }
+                $.ajax({
+                    url: sessionStorage["URL"],
+                    type: "POST",
+                    data: JSON.stringify(obj),
+                    dataType: "json",
+                    contentType: "application/json; charset=UTF-8",
+                    success: function (data) {
+                        var datavalue = data.d;
+                        var data = JSON.parse(datavalue)
+                        fnStopLoad();
+                        try {
+                            if (data.Table[0]['ACTION'] == "D") {
+                                fnClearIcon()
+                                fnAlert("Deleted Successfully", 'green')
+                                $('#Act_Code').removeAttr("disabled", true);
+
+                            }
+                        }
+                        catch (err) {
+                            fnAlert(data[0]['Message'], 'red')
+                        }
+                    },
+
+                    error: function (xmlhttprequest, errorthrown) {
+
+                        fnAlert(errorthrown, 'red')
+                    }
+                });
+            }
+        }
+
+        $('.numer-only').keydown(function (event) {
+            // Allow special chars + arrows
+            if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 || (event.keyCode == 65 && event.ctrlKey === true) || (event.keyCode >= 35 && event.keyCode <= 39)) {
+                return;
+            }
+            else {
+                // If it's not a number stop the keypress
+                if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+                    event.preventDefault();
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

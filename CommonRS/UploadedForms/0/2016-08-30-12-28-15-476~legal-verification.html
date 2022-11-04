@@ -1,0 +1,491 @@
+<div class="title">
+  <h1><b>Service Agents : Legal Verification</b></h1>
+</div>
+<div class="content-div">
+    
+     <div class="box-div">
+    <ul class="lead-info lv-pop">
+     <h2><img src="images/copy.png" class="right expand-icon"></h2>
+      <div class="left category-icons">
+        <label><i class="icon-home-loan" style="font-size:38px;"></i></label>
+        <p>Home Loan</p>
+      </div>
+      <li class="width-1 read-only">
+        <label>Lead ID</label>
+        <p>SHFC11765689</p>
+      </li>
+      <li class="width-16 read-only">
+        <label>Applicant</label>
+        <p>SIVARAMA KRISHNAN S</p>
+      </li>
+      <li class="width-16 read-only">
+        <label>Application Number</label>
+        <p>CHAPP267488</p>
+      </li>
+      <li class="width-15 read-only">
+        <label>Branch</label>
+        <p>Chennai</p>
+      </li>
+      <div class="clear"></div>
+    </ul>
+  </div>
+  
+  
+    <div class="box-div legal-div">
+      <ul class="common-tabs">
+        <li class="active lsr-list">Legal Scrutiny</li>
+        <li class="disbursement-list">Pre Disbursement</li>
+        <li class="disbursement-list">Post Disbursement</li>
+      </ul>
+      <div class="lsr-div">
+      
+       <div class="clear"></div>
+      <div class="feedback">
+          <span class="common-status green"><i class="icon-positive"></i></span>
+          <textarea>Comments</textarea>
+          <span class="report right" onclick="Legal_click()">
+              <img src="images/copy.png" class="expand-icon">
+              <p>Report</p>
+          </span>
+          <div class="clear"></div>
+       </div>
+       
+       
+       
+      <ul class="box-div left">
+          <h2>Boundaries As Per Sale Deed</h2>
+          <li class="width-100p">
+            <label>East</label>
+            <input type="text" placeholder=""value="VACANT LAND">
+          </li>
+          <li class="width-100p">
+            <label>West</label>
+            <input type="text" placeholder=""value="MANIKKAM HOUSE">
+          </li>
+          <li class="width-100p">
+            <label>North</label>
+            <input type="text" placeholder=""value="ROAD">
+          </li>
+          <li class="width-100p">
+            <label>South</label>
+            <input type="text" placeholder=""value="SSR NAGAR">
+          </li>
+        </ul>
+        
+        <ul class="address-div box-div left">
+          <h2>Property Address</h2>
+          <li class="width-8">
+            <label>Flat/Door No</label>
+            <input type="text" placeholder=""value="NO 1/77">
+          </li>
+          <li class="width-27">
+            <label>Building</label>
+            <input type="text" placeholder=""value="SUDHARSAN NAGAR 1st STREET">
+          </li>
+          <li class="width-8">
+            <label>Plot No</label>
+            <input type="text" placeholder=""value="S NO 307/3A1">
+          </li>
+          <li class="width-27">
+            <label>Street</label>
+            <input type="text" placeholder=""value="MAMBAKKAM">
+          </li>
+          <li class="width-100p">
+            <label>Land Mark</label>
+            <input type="text" placeholder=""value="MAMBAKKAM">
+          </li>
+          <li class="width-100p">
+            <label>Town/Village</label>
+            <input type="text" placeholder=""value="KOLAPAKKAM">
+          </li>
+          <li class="width-100p">
+            <label>District/City</label>
+            <input type="text" placeholder=""value="CHENNAI">
+          </li>
+          <li class="width-21">
+            <label>State</label>
+            <input type="text" placeholder=""value="TAMIL NADU">
+          </li>
+          <li class="width-6 right">
+            <label>PIN</label>
+            <input type="text" placeholder=""value="600127">
+          </li>
+        </ul>
+        
+        <div class="name-list right">
+           <ul class="box-div">
+         <h2>Property Ownership</h2>
+         <li> <input type="checkbox"> <span>SIVARAMA KRISHNAN S</span></li>
+         <li> <input type="checkbox"> <span>KRISHNAVENI</span></li>
+         <!--<li> <input type="checkbox"> <span>Divya</span></li>-->
+      </ul>
+      <ul class="box-div">
+         <h2>ROC</h2>
+          <li class="width-6">
+            <label>Builder Name</label>
+            <input type="text" placeholder="" value="">
+          </li>
+          <li class="width-6">
+            <label>CIN of Builder</label>
+            <input type="text" placeholder="" value="">
+          </li>
+         </ul>
+         </div>
+    <div class="clear"></div>
+      </div>
+      <div class="disbursement-div" style="display:none;">
+       <div class="document-entry">
+      <h2>Documents  <i class="icon-plus"></i>
+      
+        <!--<span class="right">
+          <input type="button" value="Scan">
+          <input type="button" value="Attach" class="attach-click">
+          </span>-->
+        <div class="clear"></div>
+      </h2>
+      <!-- <div class="preview-icons right"> <i class="icon-list-view"></i> <i class="icon-thumbnails"></i> </div>-->
+      <div class="clear"></div>
+      <div class="documents">
+        <ul>
+          <li>Licence
+            <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">Address Proof</span></p>
+          </li>
+          <li class="read-only">
+          <label>Type of Document</label>
+          <p> Original</p></li>
+        </ul>
+        <ul>
+          <li>Application Form
+            <p><span class="bg">Applicant</span> <span class="bg">Application</span> <span class="bg">Address Proof</span></p>
+          </li>
+          <li class="read-only">
+          <label>Type of Document</label>
+          <p> Original</p></li>
+        </ul>
+        <ul>
+          <li>Sale Deed
+            <p><span class="bg">Applicant</span> <span class="bg">Property</span> <span class="bg">Sale Deed</span></p>
+          </li>
+         <li class="read-only">
+          <label>Type of Document</label>
+          <p> Original</p></li>
+        </ul>
+        <ul>
+          <li>Income 
+             <p><span class="bg">Applicant</span> <span class="bg">Document</span> <span class="bg">payslip</span></p>
+          </li>
+         <li class="read-only">
+          <label>Type of Document</label>
+          <p> Original</p></li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+      </div>
+    </div>
+
+  <!--<div class="box-div">
+    <img src="images/copy.png" class="right expand-icon">
+    <div class="input">
+        <ul>
+          <li class="width-280 read-only">
+            <label>Name of Borrower</label>
+            <p>Saranya</p>
+          </li>
+          <li class="width-280 read-only">
+            <label>Name of the Property Owner</label>
+            <p>Saranya</p>
+          </li>
+          <li class="width-15">
+          <label>Property Type</label>
+          <div class="cust-select"> <span class="selected">Select</span><i class="arrow"></i>
+             <ul>
+                <li>Residential</li>
+                <li>Commercial</li>
+              </ul>
+             </div>
+           </li>
+            <li class="width-31">
+            <label>Type of Case</label>
+            <div class="cust-select"> <span class="selected">Select</span><i class="arrow"></i>
+             <ul>
+                <li class="builder-drop">Builder</li>
+                <li class="builder">Resale</li>
+                <li class="builder">Balance Transfer</li> 
+                <li class="builder">Loan Against property</li>
+             </ul>
+           </div>
+          </li>
+         </ul>
+    </div>
+  </div>
+  <div class="output box-div">
+      <ul>
+        <li class="width-1">
+          <label>Date of Report</label>
+          <input type="text" class="datepicker-here" data-language="en">
+        </li>
+        <li class="width-1">
+           <label>Search Period (No of Years)</label>
+           <input type="text">
+        </li>
+        <li class="width-11">
+          <label>Clear and Marketable</label>
+          <div class="cust-select"> <span class="selected">Select</span><i class="arrow"></i>
+             <ul>
+                <li>Yes</li>
+                <li>No</li>
+             </ul>
+           </div>
+        </li>
+        <li class="width-15">
+          <label>Feed Back</label>
+          <div class="cust-select"> <span class="selected">Select</span><i class="arrow"></i>
+             <ul>
+                <li>Positive</li>
+                <li>Negative</li>
+             </ul>
+           </div>
+        </li>
+        <li class="width-17">
+          <label>Status</label>
+          <div class="cust-select"> <span class="selected">Select</span><i class="arrow"></i>
+             <ul>
+                <li>ITR not updated in records</li>
+                <li>Concerned person refuse to verify</li>
+                <li>Document not Clear</li>
+                <li>Others</li>
+             </ul>
+           </div>
+        </li>
+        <li class="width-20">
+          <label>Comments</label>
+          <input type="text">
+        </li>
+        <div class="builder-drop-content">
+        <li class="width-280">
+          <label>Builder Name</label>
+          <input type="text">
+        </li>
+        <li class="width-1">
+          <label>Property Address</label>
+          <input type="text">
+        </li>
+        <li class="width-1">
+          <label>CIN of Builder</label>
+          <input type="text">
+        </li>
+        </div>
+        <li class="width-1">
+          <label>Attachment of the Report</label>
+          <input type="button" value="Attach">
+        </li>
+      </ul>
+    </div>-->
+</div>
+
+<!--LV popup -->
+<div class="pop-bg" id="lv-pop" style="display:none">
+ <div class="popup-div">
+ 	<div class="icon-close right"></div>
+    <div class="clear"></div>
+    <ul class="common-tabs report-li">
+      <li class="active r1">Data Fields</li>
+      <li class="r2">Reports</li>
+    </ul>
+    <div class="r1-content">
+      <ul class="box-div">
+                    <h2>Title</h2>
+                    <li class="width-98p">
+                        <h2>Property Address</h2>
+                    </li>
+                    <li class="width-98p">
+                        <label>Flat/Door No</label>
+                        <input type="text" placeholder="" value="NO 1/77">
+                    </li>
+                    <li class="width-98p">
+                        <label>Building</label>
+                        <input type="text" placeholder="" value="SUDHARSAN NAGAR 1st STREET">
+                    </li>
+
+                    <li class="width-98p">
+                        <label>Plot No</label>
+                        <input type="text" placeholder="" value="S NO 307/3A1">
+                    </li>
+                    <li class="width-98p">
+                        <label>Street</label>
+                        <input type="text" placeholder="" value="MAMBAKKAM">
+                    </li>
+                    <li class="width-98p">
+                        <label>Land Mark</label>
+                        <input type="text" placeholder="" value="MAMBAKKAM">
+                    </li>
+                    <li class="width-98p">
+                        <label>Town/Village</label>
+                        <input type="text" placeholder="" value="KOLAPAKKAM">
+                    </li>
+            <li class="width-98p">
+                <label>District/City</label>
+                <input type="text" placeholder="" value="CHENNAI">
+            </li>
+            <li class="width-98p">
+                <label>State</label>
+                <input type="text" placeholder="" value="TAMIL NADU">
+            </li>
+            <li class="width-98p">
+                <label>PIN</label>
+                <input type="text" placeholder="" value="600127">
+            </li>
+                    <li class="width-98p">
+                        <h2>Boundaries As Per Sale Deed</h2>
+                    </li>
+                    <li class="width-98p">
+                        <label>East</label>
+                        <input type="text" placeholder="" value="VACANT LAND">
+                    </li>
+                    <li class="width-98p">
+                        <label>West</label>
+                        <input type="text" placeholder="" value="MANIKKAM HOUSE">
+                    </li>
+                    <li class="width-98p">
+                        <label>North</label>
+                        <input type="text" placeholder="" value="ROAD">
+                    </li>
+                    <li class="width-98p">
+                        <label>South</label>
+                        <input type="text" placeholder="" value="SSR NAGAR">
+                    </li>
+                    <li class="width-98p">
+                        <h2>ROC</h2>
+                    </li>
+                    <li class="width-98p">
+                        <label>Builder Name</label>
+                        <input type="text" placeholder="" value="">
+                    </li>
+                    <li class="width-98p">
+                        <label>CIN of Builder</label>
+                        <input type="text" placeholder="" value="">
+                    </li>
+            </ul>
+            </div>
+            <div class="r2-content" style="display:none;">
+      <div class="box-div"><img src="images/legal-report.jpg"></div>
+      
+    </div>
+ </div>
+</div>
+<!--LV popup End -->
+
+<div id="div-document-content" style="display:none;"></div>
+<div class="center form-btns">
+  <!--<input type="button" value="Back" onClick="LoadHtmlDiv('document-verification.html')">
+  <input type="button" value="Confirm" onClick="LoadHtmlDiv('technical-verification.html')">-->
+  <div class="drop-button"><input type="button" value="Confirm"><i class="icon-down-arrow"></i>
+    <ul class="drop-list">
+        <li class="lead-dd1">Confirm &amp; Handover</li>
+    </ul>
+  </div>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$(".r1").click(function(e) {
+	 $(".r1-content").show();
+	 $(".r2-content").hide();
+	 $(this).addClass('active');
+	 $(this).siblings().removeClass('active');
+});
+$(".r2").click(function(e) {
+	$(".r2-content").show();
+	 $(".r1-content").hide();
+	 $(this).addClass('active');
+		$(this).siblings().removeClass('active');
+});
+	 $(".lsr-list").click(function(e) {
+		$(".lsr-div").show(); 
+		$(".disbursement-div").hide();
+		$(this).addClass('active');
+		$(this).siblings().removeClass('active');
+	 });
+	  $(".disbursement-list").click(function(e) {
+		$(".disbursement-div").show(); 
+		$(".lsr-div").hide(); 
+		$(this).addClass('active');
+		$(this).siblings().removeClass('active');
+	 });
+ $(".expand-icon").click(function(e) {
+    $(".popup-div,.documents-popup").show();
+	$(".popup-div ul li").click(function(e) {
+		$(".popup-div,.documents-popup").hide();
+        $(".content-div").addClass("center-collapse");
+		$(".expand-icon").show();
+		$("#div-document-content").show();
+    });
+		    $(".icon-collapse").click(function(e) {
+		    $("#div-document-content").hide();
+			$(".content-div").removeClass("center-collapse");
+			});
+			$(".attach-click").click(function(e) {
+				$(".document-attach").show();
+				$(".document-entry").hide();
+				});
+				$(".documents-popup .icon-close").click(function(e) {
+                    $(".pop-bg.documents-popup").hide();
+                });
+ });
+ $(".builder-drop-content").hide();
+$(".builder-drop").click(function(e) {
+    $(".builder-drop-content").show();
+});
+$(".builder").click(function(e) {
+    $(".builder-drop-content").hide();
+});
+categoryPopup();
+dropButton();
+/* LV popup */
+$(".lv-pop li").click(function (e) {
+        $("#lv-pop").show();
+        $("#lv-pop .icon-close").click(function (e) {
+            $("#lv-pop").hide();
+        });
+});
+/* LV popup End*/
+/*Custom Select starts*/
+$('.cust-select').click(function(e) {
+	$(this).children('ul').toggle();
+});
+$('.cust-select ul li').click(function(e) {
+	$('.cust-select ul li:first-child').addClass('active');
+	$(this).toggleClass('active');
+	$(this).siblings().removeClass('active');
+	var val = $(this).text();
+	$(this).parent('ul').siblings('span.selected').text(val);
+});
+$(".cust-select").mouseleave(function(e) {
+	$(".cust-select ul").hide();
+});
+/*Custom Select ends*/
+var cHeight = function() {
+		var cHeight = $(window).innerHeight();
+		//alert(cHeight);
+		$('#div-user-content .content-div').css({'height': cHeight-130+'px'});
+	}
+	cHeight();
+	var dHeight = function() {
+		var dHeight = $(window).innerHeight();
+		$('#div-document-content').css({'height': dHeight-130+'px'});
+	}
+	dHeight();
+$(window).resize(function() {
+     cHeight();dHeight();
+      }).load(function() {
+ cHeight();dHeight();
+      });
+});
+function Legal_click() {
+	$(".popup-div,.documents-popup").hide();
+    $(".content-div").addClass("center-collapse");
+    $("#div-document-content").show();
+    LoadHtmldoc('Legal-documents.html');
+}
+</script>

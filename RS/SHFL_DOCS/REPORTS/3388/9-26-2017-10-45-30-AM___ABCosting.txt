@@ -1,0 +1,10 @@
+Terms 	Definitions
+Costing	The process of estimate overhead costs related to production and then produces the P\L status 
+ABC	Activity-based costing is a system that attempts to accurately trace indirect costs to products by allocating indirect costs to activities and then to products based on their usage of the activities.(used when indirect cost > direct cost or where the Accuracy required)
+Cost Driver	A cost driver is the unit of an activity that causes the change in activity's cost.
+Price Point	Price points are prices at which demand for a given product is supposed to stay relatively high.
+Fixed Cost	Fixed cost are the costs that are not dependent on the level of goods or services produced by the business.(there are no fixed costs in the long run)
+Variable Cost	Variable costs are costs that change in proportion to the good or service that a business produces(often related to direct cost)
+Overhead	Overhead expense refers to an ongoing expense of operating a business(often related to Fixed Cost or indirect cost, do not directly generate profits but still vital to business operations)
+Cost Auditing	It is the verification of cost accounting records to ensure that they are in conformity with Cost Accounting principles, plans, procedures and objective.
+Man-Hour	is the amount of work performed by the average worker in one hour.

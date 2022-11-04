@@ -1,0 +1,242 @@
+﻿.helpbox-container { position:relative;
+}
+.helpbox-container input{ padding-right:15px;}
+.enter-icon {
+    position: absolute;
+    /*
+    top: 8px;
+    right: 8px;
+    */
+    top: 5px;
+    right: 0px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+.grid-type .enter-icon {
+    top: 0;
+}
+.pagination li {
+    font-family: Arial;
+    display: inline-block !important;
+    margin: 2px 3px;
+    line-height: 25px;
+    color: #333;
+    font-size: 12px;
+}
+.pagination li .gridgoto {
+        width: 30px !important;
+        border: 1px solid #BBBBBB;
+        margin-left: 10px;
+    }
+.pagination li.page-text {
+    }
+.pagination li.page-num, .pagination li.page-nav {
+        min-width: 25px;
+        height: 25px;
+        padding: 0 2px;
+        border-radius: 3px;
+        text-align: center;
+        background: #E4E4E4;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+.pagination li.page-nav {
+        width: 35px;
+        padding: 0 2px;
+    }
+.pagination li.active-page, .pagination li.page-num:hover, .pagination li.page-nav:hover {
+            color: #FFF;
+            background: #999;
+        }
+.pagination li:first-child, .pagination li.dots {
+        background-color: transparent;
+        color: #2d2d2d;
+        width: auto;
+    }
+comp-help {
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    font: 90%/1.45em "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+    float: left; width:100%;
+}
+comp-help .icon-close {
+    z-index:99;   
+}
+comp-help tbody::-scrollbar-track {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+comp-help tbody::-scrollbar {
+    width: 6px;
+    background-color: #E0E9F5;
+}
+
+comp-help tbody::-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #E0E9F5;
+
+}
+
+comp-help tbody::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+comp-help tbody::-webkit-scrollbar {
+    width: 6px;
+    background-color: #E0E9F5;
+}
+
+comp-help tbody::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #E0E9F5;
+}
+
+comp-help tbody::-moz-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+comp-help tbody::-moz-scrollbar {
+    width: 6px;
+    background-color: #E0E9F5;
+}
+
+comp-help tbody::-moz-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #E0E9F5;
+}
+
+comp-help tbody::-ms-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+comp-help tbody::-ms-scrollbar {
+    width: 6px;
+    background-color: #E0E9F5;
+}
+
+comp-help tbody::-ms-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #E0E9F5;
+}
+
+
+comp-help tbody::-o-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+comp-help tbody::-o-scrollbar {
+    width: 6px;
+    background-color: #E0E9F5;
+}
+
+comp-help tbody::-o-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #E0E9F5;
+}
+
+comp-help .hidden-Col {
+    display: none;
+}
+
+comp-help .grid-up, comp-help .grid-down {
+    height: 8px;
+    cursor: pointer;
+    float: left;
+    font-size: 9px;
+    padding: 0px;
+    margin: 0px;
+    color: #475DA7;
+}
+
+.comp-grid-table thead.grid-head th .lbl {
+    display: inline;
+    white-space: nowrap;
+}
+
+
+comp-help .grid-sortkey {
+    visibility: hidden;
+    width: 15px;
+    /*height:100%;
+    float: left;*/
+    margin: 0px;
+    position: relative;
+    left: 5px;
+    top: -3px;
+}
+
+comp-help .grid-search {
+    visibility: hidden;
+    width: 10px;
+    height: 100%;
+    float: right;
+    position: relative;
+    right: 5px;
+    top: -6px;
+}
+
+comp-help tr.search-tr input {
+    border-bottom: 1px solid #CCC;
+}
+
+comp-help thead tr th:hover span.grid-search {
+    cursor: pointer;
+    visibility: visible;
+}
+
+comp-help thead tr th:hover .grid-sortkey {
+    visibility: visible;
+}
+.grid-div {
+    width: 100%;
+    overflow-y: auto;
+    height: 300px;
+}
+table tr td{ padding:5px; border:1px solid #CCC;}
+table tbody tr td { font-size:14px;}
+.comp-grid-table thead.grid-head th {
+        padding: 2px;
+        height: 20px;
+        font-size: 14px;
+        color: #475DA7;
+    }
+.comp-grid-table {
+    border-collapse: collapse;
+    width: 99%;
+}
+
+ .comp-grid-table tbody tr:hover {
+        background: #DDDDDD;
+    }
+
+    .comp-grid-table tbody.grid-body tr.active-row {
+        background: #E0E9F5;
+    }
+
+    .comp-grid-table tr.active-help {
+        background: #E0E9F5;
+    }
+
+    .comp-grid-table tbody.grid-body tr.edit-row {
+        background: #DDDDDD;
+    }
+.footer-div { text-align:center;}

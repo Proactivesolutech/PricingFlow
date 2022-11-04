@@ -1,0 +1,245 @@
+<div class="title">
+  <h1><i class="icon-agents"></i> Service Agents : Dashboard</h1>
+</div>
+<div class="content-div">
+  <div class="dashboard-div">
+    <div class="grid-33">
+        <comp-dashboard width="100%" id="agents-dashboard"> </comp-dashboard>
+    </div>
+    <div class="grid-33">
+      <h2>Queries</h2>
+      <div class="box-div">
+        <div class="query-box">
+          <div class="query-info">
+            <div class="query-info-top">
+              <div class="div-left">
+                <div class="query-text"><img src="images/user.png">
+                  <p class="bg-tag bg4">Document Missing</p>
+                </div>
+                <div class="read-only">
+                  <p class="code align-right">SHFC11765689</p>
+                  <p class="name align-right">Saraswathy Rajendran</p>
+                </div>
+              </div>
+              <i class="icon-home-loan div-right"></i> </div>
+            <div class="query-info-bottom">
+              <div class="div-left">
+                <p class="bg-tag bg-blue">Branch Ops</p>
+                <p class="date-time"> <span>20 Jun 2016</span> <span>4.32 PM</span></p>
+              </div>
+              <i class="icon-down-arrow div-right"></i> </div>
+            <div class="clear"></div>
+          </div>
+          <div class="query-detail">
+            <p>Property Address differ with the Document.</p>
+          </div>
+        </div>
+        <div class="query-box">
+          <div class="query-info">
+            <div class="query-info-top">
+              <div class="div-left">
+                <div class="query-text"><img src="images/user.png">
+                  <p class="bg-tag bg4">Document Missing</p>
+                </div>
+                <div class="read-only">
+                  <p class="code align-right">SHFC11765689</p>
+                  <p class="name align-right">Saraswathy Rajendran</p>
+                </div>
+              </div>
+              <i class="icon-home-loan div-right"></i> </div>
+            <div class="query-info-bottom">
+              <div class="div-left">
+                <p class="bg-tag bg-blue">Branch Ops</p>
+                <p class="date-time"> <span>20 Jun 2016</span> <span>4.32 PM</span></p>
+              </div>
+              <i class="icon-down-arrow div-right"></i> </div>
+            <div class="clear"></div>
+          </div>
+          <div class="query-detail">
+            <p>Property Address differ with the Document.</p>
+            <div class="query-document">
+               <div class="div-left"><img src="images/attach.png"> <span>documen.tif</span></div>
+               <div class="div-right"><img src="images/download.png"> </div>
+               <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-33">
+      <h2>Performance</h2>
+      <div class="box-div performance-div">
+         <ul class="common-tabs">
+           <li class="active performance-list1">Business</li>
+           <li class="performance-list2">KPI</li>
+         </ul>
+         <div class="performance-content">
+             <div class="business-content">
+               <div id="container1" style="width:100%; height: 240px; margin: 0 auto"></div>
+               <div id="container2" style="width:100%; height: 240px; margin: 0 auto"></div>
+             </div>
+             <div class="kpi-content" style="display:none;">
+               <div class="kpi-graph">
+                 <h2>Resolution</h2>
+                 <img src="images/kpi2.jpg">
+               </div>
+               <div class="kpi-graph">
+                 <h2>FTR</h2>
+                 <img src="images/kpi3.jpg">
+               </div>
+               <div id="container-column" style="width:100%; height: 240px; margin: 0 auto"></div>
+             </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+jQuery(document).ready(function(){
+  calcHeight(); /*window height for all div*/
+  commontabs(); /*common tabs active style*/
+commonquery();
+
+  $(".performance-list1").click(function(e) {
+    $(".business-content").show();
+	$(".kpi-content").hide();
+  });
+  $(".performance-list2").click(function(e) {
+	$(".kpi-content").show();
+	$(".business-content").hide();
+	$('#container-column').highcharts().reflow();
+  });
+  $(".cases-div ul").click(function(e) {
+    $("#tracking-div").show();
+  });
+    $('#container1').highcharts({
+        xAxis: {
+            min: 5,
+        },
+        yAxis: {
+            min: 10,
+			title: {
+				text: 'ROI'
+			},
+        },
+        title: {
+            text: 'ROI'
+        },
+		legend:{
+			itemStyle:{fontWeight:'normal'}
+		},
+        series: [{
+            type: 'line',
+            name: 'Zone (WA)',
+            data: [[5, 14], [25, 14]],
+            marker: {
+                enabled: false
+            },
+            states: {
+                hover: {
+                    lineWidth: 0
+                }
+            },
+            enableMouseTracking: false
+        }, 
+		{
+            type: 'line',
+            name: 'Branch (WA)',
+            data: [[5, 13], [25, 13]],
+            marker: {
+                enabled: false
+            },
+            states: {
+                hover: {
+                    lineWidth: 0
+                }
+            },
+            enableMouseTracking: false
+        }, 
+		{
+            type: 'scatter',
+            name: 'ROI',
+            data: [[5, 13], [10, 14.5], [15, 16], [20, 15.5], [22, 14], [25, 17]],
+            marker: {
+                radius: 4
+            }
+        }]
+    });
+	$('#container2').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Sales This Month'
+        },
+        xAxis: {
+            categories: ['Apr', 'May', 'Jun'],
+             
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Sales in Lakhs'
+            },   
+        },
+        legend: {
+			reversed:true,
+            itemStyle:{fontWeight:'normal' },
+            shadow: false
+        },
+        tooltip: {
+            headerFormat: '<b>{point.x}</b><br/>',
+            pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal', 
+            }
+        },
+        series: [{
+            name: 'Decline',
+            data: [5, 3, 4]
+        }, {
+            name: 'Approved',
+            data: [2, 2, 3]       
+        }]
+    });
+	$('#container-column').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Agent Accounts Status'
+        },
+        
+        xAxis: {
+            categories: ['FDA','NPA','60+','90+'],
+            crosshair: false
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'No. of Cases'
+            }
+        },
+        legend:{
+			enabled:false,
+			legend: {
+            itemStyle: {fontWeight: 'normal'}           
+	        },
+		},
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Cases',
+            data: [30,55,90,95],
+
+        }]
+    });
+});
+</script>

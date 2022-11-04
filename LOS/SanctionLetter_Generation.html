@@ -1,0 +1,284 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sanction Letter</title>
+    <link rel="stylesheet" href="css/fonts/style.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/common-js.js"></script>
+    <script src="../COMMON/js/Scrn/CommonFns.js"></script>
+    <script src="../COMMON/js/devp-js/ProDataAccesScript.js"></script>
+    <script src="../COMMON/js/devp-js/ProLOSDataAccesScript.js"></script>    
+    <style>
+        .dark {
+        font-weight:bold;
+        }
+        body {
+            margin: 0;
+            width: 100%;
+            font: normal 13px/16px Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+        }
+
+        h1, h3, h4 {
+            font-weight: normal;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 14px;
+        }
+
+        h3 {
+            font-size: 14px; /*line-height:0;*/
+        }
+
+        p {
+            line-height: 20px;
+            margin: 0;
+        }
+
+        .bg-gray {
+            background: #EBEBEB;
+        }
+
+        .padding-5x {
+            padding: 15px 0;
+        }
+
+        .font-13 {
+            font-size: 13px;
+        }
+
+        ul li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 0;
+        }
+
+            table tr td {
+                padding: 5px;
+                border-color: #969696;
+            }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+            .footer p {
+                line-height: 15px;
+            }
+
+        .box-div td div {
+            background: #dedddd;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        sup {
+            font-size: 12px;
+        }
+
+            sup.icon-indian-rupee {
+                vertical-align: top;
+                margin: 3px 0 0 0;
+                display: inline-block;
+            }
+
+        .box-div.width-icon td {
+            position: relative;
+        }
+
+        .box-div.width-icon .icon-warning {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        #LeadNm {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <table width="100%" border="0">
+        <tr>
+            <td colspan="4" style="padding:0;">
+                <table width="100%" height="100%" border="0">
+                    <tbody>
+                        <tr>
+                            <td style="border-width:0 0 0px 0;"><img src="images/logo.png"></td>
+                            <td align="right" style="border-width:0 0 0px 0;">
+                                <span id="SancNo" class="font-13"></span>
+                                <p id="SancDt"></p>
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td colspan="2" style="border-width:0 0 0px 0; background:#dedddd;"><h1>Congratulations <span id="LeadNm" class="font-13"></span>    your loan has been sanctioned.</h1></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="padding:10px; border:0">
+                                <table width="100%" border="0">
+                                    <tr class="border">
+                                        <td width="40%" align="center">
+                                            <p style="color:#6A6A6A">Nature of facility </p>
+                                            <p id="prodNm" style="font-size:14px;"></p>
+                                            <p style="color:#6A6A6A">for the purpose of</p>
+                                            <p id="Purpose" style="font-size:13px;"></p>
+                                        </td>
+                                        <td width="60%">
+                                            <p>Financial terms</p>
+                                            <table width="100%" border="0" class="box-div width-icon">
+                                                <tbody>
+                                                    <tr align="center">
+                                                        <td width="25%">
+                                                            <div>
+                                                                <h3 id="shplr"></h3>
+                                                                <p class="dark">SHPLR</p>
+                                                            </div>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <div>
+                                                                <h3 id="ROI"></h3>
+                                                                <p class="dark">RoI per annum</p>
+                                                            </div>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <div>
+                                                                <h3 id="spread"></h3>
+                                                                <p class="dark">Markup</p>
+                                                            </div>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <div>
+                                                                <h3 id="tenure"></h3>
+                                                                <p class="dark">Instalments</p>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="30%">
+                                            <table width="100%">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Sanction Particulars:</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Loan Amount (₹): </td>
+                                                        <td id="LoanAmt" align="right"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Life Insurance Premium, LI (₹):</td>
+                                                        <td id="Li" align="right"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Property Insurance Premium, PI (₹):</td>
+                                                        <td id="Gi" align="right"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Processing charges (₹):</td>
+                                                        <td align="right" id="Pfamt"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td width="70%">
+                                            <p>Equated monthly EMI options</p>
+                                            <table width="100%" border="0" class="box-div">
+                                                <tbody>
+                                                    <tr align="center">
+                                                        <td width="25%">
+                                                            <div>
+                                                                <h3 id="LoanAmt1"></h3>
+                                                                <p class="dark">Loan Amount</p>
+                                                                <h4 id="Emi"></h4>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <h3 id="LoanLI"></h3>
+                                                                <p class="dark">Loan + LI</p>
+                                                                <h4 id="LI_1"></h4>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <h3 id="LoanGI"></h3>
+                                                                <p class="dark">Loan + PI</p>
+                                                                <h4 id="GI_1"></h4>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <h3 id="lipi"></h3>
+                                                                <p class="dark">Loan + LI + PI</p>
+                                                                <h4 id="lipiamt"></h4>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <!--<tr align="center">
+                                                      <td><h4>50,553</h4></td>
+                                                      <td><h4>53,995</h4></td>
+                                                      <td><h4>50,818</h4></td>
+                                                      <td><h4>54,261</h4></td>
+                                                    </tr>-->
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">The aforesaid sanction of the loan will be subject to terms & conditions mention:</td>
+                                    </tr>
+                                    <tr>
+                                        <table id="subjective">
+
+                                        </table>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="footer">
+                    <table width="100%" cellpadding="0">
+                        <tr>
+                            <td colspan="4" style="border-bottom:1px solid #969696;">Please call us on 1800-102-4345 for any queries or discrepancies in this letter.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p class="font-13">Shriram Housing Finance Limited</p>
+                                <p>Head Office:</p>
+                                <p>3rd Level Wockhardt Towers, EastWingC-2GBlock.</p>
+                                <p>Bandra–KurlaComplex, Bandra(E) Mumbai400051 </p>
+                            </td>
+                            <td colspan="2">
+                                <p>Registered Office:</p>
+                                <p>No.123,Angapp a Naicken Street, Chennai-600001</p>
+                                <p>CIN:U65929TN2010PLC078004</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tel: +91-022-42410400 </td>
+                            <td>Fax: +91-22-42410422 </td>
+                            <td>contact@shriramhousing.in</td>
+                            <td align="right">www.shriramhousing.in</td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+<script src="js/Scrn/sanction_letter_gen.js"></script>
+</html>

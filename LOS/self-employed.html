@@ -1,0 +1,664 @@
+<!--<script src="js/Scrn/DDE.js"></script>-->
+<link rel="stylesheet" href="css/fonts/style.css">
+<script src="js/jquery.js"></script>
+<script src="js/common-js.js"></script>
+<script src="../COMMON/js/Scrn/CommonFns.js"></script>
+<script src="../COMMON/js/devp-js/ProDataAccesScript.js"></script>
+<script src="../COMMON/js/devp-js/ProLOSDataAccesScript.js"></script>
+
+<style>
+    * {
+        margin: 0;
+        font: normal 12px/16px arial;
+    }
+
+    #leadid {
+        float: right;
+        font-weight: normal;
+        font-size: 13px;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .title h2 {
+        font-size: 14px;
+        text-align: center;
+        padding: 5px;
+        background: #e8e8e8;
+    }
+
+    table, td {
+        padding: 3px 0px;
+        border: none;
+    }
+
+    .self-emp h2 {
+        font-size: 14px;
+        text-align: center;
+        padding: 5px;
+        background: #e8e8e8;
+        margin: 10px 0;
+    }
+
+    .self-emp .right {
+        float: right;
+    }
+
+    .self-emp .left {
+        float: left;
+    }
+
+    #LeadIncomeDiv .income-div {
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+        #LeadIncomeDiv .income-div ul:first-of-type {
+            padding: 0px;
+            text-align: left;
+        }
+
+        #LeadIncomeDiv .income-div ul {
+            padding: 0 20px;
+            text-align: right;
+        }
+
+    #LeadIncomeDiv div p {
+        width: 100%;
+        font-weight: bold;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    ul.verticalul {
+        display: inline-block;
+        list-style: none;
+    }
+
+        ul.verticalul li {
+            padding: 4px 0px;
+        }
+
+    .applicant-table {
+        display: inline-block;
+        background: #f3f3f3;
+        margin: 5px;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+        .applicant-table th {
+            text-align: center;
+            display: block;
+            font-weight: bold;
+        }
+
+        table.applicant-table, .applicant-table tbody, .applicant-table tr {
+            display: block;
+            width: 100%;
+        }
+
+            .applicant-table tr td {
+                width: 50%;
+                display: inline-block;
+            }
+
+
+
+        .applicant-table td:nth-child(2) {
+            text-align: right;
+        }
+
+    .box-div .left, .box-div .right {
+        width: 48.5%;
+    }
+
+    .box-div table {
+        background: #f3f3f3;
+        margin: 10px 0;
+        padding: 10px;
+        vertical-align: top;
+    }
+
+        .box-div table td:nth-child(2) {
+            text-align: right;
+        }
+
+    #OblAppend {
+        font-weight: bold;
+    }
+</style>
+<div class="title">
+    <h2>Cash Flow Method <span id="leadid"></span></h2>
+</div>
+<div class="content-div detail-entry-page self-emp">
+    <table id="self-table" width="100%" border="0" cellspacing="0" cellpadding="0"></table>
+
+    <table id="amt_table" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin:10px 0"></table>
+    <div id="LeadIncomeDiv" style="overflow:hidden; margin:10px 0">
+        <h2>Calculation of Eligibility</h2>
+        <div id="BusinessDiv" class="income-div">
+            <p>Income from Business </p>
+        </div>
+        <div id="SalaryDiv" class="income-div">
+            <p>Income from Salary </p>
+        </div>
+        <div id="CashDiv" class="income-div">
+            <p>Income from cash </p>
+        </div>
+        <div id="BankDiv" class="income-div">
+            <p> Bank Balance </p>
+        </div>
+        <div id="OthersDiv" class="income-div">
+            <p>Income from Others </p>
+        </div>
+    </div>
+
+    <div class="box-div loan-detail normal" style="overflow:hidden; margin:10px 0">
+
+        <h2>Obligations</h2>
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr id="OblAppend">
+                    <td>TYPE</td>
+                    <td>EMI Amt</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Obligation</strong></td>
+                    <td colspan="2"><strong id="totalOBL">0</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2> Property Details </h2>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr id="PrpValuation">
+                    <td>Technical</td>
+                    <td>Amount</td>
+                </tr>
+                <tr>
+                    <td>Lower Valuation</td>
+                    <td id="PrpLower"></td>
+                </tr>
+                <tr>
+                    <td>LTV to MV</td>
+                    <td id="LtvToMV"></td>
+                </tr>
+                <tr>
+                    <td>CLIR</td>
+                    <td id="CLIR"></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <h2> Credit Details </h2>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <th colspan="3">&nbsp;</th>
+                </tr>
+                <tr>
+                    <td>TOTAL Avg Balance(A)</td>
+                    <td id="totalinc"></td>
+                </tr>
+                <tr>
+                    <td>Existing Obligations</td>
+                    <td id="totalObl"></td>
+                </tr>
+                <tr>
+                    <td>NAMI</td>
+                    <td id="Nami"></td>
+                </tr>
+                <tr>
+                    <td>FOIR 'a' 50%</td>
+                    <td id="FoirInc"></td>
+                </tr>
+                <tr>
+                    <td>FOIR</td>
+                    <td><span id="ElgFoir"></span></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <h2 class="loan-title"> Loan Details </h2>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td>EMI Per Lac</td>
+                    <td id="EmiLakh"></td>
+                </tr>
+                <tr>
+                    <td>Eligible Loan Amount (Lac)</td>
+                    <td id="ElgLn"></td>
+                </tr>
+                <tr>
+                    <td>Proposed EMI</td>
+                    <td id="PrpEmi"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+                <th colspan="3">Recommended Loan Amount</th>
+            </tr>
+            <tr>
+                <td>Loan Amount</td>
+                <td colspan="2"><span id="LoanAmt"></span></td>
+            </tr>
+            <tr>
+                <td>Rate</td>
+                <td colspan="2"><span id="ROI"></span></td>
+            </tr>
+            <tr>
+                <td>Tenure</td>
+                <td colspan="2"><span id="Tenure"></span></td>
+            </tr>
+            <tr>
+                <td>Current FOIR</td>
+                <td colspan="2"><span id="CurFOIR"></span></td>
+            </tr>
+            <tr>
+                <td>Current LTV</td>
+                <td colspan="2"><span id="CurLTV"></span></td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="box-div loan-detail top-up" style="display:none; overflow:hidden; margin:10px 0">
+        <h2 class="loan-title"> Loan Details - Topup </h2>
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td>EMI Per Lac</td>
+                    <td id="EmiLakh"></td>
+                </tr>
+                <tr>
+                    <td>Eligible Loan Amount (Lac)</td>
+                    <td id="ElgLn"></td>
+                </tr>
+                <tr>
+                    <td>Proposed EMI</td>
+                    <td id="PrpEmi"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+                <th colspan="3">Recommended Loan Amount</th>
+            </tr>
+            <tr>
+                <td>Loan Amount</td>
+                <td colspan="2"><span id="LoanAmt"></span></td>
+            </tr>
+            <tr>
+                <td>Rate</td>
+                <td colspan="2"><span id="ROI"></span></td>
+            </tr>
+            <tr>
+                <td>Tenure</td>
+                <td colspan="2"><span id="Tenure"></span></td>
+            </tr>
+            <tr>
+                <td>Current FOIR</td>
+                <td colspan="2"><span id="CurFOIR"></span></td>
+            </tr>
+            <tr>
+                <td>Current LTV</td>
+                <td colspan="2"><span id="CurLTV"></span></td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <!--
+        <div class="box-div loan-detail normal" style="overflow:hidden; margin:10px 0">
+            <h2 class="loan-title"> Loan Details </h2>
+            <div class="left">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <th colspan="3">&nbsp;</th>
+                        </tr>
+                        <tr>
+                            <td>TOTAL Avg Balance(A)</td>
+                            <td id="totalinc"></td>
+                        </tr>
+                        <tr>
+                            <td>Existing Obligations</td>
+                            <td id="totalObl"></td>
+                        </tr>
+                        <tr>
+                            <td>NAMI</td>
+                            <td id="Nami"></td>
+                        </tr>
+                        <tr>
+                            <td>FOIR 'a' 50%</td>
+                            <td id="FoirInc"></td>
+                        </tr>
+                        <tr>
+                            <td>EMI Per Lac</td>
+                            <td id="EmiLakh"></td>
+                        </tr>
+                        <tr>
+                            <td>Eligible Loan Amount (Lac)</td>
+                            <td id="ElgLn"></td>
+                        </tr>
+                        <tr>
+                            <td>Proposed EMI</td>
+                            <td id="PrpEmi"></td>
+                        </tr>
+                        <tr>
+                            <td>FOIR</td>
+                            <td><span id="ElgFoir"></span></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+        </tbody>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <th colspan="2">LTV</th>
+                </tr>
+                <tr>
+                    <td>Applicable LTV</td>
+                    <td><span id="appLTV"></span></td>
+                </tr>
+                <tr>
+                    <td>Adroit Value</td>
+                    <td><span></span></td>
+                </tr>
+                <tr>
+                    <td>Murugesan Value</td>
+                    <td><span></span></td>
+                </tr>
+                <tr>
+                    <td>Average of Tech</td>
+                    <td><span id="TechAvg"> </span></td>
+                </tr>
+                <tr>
+                    <td>Eligible LTV</td>
+                    <td><span id="ElgLTV"></span></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="right">
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <th colspan="3">OBLIGATIONS</th>
+                </tr>
+                <tr>
+                    <td>Existing Loan EMI</td>
+                    <td>Applicant</td>
+                </tr>
+                <tr id="OblAppend">
+                    <td>TYPE</td>
+                    <td>EMI Amt</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Obligation</strong></td>
+                    <td colspan="2"><strong id="totalOBL">0</strong></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Deviated FOIR</td>
+                    <td colspan="2"><span>No Deviation</span></td>
+                </tr>
+                <tr>
+                    <td>Deviated LTV</td>
+                    <td colspan="2"><span>No Deviation</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+                <th colspan="3">Recommended Loan Amount</th>
+            </tr>
+            <tr>
+                <td>Loan Amount</td>
+                <td colspan="2"><span id="LoanAmt"></span></td>
+            </tr>
+            <tr>
+                <td>Rate</td>
+                <td colspan="2"><span id="ROI"></span></td>
+            </tr>
+            <tr>
+                <td>Tenure</td>
+                <td colspan="2"><span id="Tenure"></span></td>
+            </tr>
+            <tr>
+                <td>Current FOIR</td>
+                <td colspan="2"><span id="CurFOIR"></span></td>
+            </tr>
+            <tr>
+                <td>Current LTV</td>
+                <td colspan="2"><span id="CurLTV"></span></td>
+            </tr>
+        </table>
+    </div>
+        </div>
+
+
+    <div class="box-div loan-detail top-up" style="display:none; overflow:hidden; margin:10px 0">
+        <h2 class="loan-title"> Loan Details - Topup </h2>
+        <div class="left">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                        <th colspan="3">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <td>TOTAL Avg Balance(A)</td>
+                        <td id="totalinc"></td>
+                    </tr>
+                    <tr>
+                        <td>Existing Obligations</td>
+                        <td id="totalObl"></td>
+                    </tr>
+                    <tr>
+                        <td>NAMI</td>
+                        <td id="Nami"></td>
+                    </tr>
+                    <tr>
+                        <td>FOIR 'a' 50%</td>
+                        <td id="FoirInc"></td>
+                    </tr>
+                    <tr>
+                        <td>EMI Per Lac</td>
+                        <td id="EmiLakh"></td>
+                    </tr>
+                    <tr>
+                        <td>Eligible Loan Amount (Lac)</td>
+                        <td id="ElgLn"></td>
+                    </tr>
+                    <tr>
+                        <td>Proposed EMI</td>
+                        <td id="PrpEmi"></td>
+                    </tr>
+                    <tr>
+                        <td>FOIR</td>
+                        <td><span id="ElgFoir"></span></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Percentage</td>
+                        <td><span></span></td>
+                    </tr>
+                    <tr>
+                        <td>Deviation</td>
+                        <td><span></span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                        <th colspan="2">LTV</th>
+                    </tr>
+                    <tr>
+                        <td>Applicable LTV</td>
+                        <td><span id="appLTV"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Adroit Value</td>
+                        <td><span></span></td>
+                    </tr>
+                    <tr>
+                        <td>Murugesan Value</td>
+                        <td><span></span></td>
+                    </tr>
+                    <tr>
+                        <td>Average of Tech</td>
+                        <td><span id="TechAvg"> </span></td>
+                    </tr>
+                    <tr>
+                        <td>Eligible LTV</td>
+                        <td><span id="ElgLTV"></span></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="right">
+            <table width="100%" cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                        <th colspan="3">OBLIGATIONS</th>
+                    </tr>
+                    <tr>
+                        <td>Existing Loan EMI</td>
+                        <td>Applicant</td>
+                    </tr>
+                    <tr id="OblAppend">
+                        <td>TYPE</td>
+                        <td>EMI Amt</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Obligation</strong></td>
+                        <td colspan="2"><strong id="totalOBL">0</strong></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Deviated FOIR</td>
+                        <td colspan="2"><span>No Deviation</span></td>
+                    </tr>
+                    <tr>
+                        <td>Deviated LTV</td>
+                        <td colspan="2"><span>No Deviation</span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th colspan="3">Recommended Loan Amount</th>
+                </tr>
+                <tr>
+                    <td>Loan Amount</td>
+                    <td colspan="2"><span id="LoanAmt"></span></td>
+                </tr>
+                <tr>
+                    <td>Rate</td>
+                    <td colspan="2"><span id="ROI"></span></td>
+                </tr>
+                <tr>
+                    <td>Tenure</td>
+                    <td colspan="2"><span id="Tenure"></span></td>
+                </tr>
+                <tr>
+                    <td>Current FOIR</td>
+                    <td colspan="2"><span id="CurFOIR"></span></td>
+                </tr>
+                <tr>
+                    <td>Current LTV</td>
+                    <td colspan="2"><span id="CurLTV"></span></td>
+                </tr>
+            </table>
+        </div>
+    </div> -->
+
+</div>
+<!--<script src="js/BeatPicker.min.js"></script>-->
+<script>
+    calcHeight(); //Viewport Height Function Starts
+    fnDrawDatePicker();
+    commontabs(); //Common tab style
+    customselect(); /*Custom select Function*/
+</script>
+
+<script src="js/Scrn/selfemployed.js"></script>

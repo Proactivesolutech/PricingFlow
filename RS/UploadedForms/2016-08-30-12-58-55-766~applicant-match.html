@@ -1,0 +1,571 @@
+<style>
+.verification-list1 .left { width: 95%; }
+.verification-list1.dedupe-score .left { width: 75%; }
+.right.dedupe-cibil{ width:24%;}
+.dedupe-score-content .verification-list1{ background:rgba(235, 113, 112,0.2);}
+.dedupe-score-content .verification-list1.dedupe-score .left { width: 84%;}
+.right.dedupe-cibil .dedupe-box{ width:73px;}
+.dedupe-score .right.dedupe-cibil.score-square .dedupe-box .bg{ line-height:11px; text-align:center;}
+.verification-list1 .left li p { font-size: 13px; }
+.verification-list1 .right { text-align: center; }
+.verification-list1 .expand-icon { width: 28px; height: 28px; }
+.verification-list1 .left.green { width: auto !important; padding: 12px 10px; }
+.personal-discussion-div .verification-list .left { width: 32%; }
+.red-color{ color:#e33d43;}
+.nhb-icon i{ font-size:40px; }
+.dedupe-form { margin:10px;}
+.dedupe-form li{ display:block; clear:both; margin: 0 0 10px 0;}
+	.dedupe-form li label{ display:block;}
+	.dedupe-form li .cust-select { width:30%; display:inline-block;}
+	.dedupe-form li input[type='text']{ width:68%; margin:0 1%; display:inline-block;}
+	.dedupe-search{ margin:0 15px 0 0;}
+</style>
+<div class="title">
+  <h1>De-Dupe</h1>
+</div>
+<!--<div class="right wild-click"> <input type="button" value="Wild Search"></div>-->
+<div class="clear"></div>
+<div class="content-div verification-div">
+  <div class="box-div verification-list1 dedupe-score dedupe-score1">
+    <ul class="left">
+      <li class="read-only width-1"><!--width-17-->
+        <label>Applicant</label>
+        <p>SIVARAMA KRISHNAN S</p>
+      </li>
+      <li class="read-only width-1">
+        <label>DOB</label>
+        <p>17/05/1981</p>
+      </li>
+      <li class="read-only width-1">
+        <label>Gender</label>
+        <p>Male</p>
+      </li>
+      <li class="read-only width-1">
+          <label>Mobile</label>
+          <p>9884972659</p>
+        </li>
+        <li class="read-only width-1">
+          <label>FatherName</label>
+          <p>SINGARAVEL</p>
+        </li>
+        <li class="read-only width-1">
+          <label>PINCODE</label>
+          <p>600056</p>
+        </li>
+        <li class="read-only width-1">
+          <label>PAN</label>
+          <p>AVYPS4136J</p>
+        </li>
+        <li class="read-only width-1">
+          <label>Driving License</label>
+          <p>TN60PY2014567</p>
+        </li>
+        <li class="read-only width-1">
+          <label>Voter ID</label>
+          <p>AID556546</p>
+        </li>
+        <li class="read-only width-1">
+          <label>Aadhar</label>
+          <p>GHTY6732675</p>
+        </li>
+    </ul>
+    <div class="right dedupe-cibil score-square" style="text-align:center;">
+      
+      <div class="dedupe-box">
+        <p>Match</p>
+        <p class="bg bg1"> <i class="green icon-positive"></i></p>
+        <p>Found(2)</p>
+      </div>
+      <div class="dedupe-box create-div">
+        <p class="bg bg6">Create Customer</p>
+      </div>
+      <div class="dedupe-box create-div wild-click">
+      	<p class="bg bg6">Wild <br> Search</p>
+      	<!--<input type="button" value="Wild Search">-->
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="dedupe-score-content dedupe-score-content1" style="display:none;">
+    <div class="box-div verification-list1 dedupe-score">
+      <h2>RULE : FirstName, MiddleName, LastName, DOB, Gender, FatherName, PINCODE</h2>
+      <ul class="left">
+        <li class="category-icons width-9">
+          <label><i class="icon-home-loan"></i></label>
+          <p>Home Loan</p>
+        </li>
+        <li class="read-only width-19">
+          <label>First Name</label>
+          <p>SIVARAMA</p>
+        </li>
+        <li class="read-only width-19">
+          <label>Middle Name</label>
+          <p>KRISHNAN</p>
+        </li>
+        <li class="read-only width-19">
+          <label>Last Name</label>
+          <p>S</p>
+        </li>
+        <li class="read-only width-19">
+          <label>DOB</label>
+          <p>17/05/1981</p>
+        </li>
+        <li class="read-only width-19">
+          <label>Gender</label>
+          <p>Male</p>
+        </li>
+        <li class="read-only width-19">
+          <label>Mobile</label>
+          <p>9884972659</p>
+        </li>
+        <li class="read-only width-19">
+          <label>FatherName</label>
+          <p>SINGARAVEL</p>
+        </li>
+        <li class="read-only width-19">
+          <label>PINCODE</label>
+          <p>600056</p>
+        </li>
+        <li class="read-only width-19">
+          <label>PAN</label>
+          <p>AVYPS4136J</p>
+        </li>
+        <li class="read-only width-19">
+          <label>Driving License</label>
+          <p>TN60PY2014567</p>
+        </li>
+        <li class="read-only width-19">
+          <label>Voter ID</label>
+          <p>AID556546</p>
+        </li>
+        <li class="read-only width-19">
+          <label>Aadhar</label>
+          <p>GHTY6732675</p>
+        </li>
+      </ul>
+      <div class="right dedupe-cibil dedupe-cibil-score dedubebox-2" style="text-align:center;">
+        <div class="dedupe-box">
+          <p class="bg bg5">780</p>
+          <p>Score</p>
+        </div>
+        <div class="dedupe-box">
+          <p class="bg bg6">Choose</p>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="box-div verification-list1 dedupe-score">
+      <h2>RULE : FirstName, MiddleName, LastName, DOB, Gender, FatherName</h2>
+      <ul class="left">
+        <li class="category-icons width-19">
+          <label><i class="icon-home-loan"></i></label>
+          <p>Home Loan</p>
+        </li>
+        <li class="read-only width-19">
+          <label>First Name</label>
+          <p>SIVARAMA</p>
+        </li>
+        <li class="read-only width-19">
+          <label>Middle Name</label>
+          <p>KRISHNAN</p>
+        </li>
+        <li class="read-only width-19">
+          <label>Last Name</label>
+          <p>S</p>
+        </li>
+        <li class="read-only width-19">
+          <label>DOB</label>
+          <p>17/05/1981</p>
+        </li>
+        <li class="read-only width-19">
+          <label>Gender</label>
+          <p>Male</p>
+        </li>
+        <li class="read-only width-19">
+          <label>Mobile</label>
+          <p>9884972659</p>
+        </li>
+        <li class="read-only width-19">
+          <label>FatherName</label>
+          <p>SINGARAVEL</p>
+        </li>
+        <li class="read-only width-19">
+          <label>Branch</label>
+          <p>Mylapore</p>
+        </li>
+        <li class="read-only width-19">
+          <label>PINCODE</label>
+          <p>600056</p>
+        </li>
+        <li class="read-only width-19">
+          <label>PAN</label>
+          <p>AVYPS4136J</p>
+        </li>
+        <li class="read-only width-19">
+          <label>Driving License</label>
+          <p>TN60PY2014567</p>
+        </li>
+        <li class="read-only width-19">
+          <label>Voter ID</label>
+          <p>AID556546</p>
+        </li>
+        <li class="read-only width-19">
+          <label>Aadhar</label>
+          <p>GHTY6732675</p>
+        </li>
+      </ul>
+      <div class="right dedupe-cibil dedupe-cibil-score dedubebox-2" style="text-align:center;">
+        <div class="dedupe-box">
+          <p class="bg bg5">DDE</p>
+          <p>Zonal Ops</p>
+        </div>
+        <div class="dedupe-box" style="visibility:hidden;">
+          <p class="bg bg6">Choose</p>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  
+  <!-- <div class="box-div verification-list1 dedupe-score dedupe-score2">
+    <ul class="left">
+      <li class="read-only width-17">
+        <label>Applicant</label>
+        <p>SIVARAMA KRISHNAN S</p>
+      </li>
+      <li class="read-only width-19">
+        <label>First Name</label>
+        <p>SIVARAMA</p>
+      </li>
+      <li class="read-only width-19">
+        <label>Middle Name</label>
+        <p>KRISHNAN</p>
+      </li>
+      <li class="read-only width-1">
+        <label>Last Name</label>
+        <p>S</p>
+      </li>
+      <li class="read-only width-1">
+        <label>DOB</label>
+        <p>17/05/1981</p>
+      </li>
+      <li class="read-only width-1">
+        <label>Gender</label>
+        <p>Male</p>
+      </li>
+      <li class="read-only width-1">
+        <label>Mobile</label>
+        <p>9884972659</p>
+      </li>
+      <li class="read-only width-1">
+        <label>FatherName</label>
+        <p>SINGARAVEL</p>
+      </li>
+      <li class="read-only width-1">
+        <label>PINCODE</label>
+        <p>600056</p>
+      </li>
+      <li class="read-only width-1">
+        <label>PAN</label>
+        <p>AVYPS4136J</p>
+      </li>
+      <li class="read-only width-1">
+        <label>Driving License</label>
+        <p>TN60PY2014567</p>
+      </li>
+      <li class="read-only width-1">
+        <label>Voter ID</label>
+        <p>AID556546</p>
+      </li>
+      <li class="read-only width-1">
+        <label>Aadhar</label>
+        <p>GHTY6732675</p>
+      </li>
+    </ul>
+    <div class="right dedupe-cibil" style="text-align:center;">
+       <div class="dedupe-box">
+        <p class="bg bg5">780</p>
+        <p>Score</p>
+       </div>
+       <div class="dedupe-box">
+      <p>Match</p>
+      <p class="bg bg2"> <i class="icon-negative"></i></p>
+      <p>Found</p>
+       </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="dedupe-score-content dedupe-score-content2" style="display:none;">
+     <div class="box-div">Rule1</div>
+     <div class="box-div">Rule2</div>
+     <div class="box-div">Rule3</div>
+  </div>--> 
+  
+  <script>
+    $(".dedupe-score1").css('cursor','pointer')
+     $(".dedupe-score1").click(function(e) {
+       $(".dedupe-score-content1").toggle(); 
+	   $(".dedupe-score-content2").hide(); 
+    });
+	$(".dedupe-score2").css('cursor','pointer')
+     $(".dedupe-score2").click(function(e) {
+       $(".dedupe-score-content2").toggle(); 
+	   $(".dedupe-score-content1").hide(); 
+    });
+  </script>
+  <div class="box-div verification-list1 dedupe-score dedupe-score2">
+    <ul class="left">
+      <li class="read-only">
+        <label>Co-Applicant</label>
+        <p>KRISHNAVENI</p>
+      </li>
+    </ul>
+    <div class="right dedupe-cibil score-square" style="text-align:center;">
+      <div class="dedupe-box">
+        <p>NHB</p>
+        <p class="nhb-icon"> <i class="red-color icon-warning"></i></p>
+        <p>Caution</p>
+      </div>
+      <div class="dedupe-box create-div">
+        <p class="bg bg6">Create Customer</p>
+      </div>
+      <div class="dedupe-box create-div wild-click">
+      	<p class="bg bg6">Wild <br> Search</p>
+      	<!--<input type="button" value="Wild Search">-->
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="box-div verification-list1 dedupe-score dedupe-score2">
+    <ul class="left">
+      <li class="read-only">
+        <label>Guarantor</label>
+        <p>Saranya chakrapani</p>
+      </li>
+    </ul>
+    <div class="right dedupe-cibil score-square" style="text-align:center;">
+      <div class="dedupe-box">
+        <p>Match</p>
+        <p class="bg bg2"> <i class="red icon-negative"></i></p>
+        <p>Not Found</p>
+      </div>
+      <div class="dedupe-box create-div">
+        <p class="bg bg6">Create Customer</p>
+      </div>
+      <div class="dedupe-box create-div wild-click">
+      	<p class="bg bg6">Wild <br> Search</p>
+      	<!--<input type="button" value="Wild Search">-->
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div id="div-document-content" style="display:none;"> </div>
+<div class="center form-btns"> 
+  <!--<input type="button" value="Back" onClick="LoadHtmlDiv('qc-data-entry.html')">-->
+  <div class="drop-button">
+    <input type="button" value="Confirm">
+    <i class="icon-down-arrow"></i>
+    <ul class="drop-list">
+      <li class="lead-dd1" onclick="LoadHtmlDiv('data-entry.html')">Confirm &amp; Movenext</li>
+    </ul>
+  </div>
+</div>
+<div class="pop-bg" id="wild-content" style="display:none;">
+ <div class="popup-div">
+   <i class="icon-close right"></i>
+    <h2>Wild Search</h2>
+     <ul class="box-div dedupe-form">
+        <li>
+            <label>First Name</label>
+            <div class="cust-select">
+                <span class="selected">Starting With</span><i class="arrow"></i>
+                <ul>
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                </ul>
+            </div>
+            <input type="text" placeholder="First Name">
+        </li>
+        <li>
+          <label>Middle Name</label>
+          <div class="cust-select">
+                <span class="selected">Starting With</span><i class="arrow"></i>
+                <ul>
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                </ul>
+            </div>
+            <input type="text" placeholder="Middle Name">
+        </li>
+        <li>
+          <label>Last Name</label>
+          <div class="cust-select">
+                <span class="selected">Starting With</span><i class="arrow"></i>
+                <ul>
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                </ul>
+            </div>
+            <input type="text" placeholder="Last Name">
+        </li>
+        <li>
+          <label>Father/Spouse Name</label>
+          <div class="cust-select">
+                <span class="selected">Starting With</span><i class="arrow"></i>
+                <ul>
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                </ul>
+            </div>
+            <input type="text" placeholder="Father/Spouse Name">
+        </li>
+        <li>
+          <label>Father Middle Name</label>
+          <div class="cust-select">
+                <span class="selected">Starting With</span><i class="arrow"></i>
+                <ul>
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                </ul>
+            </div>
+            <input type="text" placeholder="Father Middle Name">
+        </li>
+        <li>
+          <label>Father Last Name</label>
+          <div class="cust-select">
+                <span class="selected">Starting With</span><i class="arrow"></i>
+                <ul>
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                </ul>
+            </div>
+            <input type="text" placeholder="Father Last Name">
+        </li>
+        <li>
+          <label>D.O.B</label>
+          <input type="text" placeholder="12/08/16">
+        </li>
+        <li>
+          <label>Landline No.</label>
+          <div class="cust-select">
+                <span class="selected">Starting With</span><i class="arrow"></i>
+                <ul>
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                </ul>
+            </div>
+            <input type="text" placeholder="Landline No.">
+        </li>
+        <li>
+          <label>Mobile No.</label>
+          <div class="cust-select">
+                <span class="selected">Starting With</span><i class="arrow"></i>
+                <ul>
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                </ul>
+            </div>
+            <input type="text" placeholder="Mobile No.">
+        </li>
+        <li>
+          <label>Email Id</label>
+          <div class="cust-select">
+                <span class="selected">Starting With</span><i class="arrow"></i>
+                <ul>
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                </ul>
+            </div>
+            <input type="text" placeholder="Email Id">
+        </li>
+        <li>
+          <label>Area</label>
+          <div class="cust-select">
+                <span class="selected">Starting With</span><i class="arrow"></i>
+                <ul>
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                </ul>
+            </div>
+            <input type="text" placeholder="Area">
+        </li>
+        <li>
+          <label>Pin Code</label>
+          <input type="text" placeholder="Pin Code">
+        </li>
+        <li>
+          <label>Branch</label>
+          <div class="cust-select">
+                <span class="selected">Starting With</span><i class="arrow"></i>
+                <ul>
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                </ul>
+            </div>
+            <input type="text" placeholder="Branch">
+        </li>
+    </ul>
+     <input type="button" value="Search" class="right dedupe-search">
+ </div>
+</div>
+<script>
+$(".wild-click").click(function(e) {
+   $("#wild-content").toggle(); 
+});
+$("#wild-content .icon-close").click(function(e) {
+   $("#wild-content").hide(); 
+});
+ categoryPopup();
+ dropButton();
+/*Custom Select starts*/
+
+$(".expand-icon").click(function(e) {
+	 $(".field-investication-popup").show();
+});
+$(".icon-close").click(function(e) {
+	 $(".field-investication-popup").hide();
+});
+
+$('.cust-select').click(function(e) {
+	$(this).children('ul').toggle();
+});
+$('.cust-select ul li').click(function(e) {
+	$('.cust-select ul li:first-child').addClass('active');
+	$(this).toggleClass('active');
+	$(this).siblings().removeClass('active');
+	var val = $(this).text();
+	$(this).parent('ul').siblings('span.selected').text(val);
+});
+$(".cust-select").mouseleave(function(e) {
+	$(".cust-select ul").hide();
+});
+/*Custom Select ends*/
+var cHeight = function() {
+		var cHeight = $(window).innerHeight();
+		//alert(cHeight);
+		$('#div-user-content .content-div').css({'height': cHeight-130+'px'});
+	}
+	cHeight();
+	var dHeight = function() {
+		var dHeight = $(window).innerHeight();
+		$('#div-document-content').css({'height': dHeight-130+'px'});
+	}
+	dHeight();
+$(window).resize(function() {
+     cHeight();dHeight();
+      }).load(function() {
+ cHeight();dHeight();
+});
+</script> 

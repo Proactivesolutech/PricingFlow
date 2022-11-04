@@ -1,0 +1,92 @@
+﻿    <h2> CASES </h2>
+
+    Case Name : <input style="width:200px;border:1px solid #ccc;border-radius:5px;padding:5px;" type="text" id="casenm" />
+    <i class="icon-plus cursor" onclick="fnSavetoFlow()"></i>
+
+    <comp-dashboard width="100%" type="lead" id="home_dashboard"> </comp-dashboard>
+
+<script>
+
+    $(document).ready(function () {
+        //fnSelectKeyList();
+    });
+
+    var UsrPk = 381;
+    var flowFk = 102;
+    var branchFk = 52;
+    var usrNm = 'User1';
+    var GlobXml = {}
+    var branchNm = 'CHENNAI CHIT UNIT';
+
+    var GlobalBpmXml = {};
+    GlobalBpmXml.UsrPk = UsrPk;
+    GlobalBpmXml.UsrCd = 'User1';
+
+    var objProcData = { ProcedureName: "PrcShflBpm_Proj", Type: "SP", Parameters: ["GET_ENTRY_DATA", JSON.stringify(GlobalBpmXml)] }
+    fnCallWebService("GET_PENDINGS_LIST", objProcData, fnBPMProjResult, "MULTI", UsrPk);
+
+    function fnSavetoFlow() {
+        debugger;
+        var caseNm = $("#casenm").val();
+        if (caseNm.trim() == "")
+            return;
+        var Obj = { ProcedureName: "PrcSaveKeyData", Type: "SP", Parameters: ['Save', caseNm, branchFk] };
+        fnCallWebService("SaveKey", Obj, fnResult, "MULTI");
+    }
+
+    function fnResult(serviceFor, Obj, Param1, Param2) {
+        if (serviceFor == "SaveKey") {
+            var data = JSON.parse(Obj.result);
+            if (data && data.length > 0)
+                fnAddCase(data);
+            fnSelectKeyList();
+        }
+
+        if (serviceFor == "GET_PENDINGS_LIST") {
+
+
+            GlobalXml[0].UsrPk = JSON.parse(Obj.result_1)[0].UsrFk;
+            var Data = JSON.parse(Obj.result_2);
+            //var Data2 = JSON.parse(Obj.result_3);
+            fnCallBackFromBpm(serviceFor, Data, []);
+
+            $("#home_dashboard").setDashBoard(Data);
+
+            return;
+
+
+            var data = JSON.parse(Obj.result);
+            if (!data || data.length == 0)
+                return;
+            for (var i = 0; i < data.length; i++) {
+                var row = "<tr key='" + data[i].KeyNm + "' onclick='fnGotoPage(this)'><td>" + data[i].KeyNm + "</td></tr>";
+                $("#tableNm").append(row);
+            }
+        }
+    }
+    function fnAddCase(data) {
+        GlobXml.LeadPk = data[0].KeyPk;
+        GlobXml.BrnchFk = branchFk
+        GlobXml.Branch = branchNm;
+        fnGetBpmHelpFor('LEAD_CREATE', GlobXml, flowFk, usrNm);
+    }
+
+    function fnSelectKeyList() {
+        //var Obj = { ProcedureName: "PrcSaveKeyData", Type: "SP", Parameters: ['Select','', ''] };
+        //fnCallWebService("Select", Obj, fnResult, "MULTI");
+
+        var GlobalBpmXml = {};
+        GlobalBpmXml.UsrPk = UsrPk;
+        GlobalBpmXml.UsrCd = 'User1';
+
+        var objProcData = { ProcedureName: "PrcShflBpm_Proj", Type: "SP", Parameters: ["GET_ENTRY_DATA", JSON.stringify(GlobalBpmXml)] }
+        fnCallWebService("GET_PENDINGS_LIST", objProcData, fnResult, "MULTI", UsrPk);
+
+    }
+
+    function fnGotoPage(elem) {
+        var keyfk = $(elem).attr("key");
+        fnGetBpmHelpFor("GET_PGDTLS", Param1, Param2, Param3, Param4, Param5, Param6);
+    }
+
+</script>

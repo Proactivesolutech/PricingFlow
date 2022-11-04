@@ -1,0 +1,755 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6BA0D8C7-581C-4C4D-BCEB-C0A071BDA1D0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SHFL</RootNamespace>
+    <AssemblyName>SHFL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.7.4114.6375, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>RS\bin\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ISQUARE_GenericControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>RS\bin\ISQUARE_GenericControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>RS\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="SynPIDLIBRARYV2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>RS\bin\SynPIDLIBRARYV2.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BPM\Homepage.aspx" />
+    <Content Include="COMMON\Components\css\fonts\query-icomoon.eot" />
+    <Content Include="COMMON\Components\css\fonts\query-icomoon.ttf" />
+    <Content Include="COMMON\Components\css\fonts\query-icomoon.woff" />
+    <Content Include="COMMON\Components\css\fonts\scan-icomoon.eot" />
+    <Content Include="COMMON\Components\css\fonts\scan-icomoon.ttf" />
+    <Content Include="COMMON\Components\css\fonts\scan-icomoon.woff" />
+    <Content Include="COMMON\Components\js\select2-4.0.3\Thumbs.db" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="COMMON\assets\images\ajax-loader.gif" />
+    <Content Include="COMMON\assets\images\calendar\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="COMMON\assets\images\calendar\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="COMMON\assets\images\calendar\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="COMMON\assets\images\calendar\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="COMMON\assets\images\calendar\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="COMMON\assets\images\calendar\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="COMMON\assets\images\calendar\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="COMMON\assets\images\calendar\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="COMMON\assets\images\calendar\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="COMMON\assets\images\calendar\ui-icons_222222_256x240.png" />
+    <Content Include="COMMON\assets\images\calendar\ui-icons_228ef1_256x240.png" />
+    <Content Include="COMMON\assets\images\calendar\ui-icons_ef8c08_256x240.png" />
+    <Content Include="COMMON\assets\images\calendar\ui-icons_ffd27a_256x240.png" />
+    <Content Include="COMMON\assets\images\calendar\ui-icons_ffffff_256x240.png" />
+    <Content Include="COMMON\assets\images\Default-profile-Picture.jpg" />
+    <Content Include="COMMON\assets\images\graph-bg.png" />
+    <Content Include="COMMON\Components\comp-dashboard\comp-dashboard.html" />
+    <Content Include="COMMON\Components\comp-dashboard\js\comp-dashboard.js" />
+    <Content Include="COMMON\Components\comp-grid\comp-grid.html" />
+    <Content Include="COMMON\Components\comp-grid\css\comp-grid.css" />
+    <Content Include="COMMON\Components\comp-grid\js\comp-grid.js" />
+    <Content Include="COMMON\Components\comp-helpgrid\comp-helpgrid.html" />
+    <Content Include="COMMON\Components\comp-helpgrid\js\comp-helpgrid.js" />
+    <Content Include="COMMON\Components\comp-help\comp-help.html" />
+    <Content Include="COMMON\Components\comp-help\css\comp-help.css" />
+    <Content Include="COMMON\Components\comp-help\js\comp-help.js" />
+    <Content Include="COMMON\Components\comp-query\comp-query.html" />
+    <Content Include="COMMON\Components\comp-query\css\common.css" />
+    <Content Include="COMMON\Components\comp-query\css\fonts\icomoon.eot" />
+    <Content Include="COMMON\Components\comp-query\css\fonts\icomoon.svg" />
+    <Content Include="COMMON\Components\comp-query\css\fonts\icomoon.ttf" />
+    <Content Include="COMMON\Components\comp-query\css\fonts\icomoon.woff" />
+    <Content Include="COMMON\Components\comp-query\css\fonts\roboto-regular.eot" />
+    <Content Include="COMMON\Components\comp-query\css\fonts\roboto-regular.svg" />
+    <Content Include="COMMON\Components\comp-query\css\fonts\roboto-regular.ttf" />
+    <Content Include="COMMON\Components\comp-query\css\fonts\roboto-regular.woff" />
+    <Content Include="COMMON\Components\comp-query\css\fonts\roboto-regular.woff2" />
+    <Content Include="COMMON\Components\comp-query\css\fonts\style.css" />
+    <Content Include="COMMON\Components\comp-query\css\jquery-ui.css" />
+    <Content Include="COMMON\Components\comp-query\CustomElements.html" />
+    <Content Include="COMMON\Components\comp-query\images\ajax-loader.gif" />
+    <Content Include="COMMON\Components\comp-query\images\customer.png" />
+    <Content Include="COMMON\Components\comp-query\js\comp-query.js" />
+    <Content Include="COMMON\Components\comp-scan-file\comp-scan-file.html" />
+    <Content Include="COMMON\Components\comp-scan-file\js\comp-scan-file.js" />
+    <Content Include="COMMON\Components\comp-scan\comp-scan.html" />
+    <Content Include="COMMON\Components\comp-scan\js\comp-scan.js" />
+    <Content Include="COMMON\Components\css\common.css" />
+    <Content Include="COMMON\Components\css\fonts\icomoon.eot" />
+    <Content Include="COMMON\Components\css\fonts\icomoon.svg" />
+    <Content Include="COMMON\Components\css\fonts\icomoon.ttf" />
+    <Content Include="COMMON\Components\css\fonts\icomoon.woff" />
+    <Content Include="COMMON\Components\css\fonts\query-icomoon.svg" />
+    <Content Include="COMMON\Components\css\fonts\query-style.css" />
+    <Content Include="COMMON\Components\css\fonts\roboto-regular.eot" />
+    <Content Include="COMMON\Components\css\fonts\roboto-regular.svg" />
+    <Content Include="COMMON\Components\css\fonts\roboto-regular.ttf" />
+    <Content Include="COMMON\Components\css\fonts\roboto-regular.woff" />
+    <Content Include="COMMON\Components\css\fonts\roboto-regular.woff2" />
+    <Content Include="COMMON\Components\css\fonts\scan-icomoon.svg" />
+    <Content Include="COMMON\Components\css\fonts\scan-style.css" />
+    <Content Include="COMMON\Components\css\fonts\style.css" />
+    <Content Include="COMMON\Components\css\jquery-ui.css" />
+    <Content Include="COMMON\Components\index.html" />
+    <Content Include="COMMON\Components\js\jquery-1.11.1.js" />
+    <Content Include="COMMON\Components\js\jquery-ui.js" />
+    <Content Include="COMMON\Components\js\jquery.signalR-2.1.2.js" />
+    <Content Include="COMMON\Components\js\lz-string.js" />
+    <Content Include="COMMON\Components\js\PDF2IMAGE\PdfJs.js" />
+    <Content Include="COMMON\Components\js\PDF2IMAGE\PdfJs.worker.js" />
+    <Content Include="COMMON\Components\js\PDF2IMAGE\processing-api.min.js" />
+    <Content Include="COMMON\Components\js\select2-3.5.1\select2-bootstrap.css" />
+    <Content Include="COMMON\Components\js\select2-3.5.1\select2-spinner.gif" />
+    <Content Include="COMMON\Components\js\select2-3.5.1\select2.css" />
+    <Content Include="COMMON\Components\js\select2-3.5.1\select2.js" />
+    <Content Include="COMMON\Components\js\select2-3.5.1\select2.min.js" />
+    <Content Include="COMMON\Components\js\select2-3.5.1\select2.png" />
+    <Content Include="COMMON\Components\js\select2-3.5.1\select2x2.png" />
+    <Content Include="COMMON\Components\js\select2-3.5.1\Thumbs.db" />
+    <Content Include="COMMON\Components\js\select2-4.0.3\select2-bootstrap.css" />
+    <Content Include="COMMON\Components\js\select2-4.0.3\select2-spinner.gif" />
+    <Content Include="COMMON\Components\js\select2-4.0.3\select2.css" />
+    <Content Include="COMMON\Components\js\select2-4.0.3\select2.js" />
+    <Content Include="COMMON\Components\js\select2-4.0.3\select2.min.js" />
+    <Content Include="COMMON\Components\js\select2-4.0.3\select2.png" />
+    <Content Include="COMMON\Components\js\select2-4.0.3\select2x2.png" />
+    <Content Include="COMMON\Components\js\webcomponent-lite.min.js" />
+    <Content Include="COMMON\css\animate.css" />
+    <Content Include="COMMON\css\common.css" />
+    <Content Include="COMMON\css\fonts\icomoon.eot" />
+    <Content Include="COMMON\css\fonts\icomoon.svg" />
+    <Content Include="COMMON\css\fonts\icomoon.ttf" />
+    <Content Include="COMMON\css\fonts\icomoon.woff" />
+    <Content Include="COMMON\css\fonts\roboto-regular.eot" />
+    <Content Include="COMMON\css\fonts\roboto-regular.svg" />
+    <Content Include="COMMON\css\fonts\roboto-regular.ttf" />
+    <Content Include="COMMON\css\fonts\roboto-regular.woff" />
+    <Content Include="COMMON\css\fonts\roboto-regular.woff2" />
+    <Content Include="COMMON\css\fonts\style.css" />
+    <Content Include="COMMON\css\img\ui-icons_444444_256x240.png" />
+    <Content Include="COMMON\css\img\ui-icons_555555_256x240.png" />
+    <Content Include="COMMON\css\img\ui-icons_777620_256x240.png" />
+    <Content Include="COMMON\css\img\ui-icons_777777_256x240.png" />
+    <Content Include="COMMON\css\img\ui-icons_cc0000_256x240.png" />
+    <Content Include="COMMON\css\img\ui-icons_ffffff_256x240.png" />
+    <Content Include="COMMON\css\jquery-ui.css" />
+    <Content Include="COMMON\css\jquery.mCustomScrollbar.css" />
+    <Content Include="COMMON\DB OBJECTS\dbo.PrcShflDocumenthelp.sql" />
+    <Content Include="COMMON\DB OBJECTS\dbo.PrcShflInsurardisplayhelp.sql" />
+    <Content Include="COMMON\DB OBJECTS\dbo.PrcShflInsurarhelp.sql" />
+    <Content Include="COMMON\DB OBJECTS\dbo.PrcShflKychhelp.sql" />
+    <Content Include="COMMON\DB OBJECTS\dbo.PrcShflleadagenthelp.sql" />
+    <Content Include="COMMON\DB OBJECTS\dbo.PrcShflleadBranchhelp.sql" />
+    <Content Include="COMMON\DB OBJECTS\dbo.PrcShflLeadDetailshelp.sql" />
+    <Content Include="COMMON\DB OBJECTS\dbo.PrcShflPincodehelp.sql" />
+    <Content Include="COMMON\DB OBJECTS\dbo.PrcShflScanBankhelp.sql" />
+    <Content Include="COMMON\DB OBJECTS\dbo.PrcShflscanBranchhelp.sql" />
+    <Content Include="COMMON\DB OBJECTS\dbo.PrcShfl_AgentMas_help.sql" />
+    <Content Include="COMMON\DB OBJECTS\PrcShflLocationhelp.sql" />
+    <Content Include="COMMON\DB OBJECTS\PrcShflRefNohelp.sql" />
+    <Content Include="COMMON\js\devp-js\ckeditor\adapters\jquery.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\build-config.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\CHANGES.md" />
+    <Content Include="COMMON\js\devp-js\ckeditor\ckeditor-Beautifier.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\ckeditor.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\config.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\contents.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\af.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\ar.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\bg.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\bn.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\bs.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\ca.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\cs.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\cy.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\da.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\de-ch.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\de.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\el.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\en-au.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\en-ca.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\en-gb.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\en.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\eo.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\es.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\et.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\eu.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\fa.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\fi.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\fo.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\fr-ca.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\fr.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\gl.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\gu.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\he.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\hi.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\hr.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\hu.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\id.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\is.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\it.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\ja.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\ka.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\km.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\ko.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\ku.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\lt.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\lv.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\mk.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\mn.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\ms.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\nb.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\nl.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\no.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\pl.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\pt-br.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\pt.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\ro.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\ru.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\si.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\sk.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\sl.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\sq.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\sr-latn.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\sr.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\sv.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\th.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\tr.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\tt.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\ug.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\uk.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\vi.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\zh-cn.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\lang\zh.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\LICENSE.md" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\af.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\de-ch.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\eu.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\fo.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\colordialog\dialogs\colordialog.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\icons.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\magicline\images\icon-rtl.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\preview\preview.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\scayt\CHANGELOG.md" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\scayt\README.md" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\angel_smile.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\angry_smile.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\broken_heart.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\confused_smile.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\cry_smile.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\devil_smile.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\embarrassed_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\embarrassed_smile.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\envelope.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\heart.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\kiss.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\lightbulb.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\omg_smile.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\regular_smile.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\sad_smile.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\shades_smile.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\teeth_smile.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\thumbs_down.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\thumbs_up.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\tongue_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\tongue_smile.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\smiley\images\wink_smile.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\af.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\da.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\de-ch.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\eu.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\ko.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\lt.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\templates\dialogs\templates.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="COMMON\js\devp-js\ckeditor\plugins\wsc\README.md" />
+    <Content Include="COMMON\js\devp-js\ckeditor\README.md" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\css\samples.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\img\github-top.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\img\header-bg.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\img\header-separator.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\img\logo.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\img\navigation-tip.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\index-cust.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\index.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\js\sample.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\js\sf.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\ajax.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\api.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\appendto.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\assets\inlineall\logo.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\assets\posteddata.php" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\assets\sample.jpg" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\assets\uilanguages\languages.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\datafiltering.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\dialog\assets\my_dialog.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\dialog\dialog.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\divreplace.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\enterkey\enterkey.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\htmlwriter\outputforflash.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\htmlwriter\outputhtml.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\index.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\inlineall.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\inlinebycode.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\inlinetextarea.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\jquery.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\magicline\magicline.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\readonly.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\replacebyclass.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\replacebycode.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\sample.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\sample.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\sample_posteddata.php" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\tabindex.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\toolbar\toolbar.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\uicolor.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\uilanguages.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\wysiwygarea\fullpage.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\old\xhtmlstyle.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\css\fontello.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\font\config.json" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\font\fontello.eot" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\font\fontello.svg" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\font\fontello.ttf" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\font\LICENSE.txt" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\index.html" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\js\abstracttoolbarmodifier.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\js\fulltoolbareditor.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\js\toolbarmodifier.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\js\toolbartextmodifier.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\lib\codemirror\javascript.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\lib\codemirror\neo.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.js" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\dialog.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\editor.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\icons.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\images\close.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\images\spinner.gif" />
+    <Content Include="COMMON\js\devp-js\ckeditor\skins\moono\readme.md" />
+    <Content Include="COMMON\js\devp-js\ckeditor\styles.js" />
+    <Content Include="COMMON\js\devp-js\IncludeFiles.js" />
+    <Content Include="COMMON\js\devp-js\jquery.mask.js" />
+    <Content Include="COMMON\js\devp-js\jQuery.pickDate.js" />
+    <Content Include="COMMON\js\devp-js\jquery.plugin.js" />
+    <Content Include="COMMON\js\devp-js\jquery.signalR-1.0.0.js" />
+    <Content Include="COMMON\js\devp-js\jquery.signalR-1.0.0.min.js" />
+    <Content Include="COMMON\js\devp-js\jquery.table2excel.js" />
+    <Content Include="COMMON\js\devp-js\jquery.ui.timepicker.js" />
+    <Content Include="COMMON\js\devp-js\Language.js" />
+    <Content Include="COMMON\js\devp-js\lightslider.js" />
+    <Content Include="COMMON\js\devp-js\mfs100.js" />
+    <Content Include="COMMON\js\devp-js\ProDataAccesScript.js" />
+    <Content Include="COMMON\js\devp-js\ProLOSDataAccesScript.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\.gitignore" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\bower.json" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\component.json" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\composer.json" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\LICENSE" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\package.json" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\README.md" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\release.sh" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2-bootstrap.css" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2-spinner.gif" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2.css" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2.jquery.json" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2.min.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2.png" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2x2.png" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_ar.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_az.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_bg.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_ca.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_cs.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_da.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_de.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_el.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_en.js.template" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_es.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_et.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_eu.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_fa.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_fi.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_fr.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_gl.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_he.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_hr.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_hu.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_id.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_is.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_it.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_ja.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_ka.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_ko.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_lt.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_lv.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_mk.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_ms.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_nl.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_no.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_pl.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_pt-BR.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_pt-PT.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_ro.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_rs.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_ru.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_sk.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_sv.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_th.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_tr.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_ug-CN.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_uk.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_vi.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_zh-CN.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\select2_locale_zh-TW.js" />
+    <Content Include="COMMON\js\devp-js\select2-3.5.1\Thumbs.db" />
+    <Content Include="COMMON\js\devp-js\Socket.Io.Chat.js" />
+    <Content Include="COMMON\js\devp-js\tag-it.js" />
+    <Content Include="COMMON\js\devp-js\tag-it.min.js" />
+    <Content Include="COMMON\js\jquery-1.11.1.js" />
+    <Content Include="COMMON\js\jquery-ui.js" />
+    <Content Include="COMMON\js\jquery.min.js" />
+    <Content Include="COMMON\js\Scrn\BPM_Common.js" />
+    <Content Include="COMMON\js\Scrn\CommonFns.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BPM\Homepage.aspx.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BPM\Homepage.aspx.designer.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="COMMON\css\devp-css\Crop\" />
+    <Folder Include="COMMON\css\devp-css\emoji\png\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54895</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54895/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

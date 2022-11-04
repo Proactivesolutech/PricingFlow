@@ -1,0 +1,40 @@
+<custom-component compid="comp-dashboard">
+    <div class="custom-component" style="background-color: transparent; float: left;width:100%">
+        <div class="dashboard-title" style="position:relative;">
+            <h2 id="Comp_dash_title">Cases 
+            <i title="Lead Creation" id="lead_add" style="display:none;" class="icon-plus right" onclick="LoadHtmlDiv('lead.html')"></i> 
+            <i title="Balance PF Collection" id="PF_add" style="display:none;padding-right:10px;" class="icon-balance-pf right" onclick="LoadHtmlDiv('BalancePF.html')"></i>
+             <i title="Letter Generation" id="cam_san" style="display:none;padding-right:10px;" class="icon-sanction-letter right" onclick="LoadHtmlDiv('CamLinkZO.html')"></i> 
+            <i title="Override Exception Report" id="Except_Rep" style="padding-right:10px;" class="icon-warning right" onclick="LoadHtmlDiv('ExceptionReport.html')"></i> 
+                <span style="float:right;">Search :  <input type="text" id="FlwSrch" placeholder="Process Id" style="width:60px;height: 1em;" onkeyup="IdSearch()"></span>
+            </h2>
+            <div id="Comp-dashBrdList" class="box-div cases-div" style="padding-top:2px;">
+            <ul id="ProcessHeading"><li>Process Name</li></ul>
+            </div>
+            <i id="newtask" class="newtask material-icons" title="Add New Task">add_circle</i>
+        </div>
+    </div>
+    <style>
+        .active-dash-row {
+            background: #E4E4E4;
+        }
+        .newtask {
+            font-size: 60px !important;
+            color: #009fd7;
+            opacity: 0.5;
+            position: absolute;
+            /*left: 87%;
+            top: 85%;*/
+            cursor: pointer;
+            right: 5%;
+            bottom: 5%;
+        }
+        .newtask:hover {            
+            opacity: 1 !important;
+        }
+        .newtask:active {
+            font-size: 55px !important;
+            opacity: 1 !important;
+        }
+    </style>
+</custom-component>

@@ -1,0 +1,73 @@
+﻿
+<div class="title">
+    <h1>Zonal Ops : Letter Generation</h1>
+</div>
+<div class="content-div">
+    <div>
+        <div class="box-div" id="LeadDiv">
+            <h2>Lead Information</h2>
+            <ul class="form-controls">
+                <li style="text-align: center;">
+                    <div id="prddiv">
+                        <i id="LGen_lead_prdicon"></i>
+                        <p id="LGen_lead_prdnm"></p>
+                    </div>
+                </li>
+                <li class="width-1 read-only Lead">
+                    <label>Lead ID</label>                  
+                    <comp-help id="Lead-help" txtcol="LeadId" valcol="LeadId" onrowclick="Leadclick" prcname="PrcSHFLLosLeadSearchZonallink" width="100%"></comp-help>
+                    <input name="text" key="lead_id" type="hidden" placeholder="">
+                </li>                
+                <li class="width-280 read-only">
+                    <label>Applicant</label>
+                    <p id="Bal_LeadNm"></p>
+                </li>
+                <li class="width-15 read-only">
+                    <label>Branch</label>
+                    <p id="Bal_Branch"></p>
+                </li>
+                <!--<li class="width-1 read-only"LeadPk>
+                    <label>Agent</label>
+                    <p id="Bal_Agt"></p>
+                </li>-->
+                <li class="width-1 read-only" style="display:none;">
+                    <label>Collected PF</label>
+                    <p id="ColPF"></p>
+                </li>
+                <!--<li class="width-1 read-only" style="display:none;">
+                    <label>Balance PF</label>
+                    <p id="BalPF"></p>
+                </li-->
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <div class="box-div buttondiv">
+            <ul>
+                <li class="width-11 read-only">
+                    <input type="button" onclick="fnGenerateCAM()" class="bc_link_feeback bg bg1 cursor" value="Generate CAM print"></input>
+                </li></br>
+                <li class="width-11 read-only">
+                    <input type="button" onclick="fnGenerateSanction()" class="bc_link_feeback bg bg1 cursor" value="Sanction/Rejection"></input>
+                </li>    </br>
+                <li class="width-11 read-only">
+                    <input type="button" onclick="fnGeneratePrpslNote()" class="bc_link_feeback bg bg1 cursor" value="Proposal Note"></input>
+                </li>   </br>
+                <li class="width-21 read-only">
+                    <input type="button" onclick="fnGenerateRiskcalc()" class="bc_link_feeback bg bg1 cursor" value="Risk Calculation Matrix"></input>
+                </li>   </br>
+                <li class="width-21 read-only">
+                    <input type="button" onclick="fnGenerateDisburseMemo()" class="bc_link_feeback bg bg1 cursor" value="Disbursement Memo"></input>
+                </li>       </br>  
+            </ul>
+
+        </div>
+       
+        
+    </div>
+</div>
+<script src="js/BeatPicker.min.js"></script>
+<script src="js/CamlinkZO.js"></script>
+<script>
+    calcHeight(); categoryPopup();  /*window height for all div*/
+    selectfocus(); /* Custom Select2 plugin Function*/
+</script> 

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Dynamic Columns </title>
+    <style>
+        .rTable {
+            display: block;
+            width: 90%;
+            overflow-x:auto;
+        }
+
+        .rTableRow {
+            display: table-row;
+        }
+
+        .rTextRight {
+            text-align: right;
+            width: 80px;
+        }
+
+        .rTableHead, .rTableCellHead, .rTableRowGrp {
+            background-color: #ddd;
+            font-weight: bold;
+            
+        }
+
+        .rTableCell, .rTableHead {
+            display: table-cell;
+            padding: 3px 10px;
+            border: 1px solid #999999;
+        }
+
+        
+    </style>
+    <script type="text/javascript">
+        var ColJson = [];
+        var RowJson = [];
+        var MnthJson = [];
+        var YrJson = [];
+
+        $(document).ready(function () {
+
+            MnthJson.push(
+                { MnthNm: "Jan", MnthId: 0 },
+                { MnthNm: "Feb", MnthId: 1 },
+                { MnthNm: "March", MnthId: 2 },
+                { MnthNm: "April", MnthId: 3 },
+                { MnthNm: "May", MnthId: 4 },
+                { MnthNm: "June", MnthId: 5 },
+                { MnthNm: "July", MnthId: 6 },
+                { MnthNm: "August", MnthId: 7 },
+                { MnthNm: "September", MnthId: 8 },
+                { MnthNm: "October", MnthId:  9},
+                { MnthNm: "November", MnthId: 10 },
+                { MnthNm: "December", MnthId: 11 })
+
+            
+            var objProcData = { ProcedureName: "Prc_AvgCalc", Type: "SP", Parameters: ["E"] }
+            fnCallWebService("SAVE_DATA", objProcData, fnProjResult_Avg, "MULTI", "");
+
+            $("#add_cols").click(function () {
+                var LastMonth = ColJson[ColJson.length - 1].MnthIndex;
+                var ColIndex = ColJson[ColJson.length - 1].ColIndex;
+
+                var CurMonth;
+                if (LastMonth == -1 || LastMonth == 11) { CurMonth = 0; }
+                else { CurMonth = LastMonth + 1; }
+                
+                var ColNm = MnthJson[CurMonth].MnthNm + '-2016';
+                ColJson.push(
+                    { ColNm: ColNm, ColIndex: ColIndex + 1, IsNew: 1, MnthIndex: CurMonth},
+                    { ColNm: "% Cons", ColIndex: ColIndex + 2, IsNew: 1, MnthIndex: CurMonth},
+                    { ColNm: "Amt Cons", ColIndex: ColIndex + 3, IsNew: 1, MnthIndex: CurMonth}
+                );
+                
+                fnBuildCols(0);
+                fnBuildRows()
+            });
+
+            $("#add_rows").click(function () {
+                if ($("#rows_val").val() == "") {
+                    alert("Enter Row Name to Add!");
+                    return;
+                }
+                for (var i = 0; i < RowJson.length; i++) {
+                    if ($("#rows_val").val() == RowJson[i].RowNm) {
+                        alert("Already Existing Row Name!");
+                        return;
+                    }
+                }
+                
+                RowJson.push({ RowNm: $("#rows_val").val(), RowIndex: (RowJson.length + 1) });
+                fnBuildRows();
+                
+            });
+        });
+
+        function fnReset(Mode) {
+            $("#tbl_Avg_Calc").html("");
+            ColJson = [];
+            RowJson = [];
+
+            ColJson.push({ ColNm: "Components", ColIndex: 1, IsNew: 1, MnthIndex: -1 }, { ColNm: "Average", ColIndex: 2, IsNew: 1, MnthIndex: -1 });
+            fnBuildCols(1);
+
+            RowJson.push(
+                { RowNm: "Pay",  RowIndex: 1 },
+                { RowNm: "HRA",  RowIndex: 2 },
+                { RowNm: "Gross Total",  RowIndex: 3 },
+                { RowNm: "Deduction Total",  RowIndex: 4 })
+            fnBuildRows();
+            
+        }
+
+        function fnBuildCols(IsNew) {
+            if (IsNew == 1) {
+                $("#tbl_Avg_Calc").html("");
+                $("#tbl_Avg_Calc").append('<div id="HdrDt" class="rTableRow"></div>');
+            }
+
+            for (var col = 0; col < ColJson.length; col++) {
+                if (ColJson[col].IsNew == 1) {
+                    $("#HdrDt").append(
+                       '<div MnthIndex = "' + ColJson[col].MnthIndex + '" colIndex="' + ColJson[col].ColIndex + '" class="rTableHead">' + ColJson[col].ColNm + '</div>'
+                    )
+                }
+            }
+        }
+
+        function fnBuildRows() {
+
+            for (var row = 0; row < RowJson.length; row++) {
+
+                try { $("#tbl_footer").remove(); } catch (e) { }
+
+                var RowId; var IsFirst = 0;
+
+                RowId = 'Row_' + RowJson[row].RowIndex;
+                IsFirst = $("#" + RowId).html() == undefined ? 1:0;
+                
+                if (IsFirst == 1) {
+                    $("#tbl_Avg_Calc").append(
+                        '<div rowIndex="' + RowJson[row].RowIndex + '" id="Row_' + RowJson[row].RowIndex + '" class="rTableRow">' +
+                        '</div>'
+                    );
+
+                    RowId = 'Row_' + RowJson[row].RowIndex;
+                }
+
+                for (var col = 0; col < ColJson.length; col++) {
+
+                    if (IsFirst == 1) {
+                        if (ColJson[col].ColIndex == 1) {
+                            $("#" + RowId).append('<div id="' + RowJson[row].RowIndex + '1" class="rTableCell rTableCellHead">' + RowJson[row].RowNm + '</div>')
+                        }
+                        else if (ColJson[col].ColIndex == 2) {
+                            $("#" + RowId).append
+                                (
+                                    '<div id="' + RowJson[row].RowIndex + '' + ColJson[col].ColIndex + '" class="rTextRight rTableCell">' +
+                                        '<label id="rowavg_' + RowJson[row].RowIndex + '">0</label>' +
+                                    '</div>'
+                                );
+                        }
+                        else {
+                            $("#" + RowId).append
+                                (
+                                    '<div id="' + RowJson[row].RowIndex + '' + ColJson[col].ColIndex + '" class="rTextRight rTableCell">' +
+                                        '<input Fk="0" value="0" onchange=fnCalcRowColAvg(' + RowJson[row].RowIndex + ',' + ColJson[col].ColIndex + ') class="rTextRight rowavg_' + RowJson[row].RowIndex + ' colavg_' + ColJson[col].ColIndex + '" type="number"/>' +
+                                    '</div>'
+                                );
+                        }
+                    }
+
+                    else {
+                        if (ColJson[col].IsNew == 1) {
+                            $("#" + RowId).append
+                                (
+                                    '<div id="' + RowJson[row].RowIndex + '' + ColJson[col].ColIndex + '" class="rTextRight rTableCell">' +
+                                        '<input Fk="0" value="0" onchange=fnCalcRowColAvg(' + RowJson[row].RowIndex + ',' + ColJson[col].ColIndex + ') class="rTextRight rowavg_' + RowJson[row].RowIndex + ' colavg_' + ColJson[col].ColIndex + '" type="number"/>' +
+                                    '</div>'
+                                );
+                        }
+                    }
+                }
+            }
+
+            $("#tbl_Avg_Calc").append(
+                '<div id="tbl_footer" class="rTableRow rTableRowGrp">' +
+                '</div>'
+            );
+            
+            for (var IsNwCol = 0; IsNwCol < ColJson.length; IsNwCol++) {
+                ColJson[IsNwCol].IsNew = 0;
+
+                if (IsNwCol == 0) {
+                    $("#tbl_footer").append(
+                            '<div class="rTableCell">' +
+                                '<label>Net</label>' +
+                            '</div>'
+                        );
+                }
+                else {
+                    $("#tbl_footer").append(
+                        '<div class="rTextRight rTableCell">' +
+                            '<label id="colavg_' + ColJson[IsNwCol].ColIndex + '">0</label>' +
+                        '</div>'
+                    );
+                }
+            }
+            $("#colavg_2").text("");
+        }
+
+        function fnCalcRowColAvg(Rowindex, ColIndex) {
+            
+            var RwData = $("#Row_" + Rowindex + " .rTableCell .rowavg_" + Rowindex)
+            var RwFinalVal = 0; var ColFinalVal = 0;
+
+            for (var val = 0; val < RwData.length; val++) {
+                if ($(RwData[val]).val() != "") {
+                    RwFinalVal += parseInt($(RwData[val]).val());
+                }
+            }
+            RwFinalVal = RwFinalVal / 2;
+
+            $("#rowavg_" + Rowindex).text(RwFinalVal);
+
+            var ClData = $(".rTableCell .colavg_" + ColIndex)
+
+            for (var cval = 0; cval < ClData.length; cval++) {
+                if ($(ClData[cval]).val() != "") {
+                    ColFinalVal += parseInt($(ClData[cval]).val());
+                }
+            }
+            ColFinalVal = ColFinalVal / 2;
+
+            $("#colavg_" + ColIndex).text(ColFinalVal);
+        }
+        
+        function fnGetJson() {
+            var RowData = [];
+            for (var j = 0; j < RowJson.length; j++) {
+                for (var i = 0; i < ColJson.length; i++) {
+                    var ID = RowJson[j].RowIndex + "" + ColJson[i].ColIndex;
+                    var IdVal = $("#" + ID + " input").val();
+                    if (IdVal != undefined)
+                        RowData.push({
+                            RowId: RowJson[j].RowIndex,
+                            ColId: ColJson[i].ColIndex,
+                            InpVal: IdVal,
+                            ValFk : $("#" + ID + " input").attr("Fk")
+                        })
+                }
+            }
+            $("#div_Rslt").html("");
+            $("#div_Rslt").append("<b> RowJSON : </b> " + JSON.stringify(RowJson) + " <br/> <b> ColJSON : </b>" + JSON.stringify(ColJson) + " <br/> <b> ValJson : </b>" + JSON.stringify(RowData))
+
+            var objProcData = { ProcedureName: "Prc_AvgCalc", Type: "SP", Parameters: ["A", JSON.stringify(RowJson), JSON.stringify(ColJson), JSON.stringify(RowData)] }
+            fnCallWebService("SAVE_DATA", objProcData, fnProjResult_Avg, "MULTI", "");
+        }
+
+        function fnProjResult_Avg(ServDesc, Obj, Param1, Param2) {
+            if (ServDesc == "SAVE_DATA") {
+
+                $("#div_Rslt").html("");
+                RowJson = []; ColJson = [];
+
+                RowJson = JSON.parse(Obj.result_1);
+                ColJson = JSON.parse(Obj.result_2);
+                var ValData = JSON.parse(Obj.result_3);
+
+                $("#div_Rslt").append("<b> RowJSON : </b> " + JSON.stringify(RowJson) + " <br/> <b> ColJSON : </b>" + JSON.stringify(ColJson) + " <br/> <b> ValJson : </b>" + JSON.stringify(ValData))
+
+                if(RowJson.length > 0){
+                    $("#tbl_Avg_Calc").html("");
+                    fnBuildCols(1);
+                    fnBuildRows();
+
+                    for (var i = 0; i < ValData.length; i++) {
+                        var ID = ValData[i].RowIndex + "" + ValData[i].ColIndex;
+                        var IdObj = $("#" + ID + " input");
+                        IdObj.val(ValData[i].InpVal);
+                    }
+                }
+                else 
+                    fnReset("A");
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+    <input type="text" id="rows_val" />
+    <input type="button" id="add_rows" value="Add Rows" />
+    <input type="button" id="add_cols" value="Add Columns" />
+    <input type="button" value="Get Json" onclick="fnGetJson()"/>
+    <h2>Income BreakUp Details</h2>
+    <div class="rTable" id="tbl_Avg_Calc">
+    </div>
+
+    <div style="margin-top:30px;width:500px; height:200px; border:1px solid black; overflow-y:auto;" id="div_Rslt"></div>
+</body>
+</html>

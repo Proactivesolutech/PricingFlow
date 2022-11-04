@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Components</title>
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/jquery-ui.css" rel="stylesheet" />
+    <link href="css/fonts/style.css" rel="stylesheet" />
+
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/webcomponent-lite.min.js"></script>
+
+    <link id="scan" rel="import" href="comp-scan/comp-scan.html" />
+    <link id="scanfile" rel="import" href="comp-scan-file/comp-scan-file.html" />
+    <!--<link id="query" rel="import" href="comp-query.html" />-->
+    <link href="comp-grid/css/comp-grid.css" rel="stylesheet" />
+    <link id="grid" rel="import" href="comp-grid/comp-grid.html" />
+
+    <script src="js/PDF2IMAGE/PdfJs.js"></script>
+    <script src="js/PDF2IMAGE/processing-api.min.js"></script>
+
+    <!--<link href="../select2-3.5.1/select2.css" rel="stylesheet" type="text/css" />
+    <link href="../select2-3.5.1/select2-bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="../select2-3.5.1/select2.js" type="text/javascript"></script>-->
+
+    <script src="comp-scan-file/js/comp-scan-file.js"></script>
+    <script src="comp-scan/js/comp-scan.js"></script>
+    <script src="comp-grid/js/comp-grid.js"></script>
+    <!--<script src="comp-query/js/comp-query.js"></script>-->
+
+
+
+</head>
+<body>
+    <!--<comp-scan-viewer width="600px" height="600px" id="scanviewerid"></comp-scan-viewer>
+
+    <comp-scan id="scanid" width="600px" height="600px"></comp-scan>
+
+    <comp-scan-save width="99%" height="600px" id="scansaveid"></comp-scan-save>-->
+    <!--<comp-scan-file width="600px" height="600px" id="scanfileid"></comp-scan-file>-->
+    <comp-scan-file width="600px" height="600px" id="scanfileid"></comp-scan-file>
+    <input type="button" value="preview" onclick="fnPreview()" />
+    <comp-scan type="viewer" id="scanid" width="600px" height="600px"></comp-scan>
+    <comp-scan type="save" width="99%" height="600px" id="scansaveid"></comp-scan>
+    <!--<comp-query querydata="{{data}}" id="q1" attr-data="dat1"></comp-query>-->
+
+    <comp-grid id="grid_1" width="100%"></comp-grid>
+
+
+
+    <input type="text" maxlength="12" id="AahdarNum" />
+    <button onclick="validateAadhar()">Test Valid Aadhar</button>
+
+    <input type="text" id="pannumber" maxlength="10" />
+    <button onclick="validatePAN()">Test Valid PAN</button>
+</body>
+<script>
+
+    function validatePAN() {
+        var PANNo = $("#pannumber").val();
+        var isValid = pan_validate(PANNo);
+        alert(isValid.toString());
+        alert(pan_validatePerson(PANNo));
+    }
+
+
+    function validateAadhar() {
+        var aadharNo = $("#AahdarNum").val();
+        var isValid = Aahdar_validate(aadharNo);
+        alert(isValid.toString());
+    }
+
+    // multiplication table d
+    var Aadhar_Multiplication = [
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        [1, 2, 3, 4, 0, 6, 7, 8, 9, 5],
+        [2, 3, 4, 0, 1, 7, 8, 9, 5, 6],
+        [3, 4, 0, 1, 2, 8, 9, 5, 6, 7],
+        [4, 0, 1, 2, 3, 9, 5, 6, 7, 8],
+        [5, 9, 8, 7, 6, 0, 4, 3, 2, 1],
+        [6, 5, 9, 8, 7, 1, 0, 4, 3, 2],
+        [7, 6, 5, 9, 8, 2, 1, 0, 4, 3],
+        [8, 7, 6, 5, 9, 3, 2, 1, 0, 4],
+        [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+    ];
+
+    // permutation table p
+    var Aadhar_permutation = [
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        [1, 5, 7, 6, 2, 8, 3, 0, 9, 4],
+        [5, 8, 0, 3, 7, 9, 6, 1, 4, 2],
+        [8, 9, 1, 6, 0, 4, 3, 5, 2, 7],
+        [9, 4, 5, 3, 1, 2, 6, 8, 7, 0],
+        [4, 2, 8, 6, 5, 7, 3, 9, 0, 1],
+        [2, 7, 9, 3, 8, 0, 6, 4, 1, 5],
+        [7, 0, 4, 6, 9, 1, 3, 2, 5, 8]
+    ];
+
+    // inverse table inv
+    var Aadhar_inverse = [0, 4, 3, 2, 1, 5, 6, 7, 8, 9];
+
+    // converts string or number to an array and inverts it
+    function invArray(array) {
+
+        if (Object.prototype.toString.call(array) == "[object Number]") {
+            array = String(array);
+        }
+
+        if (Object.prototype.toString.call(array) == "[object String]") {
+            array = array.split("").map(Number);
+        }
+
+        return array.reverse();
+
+    }
+
+    // generates checksum
+    function Aadhar_generate(array) {
+
+        var c = 0;
+        var invertedArray = invArray(array);
+
+        for (var i = 0; i < invertedArray.length; i++) {
+            c = Aadhar_Multiplication[c][Aadhar_permutation[((i + 1) % 8)][invertedArray[i]]];
+        }
+
+        return Aadhar_inverse[c];
+    }
+
+    // validates checksum
+    function Aahdar_validate(array) {
+
+        var c = 0;
+        var invertedArray = invArray(array);
+
+        for (var i = 0; i < invertedArray.length; i++) {
+            c = Aadhar_Multiplication[c][Aadhar_permutation[(i % 8)][invertedArray[i]]];
+        }
+
+        return (c === 0);
+    }
+
+
+
+    function pan_validate(panNum) {
+        //var regpan = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
+        var regpan = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+        return regpan.test(panNum);
+    }
+
+
+    function pan_validatePerson(panNum, PANType, LastName) {
+        /*
+            P - Person
+            C - Company
+            H - HUF(Hindu Undivided Family)
+            F - Firm
+            A - Association of Persons (AOP)
+            T - AOP (Trust)
+            B - Body of Individuals (BOI)
+            L - Local Authority
+            J - Artificial Juridical Person
+            G - Govt
+
+            <select>
+                <option value="P">Person</option>
+                <option value="C">Company</option>
+                <option value="H">HUF(Hindu Undivided Family)</option>
+                <option value="F">Firm</option>
+                <option value="A">Association of Persons (AOP)</option>
+                <option value="T">AOP (Trust)</option>
+                <option value="B">Body of Individuals (BOI)</option>
+                <option value="L">Local Authority</option>
+                <option value="J">Artificial Juridical Person</option>
+                <option value="G">Govt</option>
+            </select>
+        */
+        PANType = "P";
+        LastName = "J"; // Initial
+
+        try {
+            panNum = panNum ? panNum : "";
+            panNum = panNum.toUpperCase();
+            var regpan = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+            if (!regpan.test(panNum))
+            { return false; }
+            else {
+                return (panNum[3] == PANType && panNum[4] == LastName);
+            }
+        } catch (e) {
+            alert("Error in validating PAN number..");
+            return false;
+        }
+    }
+    
+    function fnPreview() {
+        var ImgArr = $("#scanfileid").getSelectedImages();
+        $("#scansaveid").MakeEmpty();
+        if (ImgArr.length > 0)
+            $("#scansaveid").LoadImageArr(ImgArr);
+    }
+
+    COMP_SCAN_FILE.CompReady("#scanfileid", function () {
+        $("#scanfileid").SetRepositoryProps({ userpk: "1" });
+        $("#scanfileid").LoadDirectory();
+    });
+
+    COMP_SCAN.CompReady("#scansaveid", function () {
+
+    });
+
+    $("#scansaveid").setProps({
+        LeadFk: 52,
+        DocAgtNm: "Agent",
+        DocBGeoFk: 2,
+        DocPrdFk: 2
+    });
+    
+
+    var DataHead = [
+        {
+            key: "AcCd", label: "Acc Code", type: "help",
+            Query: { ProcedureName: "", Type: "T", Parameters: ["SELECT LedPk as PK ,LedNm as AcCd,LedDelId FROM LosLead(NOLOCK); "] }, isPkValue: true
+        },
+        {
+            key: "SbAcCd", label: "Sub AccCode", type: "help",
+            Query: { ProcedureName: "", Type: "T", Parameters: ["SELECT LedPk as PK ,LedNm as SbAcCd ,LedDelId FROM LosLead(NOLOCK); "] }, isPkValue: false
+        },
+        { key: "TrTp", label: "Tran Type", type: "text" },
+        {
+            key: "BRfNm", label: "Bill Ref Number", type: "help",
+            Query: { ProcedureName: "", Type: "T", Parameters: ["SELECT LedPk as PK ,LedNm as BRfNm  FROM LosLead(NOLOCK); "] }, isPkValue: false
+        },
+        {
+            key: "HidBRfNm", label: "Bill Ref Number", type: "help",
+            Query: { ProcedureName: "", Type: "T", Parameters: ["SELECT LedPk as PK ,LedNm as HidBRfNm  FROM LosLead(NOLOCK); "] }, isPkValue: false
+        },
+        { key: "A", label: "A Ref Number", type: "date" },
+        {
+            key: "B", label: "B Ref Number", type: "text",
+            Query: { ProcedureName: "", Type: "T", Parameters: ["SELECT LedPk as PK ,LedPk as B  FROM LosLead(NOLOCK); "] }, isPkValue: false
+        }
+    ];
+
+    var DataBody = [];
+
+    for (var i = 1; i <= 10; i++) {
+        DataBody.push({ Pk: i, AcCd: "DATA_" + i, SbAcCd: "A", TrTp: "Q", BRfNm: i, HidBRfNm: "RE", A: "A_" + i, B: "B_" + i });
+    }
+
+  
+
+    setTimeout(function () {
+        $("#grid_1").initGrid({
+            DataHead: DataHead,
+            DataBody: DataBody,
+            paginationSize: 10,
+            isPagination: true
+        });
+    }, 300);
+
+</script>
+<style>
+    comp-scan, comp-scan-file, comp-scan-save, comp-scan-viewer {
+        /*border:1px solid red;*/
+        margin: 5px;
+    }
+
+        comp-scan h2, comp-scan-file h2 {
+            font-size: 12px;
+        }
+</style>
+</html>

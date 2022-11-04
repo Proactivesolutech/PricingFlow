@@ -1,0 +1,7 @@
+{"SPName": "PrcShflSanctionRejectPrint",
+"Addr": "PrcShflSanctionRejectPrint.Table1.Addr",
+"SancNo": "PrcShflSanctionRejectPrint.Table2.SancNo",
+"SancDt": "PrcShflSanctionRejectPrint.Table2.SancDt",
+"date": "PrcShflSanctionRejectPrint.Table.date",
+"Prd": "PrcShflSanctionRejectPrint.Table3.PrdNM",
+"notes": "PrcShflSanctionRejectPrint.Table4.Notes"}

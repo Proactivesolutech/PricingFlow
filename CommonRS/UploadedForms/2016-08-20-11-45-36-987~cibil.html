@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> PO </title>
+	<script type="text/javascript">
+        $(document).ready(function () {
+		    $("#btn_Save").click(function (e) {
+                
+		        var objProcData = { ProcedureName: "Prc_DataEntry", Type: "SP", Parameters: [GlobalXml[0].FwdDataPk, $("#cib_scr").val(),"", 1] }
+		        fnCallWebService("SAVE_DATA", objProcData, fnProjResult_PO, "MULTI", "");
+
+			})
+        });
+
+        function fnProjResult_PO(ServDesc, Obj, Param1, Param2) {
+            if (ServDesc == "SAVE_DATA") {
+                var Pk = JSON.parse(Obj.result)[0].Pk;
+                fnTriggerNxtPrc(Pk);
+            }
+        }
+	</script>
+</head>
+<body>
+	<table>
+	<tr>
+		<td> CIBIL Score </td>
+		<td> <input type="text" id="cib_scr"/> </td>
+	</tr>	
+	<tr>
+		<td> <input id="btn_Save" type="button" value="Save"/> </td>
+	</tr>
+	</table>
+</body>
+</html>

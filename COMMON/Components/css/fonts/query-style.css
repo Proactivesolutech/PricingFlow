@@ -1,0 +1,120 @@
+@font-face { font-family: 'icomoon'; src: url('query-icomoon.eot?tazztr'); src: url('query-icomoon.eot?tazztr#iefix') format('embedded-opentype'),  url('query-icomoon.ttf?tazztr') format('truetype'),  url('query-icomoon.woff?tazztr') format('woff'),  url('query-icomoon.svg?tazztr#icomoon') format('svg'); font-weight: normal; font-style: normal; }
+[class^="query_icon-"], [class*=" query_icon-"] { /* use !important to prevent issues with browser extensions that change fonts */
+font-family: 'icomoon' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; /* Better Font Rendering =========== */
+-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.query_icon-plus:before { content: "\e900"; }
+.query_icon-mail:before { content: "\e901"; }
+.query_icon-chat:before { content: "\e902"; }
+.query_icon-notification:before { content: "\e903"; }
+.query_icon-line-chart:before { content: "\e904"; }
+.query_icon-location:before { content: "\e905"; }
+.query_icon-calculator:before { content: "\e906"; }
+.query_icon-business:before { content: "\e907"; }
+.query_icon-calendar:before { content: "\e908"; }
+.query_icon-house:before { content: "\e909"; }
+.query_icon-indian-rupee:before { content: "\e90a"; }
+.query_icon-menu:before { content: "\e90b"; }
+.query_icon-credit:before { content: "\e90c"; }
+.query_icon-list:before { content: "\e90d"; }
+.query_icon-file:before { content: "\e90e"; }
+.query_icon-view:before { content: "\e90f"; }
+.query_icon-reply:before { content: "\e910"; }
+.query_icon-settings:before { content: "\e911"; }
+.query_icon-tick:before { content: "\e912"; }
+.query_icon-close:before { content: "\e913"; }
+.query_icon-expand:before { content: "\e914"; }
+.query_icon-collapse:before { content: "\e915"; }
+.query_icon-list-view:before { content: "\e916"; }
+.query_icon-thumbnails:before { content: "\e917"; }
+.query_icon-delete:before { content: "\e918"; }
+.query_icon-personal-loan:before { content: "\e919"; }
+.query_icon-home-loan:before { content: "\e91a"; }
+.query_icon-auto-loan:before { content: "\e91b"; }
+.query_icon-gold-loan:before { content: "\e91c"; }
+.query_icon-two-wheeler-loan:before { content: "\e91d"; }
+.query_icon-card-loan:before { content: "\e91e"; }
+.query_icon-bank-saving:before { content: "\e91f"; }
+.query_icon-insurance:before { content: "\e920"; }
+.query_icon-fixed-deposits:before { content: "\e921"; }
+.query_icon-immovable-property:before { content: "\e922"; }
+.query_icon-shares-and-securities:before { content: "\e923"; }
+.query_icon-pf:before { content: "\e924"; }
+.query_icon-lap:before { content: "\e925"; }
+.query_icon-car-loan:before { content: "\e926"; }
+.query_icon-bank:before { content: "\e927"; }
+.query_icon-coins:before { content: "\e928"; }
+.query_icon-negative:before { content: "\e929"; }
+.query_icon-salaried:before { content: "\e92a"; }
+.query_icon-self-employed:before { content: "\e92b"; }
+.query_icon-proof:before { content: "\e92c"; }
+.query_icon-no-proof:before { content: "\e92d"; }
+.query_icon-sorrogate:before { content: "\e92e"; }
+.query_icon-positive:before { content: "\e92f"; }
+.query_icon-question-mark:before { content: "\e930"; }
+.query_icon-no-status:before { content: "\e931"; }
+.query_icon-test-tube:before { content: "\e932"; }
+.query_icon-folder:before { content: "\e933"; }
+.query_icon-home-extension-loan:before { content: "\e934"; }
+.query_icon-home-improvement-loan:before { content: "\e935"; }
+.query_icon-balance-transfer:before { content: "\e936"; }
+.query_icon-plot-loan:before { content: "\e937"; }
+.query_icon-builder-loan:before { content: "\e938"; }
+.query_icon-topup-loan:before { content: "\e939"; }
+.query_icon-crop:before { content: "\e93a"; }
+.query_icon-minus:before { content: "\e93b"; }
+.query_icon-refresh:before { content: "\e93c"; }
+.query_icon-rotate-left:before { content: "\e93d"; }
+.query_icon-location2:before { content: "\e93e"; }
+.query_icon-rotate-right:before { content: "\e93f"; }
+.query_icon-aadhar:before { content: "\e940"; }
+.query_icon-dashboard:before { content: "\e941"; }
+.query_icon-pending:before { content: "\e942"; }
+.query_icon-drop-down-arrow:before { content: "\e943"; }
+.query_icon-sales-manager:before { content: "\e944"; }
+.query_icon-agents:before { content: "\e945"; }
+.query_icon-branch-credit:before { content: "\e946"; }
+.query_icon-zonal-credit:before { content: "\e947"; }
+.query_icon-zonal-ops-qc:before { content: "\e948"; }
+.query_icon-zonal-ops:before { content: "\e949"; }
+.query_icon-rcu:before { content: "\e94a"; }
+.query_icon-branch-ops:before { content: "\e94b"; }
+.query_icon-opration-manager:before { content: "\e94c"; }
+.query_icon-dispurcement-manager:before { content: "\e94d"; }
+.query_icon-down-arrow:before { content: "\e94e"; }
+.query_icon-warning:before { content: "\e94f"; }
+.query_icon-info:before { content: "\e950"; }
+.query_icon-clock:before { content: "\e951"; }
+.query_icon-cup:before { content: "\e952"; }
+.query_icon-new-file:before { content: "\e953"; }
+.query_icon-open:before { content: "\e954"; }
+.query_icon-save:before { content: "\e955"; }
+.query_icon-tools:before { content: "\e956"; }
+.query_icon-tag:before { content: "\e957"; }
+.query_icon-chat-o:before { content: "\e958"; }
+.query_icon-zoom-out:before { content: "\e959"; }
+.query_icon-zoom-in:before { content: "\e95a"; }
+.query_icon-previous:before { content: "\e95b"; }
+.query_icon-search:before { content: "\e95c"; }
+.query_icon-document:before { content: "\e95d"; }
+.query_icon-down-detail:before { content: "\e95e"; }
+.query_icon-up-arrow:before { content: "\e95f"; }
+.query_icon-down-arrow1:before { content: "\e960"; }
+.query_icon-printer:before { content: "\e961"; }
+.query_icon-customer:before { content: "\e962"; }
+.query_icon-download:before { content: "\e963"; }
+.query_icon-attach:before { content: "\e964"; }
+.query_icon-filter:before { content: "\e965"; }
+.query_icon-paid:before { content: "\e966"; }
+
+
+
+
+.fa-lg { font-size: 1.33333333em; line-height: 0.75em; vertical-align: -15%; }
+.fa-1x { font-size: 1.5em; vertical-align: middle; }
+.fa-2x { font-size: 2em; vertical-align: middle; }
+.fa-3x { font-size: 3em; }
+.fa-4x { font-size: 4em; }
+.fa-5x { font-size: 5em; }
+.fa-fw { width: 1.28571429em; text-align: center; }
+@font-face { font-family: 'robotoregular'; src: url('roboto-regular.eot'); src: url('roboto-regular.eot?#iefix') format('embedded-opentype'), url('roboto-regular.woff2') format('woff2'), url('roboto-regular.woff') format('woff'), url('roboto-regular.ttf') format('truetype'), url('roboto-regular.svg#robotoregular') format('svg'); font-weight: normal; font-style: normal; }
+

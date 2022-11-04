@@ -1,0 +1,280 @@
+=====================================
+
+Name			:	VIJAYASARATHI. S
+Domain			:	SVSGLOBAL.COM
+Domain username	:	SVSV447
+Emp Id			:	V447
+Email			:	vijayasarathi.s@shriramvalue.in
+Documentation On:	BPM
+
+=====================================
+
+----DB Details----------------------
+	172.31.242.6\abistesting
+	proabis
+	Abispro@123
+	
+----Links Used mainly----------------	
+	Login Page							http://192.169.5.224/bpm/bpmflow/login.html
+	For Process creation				http://192.169.5.224/BPM/Bpm/	
+	For Process selection and History	http://192.169.5.224/BPM/Bpmflow/
+	For User details of various roles	http://192.169.5.224/bpm/users/
+
+----Reference Links-----------------------
+	https://bpmn.io/
+	http://camunda.org/bpmn/reference/
+	
+----For Hosting make changes in below files------------------
+	SHFL\BPMFLOW\js\Scrn\index.js	:IP,DB
+	SHFL\BPMFLOW\js\Scrn\login.js	:IP
+	SHFL\BPM\js\Scrn\modeler.js		:IP
+	SHFL\RS\Web.config				:DB
+
+----Project and Working Folder-------------
+	For Local development
+		1.Web Service: RS-Local
+			Hosted in IIS	:Yes
+			Path				:D:\Vijay\BPM-Local\SHFL LENDING\SHFL\RS
+			DB					:BPM
+		2.Web Application: BPM-Local
+			Hosted in IIS	:Yes
+			Path				:D:\Vijay\BPM-Local\SHFL LENDING\SHFL
+			DB					:BPM
+		
+	For Demo 
+		1.Web Service: RS 
+			Hosted in IIS	:Yes
+			Path				:D:\Vijay\BPM\SHFL LENDING\SHFL\RS
+			DB					:BPMSITE
+		2.Web Application: BPM 
+			Hosted in IIS	:Yes
+			Path				:D:\Vijay\BPM\SHFL LENDING\SHFL
+			DB					:BPMSITE
+	
+----SQL Related things(mainly used)------------------
+	Tables
+		BpmToolBox		- (Identity-BtbPk)contains Tools info available in BPM page Tools option  
+		BPMMas			- (Identity-BpmPk)contains the Process and its ID (this id is the part of process table [GEN_<ProcessID>_<TaskName>])
+		BpmVersions 	- (Identity-BvmPk)contains Version ID, process design as XML for Process
+		BpmFlow 		- (Identity-BfwPk)contains the Tasks created for Process with Version ID
+		BpmFlowTbl 		- (Identity-no)contains separate entries for each and every task with [ID FtBfwFk] of all Process 
+		BpmUIDefn 		- (Identity-BudPk)contains the Design data as JSON with [ID BudBfwFk] for all the Elements 
+		BpmObjInOut 	- (Identity-BioPk)contains the tasks with the input task and output task info with version ID to differentiate each different version
+		BpmFlowKeyTable	- (Identity-KeyPk)contains the list of ProcessID created for each Process
+		BpmExec 		- (Identity-BexPk)contains the Tasks with the Task Id [BexBioFk] from inout table [Biopk]
+		BpmExecStatus	- (Identity-BesPk)
+		BpmNextOpUsr	- (Identity-BnoPk)contains the details of task flow fo next-next users
+		GenUsrBrnDtls	-
+		GenUsrRoleDtls 	-
+		GenUsrMas		-
+		GenRole			-
+		QryHdr			-
+		QryDtls			-
+		QryIn			-
+		Qryout			-
+		QryCategory		-
+	Stored Procedures
+		PrcShflBpm_Build
+		PrcShflBpmProcess
+		PrcShflBpm_Proj
+		PrcSaveKeyData
+		PrcBpmArvNextSeq
+    
+----Things to keep in mind-----------	
+	1. When initiating the process it will be assigned automatically to
+		i. the user of the Role of Start event present
+		ii. also to the user who is having less pending tasks
+	2. When naming Process flow elements don't use space use _ instead
+	3. Separate tables will be created for each tasks in the format [GEN_<ProcessID>_<TaskName>] Eg.[GEN_2147_Task_05yvzrx_xrpv]
+	4. BPMExec will store the user who is creating\initiating the process and not the user it will be assigned to.
+			
+----Queries/Bugs--------------------------	
+	1. All elements in the Process flow must have the code - but no validation for it*********Issue1-Fixed
+	2. Names should be inserted to differentiate the output Tasks when using ExGate - but no validation for it*********Issue2
+	3. Gateways consecutively can come? Two Exclusive Gateways(Parallel Gateway can come) consecutively won't come
+	4. More than one End/Start event will come? scenarios like multiple start\end won't come(multiple end allowed, single end from diff task allowed, for multiple start error)
+	5. If 2nd Point possible will it come for different Role? (End for different Role allowed)
+	6. For Parallel Gateway, how many tasks allowed(both input/output)? no restriction
+	7. If 4th Point possible will it connect between different Role? yes
+	8. More than one Participant will come? No Need of it
+	9. Single End event from many Tasks can possible? yes
+	10.In ExGate if Continue given directly, then its not moving to any user*********Issue3-Fixed
+	11.ExGate button text not applied correctly - Names should be inserted to differentiate the output Tasks
+	12.How will work if Button control given in the Tasks?*********Issue4
+	13.What will happen when the ExGate and input given in diff role? It's coming in the same role
+	14.Even its Mandatory Form is contine to Next stage*********Issue5-Fixed
+	15.Check how the tools are loading - bpm-modeler.js
+	16.If any columns updated, both the old and new columns coming in the History**********Issue6
+	17.Version number not started from 1 when created from use as template************Issue7
+	
+----For Better Understanding---------
+	DB
+		When loading BPM 
+			SP's used
+				PrcShflBpm_Build with Action 'GET_FLOW_XML'
+					1. returns existing Process and its work flow diagram
+					2. returns existing Process and its process id
+				PrcShflBpm_Build with Action 'LOAD_ROLES'
+					1. returns list of Users eg. Customer, Executive, HOD,.. 
+					2. returns list of Branches and its ID eg. CHENNAI CHIT UNIT 52					
+					3. returns list of users and their ID eg. Naveen 1428
+		New Process								
+			when saving
+				SP's Used
+					1. PrcShflBpmProcess with Action 'PrcSave'
+				Tables getting affected
+					1. Few tables will be created based on the Tasks created in the Process
+					2. [BpmMas] - Process Name and Id inserted (Identity-BpmPk)
+					3. [BpmVersions] - Version ID, process design as XML Inserted for Process
+					4. [BpmFlow] - Task Id with Version ID Inserted
+					5. [BpmFlowTbl] - For separate table creation for each and every task separate entries are inserted with ID FtBfwFk
+					6. [BpmUIDefn] - Design data as JSON with [BudBfwFk] for all the Elements will be inserted
+					7. [BpmObjInOut] - tasks with in and out task of each tasks inserted with version number
+					8. [ShflPgRightsDtls] - Roles rights inserted											
+		Existing Process
+			When Opening Existing Process
+				SP's used
+					PrcShflBpm_Build with Action 'GET_FLOW_XML'
+			when saving
+				SP's used
+					PrcShflBpmProcess with Action 'PrcEdit'
+				Tables getting Affected
+					1. [BpmVersions] - Version ID, process design as XML Inserted for Process
+					2. [BpmFlow] - Task Id with Version ID Inserted
+					3. [BpmObjInOut] - tasks with in and out task of each tasks inserted with version number
+					4. [ShflPgRightsDtls] - Roles rights inserted
+					5. [BpmUIDefn] - Design data as JSON with [BudBfwFk] for all the Elements will be inserted
+					6. [BpmFlowTbl] - will be affected when there is a change in Tasks
+							
+		Process Workflow
+			When loading BpmFlow
+				SP's used
+					1. PrcSaveKeyData with Action 'GetBpmList'
+					2. PrcShflBpm_Proj with Action 'GET_ENTRY_DATA' - get the case list 
+			when Adding/initiating Process
+				SP's used
+					1. PrcSaveKeyData with Action 'Save'
+					2. PrcLeadListing 
+					3. PrcShflBpm_Proj with Action 'GET_ENTRY_DATA' - get the case list 
+					4. PrcShflBpm_Proj with Action 'GET_ENTRY_STS' - get all the info of the task like textbox,button,... as JSON
+				Tables getting Affected
+					1. [BpmFlowKeyTable] - Process Key created for added Process
+					2. [BpmExec] - For current Task an entry will be inserted with the Task Id [BexBioFk] from inout table [Biopk]
+			when click on the Process
+				SP's used
+					1. PrcShflBpm_Proj with Action 'GET_ENTRY_STS' - get all the info of the task like textbox,button,... as JSON
+			when click on the Continue and Handover
+				SP's used
+					1. PrcShflBpm_Proj with Action 'FORWARD_DATA'
+					2. PrcShflBpm_Proj with Action 'GET_ENTRY_DATA' - reload the cases list
+				Tables getting Affected
+					1. [BpmExec]
+					2. [BpmExecStatus]
+					3. [BpmNextOpUsr]					
+	Code
+		Tables used			
+			what data stored
+			when and where that data used back
+			how the controls created
+			how the connection between tables maintained
+
+----Query to retrive Required Information--------------------
+	MainProcessName,MainProcessID,ProcessID,VersionName,VersionID,RoleName,RoleID,UserName,UserID
+	
+	
+--To find the Users and their roles for a Process
+	Declare @ProcessID bigint, @MainProcessName varchar(100);
+	select @ProcessID = 0; 
+	select @MainProcessName = '';
+
+	Select 
+		MainProcessName = (Select KeyNm from BpmFlowKeyTable where KeyPk = T1.bnodatapk),
+		MainProcessID = (Select Bpmpk from BpmMas where BpmNm = @MainProcessName), 
+		VersionID = T1.BnoBvmFk, 
+		VersionNumber = (Select BvmVerNo from BpmVersions where BvmPk = T1.BnoBvmFk),
+		ProcessID = T1.bnodatapk,
+		RoleID = T1.urdRolFk,
+		RoleName = T2.Rolnm,
+		UserID = T1.UsrPk,
+		UserName = T1.usrnm 
+	from( 
+		--To find the Role Name of a user
+		Select a.usrnm, a.UsrPk, b.urdRolFk, u3.bnodatapk, u3.BnoBvmFk  from 
+			GenUsrMas a 
+		join 
+			GenUsrRoleDtls b 
+		on 
+			b.urdusrfk=a.usrpk and a.usrpk in (
+				--To find the Assigned user(s) of a Process
+				Select u2.bnousrfk from 
+					BpmExec u1
+				join 
+					BpmNextOpUsr u2
+				on
+					u1.bexpk=u2.bnobexfk and u1.bexkeyfk in (select keypk from BpmFlowKeyTable where keynm = @MainProcessName OR @MainProcessName='') 					
+			)
+		join
+			BpmNextOpUsr u3
+		on
+			b.UrdUsrFk=u3.BnoUsrFk and (u3.BnoDataPk = @ProcessID or @ProcessID=0 or @ProcessID=null)
+		) as T1 
+	join 
+		genrole T2 
+	on 
+		t2.rolpk=t1.UrdRolFk
+	order by 
+		MainProcessName,MainProcessID,VersionID,VersionNumber,ProcessID,RoleName,RoleID,UserName,UserID
+		
+----Tasks---------------------------
+	1.Issue1 - Validation for Code entering
+		Changes Done
+			Files				
+				D:\Vijay\BPM\SHFL LENDING\SHFL\BPM\js\scrn\modeler.js
+				
+	2. Attachment
+		Review
+			1. Add the file browse control[Attr:disabled,multiple] in BPM design (set it disable)
+			2. Enable it in BPMFlow on initiating process
+			3. Allow them Single/Multiple file to browse?
+			4. Add Timestamp to avoid conflict of same name(code already available)
+			5. Need to store the info in DB for track them and which table to use?
+			6. Separate Attach button required or during click on Continue? 
+			7. File type(extension) filter required?
+		Instructions
+			1. Attachment allow Single File-done
+			2. Add Timestamp-done
+			3. Upload the file only on Clicking "Continue"-done
+			4. Add a control to insert Remarks-done
+			5. Create separate table and store the details ID, ProcessID, BoiFk, Actual-Filename, New-FileName, Path, Remarks, Created-Time-done
+			6. Add a stored procedure to insert in data into the table-done
+			7. If Attachment present show them as Preview in History-done
+			
+		Changes Done
+			Files
+				D:\Vijay\BPM-Local\SHFL LENDING\SHFL\RS\FileUploadHandler.ashx.cs
+				D:\Vijay\BPM-Local\SHFL LENDING\SHFL\RS\Web.config
+				D:\Vijay\BPM-Local\SHFL LENDING\SHFL\Common\js\scrn\bpm_common.js
+				D:\Vijay\BPM-Local\SHFL LENDING\SHFL\BPM\js\scrn\modeler.js
+				D:\Vijay\BPM-Local\SHFL LENDING\SHFL\BPMFLOW\js\Scrn\index.js
+				D:\Vijay\BPM-Local\SHFL LENDING\SHFL\BPMFLOW\index.html
+			SQL	
+				New Procedure Added "PrcFileupldDetails"
+				New Table Added "FileupldAttachment"
+				
+	3.Issue5 - Mandatroy Field Check
+		Changes Done 
+			Files
+				D:\Vijay\BPM-Local\SHFL LENDING\SHFL\COMMON\components\css\common.css
+				D:\Vijay\BPM-Local\SHFL LENDING\SHFL\COMMON\css\common.css
+				D:\Vijay\BPM-Local\SHFL LENDING\SHFL\BPMFLOW\index.html
+				
+	4.Issue3 - ExGate "Continue"
+		Changes Done 
+			Files
+				D:\Vijay\BPM-Local\SHFL LENDING\SHFL\BPMFLOW\index.html
+				
+	5.Attachment in Queries Panel
+		Changes Done 
+			Files
+				D:\Vijay\BPM-Local\SHFL LENDING\SHFL\BPMFLOW\index.html
+				

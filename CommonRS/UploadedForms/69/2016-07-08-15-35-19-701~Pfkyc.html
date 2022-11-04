@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> PO </title>
+	<script type="text/javascript">
+        $(document).ready(function () {
+		    $("#btn_Save").click(function (e) {
+                
+		        var objProcData = { ProcedureName: "Prc_DataEntry", Type: "SP", Parameters: [GlobalXml[0].FwdDataPk, $("#txt_PfAmt").val(), $("#txt_AdharNo").val(), $("#txt_VotID").val(), 0] }
+		        fnCallWebService("SAVE_DATA", objProcData, fnProjResult_PO, "MULTI", "");
+
+			})
+        });
+
+        function fnProjResult_PO(ServDesc, Obj, Param1, Param2) {
+            if (ServDesc == "SAVE_DATA") {
+                var DataPk = JSON.parse(Obj.result)[0].Pk;
+                fnTriggerNxtPrc(DataPk);
+            }
+        }
+	</script>
+</head>
+<body>
+	<table>
+	<tr>
+		<td> PF Amount </td>
+		<td> <input type="text" id="txt_PfAmt"/> </td>
+	</tr>	
+	<tr>
+		<td> Adhar No. </td>
+		<td> <input type="text" id="txt_AdharNo"/> </td>
+	</tr>
+    <tr>
+        <td> Voters ID No. </td>
+        <td> <input type="text" id="txt_VotID" /> </td>
+    </tr>
+	<tr>
+		<td> <input id="btn_Save" type="button" value="Save"/> </td>
+	</tr>
+	</table>
+</body>
+</html>

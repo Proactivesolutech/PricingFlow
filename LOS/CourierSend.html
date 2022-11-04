@@ -1,0 +1,205 @@
+﻿<div class="title">
+    <h1>Branch Ops : Sanction Acceptance</h1>
+</div>
+<div class="content-div"id="sanction_div">
+
+    <form id="PostForm" name="PostForm" action="http://119.226.197.6:8080/omnidocs/integration/foldView/viewFoldList.jsp" method="post" target="newWin">
+        <input type="hidden" name="Application" value="SHFL_LOANS">
+        <input type="hidden" id="fold_nm" name="FolderName" value="">
+        <input type="hidden" name="sessionIndexSet" value="false">
+    </form>
+
+    <div id="div_append">
+        <div class="box-div">
+            <h2>Lead Information<i class="icon-plus div-right" title="Omnidox" id="popclose" onclick="fnpop();"></i></h2>
+            <ul class="form-controls">
+                <li class="category-icon">
+                    <div id="prddiv">
+                        <i class="icon-home-loan"></i>
+                        <p>Home Loan</p>
+                    </div>
+                </li>
+                <li class="width-1 read-only">
+                    <label>Lead ID</label>
+                    <p id="Scan_LeadId"></p>
+                </li>
+                <li class="width-280 read-only">
+                    <label>Applicant</label>
+                    <p id="Scan_LeadNm"></p>
+                </li>
+                <li class="width-15 read-only">
+                    <label>Branch</label>
+                    <p id="Scan_Branch"></p>
+                </li>               
+
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <div class="box-div" id="boxdivid">
+            <ul class="form-controls" id="ul_hid">
+                <li class="width-13">
+                    <label>Courier Sent Date</label>
+                    <input id="CourierDt" data-beatpicker="true" data-beatpicker-position="['*','*']" type="text" name="text" key="CourierDt" class="mandatory" sign="C">
+                </li>
+                <li class="width-13">
+                    <label>Sanction Signed Date</label>
+                    <input id="sanctionDt" data-beatpicker="true" data-beatpicker-position="['*','*']" type="text" name="text" key="sanctionDt" class="mandatory" sign="S">
+                </li>               
+                </ul>
+        </div>
+        <div id="sandivid">
+            </div>
+        
+        </div>
+    <div class="postsanction-property-bo box-div" id="PostSancProperty_bo">        
+            <ul id="psq_ul_prop_tabs_bo" class="common-tabs">
+                <li class="active tab_0 propDiv" licount="0" onclick="fnshowprop_bo(this);">Property1</li>
+            </ul>
+            <h2>Property Information</h2>
+            <div id="psq_prop_div_bo_0" val="0" propfk="0" class="tab0-content div_content property" contentchanged="true">
+                <div class="box-div">
+                    <ul class="form-controls">
+                        <h2>Property Address</h2>
+                        <li class="width-8">
+                            <label>Flat/Door No</label>
+                            <input type="text" name="text" key="sanc_doorno" restrict="number" maxlength="20" readonly>
+                        </li>
+                        <li class="width-22">
+                            <label>Building</label>
+                            <input type="text" name="text" key="sanc_building" restrict="number" maxlength="100" readonly>
+                        </li>
+                        <li class="width-9">
+                            <label>Plot No</label>
+                            <input type="text" name="text" key="sanc_plotno" restrict="number" maxlength="20" readonly>
+                        </li>
+                        <li class="width-21">
+                            <label>Street</label>
+                            <input type="text" name="text" key="sanc_street" restrict="number" maxlength="150" readonly>
+                        </li>
+                        <li class="width-34">
+                            <label>Land Mark</label>
+                            <input type="text" name="text" key="sanc_landmark" restrict="number" maxlength="250" readonly>
+                        </li>
+                        <li class="width-21">
+                            <label>Town/Village</label>
+                            <input type="text" name="text" key="sanc_area" restrict="number" maxlength="150" readonly>
+                        </li>
+                        <li class="width-34">
+                            <label>District/City</label>
+                            <input type="text" name="text" key="sanc_district" restrict="number" maxlength="100" readonly>
+                        </li>
+                        <li class="width-10">
+                            <label>State</label>
+                            <input type="text" name="text" key="sanc_state" restrict="number" maxlength="100" readonly>
+                        </li>
+                        <li class="width-10">
+                            <label>Country</label>
+                            <input type="text" name="text" key="sanc_country" restrict="number" maxlength="100" readonly>
+                        </li>
+                        <li class="width-6">
+                            <label>PIN</label>
+                            <input type="text" name="text" key="sanc_pincode" restrict="number" maxlength="6" readonly>
+                        </li>
+                    </ul>
+                </div>
+                <div class="postsanction-seller box-div" id="PostSancSeller_bo">
+                    <h2>Seller Details</h2>
+                    <ul id="psq_ul_seller_tabs_bo" class="common-tabs">
+                        <li value="0" class="active tab_0 common" onclick="fnshowseller(this);">Seller1</li>
+                        <li class="add">
+                            <i class="icon-plus" onclick="fnAddSeller(this)"></i>
+                        </li>
+                    </ul>
+                    <div id="psq_seller_div_bo_0_0" val="0" propfk="0" sellerpk="0" class="tab0-content div_content seller_div psq_seller_div_bo_0_0" contentchanged="true">
+                        <ul class="form-controls" contentchanged="true">
+                            <li class="width-7 seller">
+                                <label>Type of Seller</label>
+                                <select name="select2" key="psq_SellerType" class="select mandatory" onchange="fnSellerTypChange(this, 'psq_seller_div_bo_0_0');">
+                                    <option value="-1">Select</option>
+                                    <option value="B">Builder</option>
+                                    <option value="S">Seller</option>
+                                </select>
+                            </li>
+
+                            <li class="width-12 buildermas">
+                                <!--<label>Name</label>-->
+                                <!--<comp-help id="comp-help" txtcol="BuilderName" valcol="GPk" onrowclick="builderclick" prcname="PrcShflBuilderhelp" width="100%"></comp-help>
+                            <input type="hidden" class="mandatory" valtext="" name="text" key="psq_SellerName">-->
+                            </li>
+                            <li class="width-12" id="sanc_buildercin" style="display:none;">
+                                <label>CIN</label>
+                                <input type="text" placeholder="" name="text" key="psq_CIN" class="mandatory">
+                            </li>
+                        </ul>
+                        <ul class="form-controls UlSellerAddr" id="sanc_UlSellerAddr" contentchanged="true" style="display:none">
+                            <h2>Address</h2>
+                            <li class="width-8">
+                                <label>Flat/Door No</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerFLatNo" maxlength="20">
+                            </li>
+                            <li class="width-21">
+                                <label>Building</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerBuild" class="mandatory" maxlength="100">
+                            </li>
+                            <li class="width-8">
+                                <label>Plot No</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerPlotNo" maxlength="20">
+                            </li>
+                            <li class="width-54">
+                                <label>Street</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerSt" maxlength="150">
+                            </li>
+                            <li class="width-54">
+                                <label>Land Mark</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerLndMrk" maxlength="250">
+                            </li>
+                            <li class="width-54 city">
+                                <label>Town/Village/City</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerTown" class="mandatory" maxlength="150">
+                            </li>
+                            <li class="width-54 district">
+                                <label>District</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerDist" class="mandatory" maxlength="100">
+                            </li>
+                            <li class="width-21 state">
+                                <label>State</label>
+                                <input type="text" placeholder="" name="text" key="psq_SellerState" class="mandatory" maxlength="100">
+                            </li>
+                            <li class="width-6">
+                                <label>PIN</label>
+                                <comp-help id="comp-help" txtcol="Pincode" valcol="PinPk" onrowclick="Pinclick" prcname="PrcShflPincodehelp" width="100%" class="mandatory"></comp-help>
+                                <input type="hidden" placeholder="" name="text" key="psq_SellerPin" restrict="number" maxlength="6" >
+                            </li>
+
+                        </ul>
+                        <ul class="form-controls" id="sanc_chkagent" contentchanged="true">
+                            <li class="checkbox width-54" id="sanc_checkAgt" style="display:none">
+                                <input type="checkbox" name="checkbox" key="psq_check_agt" onclick="fncheckAgt(this);">
+                                Trigger Agency
+                            </li>
+
+                            <li class="width-54 sanc-SelAGent" id="sanc_SelAGent"style="display:none">
+                                <label>Seller Agent</label>
+                                <comp-help id="comp-help" class="Seller_help mandatory" txtcol="AgentName" valcol="Agtpk" helpfk="0" onrowclick="agtclick" prcname="PrcShfl_AgentMas_help" width="100%"></comp-help>
+                                <input type="hidden" placeholder="" name="text" key="psq_agnttype">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>        
+            <div class="clear"></div>                                       
+    </div>
+    <input type="hidden" name="text" id="psq_hdn_confirm_bo" key="psq_hdn_confirm" value="0" />
+    <input type="hidden" name="text" key="psq_hdn_new" value="0" />
+    </div>
+ <script src="js/Scrn/CourierSend.js"></script>
+<script src="js/BeatPicker.min.js"></script>
+<script>
+    GlobalXml[0].Sanc_Frm = "CourierSend"
+    calcHeight(); //Viewport Height Function Starts
+    function fnpop() {
+        $("#fold_nm").val(GlobalXml[0].LeadID);
+        window.open("", "newWin", "location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no,left=20,top=20,width=600,height=600");
+        PostForm.submit();
+    }
+</script>

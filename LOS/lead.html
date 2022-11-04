@@ -1,0 +1,235 @@
+
+<div class="title">
+  <h1>Sales Manager : Lead</h1>
+</div>
+<div id="mainLeadDiv" class="Initiate">
+    <div class="content-div" contentchanged="true">
+        <div class="grid-50 div-left">
+            <div class="box-div">
+                <h2>Lead Information</h2>
+                <ul class="form-controls">
+                    <li class="category-icon">
+                        <div id="prddiv">
+                            <!--<input type="hidden" name="text" key="lead_product"/>-->
+                            <i class="icon-home-loan"></i>
+                            <p>Home Loan</p>
+                        </div>
+                    </li>
+                    <li class="width-1 read-only">
+                        <label>Lead ID</label>
+                        <!--<p id="leadno" name="content" key="lead_id" disabled />-->
+                        <input type="text" name="text" class="mandatory" key="lead_id" id="lead_id">
+                    </li>
+                    <!--<li class="width-15 read-only">
+                                    <label>Branch</label>
+                                    <select id="Brn" key ="lead_Branch" name="Select"></select>
+                                    <input type="text">
+                                </li>-->
+                    <li class="width-15 read-only bank">
+                        <label>Branch</label>
+                        <comp-help id="comp-help" txtcol="Location" valcol="Brnchpk" onrowclick="Brnchclick" connect="bpm" prcname="PrcShflleadBranchhelp" width="100%"></comp-help>
+                        <input type="hidden" name="text" valtext="" key="lead_Branch" />
+                        <!--<div class="select-focus">
+                                          <input name="select" placeholder="Select" onkeydown="return false" selval="-1" key="lead_Branch" class="autofill mandatory">
+
+                                          <i class="icon-down-arrow"></i>
+                                          <ul class="custom-select" id="Brn"></ul>
+                                      </div>-->
+                    </li>
+                    <li class="width-280 read-only">
+                        <label>Applicant</label>
+                        <input type="text" name="text" key="lead_ApplicantNm" restrict="alphaspace" maxlength="100" class="mandatory">
+                    </li>
+                    <li class="width-15 read-only">
+                        <label>Mobile Number</label>
+                        <input type="text" class="mobile" name="text" key="lead_mobile" restrict="number" maxlength="10">
+                    </li>
+                    <li class="width-15 read-only">
+                        <label>DOB</label>
+                        <input type="text" name="text" key="lead_dob" id="dobid" />
+                        <!--<input type="text" name="text" key="lead_dob" data-beatpicker="true" />-->
+                        <!--<input class="datepicker" type="text" name="text" key="lead_dob">-->
+                    </li>
+                    <li class="width-10 read-only branch">
+                        <label>Agent</label>
+                        <comp-help id="agent-help" txtcol="AgentName" valcol="Agtpk" helpfk="7" onrowclick="Agentclick" prcname="PrcShfl_AgentMas_help" width="100%"></comp-help>
+                        <input type="hidden" name="text" valtext="" key="lead_Agent" />
+                        <!--<comp-help id="comp-help" txtcol="firstnm" valcol="AgtPk" prcname="PrcShflAgenthelp" width="100%"></comp-help>-->
+                        <!--<div class="select-focus">
+                                          <input name="select" placeholder="Select" onkeydown="return false" selval="-1" key="lead_Agent" class="autofill mandatory">
+
+                                          <i class="icon-down-arrow"></i>
+                                          <ul class="custom-select" id="Agt"></ul>
+                                      </div>-->
+                    </li>
+                    <div class="clear"></div>
+                   
+                
+                        <li>
+                            <comp-help id="lead_help" valcol="GPk" onrowclick="Searchclick" prcname="PrcShflleadhelp" width="100%" comp-hidden="true"></comp-help>
+                            <input type="button" value="Search" id="searchbutton" onclick="fnLedSearch();">
+                        </li>
+                   
+                    <li class="width-15 read-only">
+                        <input type="hidden" id="leadpk" pcd="" name="text" key="lead_pk">
+                        <input type="hidden" id="LeadPrdPk" name="text" key="lead_prdPk">
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <!--<div class="box-div">
+                      <h2>Processing Fee</h2>
+                      <ul class="form-controls form-focus">
+                        <li class="width-48p">
+                            <label>Instrument Number</label>
+                        <input type="text" value="" required>
+                        </li>
+                        <li class="width-48p"><label>Instrument Date</label>
+                          <input type='text' required>
+                        </li>
+                        <li class="amount width-48p"><label>Instrument Amount</label>
+                          <input type="text" required>
+                          <i class="icon-indian-rupee"></i> </li>
+                        <li class="width-48p"><label>Drawee Bank</label>
+                          <input type="text" required>
+                        </li>
+                        <div class="clear"></div>
+                      </ul>
+                    </div>-->
+        </div>
+        <div class="grid-50 div-right">
+            <div class="box-div">
+                <div class="calculator-div">
+                   <!-- <input id="chk_Prop" type="checkbox" key="lead_pni" name="checkbox" onclick="fnchkprop();">
+                    Property Not Identified
+                    <input id="chk_topup" type="checkbox" key="lead_bt" name="checkbox" onclick="fnchktopup();">
+                    BT - TOPUP-->
+                 
+                    <div class=" cal-head">
+                        <ul class="div-left">
+                          
+                            <label>Income Type</label>
+
+                            <!--<div class="select-focus">
+                                                <input name="select" placeholder="Select" onkeydown="return false" selval="-1" key="lead_incometyp" class="autofill mandatory">
+                                                <i class="icon-down-arrow"></i>
+                                                <ul class="custom-select">
+                                                    <li val="0">Salaried</li>
+                                                    <li val="1">Self Employed</li>
+                                                </ul>
+                                            </div>-->
+                            <select name="select2" key="lead_incometyp" class="select mandatory">
+                                <option value="-1">Select</option>
+                                <option value="0">Salaried</option>
+                                <option value="1">Self Employed</option>
+                            </select>
+                        </ul>
+                        <div class="div-right">
+                            <p class="cal-per"><span name="content" contenteditable="true" key="lead_roi" id="ROIID"></span>%</p>
+                            <p>ROI</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="cal-content">
+                        <ul class="form-controls div-left">
+                            <li class="amount">
+                                <label>Estimated Markert value of property</label>
+                                <input type="text" name="text" class="currency mandatory" key="lead_mktval" restrict="number" id="EMVid">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="amount">
+                                <label>Loan Amount</label>
+                                <input type="text" name="text" class="currency mandatory" key="lead_loanamt" restrict="number" id="LoanAmtid">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="amount">
+                                <label>Repayment Tenure (In Months)</label>
+                                <input type="text" name="text" key="lead_tenure" restrict="number" id="Tenureid" class="mandatory">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="amount">
+                                <label>Monthly Income</label>
+                                <input type="text" name="text" key="lead_mnthInc" class="currency mandatory" restrict="number" id="monIncome">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <li class="amount">
+                                <label>Monthly Obligations</label>
+                                <input type="text" name="text" key="lead_obl" class="currency" restrict="number" id="MonObli">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+                            <div class="clear"></div>
+                        </ul>
+                        <ul class="form-controls div-right">
+                            <li>
+                                <label>Previous loan or card history?</label>
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="checkbox" key="lead_prvloanRcard" class="onoffswitch-checkbox" id="myonoffswitch1" checked>
+                                    <label class="onoffswitch-label" for="myonoffswitch1"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                </div>
+                            </li>
+                            <li>
+                                <label>Have you defaulted on loan/card? </label>
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="checkbox" key="lead_defloanRcard" class="onoffswitch-checkbox" id="myonoffswitch2" checked>
+                                    <label class="onoffswitch-label" for="myonoffswitch2"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                </div>
+                            </li>
+                            <li>
+                                <label>Has Proofs</label>
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="checkbox" key="lead_proof" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                                    <label class="onoffswitch-label" for="myonoffswitch"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                                </div>
+                            </li>
+                            <li>
+                                <label>CIBIL Score</label>
+                                <input type="text" name="text" key="lead_cibil" restrict="number" id="cibilid">
+                            </li>
+                            <li>
+                                <label>Purpose of Loan</label>
+                                <select name="select2" key="ld_loanpurpose" class="select mandatory">
+                                    <option value="-1">Select</option>
+                                    <option value="0">Property Identified</option>
+                                    <option value="1">Exiting Loan transfer along with Additional finance</option>
+                                    <option value="2">Property Not identified</option>
+                                </select>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div id="select-content" class="popup-bg document-pop-content" style="display:none">
+  <div class="popup-div">
+    <div class="popup-header">
+      <h2> Lead Listing <span class="right"> </span> <i class="icon-close div-right"></i> </h2>
+      <div class="clear"></div>
+    </div>
+    <div class="popup-content">
+      <div class="document-entry">
+        <div class="clear"></div>
+        <div class="popup documents attach-icon doc-list-view"> 
+          <!--<ul pk="120">
+                            <li>
+                                Lead ID
+                                <p>
+                                    <span class="bg">Lead Name</span>
+                                    <span class="bg">Branch</span>
+                                    <span class="bg">Product</span>
+                                </p>
+                            </li>
+                        </ul>-->
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/BeatPicker.min.js"></script> 
+<script src="js/Scrn/lead.js"></script> 
+<script>calcHeight(); categoryPopup();  /*window height for all div*/
+     /* Custom Select2 plugin Function*/
+    </script> 

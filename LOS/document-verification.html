@@ -1,0 +1,289 @@
+<div class="title">
+  <h1>Zonal Qc : Document Verification</h1>
+</div>
+<div class="content-div" id="doc-popup">
+  <div class="box-div zonal-agent">
+    <div class="agent-header">
+        <div class="div-left">
+            <div class="div-left">
+                <i class="icon-agents"></i>
+            </div>
+            <p class="div-right"><span id="agt_name"></span> <span id="agt_Scr_Typ"></span></p>
+        </div>
+        <span class="div-right" id="lead_id"></span>
+      <div class="clear"></div>
+    </div>
+    <div class="agent-content">
+      <div class="field-content"> </div>
+      <div class="agent-document-list document-entry">
+        <h2>Documents</h2>
+        <div contentchanged="true" class="agt_Doc_ver documents attach-icon doc-list-view agent-documets"> </div>
+        <div class="clear"></div>
+      </div>
+        <div id="ageFB">
+            <div id="maindocverdiv">
+                <div contentchanged="true" class="fidt2">
+                    <h2>Report</h2>
+                    <ul class="fom-controls">
+                        <li class="div-left width-4">
+                            <label>Date of Report</label>
+                            <input name="text" key="agt_rptdt" type="text" data-beatpicker="true" data-beatpicker-position="['*','*']" class="mandatory">
+                        </li>
+                        <li class="div-right status">
+                            <p class="bg bg1"><i class="icon-positive" id="rptsts" onclick="fnReprtSts(this);"></i></p>
+                            <input name="text" key="agt_rptstatus" type="hidden">
+                        </li>
+                    </ul>
+                    <textarea name="text" key="agt_notes" class="mandatory" maxlength="500"></textarea>
+                    <ul class="div-left attachment-div">
+                        <li id="attach_spn">
+                            <!--<span><i class="icon-attach"></i> report.pdf <i class="icon-down-arrow"></i></span>
+                        <ul class="attach-dd" style="display:none;">
+                          <li>Remove</li>
+                          <li>Download</li>
+                        </ul>-->
+                        </li>
+                    </ul>
+                    <span id="Spn_reportupload" class="div-right bg-blue"><i class="icon-attach"></i> Attach</span>
+                    <input type="file" id="FIReportUpload" multiple style="display:none;" />
+                    <input type="text" id="agt_Rpt" key="agt_RptPath" style="display:none;" />
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<input type="button" value="Save" onclick="fnSaveChangedData();" class="div-right">-->
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="div-document-content" class="documents-content" style="display:none;">
+</div>
+
+<!--<div class="popup-bg field-popup" id="doc-popup">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2><i class="icon-agents"></i> <span id="agt_name"></span> <span id="agt_Scr_Typ"></span> <i class="icon-close div-right"></i></h2>
+            <span class="div-right" id="lead_id"></span>
+            <div class="clear"></div>
+        </div>
+        <div class="popup-content">
+            <div class="field-content">
+            </div>
+            <div class="agent-document-list document-entry">
+                <h2>Documents</h2>
+                <div contentchanged="true" class="agt_Doc_ver documents attach-icon doc-list-view">
+
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div id="maindocverdiv">
+                <div contentchanged="true" class="fidt2">
+                    <h2>Report</h2>
+                    <ul class="fom-controls">
+                        <li class="div-left width-4">
+                            <label>Date of Report</label>
+                            <input name="text" key="agt_rptdt" type="text" class="datepicker">
+                        </li>
+                        <li class="div-right status">
+                            <p class="bg bg1"><i class="icon-positive" onclick="fnReprtSts(this);"></i></p>
+                            <input name="text" key="agt_rptstatus" type="hidden">
+                        </li>
+                    </ul>
+                    <textarea name="text" key="agt_notes"></textarea>
+                    <ul class="div-left attachment-div">
+                        <li>
+                            <span><i class="icon-attach"></i> report.pdf <i class="icon-down-arrow"></i></span>
+                            <ul class="attach-dd" style="display:none;">
+                                <li>Remove</li>
+                                <li>Download</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <span class="div-right bg-blue"><i class="icon-attach"></i> Attach</span>
+                </div>
+            </div>
+        </div>
+        <input type="button" value="Save" onclick="fnSaveChangedData();" class="div-right">
+    </div>
+</div>--> 
+
+<!--<div>
+    <div class="box-div lead-information">
+      <ul class="form-controls">
+        <div class="div-right">
+          <i class="icon-document"></i>
+        </div>
+        <li class="category-icon"> <i class="icon-home-loan"></i>
+          <p>Home Loan</p>
+        </li>
+        <li class="width-1 read-only">
+          <label>Lead ID</label>
+          <p>SHFC11765689</p>
+        </li>
+        <li class="width-16 read-only">
+          <label>Applicant</label>
+          <p>SIVARAMA KRISHNAN S</p>
+        </li>
+        <li class="width-16 read-only">
+          <label>Application Number</label>
+          <p>CHAPP267488</p>
+        </li>
+        <li class="width-15 read-only">
+          <label>Branch</label>
+          <p>Chennai</p>
+        </li>
+        <li class="width-15 read-only">
+          <label>Agency</label>
+          <p>RB Agency</p>
+        </li>
+        <li class="width-15">
+          <label>Date of Report</label>
+          <input type="text">
+        </li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+
+    <div class="box-div document-div">
+      <ul class="common-tabs">
+        <li class="active tab1">Applicant</li>
+        <li class="tab2">Co-Applicant</li>
+      </ul>
+      <div class="document-entry doc-verification">
+        <div class="tab1-content">
+          <h2>Documents
+            <div class="div-right">
+              <i class="icon-document doc-view"></i>
+              <!--<p>Report</p>--> 
+<!--</div>--> 
+<!--<div class="clear"></div>
+  </h2>
+  <div class="documents doc-list-view">
+    <ul>
+      <li>Licence
+        <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">Address Proof</span></p>
+      </li>
+      <li class="read-only">
+        <label>Status</label>
+        <p>Verified</p>
+      </li>
+      <li class="status"><div class="bg bg1"><i class="icon-positive"></i></div></li>
+      <li class="read-only">
+        <label>Comments</label>
+        <input type="text">
+      </li>
+      <li class="readonly align-right"> <i class="icon-document doc-view"></i>
+        <p>Report</p>
+      </li>
+    </ul>
+    <ul>
+      <li>Pan Card
+        <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">ID Proof</span></p>
+      </li>
+      <li class="read-only">
+        <label>Status</label>
+        <p>Verified</p>
+      </li>
+      <li class="status"><div class="bg bg1"><i class="icon-positive"></i></div></li>
+      <li class="read-only">
+        <label>Comments</label>
+        <input type="text">
+      </li>
+      <li class="readonly align-right"> <i class="icon-document doc-view"></i>
+        <p>Report</p>
+      </li>
+    </ul>
+    <ul>
+      <li>Passport
+        <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">DOB Proof</span></p>
+      </li>
+      <li class="read-only">
+        <label>Status</label>
+        <p>Verified</p>
+      </li>
+      <li class="status"><div class="bg bg2"><i class="icon-negative"></i></div></li>
+      <li class="read-only">
+        <label>Comments</label>
+        <input type="text">
+      </li>
+      <li class="readonly align-right"> <i class="icon-document doc-view"></i>
+        <p>Report</p>
+      </li>
+    </ul>
+  </div>
+</div>--> 
+<!--<div class="tab2-content" style="display:none;">
+  <h2>Documents
+    <div class="div-right">
+      <i class="icon-document doc-view"></i>
+      <p>Report</p>
+    </div>
+    <div class="clear"></div>
+  </h2>
+  <div class="documents doc-list-view">
+    <ul>
+      <li>Licence
+        <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">Address Proof</span></p>
+      </li>
+      <li class="read-only">
+        <label>Status</label>
+        <p>Verified</p>
+      </li>
+      <li class="status"><div class="bg bg1"><i class="icon-positive"></i></div></li>
+      <li class="read-only">
+        <label>Comments</label>
+        <input type="text">
+      </li>
+      <li class="readonly align-right"> <i class="icon-document doc-view"></i>
+        <p>Report</p>
+      </li>
+    </ul>
+    <ul>
+      <li>Pan Card
+        <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">ID Proof</span></p>
+      </li>
+      <li class="read-only">
+        <label>Status</label>
+        <p>Verified</p>
+      </li>
+      <li class="status"><div class="bg bg1"><i class="icon-positive"></i></div></li>
+      <li class="read-only">
+        <label>Comments</label>
+        <input type="text">
+      </li>
+      <li class="readonly align-right"> <i class="icon-document doc-view"></i>
+        <p>Report</p>
+      </li>
+    </ul>
+  </div>
+</div>--> 
+<!--<div class="clear"></div>
+  </div>
+</div>--> 
+<!--</div>--> 
+<script src="js/BeatPicker.min.js"></script>
+<script>
+    GlobalXml[0].Agt_loadHtml = "maindocverdiv";
+    calcHeight(); /*window height for all div*/
+    scanDocPreview(); /*Scand or Attached Document image Preview*/
+    commontabs();
+    customselect();
+    rightdocument()
+    $(".doc-view").click(function (e) {
+        $(".content-div").addClass("center-collapse");
+        $("#div-document-content").show();
+        LoadHtmldoc('documents.html');
+    });
+    function LoadHtmldoc(HtmlPage) {
+        $("#div-document-content").empty();
+        $("#div-document-content").load(HtmlPage);
+    }
+    scanDocPreview();
+    $(document).ready(function () {
+        categoryPopup();
+        scanAttachClick();
+        dropButton();
+    });
+</script> 
+<script src="js/Scrn/AgentFB.js"></script>

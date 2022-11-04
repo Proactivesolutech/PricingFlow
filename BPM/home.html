@@ -1,0 +1,646 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+    <link rel="stylesheet" href="../COMMON/css/common.css">
+    <link rel="stylesheet" href="../COMMON/css/fonts/style.css">
+    <link rel="stylesheet" href="bower_components/bpmn-js/dist/assets/diagram-js.css">
+    <link rel="stylesheet" href="bower_components/bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css">
+    <link href="../COMMON/js/devp-js/select2-3.5.1/select2.css" rel="stylesheet" type="text/css" />
+    <link href="../COMMON/js/devp-js/select2-3.5.1/select2-bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="../COMMON/js/jquery.min.js"></script>
+    <script src="../COMMON/js/Scrn/CommonFns.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.24/jquery-ui.min.js" type="text/javascript"></script>
+<link href="http://code.jquery.com/ui/1.8.24/themes/blitzer/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <link href="../COMMON/css/font-awesome.min.css" rel="stylesheet" />
+    <script>
+        $(document).ready(function () {
+            debugger
+            //added by Vijay S
+            if (sessionStorage.user != "sa") {
+                alert("Please Login");
+                window.location = "Homepage.aspx"
+                return false
+
+            }
+            else {
+                var span = document.getElementsByClassName("close")[0];
+                span.onclick = function () {
+                    $("#myModal").css("display", "none");
+                    UpdateFlg = false;
+                }
+                /*Custom Select starts*/
+                $('.cust-select').click(function (e) {
+                    $(this).children('ul').toggle();
+                });
+                $(document).on('click', '.cust-select ul li', function (e) {
+                    $(this).siblings().removeClass('active');
+                    $(this).addClass('active');
+                    var val = $(this).text();
+                    $(this).closest("div.cust-select").setVal(val);
+                });
+
+                $(document).on('DOMSubtreeModified', '.cust-select span.selected', function (e) {
+                    console.log(e);
+                });
+
+                $(".cust-select").mouseleave(function (e) {
+                    $(".cust-select ul").hide();
+                });
+                /*Custom Select ends*/
+
+                $(".tools-panel .icon-open").click(function (e) {
+                    $("#open-popup").show();
+                });
+                $(".tools-panel .icon-tag").click(function (e) {
+                    $("#tag-popup").show();
+                });
+                $(".icon-close").click(function (e) {
+                    $(this).parents(".pop-bg,#dialogDiv,#SubdialogDiv,#title-name").hide();
+                    if ($('#ProcName').attr("contenteditable") == "false") {
+                        $('#ProcName').attr("contenteditable", "true");
+                    }
+                });
+
+                $("#sel_version_div").change(function (e) {
+                    e.preventDefault();
+                    $("#dialogDiv").css("display", "none");
+                    $("#title-name").css("display", "none");
+
+                    var FlowPk = $(this).val();
+                    CurrentOpenProc = 2;
+                    fnLoadXML(FlowPk);
+
+                    $("#sel_VerHis").val($(this).val());
+                    $("#txt_VerHis").val($('option:selected', $("#sel_version_div")).attr('Rmks'));
+                })
+                $("#sel_VerHis").change(function (e) {
+                    e.preventDefault();
+                    $("#txt_VerHis").val($('option:selected', $("#sel_VerHis")).attr('Rmks'));
+                })
+                $(".attach-list").click(function (e) {
+                    $("#dialogDiv .popup-div.popup-div-large .pop-content").css("width", "95%");
+                    $(".attach-content").show();
+                    $(".screen-content").hide();
+                    $(this).addClass('active');
+                    $(this).siblings().removeClass('active');
+                });
+                $(".screen-list").click(function (e) {
+                    //$("#dialogDiv .popup-div.popup-div-large .pop-content").css("width", "70%");
+                    $("#dialogDiv .popup-div.popup-div-large .pop-content").css("width", "95%");//modified by Vijay S
+                    $(".screen-content").show();
+                    $(".attach-content").hide();
+                    $(this).addClass('active');
+                    $(this).siblings().removeClass('active');
+                });
+                $(".m-tab1").click(function (e) {
+                    $(".m-tab1-content").show();
+                    $(".m-tab2-content,.m-tab3-content").hide();
+                    $(this).addClass('active');
+                    $(this).siblings().removeClass('active');
+                });
+                $(".m-tab2").click(function (e) {
+                    $(".m-tab2-content").show();
+                    $(".m-tab1-content,.m-tab3-content").hide();
+                    $(this).addClass('active');
+                    $(this).siblings().removeClass('active');
+                });
+                $(".m-tab3").click(function (e) {
+                    $(".m-tab3-content").show();
+                    $(".m-tab1-content,.m-tab2-content").hide();
+                    $(this).addClass('active');
+                    $(this).siblings().removeClass('active');
+
+                    var SelVal = $("#selPageTyp .active").attr("val");
+                    //if (SelVal == 0) { $("#dialogDiv .popup-div.popup-div-large .pop-content").css("width", "80%"); }
+                    //else {//modified by Vijay S
+                    $("#dialogDiv .popup-div.popup-div-large .pop-content").css("width", "95%");
+                    //}
+
+                });
+                $(".screen-content li").click(function (e) {
+                    $(this).addClass('active');
+                    $(this).siblings().removeClass('active');
+                });
+                $("#ProcName").dblclick(function (e) {
+                    $("#title-name").show();
+                    $("#txt_ProcNm").val($('#ProcName').text());
+                    $('#ProcName').attr("contenteditable", "false");
+                    fnEnableDisableTabs(2);
+                });
+
+                $('#txt_ProcNm').change(function () {
+                    $("#ProcName").text($(this).val())
+                    $("#spn_title_tags").text($(this).val());
+                });
+
+                $('#ProcName').bind("DOMSubtreeModified", function () {
+                    $("#spn_title_tags").text($(this).text());
+                });
+
+                $(".process-list1").click(function (e) {
+                    $(".process-list1-content").show();
+                    $(".process-list2-content,.process-list3-content,.process-list4-content").hide();
+                    $(this).addClass('active');
+                    $(this).siblings().removeClass('active');
+                });
+                $(".process-list2").click(function (e) {
+                    $(".process-list2-content").show();
+                    $(".process-list1-content,.process-list3-content,.process-list4-content").hide();
+                    $(this).addClass('active');
+                    $(this).siblings().removeClass('active');
+                });
+                $(".process-list3").click(function (e) {
+                    $(".process-list3-content").show();
+                    $(".process-list1-content,.process-list2-content,.process-list4-content").hide();
+                    $(this).addClass('active');
+                    $(this).siblings().removeClass('active');
+                });
+                $(".process-list4").click(function (e) {
+                    $(".process-list4-content").show();
+                    $(".process-list1-content,.process-list2-content,.process-list3-content").hide();
+                    $(this).addClass('active');
+                    $(this).siblings().removeClass('active');
+                });
+            }
+        });
+    </script>
+    <!--../LOS/LOS/lead-entry.html-->
+    <script src="../COMMON/js/devp-js/select2-3.5.1/select2.js" type="text/javascript"></script>
+    <script src="../COMMON/js/devp-js/ProDataAccesScript.js"></script>
+
+    <!-- application -->
+    <script src="js/Scrn/CommonScript.js"></script>
+    <script src="js/Scrn/modeler.js"></script>
+    <!-- scripts -->
+    <!-- bpmn-js viewer -->
+    <script src="bower_components/bpmn-js/dist/bpmn-viewer.js"></script>
+    <!-- bpmn-js modeler -->
+    <script src="bower_components/bpmn-js/dist/bpmn-modeler.js"></script>
+</head>
+
+<body>
+    
+    <!-- Error Popup Div Starts-->
+    <div class="error-div" style="display:none;">
+        <div class="error-content">
+            <i id="AlertIcon"></i>
+            <p id="error_msg"></p>
+            <input type="button" id="btn_Ok" value="OK">
+            <input type="button" id="btn_Cancel" value="CANCEL">
+        </div>
+    </div>
+    <!-- Error Popup Div Ends-->
+
+
+    <div class="main-wrapper bpm-div">
+        <div class="top-fixed-div">
+            <div class="top-bar bg-blue">
+                <div id="ProcName" class="left width-12 document-title" contenteditable="true">Untitled</div>
+                <div class="right">
+                    <select id="sel_version_div"></select>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="tools-panel">
+                <ul id="ul_menu">
+                    <li class="active"><i class="icon-new-file" onclick="fnNewDiagram()" title="New"></i>New</li>
+                    <li><i class="icon-open" onclick="fnOpen()" title="Open"></i>Open</li>
+                    <li><i class="icon-save" onclick="fnGetFlowSeqJSON()" title="Save"></i>Save</li>
+                    <li class="li-tools"><i class="icon-tools" onclick="fnhideorshowTool()" title="Tools"></i>Tools</li>
+                    <li><i class="icon-tag" title="Tags"></i>Tags</li>
+                    <li><i class="icon-zoom-out" title="Zoom Out"></i>Zoom Out</li>
+                    <li><i class="icon-zoom-in" title="Zoom In"></i>Zoom In</li>
+                    <li onclick="fnExportSVG()"><i class="icon-download" title="Export"></i>Export</li>
+                    <!--<li id="back-button" style="display:none;"><i class="icon-previous" title="Back"></i>Back</li>-->
+                </ul>
+            </div>
+            <div class="tags" id="div_Tags"><i class="icon-tag"></i></div>
+            <div class="clear"></div>
+        </div>
+        <div class="content-wrapper">
+            <div class="right">
+                <div class="bpm-container" id="canvas-model"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="pop-bg" id="open-popup" style="display:none;">
+        <div class="popup-div">
+            <h2>Select Process <i class="icon-close right"></i></h2>
+            <div class="clear"></div>
+            <div class="pop-content">
+                <div class="document-entry">
+                    <div class="documents attach-icon" id="div_Proclist"> </div>
+                    <div class="clear"></div>
+                </div>
+                <input type="hidden" id="projSelect" />
+            </div>
+            <div class="right">
+                <input type="button" onclick="fnCHangeXml(1)" value="Use as Template">
+                <input type="button" onclick="fnCHangeXml(3)" value="Open">
+            </div>
+        </div>
+    </div>
+    <div class="pop-bg" id="tag-popup" style="display:none;">
+        <div class="popup-div">
+            <h2><span id="spn_title_tags">Untitled</span> <i class="icon-close right"></i></h2>
+            <div class="clear"></div>
+            <div class="pop-content small-pop">
+                <select id="sel_PrdLoc" multiple></select>
+            </div>
+            <div class="right">
+                <input type="button" onclick="fnSavePrdLocTags()" value="Save">
+            </div>
+        </div>
+    </div>
+    <div id="Role_Dtls_Pop" class="pop-bg" style="display: none;">
+        <div class="popup-div">
+            <h2>Assign Roles <i class="icon-close right"></i></h2>
+            <div class="clear"></div>
+            <div class="pop-content small-pop">
+                <select id="sel_PickRole" multiple></select>
+            </div>
+            <div class="right">
+                <input type="button" id="btn_Asg_Role" value="Assign" />
+            </div>
+        </div>
+    </div>
+    <div id="HtmlBuilder_SP" class="pop-bg" style="display:none;">
+        <div class="popup-div">
+            <h2>Pick SubProcess <i class="icon-close right"></i></h2>
+            <div class="clear"></div>
+            <div class="pop-content" id="PageContent_SP">
+                <div class="document-entry">
+                    <div class="documents attach-icon" id="div_sel_Flow"> </div>
+                    <div class="clear"></div>
+                </div>
+                <input type="hidden" id="sel_Flow" />
+            </div>
+            <div class="right">
+                <input type="button" id="btn_save_subp" value="Save" />
+            </div>
+        </div>
+    </div>
+    <div id="SubdialogDiv" style="display:none">
+        <div class="popup-div popup-div-large">
+            <h2><span id="spn_subtitle"> </span><i class="icon-close right"></i></h2>
+            <div class="clear"></div>
+            <div class="pop-content">
+                <div class="task-popup-div">
+                    <div class="bpm-container" id="canvas-view"></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dialogDiv" style="display:none">
+        <div class="popup-div popup-div-large">
+            <h2><span id="spn_title"> </span><i class="icon-close right"></i></h2>
+            <div class="clear"></div>
+            <div class="pop-content">
+                <div class="task-popup-div">
+                    <div>
+                        <ul class="left">
+                            <li class="width-12">
+                                <label>Code</label>
+                                <input id="elementDescCd" type="text">
+                            </li>
+                        </ul>
+                        <ul style="margin-left:10px;" class="left">
+                            <li class="width-12">
+                                <label>Task</label>
+                                <input id="elementDescText" type="text">
+                            </li>
+                        </ul>
+                        <ul style="margin-left:10px;width:50px;" class="left">
+                            <li class="width-12">
+                                <label style="display: inline-block;">Return <input id="elementIsRtnNeed" type="checkbox"> </label>
+                            </li>
+                        </ul>
+                        <ul style="margin-left: 10px;" id="ul_auto_dec" class="left">
+                            <li class="width-12">
+                                <label style="display: inline-block;">Automatic <input id="sel_Automatic" type="checkbox"> </label>
+                            </li>
+                        </ul>
+                        <input type="button" value="Save Page" onclick="fnSaveUpdatePage('x', 'designDiv-form-area')" class="right">
+                        <div class="clear"></div>
+                    </div>
+                    <div class="popup-tabs">
+                        <div class="main-tabs">
+                            <ul id="common-tabs" class="common-tabs">
+                                <li val="0" class="active m-tab1">General</li>
+                                <li val="1" class="m-tab2">Roles</li>
+                                <li val="2" class="m-tab3">Form</li>
+                            </ul>
+                            <div class="main-tab-content">
+                                <div id="m-tab1" class="m-tab1-content">
+                                    <br />
+                                    Task Description :
+                                    <textarea id="txt_TskRmks"></textarea>
+                                </div>
+                                <div id="m-tab2" class="m-tab2-content" style="display:none;">
+                                    <br />
+                                    Roles Attached :
+                                    <label id="lbl_Roles"></label>
+                                </div> 
+                               
+                                <div id="m-tab3" class="m-tab3-content" style="display:none;">
+                                    <ul id="selPageTyp" class="common-tabs">
+                                        <li val="1" class="active attach-list">Attach Source</li>
+                                        <li val="0" class="screen-list">Build Screen</li>
+                                    </ul>
+                                   <!-- <ul>
+                                    <li><div><label>Table Name</label><input type="text" id="txttblnm" name="tblnm" title="TableName" jsondata="[{"elem":"input","type":"text","value":"","label":"Suggestion","isMandatory":false}]"></div></li>
+                                    </ul>-->
+                                    <div class="popup-tabs-content">
+                                        <div class="attach-content">
+                                            <ul>
+                                                <li class="width-12 left">
+                                                 <select id="htmlFile"></select>
+                                                  <!--<input id="htmlFile" type="text" value="../BPMFLOW/SVS_Prototype/">-->
+                                                </li>
+                                            </ul>
+                                            <div class="clear"></div>
+                                            <div class="file-content" id="htmlFilecontent"></div>
+                                        </div>
+                                        <div class="screen-content" style="display:none;">
+                                            <ul id="ul_dec_list" style="display:none;" class="common-tabs">
+                                                <li onclick=fnLoadDecisionPg('0') class="active manual-list">Manual</li>
+                                                <li onclick=fnLoadDecisionPg('1') class="auto-list">Automatic</li>
+                                            </ul>
+                                            <div style="display:none;" id="auto_decision_div">
+                                                <form id="autodesignDiv-form-area">
+                                                    <div style="margin:10px;">
+                                                        <div> Provide Condition Expression </div>
+                                                        <input type="text" id="auto_txt_cnd" />
+                                                    </div>
+                                                </form>
+                                            </div>
+                                             <div id="form_right" class="box-div">
+                                                    <ul id="inp-list" class="input-list">
+                                                        <h2>
+                                                            Form Controls<span class="right" style="top:-3px !Important;">
+                                                                <!--<i class="icon-search"></i>
+                                                                <input type="text" placeholder="Search">-->
+                                                            </span>
+                                                        </h2>
+                                                        <div class="clear"></div>
+                                                        <div onmouseover="$('.box-div.left,.box-div.center,.box-div.right').addClass('abcd')" onmouseout="$('.box-div.left,.box-div.center,.box-div.right').removeClass('abcd')" id="SelAddField" style="display: inline-flex !Important; width: 100% !Important; border: 2px solid #ccc !Important; min-height: 50px !Important; flex-wrap: wrap;">
+                                                            <!--<li>Input <i class="right icon-plus"></i></li>-->
+                                                        </div>
+                                                    </ul>
+                                                    
+                                                </div>
+                                            <div id="designDiv" style="display:inline-flex !Important;width:100%;position:relative;">
+                                                <div class="box-div left" style="width:100% !Important;">
+                                                    <h2 style="padding-bottom: 5%;">
+                                                        Form Data  
+                                                        
+                                                        <span class="right">
+                                                            <input type="reset" onclick="fnClearForm('designDiv-form-area');fnClearForm('designDiv-form-area-2');fnClearForm('designDiv-form-area-3');" value="Clear All">
+                                                        </span>
+                                                    </h2>
+                                                    <ul id="designDiv-form-area" style="width:100% !Important;" class="form-labels" ondrop="fnsetval(0);">
+                                                    </ul>
+                                                    
+                                                </div>
+                                                 <div class="box-div center" style="display: -webkit-inline-box;width:100% !Important;text-align:left !Important;">
+                                                  
+                                                    <ul id="designDiv-form-area-2" style="width:100% !Important;" class="form-labels" ondrop="fnsetval(1);">
+                                                    
+                                                    </ul>
+                                                    </div>
+                                                    <div class="box-div right" style="display: -webkit-inline-box;width:100% !Important;">
+                                                  
+                                                    <ul id="designDiv-form-area-3" style="width:100% !Important;" class="form-labels" ondrop="fnsetval(2);">
+                                                    
+                                                    </ul>
+                                                    </div>
+                                                <!--<div id="form_right" class="box-div right">
+                                                    <ul id="inp-list" class="input-list">
+                                                        <h2>
+                                                            Form Controls<span class="right">
+                                                                <i class="icon-search"></i>
+                                                                <input type="text" placeholder="Search">
+                                                            </span>
+                                                        </h2>
+                                                        <div class="clear"></div>
+                                                        <div id="SelAddField">
+                                                            <!--<li>Input <i class="right icon-plus"></i></li>-->
+                                                    <!--    </div>
+                                                    </ul>
+                                                    <ul id="prop-list" style="display:none;" class="input-list property-list">
+                                                        <h2>Properties</h2>
+                                                        <div id="getDetails">
+                                                            <!--<li>
+                                                                <label>Element</label>
+                                                                <input type="text">
+                                                            </li>-->
+                                                        <!--</div>
+                                                        <div class="buttons">
+                                                            <input type="button" onclick="fnBuildElem('designDiv-form-area')" value="Save">
+                                                        </div>
+                                                    </ul>
+                                                </div>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="title-name" style="display:none">
+        <div class="popup-div popup-div-large">
+            <h2><i class="icon-close right"></i></h2>
+            <div class="clear"></div>
+            <div class="pop-content">
+                <ul id="ul_ProcTab" class="common-tabs">
+                    <li val="0" class="process-list1 active">General</li>
+                    <li val="1" class="process-list2">Trigger</li>
+                    <li val="2" class="process-list3">Roles</li>
+                    <li val="3" class="process-list4">Versions</li>
+                </ul>
+                <div style="width:500px;" id="div_content_Process">
+                    <div id="div_Gen_Proc" class="process-list1-content proc-tab">
+                        <ul class="form-labels">
+                            <li>
+                                <label> Process </label>
+                                <input type="text" id="txt_ProcNm" />
+                            </li>
+                            <li>
+                                <label> Remarks </label>
+                                <textarea id="txt_ProcRmks"></textarea>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="process-list2-content proc-tab" style="display:none;">
+                        <ul class="form-labels">
+                            <li>
+                                <label> Trigger Event </label>
+                                <select id="sel_TriggerSel">
+                                </select>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="process-list3-content proc-tab" style="display:none;">
+                        <ul class="form-labels">
+                            <li>
+                                <label>Process Owner </label>
+                                <select id="sel_ProcOwner"></select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="process-list4-content proc-tab" style="display:none;">
+                        <ul class="form-labels">
+                            <li>
+                                <label>Versions </label>
+                                <select id="sel_VerHis"></select>
+                            </li>
+                            <li>
+                                <label>Version Remarks </label>
+                                <textarea id="txt_VerHis"></textarea>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content" style="width: 33.33% !Important;height: fit-content;">
+            <span class="close">×</span>
+            <div style="width: 100%; padding: 12px 0px 8px 15px; height: fit-content;">
+                <fieldset class="grid-333" id="close" style="padding: 5px;border:2px solid #ccc">
+                    <legend style="font-weight: bolder;font-size: 15px; opacity: 0.9;">Properties</legend>
+                    <ul id="prop-list" style="display:none;" class="input-list property-list">
+                        <div id="getDetails" style="padding-left:4px;">
+
+                        </div>
+
+                    </ul>
+                </fieldset>
+                <div class="buttons" style="text-align:center;">
+                    <input type="button" onclick="fnBuildElem(this);" value="Save" style=" margin-top: 5px; ">
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>    
+</body>
+<style>
+body
+{
+    font-family: Arial;
+    font-size: 10pt;
+}
+img
+{
+    height: 100px;
+    width: 100px;
+    margin: 2px;
+}
+.draggable
+{
+    filter: alpha(opacity=60);
+    /*opacity: 0.6;*/
+}
+.dropped
+{
+    position: static !important;
+}
+#SelAddField, #designDiv-form-area,#designDiv-form-area-2,#designDiv-form-area-3
+{
+    border: 5px solid #ccc;
+    padding: 5px;
+    min-height: 100px;
+    /*width: 430px;*/
+    width: 200px;
+}
+    #myModal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 2; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        padding: 5px;
+        border: 1px solid #888;
+        position: relative;
+        background-color: #fefefe;
+        margin: 2% auto;
+        border: 1px solid #888;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    #getDetails input[type="text"] {
+        margin-bottom: 3px;
+    }
+    .abcd::before {
+        content: "Drag and Drop Here";
+        top: 35%;
+        position: absolute;
+        opacity: 1 !important;
+        color: #79796a;
+        font-weight: 900;
+        margin-left: 8%;
+        border: 3px dashed;
+        padding: 1%;
+    }
+
+    .abcd {
+        opacity: 0.6;
+    }
+
+    .box-div{
+        transition:opacity 1.5s;
+    }
+/*#designDiv-form-area { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+   #designDiv-form-area li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+ #designDiv-form-area li div { position: absolute; margin-left: -1.3em; }*
+
+/*#SelAddField li
+{
+border-radius: 45%;
+}*/
+</style>
+</html>

@@ -1,0 +1,444 @@
+
+<div class="title">
+    <h1>Branch Ops : Scanning &amp; Indexing (Pre Sanction)</h1>
+</div>
+<div class="content-div">
+    <div id="div_append">
+        <div class="box-div">
+            <h2>Lead Information<i class="icon-plus div-right" title="Omnidox" id="popclose" onclick="fnpop();"></i></h2>
+            <ul class="form-controls">
+                <li class="category-icon">
+                    <div id="prddiv">
+                        <i class="icon-home-loan"></i>
+                        <p>Home Loan</p>
+                    </div>
+                </li>
+                <li class="width-1 read-only">
+                    <label>Lead ID</label>
+                    <p id="Scan_LeadId">SHFC11765689</p>
+                </li>
+                <li class="width-280 read-only">
+                    <label>Applicant</label>
+                    <p id="Scan_LeadNm">SIVARAMA KRISHNAN S</p>
+                </li>
+                <li class="width-15 read-only">
+                    <label>Branch</label>
+                    <p id="Scan_Branch">Chennai</pid>
+                </li>
+                <li class="width-1 read-only">
+                    <label>Agent</label>
+                    <p id="Scan_Agent">Ravi</p>
+                </li>
+
+                <div class="clear"></div>
+            </ul>
+        </div>
+
+        <div class="box-div document-div">
+            <div class="document-entry">
+                <h2>
+                    Processing Fee<span class="right">
+                    </span>
+                    <div class="clear"></div>
+                </h2>
+                <div class="clear"></div>
+                <div id="Instdtldiv">
+                    <div contentchanged="true">
+                        <ul class="address-div1 form-controls">
+                            <li class="width-13">
+                                <label>Payment Type</label>
+                                <select id="typpayment" name="select2" key="LpcPayTyp" class="select mandatory" onchange="fnchange();">
+                                    <option value="">Select</option>
+                                    <option value="D">DD</option>
+                                    <option value="C">Cheque</option>
+                                    <option value="R">RTGS</option>
+                                    <option value="N">NEFT</option>
+                                </select>
+                                <!--
+                                <div class="select-focus">
+                                    <input id="typpayment" placeholder="Select" onkeydown="return false" selval="-1" name="select" key="LpcPayTyp" class="autofill mandatory" onchange="fnchange();">
+                                    <i class="icon-down-arrow"></i>
+                                    <ul class="custom-select">
+                                        <li val="D">DD</li>
+                                        <li val="C">Cheque</li>
+                                        <li val="R">RTGS</li>
+                                        <li val="N">NEFT</li>
+                                    </ul>
+                                </div>
+                                        -->
+                            </li>
+                            <li class="width-13">
+                                <label>Instrument No</label>
+                                <!--/*CHANGE 30/11/2016*/-->
+                                <input type="text" name="text" key="LpcInstrNo" class="mandatory" id="InsmtNoId">
+                            </li>
+                            <li class="width-13">
+                                <label>Instrument Date</label>
+                                <input id="datecheck" data-beatpicker="true" data-beatpicker-position="['*','*']" type="text" name="text" key="LpcInstrDt" class="mandatory">
+                            </li>
+                            <li class="width-13 amount">
+                                <label>Instrument Amount</label>
+                                <input type="text" name="text" key="LpcInstrAmt" class="mandatory currency" restrict="number" id="InstAmtId">
+                                <i class="icon-indian-rupee"></i>
+                            </li>
+
+                            <li class="width-13 bank">
+                                <label>Bank name</label>
+                                <comp-help id="comp-help" txtcol="BankName" valcol="Bankpk" onrowclick="Bnkclick" prcname="PrcShflScanBankhelp" width="100%"></comp-help>
+                            </li>
+
+                            <li class="width-13 branch">
+                                <label>Branch name</label>
+                                <comp-help id="comp-help" txtcol="Location" valcol="Brnchpk" helpfk='0' onrowclick="Brnchclick" prcname="PrcShflscanBranchhelp" width="100%"></comp-help>
+                            </li>
+                            <li class="width-13 depo_bank">
+                                <label>Deposited Bank</label>
+                                <comp-help id="help_dep_bank" txtcol="Code" valcol="Gblpk" onrowclick="DepsitedBankclick" prcname="PrcShflDepositebankhelp" width="100%"></comp-help>
+                                <input type="hidden" id="bank_id"name="text" key="dep_bank">
+                            </li>
+                            <li class="width-13">
+                                <label>Instrument Deposit Date</label>
+                                <input id="datecheck" data-beatpicker="true" data-beatpicker-position="['*','*']" type="text" name="text" key="LpcInstrdepoDt" class="mandatory">
+                            </li>
+                            <li class="width-13">
+                                <label>File Received Date</label>
+                                <input id="File_recdt" data-beatpicker="true" data-beatpicker-position="['*','*']" type="text" name="text" key="file_snd_Dt" class="mandatory">
+                            </li> 
+                            <li class="width-13">
+                                <label>File Sent Date</label>
+                                <input id="docdate" data-beatpicker="true" data-beatpicker-position="['*','*']" type="text" name="text" key="Doc_loginDt" class="mandatory">
+                            </li>                           
+                            <li class="width-1 read-only bnkpk">
+                                <input type="hidden" name="text" key="bnfk" valtext="">
+                            </li>
+
+                            <li class="width-1 read-only brnchpk">
+                                <input type="hidden" name="text" key="bbmfk" valtext="">
+                            </li>
+
+                            <li class="width-1 read-only">
+                                <input type="hidden" id="LeadGrdPk" name="text" key="lead_grdPk">
+                            </li>
+
+                        </ul>
+                    </div>
+                    <form id="PostForm" name="PostForm" action="http://119.226.197.6:8080/omnidocs/integration/foldView/viewFoldList.jsp" method="post" target="newWin">
+                        <input type="hidden" name="Application" value="SHFL_LOANS">
+                        <input type="hidden" id="fold_nm" name="FolderName" value="">
+                        <input type="hidden" name="sessionIndexSet" value="false">
+                    </form>
+                </div>
+                <h2 style="display:none;">
+                    Documents<span class="right">
+                    </span>
+                    <div class="clear"></div>
+                </h2>
+                <div class="documents attach-icon doc-list-view">
+                    <ul>
+                        <li>
+                            Voter Id
+                            <p><span class="bg">Applicant</span> <span class="bg">KYC</span> <span class="bg">Address Proof</span></p>
+                        </li>
+                        <li><i class="icon-document doc-view"></i></li>
+                        <li><i class="icon-delete"></i></li>
+                    </ul>
+                    <ul>
+                        <li>
+                            Application Form
+                            <p><span class="bg">Applicant</span> <span class="bg">Application</span></p>
+                        </li>
+                        <li><i class="icon-document doc-view"></i></li>
+                        <li><i class="icon-delete"></i></li>
+                    </ul>
+                    <ul>
+                        <li>
+                            Sale Deed
+                            <p><span class="bg">Applicant</span> <span class="bg">Property</span> <span class="bg">Sale Deed</span></p>
+                        </li>
+                        <li><i class="icon-document doc-view"></i></li>
+                        <li><i class="icon-delete"></i></li>
+                    </ul>
+                    <ul>
+                        <li>Processing Fee Cheque</li>
+                        <li><i class="icon-document"></i></li>
+                        <li><i class="icon-delete"></i></li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="document-attach" style="display:none;">
+                <h2><i class="icon-close right"></i></h2>
+                <div class="clear"></div>
+                <div class="drag-div"> Drag Drop </div>
+                <div class="preview-icons right"> <i class="icon-list-view"></i> <i class="icon-thumbnails"></i> </div>
+                <div class="clear"></div>
+                <div class="attached-document">
+                    <ul class="thumbnail-view">
+                        <li>
+                            <img src="images/pdf-small.jpg" alt="" title="">
+                            <p>Application Form</p>
+                        </li>
+                        <li>
+                            <img src="images/pdf-small.jpg" alt="" title="">
+                            <p>Application Form</p>
+                        </li>
+                        <li>
+                            <img src="images/pdf-small.jpg" alt="" title="">
+                            <p>Application Form</p>
+                        </li>
+                        <li>
+                            <img src="images/pdf-small.jpg" alt="" title="">
+                            <p>Application Form</p>
+                        </li>
+                        <li>
+                            <img src="images/pdf-small.jpg" alt="" title="">
+                            <p>Application Form</p>
+                        </li>
+                        <li>
+                            <img src="images/pdf-small.jpg" alt="" title="">
+                            <p>Application Form</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="scand-document" style="display:none;">
+                <i onclick="fnGetDocList()" class="icon-close right"></i>
+                <comp-scan type="save" width="100%" height="350px" id="compsaveid"> </comp-scan>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div id="div-document-content" class="documents-content" style="display:none;">
+</div>
+
+<div class="pop-bg documents-popup" id="lead-document" style="display:none;">
+    <div class="popup-div">
+        <div class="document-verification">
+            <div class="box-div document-div">
+                <div class="document-entry">
+                    <div class="documents normal-font">
+                        <h1 style="font-weight:bold;">Check list <i class="icon-close right"></i></h1>
+                        <div class="document-pop-scroll">
+                            <ul>
+                                <li>
+                                    All columns of application form filled up
+                                    <p><span class="bg">Application Form</span>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Pf Cheque photocopy attached with the file
+                                    <p><span class="bg">Processing Fee Cheque</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    KYC Documents health-check
+                                    <p><span class="bg">KYC</span></p>
+                                </li>
+                                <li class="common-status red right"><i class="icon-negative"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Clear & Valid Photo-identity Proofs of borrowers,guarantars
+                                    <p><span class="bg">KYC</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Name on ID proof to match with details filled in Application Form
+                                    <p><span class="bg">KYC</span> <span class="bg">Application</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Clear copy of date of birth Proof
+                                    <p><span class="bg">KYC</span> <span class="bg">DOB Proof</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Details of DOB Proof match with details filled in App Form
+                                    <p><span class="bg">KYC</span> <span class="bg">Application</span> <span class="bg">DOB Proof</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Clear copy of latest residence address proof
+                                    <p><span class="bg">KYC</span> <span class="bg">Address Proof</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Details of Address Proof match with details filled in App Form
+                                    <p><span class="bg">KYC</span> <span class="bg">Address Proof</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Signature match with KYC documents and App Form
+                                    <p><span class="bg">KYC</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Copy of latest partnership Deed wherever applicable
+                                    <p><span class="bg">Company Identity</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Copy of partnership Resolution for obtaining advance/borrowing
+                                    <p><span class="bg">Company Identity</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Business profile/Website Address
+                                    <p><span class="bg">Company Identity</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Copy of PAN Card
+                                    <p><span class="bg">Company Identity</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    ITR for last 2 months along with computation of income
+                                    <p><span class="bg">Income</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Tax Audit Report(wherever applicable)
+                                    <p><span class="bg">Income</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Financials of the company where proposed borrower is stake holding Director in the said company
+                                    <p><span class="bg">Income</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Financials of the firm where proposed bprrower is the Partner in the said firm
+                                    <p><span class="bg">Income</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Business countinity proof
+                                    <p><span class="bg">Income</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Nature of transaction Builder,etc
+                                    <p><span class="bg">Property</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Legal Report
+                                    <p><span class="bg">Property</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Technical REport Two Technical Reports in case of LAP or Loan amount of 50 lakhs
+                                    <p><span class="bg">Property</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Technical REport Two Technical Reports in case of LAP or Loan amount of 50 lakhs
+                                    <p><span class="bg">Property</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Copies of property related papers in case property is identified/BT cases
+                                    <p><span class="bg">Property</span></p>
+                                </li>
+                                <li class="common-status green right"><i class="icon-positive"></i></li>
+                            </ul>
+                        </div>
+                        <div class="right">
+                            <input type="button" value="OK">
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/BeatPicker.min.js"></script>
+<script type="text/javascript" src="js/Scrn/scan.js"></script>
+<script>
+    //Viewport Height Function Starts
+    calcHeight();
+    function Bnkclick(rowjson) {
+        debugger;
+        console.log(rowjson);
+        $("#Instdtldiv").find("li.branch comp-help").attr("helpfk", rowjson.Bankpk);
+        $("#Instdtldiv").find("li.bnkpk input").val(rowjson.Bankpk);
+        $("#Instdtldiv").find("li.bnkpk input").attr("valtext", rowjson.BankName);
+        $("#Instdtldiv").find("li.branch comp-help").find("input").val("");
+        $("#Instdtldiv").find("li.branch comp-help").find("input").attr("val", "");
+    }
+    function Brnchclick(rowjson) {
+        debugger;
+        $("#Instdtldiv").find("li.brnchpk input").val(rowjson.Brnchpk);
+        $("#Instdtldiv").find("li.brnchpk input").attr("valtext", rowjson.Location);
+
+    }
+    //Viewport Height Function Ends
+    $(".doc-view").click(function (e) {
+        $(".content-div").addClass("center-collapse");
+        $("#div-document-content").show();
+        LoadHtmldoc('documents.html');
+    });
+    function LoadHtmldoc(HtmlPage) {
+        $("#div-document-content").empty();
+        $("#div-document-content").load(HtmlPage);
+    }
+    scanDocPreview();
+    $(document).ready(function () {
+        //categoryPopup();
+        scanAttachClick();
+        dropButton();
+        popupclose();
+        selectfocus(); /* Custom Select2 plugin Function*/
+    });
+</script>

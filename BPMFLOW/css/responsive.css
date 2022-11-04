@@ -1,0 +1,193 @@
+/*========= Responsive Media Query =========*/
+/* 320px Mobile (Portrait) */
+@media only screen and (max-width: 479px) {
+	/*ul.trigger-div li label{ width:35%;}
+	.lead-information ul.form-controls { width:70%;}
+	.lead-info-category .category-info{ width:30%;}
+	ul.category-icons li{ float:none; width:100%;}
+	.category-icons i{ font-size:30px;}*/
+	.login-div .form-div ul.form-controls{ width:80%;}
+	.cases-div ul li:nth-of-type(2){ text-align:center;}
+	.cases-div ul li:nth-of-type(1),.cases-div ul li:nth-of-type(2),.cases-div ul li:nth-of-type(3),.cases-div ul li:nth-of-type(4){ width:50%;display: inline-block;}
+	ul.form-controls li{ width:100% !important; margin:5px 0;}
+	.calculator-div .cal-head ul.div-left,.calculator-div .cal-head .div-right,.calculator-div ul.form-controls{ width:100%; margin:5px 0;}
+	.category-popup .popup-div{ width: 250px; margin-left: -125px;}
+	.personal-info .div-left{ width:100%; float:none; text-align:center;}
+	.personal-info .div-right,.asset-header .div-left, .asset-content .div-left,.asset-income, .asset-content .div-right{ width:100%;}
+	ul.common-tabs li{ margin:0;}
+	.asset-income, .asset-content .div-right{ margin:5px 0;}
+	.feedback .div-left{ width:85%;}
+	.feedback .div-left textarea{ width:72%;}
+	/*Branch credit screen starts*/
+	.customer-financials-page .lead-information.lead-info-category{ position:relative;}
+	.customer-financials-page .credit-header.div-left{ width:100%;}
+	.customer-financials-page .lead-info-category .category-info{ position:absolute; right:0;}
+	.customer-financials-page .lead-info-category .category-info li{ float:none;}
+	.customer-financials-page .lead-info-category .category-info li p{ display:none;}
+	.bc-summary,ul.bc-total-sum{ width:100%;}
+	.bc-summary ul li:first-child,.bc-summary ul li,.bc-total-summary .box-sum{ width:100%; display:inline-block; height:auto !important;}
+	/*Branch credit screen Ends*/
+	}
+/* 480px Mobile (Landscape) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.login-div .form-div ul.form-controls{ width:50%;}
+	.calculator-div .cal-head ul.div-left{width:48%;}
+	.asset-content .div-left,.asset-content .div-right{ width:100%;}
+	.feedback .div-left{ width:90%;}
+	.feedback textarea.left{ width:82%;}
+	ul.form-controls.lv-pop li{ width:21%;}
+	/*Branch credit screen starts*/
+	.customer-financials-page .lead-information ul.form-controls li{ width:30%;}
+	.customer-financials-page .credit-header.div-left{ width:70%;}
+	.customer-financials-page .lead-info-category .category-info{ width:30%;}
+	.customer-financials-page .lead-info-category .category-info li p{ display:none;}
+	/*Branch credit screen Ends*/
+}
+@media only screen and (max-width: 767px) {
+	/*table.roles-div, .right-content-div,.grid-50 { width:100%;}
+	.calculator-div ul.form-controls{ width:100%;}
+	.popup-div{ width:90%; left:5%;}
+	.applicant-summary .applicant-box{ width:100%;}
+	.applicant-summary .applicant-box.box-div{ width:100%; margin:5px 0;}
+	.property-sum{ width:100%;}
+	.recommended-sum,.expectation-sum{ margin:0; width:50%;}
+	 ul.trigger-div li span{ width:35%;}
+	.quick-entry .box-div{ height:auto;}
+	.lead-information ul.form-controls li{ width:45%;}
+	ul.form-controls li{ width:48%;}
+	.grid-type ul.form-controls li{ width:inherit;}
+	.income-div ul.form-controls li{width:100%;}
+	 .income-div .grid-type.income-details ul.form-controls li{width:100%;}
+	ul.form-controls li.div-right{ float:left;}
+	.personal-info .div-right{ width:100%;}
+    .login-div .div-left, .login-div .div-right {width: 100%; display: block; }
+    .form-div ul.form-controls {padding: 10px 0;}*/
+	.login-div .div-left, .login-div .div-right{ display:block; width:100%;}
+	.login-div .form-div ul.form-controls{ padding:10px 0;}
+	.grid-33,.grid-50,.grid-45,.grid-66{ width:100%;}
+	.dashboard-div .box-div{ height:auto !important; margin-bottom: 2px;}
+	.title{ padding:0;}
+	.dashboard-div .query_box-div{ height:auto !important;}
+	ul.form-controls li{ width:47%;}
+	.center-panel{ padding:0 5px 0 45px;}
+	.right-panel{ width:25px;}
+	.right-panel ul.right-icons li{ width:25px; height:25px; line-height:26px;}
+	.right-panel ul.right-icons li i{ font-size:12px;}
+	.grid-type ul.form-controls li:last-of-type{ width:auto !important;}
+	.tracking-div ul.form-controls li{ width:48% !important;}
+	.popup-div{ width:90%;left:5%;}
+	 .dedupe-div .div-left{ width:75%;}
+	 .dedupe-div .div-right{ width:25%;}
+     /*QDE*/
+    .quick-entry .box-div { height:auto; overflow:inherit;}
+	/*Branch credit screen starts*/
+	.customer-financials-page .credit-summary,.income-obligation-applicant.applicant-summary{ margin:0;}
+	/*Branch credit screen Ends*/
+	}
+/* 768px Tablet (Portrait) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	/*table.roles-div { width:70%;}
+	.right-content-div{ width:60%;}
+	.query-box .query-info i.align-right{ width:5%;}
+	ul.form-controls li{ width:47%;}
+	.grid-type ul.form-controls li{ width:inherit;}
+	 .income-div ul.form-controls li{width:100%;}
+	 .income-div .grid-type.income-details ul.form-controls li{width:100%;}
+	ul.form-controls li.div-right{ float:left;}
+	.category-icon{ text-align:left;}
+	.calculator-div ul.form-controls{ width:100%;}
+	.applicant-summary .applicant-box{ width:48%;}
+	 .credit-summary .summary-income,.credit-summary .summary-details{ width:100%; margin:10px 0;}
+	 .proposal-div .box-sum{ height:80px;}
+	 .quick-entry .box-div{ height:auto;}*/
+	 .login-div .form-div ul.form-controls{ width:70%;}
+	 .grid-33,.grid-66{ width:100%;}
+	 .dashboard-div .box-div{ height:auto !important; margin-bottom: 2px;}
+	 .dashboard-div .query_box-div{ height:auto !important;}
+	 ul.form-controls li{ width:47%;}
+	 .calculator-div .cal-head ul.div-left{ width:47%;}
+	 .present_permanent_div ul li.div-right,.address-div li.div-right{ float:none;}
+	 .asset-content .div-left,.asset-content .div-right{ width:100%;}
+	 ul.form-controls.lv-pop li{ width:21%;}
+	 .feedback .div-left{ width:94%;}
+	 .feedback textarea.left{ width:90%;}
+	 .dedupe-div .div-left{ width:75%;}
+	 .dedupe-div .div-right{ width:25%;}
+	 /*Branch credit screen starts*/
+	  .customer-financials-page .lead-information ul.form-controls li{ width:31%;}
+	  .customer-financials-page .credit-header.div-left{ width:60%;}
+	  .customer-financials-page .lead-info-category .category-info{ width:40%;}
+	  .customer-financials-page .lead-info-category .category-info li p{ display:none;}
+	  .customer-financials-page .lead-information .category-icons.div-left{ width:90%;}
+	  .bc-summary,ul.bc-total-sum{ width:100%;}
+	  .bc-summary ul li,.bc-summary ul li:first-child{ width:24%;}
+	  .bc-summary ul li .box-sum{ width:100%;}
+	  /*Branch credit screen Ends*/
+	}
+/* 960px Desktop */
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
+	 /*table.roles-div{ width:55%;}
+	 .right-content-div { width:50%;}
+	 .query-info .div-right{ width:40%;}
+	 .query-info .div-left .bg-tag{ margin:3px;}
+	 .left-chart .value span.total { font-size: 30px; line-height: 40px; }
+	 .applicant-summary .applicant-box{ width:48%;}
+	 .credit-summary .summary-income,.credit-summary .summary-details{ width:100%; margin:10px 0;}
+	 .proposal-div .box-sum{ height:80px;}
+	 .popup-div{width:75%; left:12%;}
+	 .grid-type ul.form-controls li{ width:inherit;}
+	 .income-div ul.form-controls li{width:100%;}
+	 .income-div .grid-type.income-details ul.form-controls li{width:100%;}
+	 .quick-entry .box-div{ height:auto;}
+	 .lead-information ul.form-controls li{ width:18%;}
+	 .dedupe-div .div-left{ width:75%;}
+	 .dedupe-div .div-right{ width:auto;}*/
+	 .login-div .form-div ul.form-controls{ width:70%;}
+	  .address-div li{ width:100%;}
+	  .address-div li.div-right{ float:none;}
+	  .personal-info .div-right li{ width:30%;}
+	  .personal-div .div-left ul li,.salaried-div .div-left ul li,.selfemp-div .div-left ul li{ width:30%;}
+	  .personal-div .div-right ul.address-div li{ width:45%;}
+	  .reference-div ul.form-controls li{ width:24%;}
+	  .reference-div ul.address-div li{ width:32%;}
+	  .feedback .div-left{ width:95%;}
+	  .feedback textarea.left{ width:90%;}
+	  .technical-valuation-div .div-left ul.form-controls li{ width:100%;}
+	  .technical-valuation-div .div-right ul.form-controls li{ width:31%;}
+	  /*Branch credit screen starts*/
+	  .bc-summary,ul.bc-total-sum{ width:100%;}
+	  .bc-summary ul li,.bc-summary ul li:first-child{ width:24%;}
+	  .bc-summary ul li .box-sum{ width:100%;}
+	  /*Branch credit screen Ends*/
+	}
+@media only screen and (min-width: 1200px) and (max-width: 1360px) {
+	  .address-div li.div-right{ float:none;}
+	  .personal-info .div-right li{ width:30%;}
+	  .personal-div .div-left ul li,.salaried-div .div-left ul li,.selfemp-div .div-left ul li{ width:30%;}
+	   ul.address-div li{ width:45%;}
+	   .reference-div ul.form-controls li{ width:24%;}
+	  .reference-div ul.address-div li{ width:24%;}
+	  .dedupe-score ul.form-controls li{ width:13%;}
+	  /*Branch credit screen starts*/
+	  .bc-summary ul li:first-child,.bc-summary ul li{ width:23%;}
+	  .bc-summary ul li .box-sum{ width:100%;}
+	  /*Branch credit screen Ends*/
+	}
+/*@media only screen and (max-width: 959px) {
+	.grid-33,.grid-66,.grid-45,.grid-55,.grid-50{ width:100%;}
+	.ops-mngr-dashboard .right-chart { width: 100%; float: none; }
+    .ops-mngr-dashboard .left-chart { width: 100%; margin-right: 0; float: none; }
+    .ops-mngr-dashboard .left-chart .box-div { height: 150px; }
+	.dashboard-div .box-div,.dashboard-div .box-div.agent-box-div,.dashboard-div .query_box-div{ height:auto !important;}
+	.applicant-summary .applicant-box{ width:48%;}
+	.credit-summary .summary-income,.credit-summary .summary-details{ width:100%;}
+	.credit-summary .summary-details{ margin:10px 0;}
+	.proposal-div .emi-box{  text-align:center;}
+	.proposal-div .box-sum{ height:80px;}
+	.dedupe-div .div-left{ width:auto;}
+	.dedupe-div .div-right{ width:auto;}
+    .dashboard-div .box-div { margin-bottom:5px;}
+}*/
+@media only screen and (min-width: 1920px) {
+	 .login-div .form-div ul.form-controls{ width:40%;}
+}

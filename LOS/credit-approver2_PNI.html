@@ -1,0 +1,1024 @@
+<script>
+    window.CREDIT_APPROVER_NO = 4;
+    window.CREDIT_DOC_NO = 2;
+    window.IS_PNI = true;
+    window.SancRvnNo = 2;
+</script>
+<div class="title">
+    <h1><i class="icon-zonal-credit"></i> Credit Approver </h1>
+</div>
+<div class="content-div credit-approver-page">
+    <div class="box-div">
+        <div class="lead-information lead-info-category">
+            <ul class="form-controls div-left credit-header">
+                <li class="width-1 read-only">
+                    <label>Lead ID</label>
+                    <p id="txtCrLeadID">SHFC11765689</p>
+                </li>
+                <li class="width-16 read-only">
+                    <label>Application Number</label>
+                    <p id="txtCrAppNo">CHAPP267488</p>
+                </li>
+                <li class="width-15 read-only">
+                    <label>Branch</label>
+                    <p id="txtCrBrnchNm">Chennai</p>
+                </li>
+                <li style="display:none" class="width-12 read-only">
+                    <label>Purpose of purchase</label>
+                    <p id="txtCrPurpose">New House</p>
+                </li>
+                <!--<li class="width-11 read-only">
+                    <label>Loan number</label>
+                    <p id="LoanNo"></p>
+                </li>-->
+                <li class="width-1 read-only">
+                    <label>Sanction number</label>
+                    <p id="txtCrSancNo"></p>
+                </li>
+                <li class="width-7 read-only">
+                    <span onclick="fnGenerateSanction()" class="bc_link_feeback bg bg1 cursor">Generate Sanction Print</span>
+                </li>               
+            </ul>
+            <div class="category-info">
+                <ul class="category-icons div-left">
+                    <li>
+                        <label><i class="icon-home-loan"></i></label>
+                        <p>Home Loan</p>
+                    </li>
+                    <li>
+                        <label><i class="icon-salaried"></i></label>
+                        <p></p>
+                    </li>
+                    <li>
+                        <label><i class="icon-no-proof"></i></label>
+                        <p></p>
+                    </li>
+                </ul>
+                <i onclick="fnOpenDeviationFatcors()" id="deviationFactors" title="Deviations" style="color: #000;" class="icon-warning cursor"></i>
+                <i class="icon-document div-right"></i>
+                <i class="icon-plus div-right" title="Omnidox" onclick="fnOmnipop();"></i>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <form id="PostForm" name="PostForm" action="http://119.226.197.6:8080/omnidocs/integration/foldView/viewFoldList.jsp" method="post" target="newWin">
+            <input type="hidden" name="Application" value="SHFL_LOANS">
+            <input type="hidden" id="fold_nm" name="FolderName" value="">
+            <input type="hidden" name="sessionIndexSet" value="false">
+        </form>
+        <div class="applicant-summary">
+            <!--<div class="applicant-box box-div">
+              <div>
+                <div class="applicant-info div-left"> <img src="images/photo.jpg" alt="">
+                  <p>SIVARAMA KRISHNAN S</p>
+                </div>
+                <div class="div-left applicant-income">
+                  <div class="read-only">
+                    <label>Applicant</label>
+                    <p class="name">Self Employed</p>
+                  </div>
+                  <div class="applicant-amount">
+                    <p class="income-amount"><i class="icon-indian-rupee"></i>66,459</p>
+                    <p class="liability-amount"><i class="icon-indian-rupee"></i>66,459</p>
+                  </div>
+                </div>
+                <i class="icon-proof div-right"></i>
+                <div class="clear"></div>
+              </div>
+              <div>
+                <div class="cibil-score">
+                  <h5>563</h5>
+                  <p>Cibil</p>
+                </div>
+                <div class="applicant-verification"> <span class="bg-tag bg1 div-left">35</span>
+                  <span class="bg-tag bg1 cursor" onclick="fnOpenDoc(this)">PD</span>
+                    <span class="bg-tag bg1 cursor" onclick="fnOpenDoc(this)">FI</span>
+                    <span class="bg-tag bg2 cursor" onclick="fnOpenDoc(this)">DV</span>
+                    <span class="bg-tag bg3 cursor" onclick="fnOpenDoc(this)">TE</span>
+                 </div>
+                <div class="clear"></div>
+              </div>
+            </div>
+            <div class="clear"></div>-->
+        </div>
+        <div class="credit-summary">
+            <div class="div-left summary-income">
+                <div class="property-sum div-left">
+                    <h2>Property</h2>
+
+                    <!--<div id="Prp_MrkValDiv" class="box-sum bg8"> <i class="icon-warning"></i>
+                        <h5>Market</h5>
+                          <p key="textval" class="income-amount"><i class="icon-indian-rupee"></i>69.37<span class="lakhs">L</span></p>
+                        <p><span class="bg-tag bg1">LV</span> <span class="bg-tag bg1">TV</span></p>
+                      </div>
+                    <div id="Prp_AgrValDiv" class="box-sum bg8">
+                            <i class="icon-warning"></i>
+                            <h5>Agreement</h5>
+                            <p key="textval" class="income-amount"><i class="icon-indian-rupee"></i>70.00<span class="lakhs">L</span></p>
+                    </div>-->
+
+                    <div attrname="EST_PRP" id="Prp_ValDiv" class="box-sum bg8" style="padding:0px !important;">
+                        <h5>Market</h5>
+                        <p key="Mrk" class="income-amount">
+
+                        </p>
+                        <i title="Enter notes for Deviation" class="icon-warning"></i>
+
+                        <h5>Agreement</h5>
+                        <p key="Agr" class="income-amount">
+                            <!--<i class="icon-indian-rupee"></i>70.00<span>L</span>-->
+                        </p>
+                        <p class="credit-label-list">
+                            <span name="TV" class="bg bg2 tv-popup cursor" onclick="fnAgentspopup(this)">TV</span>
+                            <span name="LV" class="bg bg2 cursor" onclick="fnAgentspopup(this)">LV</span>
+                        </p>
+                    </div>
+
+
+                    <!--<div id="Prp_Loan2Val" class="box-sum bg8">
+                        <i class="icon-warning"></i>
+                        <h5>LTV</h5>
+                        <p key="textval" class="income-amount"><i class="icon-indian-rupee"></i>46.70<span class="lakhs">L</span></p>
+                        <input key="rangeval" type="text" id="range1" value="" name="range" />
+                    </div>-->
+
+                    <div attrname="LTV" id="Prp_Loan2ValMrk" class="box-sum bg8">
+                        <h5>LTV</h5>
+                        <p  class="income-amount" key="textval">
+                            <!--<i class="icon-indian-rupee"></i>46.70 <span></span>-->
+                        </p>
+                        <div>
+                            <input colkey="LTV_M" key="rangeval" type="text" id="range17" value="" name="range" />
+                        </div>
+                        <i title="Enter notes for Deviation" class="icon-warning"></i>
+                    </div>
+
+                    <!--<div attrname="ACT_LTV" id="Prp_Loan2ValAgr" class="box-sum bg8">
+                        <h5>LTV(Agreement)</h5>
+                        <p key="textval">
+
+                        </p>
+                        <div>
+                            <input colkey="LTV_A" key="rangeval" type="text" id="range19" value="" name="range" />
+                        </div>
+                        <i title="Enter notes for Deviation" class="icon-warning"></i>
+                    </div>-->
+
+
+                    <h2>Yield</h2>
+                    <div attrname="LOAN_AMT" id="ElgLoanAmt" class="box-sum bg8">
+                        <h5>Loan</h5>
+                        <p  key="textval" class="income-amount">
+
+                        </p>
+                        <input colkey="LOAN_AMT" key="rangeval" type="text" id="range2" value="" name="range" />
+                        <!--<input key="rangetext" type="text" />-->
+                        <i title="Enter notes for Deviation" class="icon-warning"></i>
+                    </div>
+                    <div attrname="TENUR" id="ElgTenure" class="box-sum bg8">
+                        <h5>Tenure</h5>
+                        <p  key="textval" class="income-amount">
+
+                        </p>
+                        <input colkey="TENURE" key="rangeval" type="text" id="range3" value="" name="range" />
+                        <!--<input key="rangetext" type="text" />-->
+                        <i title="Enter notes for Deviation" class="icon-warning"></i>
+                    </div>
+                    <div attrname="TENUR_TOP" id="ElgTenure_TOP" style="display:none" class="box-sum bg8">
+                        <h5>Topup Tenure</h5>
+                        <p key="textval" class="income-amount">
+                        </p>
+                        <input colkey="TENURE_TOP" key="rangeval" type="text" id="TOP_TENURE" value="" name="range" />
+                        <!--<input key="rangetext" type="text" />-->
+                        <i title="Enter notes for Deviation" class="icon-warning"></i>
+                    </div>
+                    <div attrname="ROI" id="ElgLoanROI" class="box-sum bg8">
+                        <h5>ROI</h5>
+                        <p  key="textval" class="income-amount">
+
+                        </p>
+                        <!--<input key="rangetext" type="text" />-->
+                        <input colkey="ROI" key="rangeval" type="text" id="range4" value="" name="range" />
+                        <i title="Enter notes for Deviation" class="icon-warning"></i>
+                    </div>
+                    <h2>Income</h2>
+                    <div attrname="CBL" id="CibilScr" class="box-sum bg8">
+                        <h5>Bureau Score</h5>
+                        <p key="textval" class="income-amount">
+
+                        </p>
+                        <i title="Enter notes for Deviation" class="icon-warning"></i>
+                    </div>
+                    <div attrname="NET_INC" id="NetIncome" class="box-sum bg8">
+                        <h5>Income</h5>
+                        <p key="textval_Inc" class="income-amount">
+                            <!--<i class="icon-indian-rupee"></i>83,703-->
+                        </p>
+                        <p key="textval_Obl" class="liability-amount">
+                            <!--<i class="icon-indian-rupee"></i>6,567-->
+                        </p>
+                        <i title="Enter notes for Deviation" class="icon-warning"></i>
+                    </div>
+                    <div attrname="FOIR" id="IIRorFOIR" class="box-sum bg8">
+                        <i title="Enter notes for Deviation" class="icon-warning"></i>
+                        <h5>FOIR</h5>
+                        <p  key="textval" class="income-amount">
+
+                        </p>
+                        <input colkey="FOIR" key="rangeval" type="text" id="range5" value="" name="range" />
+                        <!--<input key="rangetext" type="text" />-->
+                    </div>
+                </div>
+                <div class="recommended-sum div-left">
+                    <h2>Recommended</h2>
+                    <div class="box-sum" id="LoanDiv">
+                        <h5>Loan</h5>
+                        <p key="textval" class="income-amount">
+                            <!--<i class="icon-indian-rupee"></i>32.4<span class="lakhs">L</span>-->
+                        </p>
+                    </div>
+                    <h2>&nbsp;</h2>
+                    <div class="box-sum" id="ROIdiv">
+                        <h5>ROI</h5>
+                        <p key="textval" class="income-amount">
+                            <!--16<span class="percentage">%</span>-->
+                        </p>
+                    </div>
+                    <h2>&nbsp;</h2>
+                    <div class="box-sum" id="EMIdiv">
+                        <h5>EMI</h5>
+                        <p key="textval" class="income-amount">
+                            <!--<i class="icon-indian-rupee"></i>45,077-->
+                        </p>
+                    </div>
+                </div>
+                <div class="expectation-sum div-left">
+                    <h2>Expectation</h2>
+                    <div class="box-sum" id="ExpLoanAMt">
+                        <h5>Loan</h5>
+                        <p class="income-amount">
+                            <!--<i class="icon-indian-rupee"></i>35<span class="lakhs">L</span>-->
+                        </p>
+                    </div>
+                    <h2>&nbsp;</h2>
+                    <div class="box-sum" id="ExpROI">
+                        <h5>ROI</h5>
+                        <p class="income-amount">
+                            <!--16<span class="percentage">%</span>-->
+                        </p>
+                    </div>
+                    <h2>&nbsp;</h2>
+                    <div class="box-sum" id="ExpEMI">
+                        <h5>EMI</h5>
+                        <p class="income-amount">
+                            <!--<i class="icon-indian-rupee"></i>50,000-->
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="div-right box-div summary-details">
+                <ul class="common-tabs">
+                    <li class="proposal-list active">Final Proposal</li>
+                    <li class="note-list">Notes</li>
+                    <!--<li class="performance-list">Agent</li>-->
+                    <li class="query-list">Queries</li>
+                    <li class="sub-list">Subjective Conditions</li>
+                </ul>
+                <div class="summary-details-content">
+                    <div divfor="FOR-BT-TOP" class="proposal-div">
+                        <div id="BT_Fin_FOIR" class="box-sum">
+                            <h5>FOIR</h5>
+                            <p key="textval" class="income-amount">
+
+                            </p>
+                        </div>
+                        <div id="BT_Fin_LTV" class="box-sum">
+                            <h5>LTV (Market) </h5>
+                            <p key="textval" class="income-amount">
+
+                            </p>
+                        </div>
+                        <div id="BT_Fin_LTV_A" class="box-sum">
+                            <h5>LTV (Agreement) </h5>
+                            <p key="textval" class="income-amount">
+
+                            </p>
+                        </div>
+
+                        <div id="BT_LTV_M" class="box-sum">
+                            <h5>BT LTV (Market)</h5>
+                            <p key="textval" class="income-amount"></p>
+                        </div>
+
+                        <div id="TOPUP_LTV_M" class="box-sum">
+                            <h5>TOPUP LTV (Market)</h5>
+                            <p key="textval" class="income-amount"></p>
+                        </div>
+
+                        <div id="BT_LTV_A" class="box-sum">
+                            <h5>BT LTV (Agreement)</h5>
+                            <p key="textval" class="income-amount"></p>
+                        </div>
+
+                        <div id="TOPUP_LTV_A" class="box-sum">
+                            <h5>TOPUP LTV (Agreement)</h5>
+                            <p key="textval" class="income-amount"></p>
+                        </div>
+
+                        <div id="BT_Fin_ROI" class="box-sum roi-box">
+                            <div class="hover-div">
+                                <h5>ROI - BT </h5>
+                                <span class="arrived-roi"></span>
+                                <div class="hover-show">
+                                    <div contenteditable="true" style="outline:none;" class="roi-adjust-input div-right"></div>
+                                    <div class="clear"></div>
+                                    <input type="text" class="roi-adjust">
+                                    <b style="display:block;margin:25px 0 0 0;">Arrived ROI</b> <p key="textval" class="income-amount"></p>
+                                    <div class="clear"></div>
+                                </div>
+                                <span class="roi-waiver-span" style="display:none;"><input style="width:35%;border:1px solid #CCC;" type="text" id="RoiWaiver_BT" /></span>
+                            </div>
+                        </div>
+                        <div id="TOP_Fin_ROI" class="box-sum">
+                            <h5>ROI - TOPUP </h5>
+                            <p key="textval" class="income-amount">
+
+                            </p>
+                        </div>
+                        <div id="BT_amt" class="box-sum">
+                            <h5>EXISTING / BT</h5>
+                            <p key="textval" class="income-amount">
+                            </p>
+                        </div>
+                        <div id="TOP_Fin_LOAN" class="box-sum">
+                            <h5>Loan</h5>
+                            <p key="textval" class="income-amount">
+                            </p>
+                        </div>
+                        <div id="BT_Fin_LI" class="box-sum">
+                            <h5>BT LI</h5>
+                            <input class="for-currency" type="text" id="BT_TxtFin_LI" restrict="number"/>
+                        </div>
+                        <div id="TOP_Fin_LI" class="box-sum">
+                            <h5>TOPUP LI</h5>
+                            <input class="for-currency" type="text" id="TOP_TxtFin_LI" restrict="number"/>
+                        </div>
+
+                        <div id="BT_Fin_GI" class="box-sum">
+                            <h5>BT GI</h5>
+                            <input class="for-currency" type="text" id="BT_TxtFin_GI" restrict="number"/>
+                        </div>
+
+                        <div id="TOP_Fin_GI" class="box-sum">
+                            <h5>TOPUP GI</h5>
+                            <input class="for-currency" type="text" id="TOP_TxtFin_GI" restrict="number" />
+                        </div>
+
+
+                        <div class="emi-box">
+                            <div id="BT_Fin_EMI" class="box-sum bg8">
+                                <h5>BT EMI</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                            </div>
+                            <div id="BT_Fin_EMI_LG" class="box-sum bg8">
+                                <h5>BT EMI(GI + LI)</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                            </div>
+                            <div id="BT_Fin_EMI_G" class="box-sum bg8">
+                                <h5>BT EMI + GI</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                            </div>
+                            <div id="BT_Fin_EMI_L" class="box-sum bg8">
+                                <h5>BT EMI + LI</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                            </div>
+
+
+                            <div id="TOP_Fin_EMI" class="box-sum bg8">
+                                <h5>TOPUP EMI</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                            </div>
+                            <div id="TOP_Fin_EMI_LG" class="box-sum bg8">
+                                <h5>TOPUP EMI(GI + LI)</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                            </div>
+                            <div id="TOP_Fin_EMI_G" class="box-sum bg8">
+                                <h5>TOPUP EMI + GI</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                            </div>
+                            <div id="TOP_Fin_EMI_L" class="box-sum bg8">
+                                <h5>TOPUP EMI + LI</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                            </div>
+
+
+
+                            <div id="BT_Fin_PF" class="box-sum bg8">
+                                <h5>Total PF</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                                <input colkey="PF" key="rangeval" type="text" value="" name="range" />
+                            </div>
+                            <div class="box-sum">
+                                <h5>waiver amount</h5>
+                                <div class="amount widthout-label">
+                                    <i class="icon-indian-rupee"></i>
+                                    <input class="for-currency" id="BT_waiveramt" type="text" onfocusout="fnSelectREmPF();">
+                                </div>
+                            </div>
+                            <div id="BT_Fin_PF_REC" class="box-sum bg1">
+                                <h5>Collected PF</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                                <p>Received</p>
+                            </div>
+                            <!--/* changes by kani */-->
+                            <div id="BT_Fin_REM_PF_REC" class="box-sum bg8">
+                                <h5>Remaining PF</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                            </div>
+
+            
+                            <div class="PFAdjust">
+                                <input type="checkbox">
+                                Processing Payable can be adjusted against the loan amount during disbursal
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div divfor="HL" class="proposal-div">
+                        <div id="Fin_FOIR" class="box-sum">
+                            <h5>FOIR</h5>
+                            <p key="textval" class="income-amount">
+
+                            </p>
+                        </div>
+                        <div id="Fin_LTV" class="box-sum">
+                            <h5>LTV (Market) </h5>
+                            <p key="textval" class="income-amount">
+
+                            </p>
+                        </div>
+                        <div id="Fin_LTV_A" class="box-sum">
+                            <h5>LTV (Agreement) </h5>
+                            <p key="textval" class="income-amount">
+
+                            </p>
+                        </div>
+
+                        <div id="TOPUP_Fin_LTV_M" style="display:none" class="Market topup-ltv box-sum">
+                            <h5>TOPUP LTV (Market) </h5>
+                            <p key="textval" class="income-amount">
+
+                            </p>
+                        </div>
+                        <div id="TOPUP_Fin_LTV_A" style="display:none" class="Agreement topup-ltv box-sum">
+                            <h5>TOPUP LTV (Agreement) </h5>
+                            <p key="textval" class="income-amount">
+
+                            </p>
+                        </div>
+                        <div id="Fin_ROI" class="box-sum roi-box">
+                            <div class="hover-div">
+                                <h5>ROI</h5>
+                                <span class="arrived-roi"></span>
+                                <div class="hover-show">
+                                    <div contenteditable="true" style="outline:none;" class="roi-adjust-input div-right"></div>
+                                    <div class="clear"></div>
+                                    <input type="text" class="roi-adjust">
+                                    <b style="display: block; margin: 25px 0 0 0;">Arrived ROI</b><p key="textval" class="income-amount"></p>
+                                    <div class="clear"></div>
+                                </div>
+                                <span class="roi-waiver-span" style="display:none;"><input style="width:35%;border:1px solid #CCC;" type="text" id="RoiWaiver" /></span>
+                            </div>
+                        </div>
+                        <div id="Exst_LOAN" style="display:none" class="box-sum">
+                            <h5>EXISTING LOAN</h5>
+                            <p key="textval" class="income-amount">
+                            </p>
+                        </div> 
+                        <div id="Fin_LOAN" class="box-sum">
+                            <h5>Loan</h5>
+                            <p key="textval" class="income-amount">
+                            </p>
+                        </div>
+                        <div id="Fin_LI" class="box-sum">
+                            <h5>LI</h5>
+                            <input class="for-currency" type="text" id="TxtFin_LI" restrict="number"/>
+                        </div>
+
+                        <div id="Fin_GI" class="box-sum">
+                            <h5>GI</h5>
+                            <input class="for-currency" type="text" id="TxtFin_GI" restrict="number"/>
+                        </div>
+
+                        <div class="emi-box">
+                            <div id="Fin_EMI" class="box-sum bg8">
+                                <h5>EMI</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                            </div>
+                            <div id="Fin_EMI_LG" class="box-sum bg8">
+                                <h5>EMI(GI + LI)</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                            </div>
+                            <div id="Fin_EMI_G" class="box-sum bg8">
+                                <h5>EMI + GI</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                            </div>
+                            <div id="Fin_EMI_L" class="box-sum bg8">
+                                <h5>EMI + LI</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                            </div>
+
+
+                            <div id="Fin_PF" class="box-sum bg8">
+                                <h5>Total PF</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                                <input colkey="PF" key="rangeval" type="text" value="" name="range" />
+                            </div>
+                            <div class="box-sum">
+                                <h5>waiver amount</h5>
+                                <div class="amount widthout-label">
+                                    <i class="icon-indian-rupee"></i>
+                                    <input class="for-currency" id="waiveramt" type="text" onfocusout="fnSelectREmPF();">
+                                </div>
+                            </div>
+                            <div id="Fin_PF_REC" class="box-sum bg1">
+                                <h5>Collected PF</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                                <p>Received</p>
+                            </div>
+                            <!--/* changes by kani */-->
+                            <div id="Fin_REM_PF_REC" class="box-sum bg8">
+                                <h5>Remaining PF</h5>
+                                <p key="textval" class="income-amount">
+                                </p>
+                            </div>
+
+                   
+                            <div class="PFAdjust">
+                                <input type="checkbox">
+                                Processing Payable can be adjusted against the loan amount during disbursal
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="notes-div" style="display:none;">
+                        <ul class="notes-list">
+                            <!--<li>
+                                <div class="div-left">
+                                    <img src="images/user.png">
+                                    <p><span class="bg-tag bg1">Saranya</span></p>
+                                </div>
+                                <div class="div-right">
+                                    <div class="notes-info"><i class="icon-warning"></i></div>
+                                    <p><span class="bg-tag bg8">Property</span></p>
+                                    <p>25/07.2016 6.30 PM</p>
+                                    <p>Notes content here Notes content here Notes</p>
+                                </div>
+
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <div class="div-left">
+                                    <img src="images/user.png">
+                                    <p><span class="bg-tag bg1">Saranya</span></p>
+                                </div>
+                                <div class="div-right">
+                                    <div class="notes-info"><i class="icon-warning"></i></div>
+                                    <p><span class="bg-tag bg8">Property</span></p>
+                                    <p>25/07.2016 6.30 PM</p>
+                                    <p>Notes content here Notes content here Notes</p>
+                                </div>
+
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <div class="div-left">
+                                    <img src="images/user.png">
+                                    <p><span class="bg-tag bg1">Saranya</span></p>
+                                </div>
+                                <div class="div-right">
+                                    <div class="notes-info"><i class="icon-warning"></i></div>
+                                    <p><span class="bg-tag bg8">Property</span></p>
+                                    <p>25/07.2016 6.30 PM</p>
+                                    <p>Notes content here Notes content here Notes</p>
+                                </div>
+
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <div class="div-left">
+                                    <img src="images/user.png">
+                                    <p><span class="bg-tag bg1">Saranya</span></p>
+                                </div>
+                                <div class="div-right">
+                                    <div class="notes-info"><i class="icon-warning"></i></div>
+                                    <p><span class="bg-tag bg8">Property</span></p>
+                                    <p>25/07.2016 6.30 PM</p>
+                                    <p>Notes content here Notes content here Notes</p>
+                                </div>
+
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <div class="div-left">
+                                    <img src="images/user.png">
+                                    <p><span class="bg-tag bg1">Saranya</span></p>
+                                </div>
+                                <div class="div-right">
+                                    <div class="notes-info"><i class="icon-warning"></i></div>
+                                    <p><span class="bg-tag bg8">Property</span></p>
+                                    <p>25/07.2016 6.30 PM</p>
+                                    <p>Notes content here Notes content here Notes</p>
+                                </div>
+
+                                <div class="clear"></div>
+                            </li>-->
+                        </ul>
+                    </div>
+                    <div class="credit-performance-div" style="display:none;">
+                        <div class="box-sum">
+                            <h5>Approval</h5>
+                            <p class="income-amount"><span><i class="icon-positive percentage"></i></span> 45 <span class="percentage">%</span></p>
+                        </div>
+                        <div class="box-sum">
+                            <h5>LTV</h5>
+                            <p class="income-amount">80<span class="percentage">%</span></p>
+                            <h5>L 60</h5>
+                        </div>
+                        <div class="box-sum">
+                            <h5>ROI</h5>
+                            <p class="income-amount">16<span class="percentage">%</span></p>
+                            <h5>L 60</h5>
+                        </div>
+                        <div class="box-sum">
+                            <h5>BT(<2yrs)</h5>
+                            <p class="income-amount">2<span class="percentage">%</span></p>
+                        </div>
+                        <div class="box-sum">
+                            <h5>Deliguency(60+)</h5>
+                            <p class="income-amount">2<span class="percentage">%</span></p>
+                            <p>FPD 2%</p>
+                        </div>
+                        <div id="container1" style="width:100%; height: 240px; margin: 0 auto"></div>
+                    </div>
+                    <div class="credit-query-div" style="display:none;">
+                        <ul class="notes-list">
+                            <!--<li>
+                                 <div class="div-left">
+                                     <img src="images/user.png">
+                                     <p><span class="bg-tag bg-blue">Branch Ops</span></p>
+                                 </div>
+                                 <div class="div-right">
+                                     <div class="notes-info"><span class="bg-tag bg1"><i class="icon-positive"></i> Resolver</span></div>
+                                     <div>
+                                         <p><span class="bg-tag bg8">DOcument Missing</span></p>
+                                         <p>25/07.2016 6.30 PM</p>
+                                         <p>Notes content here Notes content here Notes</p>
+                                     </div>
+                                 </div>
+                                 <div class="clear"></div>
+                             </li>
+                              <li>
+                                 <div class="div-left">
+                                     <img src="images/user.png">
+                                     <p><span class="bg-tag bg-blue">Branch Ops</span></p>
+                                 </div>
+                                 <div class="div-right">
+                                     <div class="notes-info"><span class="bg-tag bg1"><i class="icon-positive"></i> Resolver</span></div>
+                                     <div>
+                                         <p><span class="bg-tag bg8">DOcument Missing</span></p>
+                                         <p>25/07.2016 6.30 PM</p>
+                                         <p>Notes content here Notes content here Notes</p>
+                                     </div>
+                                 </div>
+                                 <div class="clear"></div>
+                             </li>
+                             <li>
+                                 <div class="div-left">
+                                     <img src="images/user.png">
+                                     <p><span class="bg-tag bg-blue">Branch Ops</span></p>
+                                 </div>
+                                 <div class="div-right">
+                                     <div class="notes-info"><span class="bg-tag bg1"><i class="icon-positive"></i> Resolver</span></div>
+                                     <div>
+                                         <p><span class="bg-tag bg8">DOcument Missing</span></p>
+                                         <p>25/07.2016 6.30 PM</p>
+                                         <p>Notes content here Notes content here Notes</p>
+                                     </div>
+                                 </div>
+                                 <div class="clear"></div>
+                             </li>
+                             <li>
+                                 <div class="div-left">
+                                     <img src="images/user.png">
+                                     <p><span class="bg-tag bg-blue">Branch Ops</span></p>
+                                 </div>
+                                 <div class="div-right">
+                                     <div class="notes-info"><span class="bg-tag bg1"><i class="icon-positive"></i> Resolver</span></div>
+                                     <div>
+                                         <p><span class="bg-tag bg8">DOcument Missing</span></p>
+                                         <p>25/07.2016 6.30 PM</p>
+                                         <p>Notes content here Notes content here Notes</p>
+                                     </div>
+                                 </div>
+                                 <div class="clear"></div>
+                             </li>
+                             <li>
+                                 <div class="div-left">
+                                     <img src="images/user.png">
+                                     <p><span class="bg-tag bg-blue">Branch Ops</span></p>
+                                 </div>
+                                 <div class="div-right">
+                                     <div class="notes-info"><span class="bg-tag bg1"><i class="icon-positive"></i> Resolver</span></div>
+                                     <div>
+                                         <p><span class="bg-tag bg8">DOcument Missing</span></p>
+                                         <p>25/07.2016 6.30 PM</p>
+                                         <p>Notes content here Notes content here Notes</p>
+                                     </div>
+                                 </div>
+                                 <div class="clear"></div>
+                             </li>-->
+                        </ul>
+                    </div>
+                    <div class="subjective-div" style="display:none;">
+                        <i class="icon-plus"></i>
+                        <div class="clear"></div>
+                        <ul class="sub-notes"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<div id="div-document-content" class="documents-content" style="display:none;">
+</div>
+<!-- Agent Verification Popup-->
+<div class="popup-bg" id="trigger-popup" style="display:none;">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2>Agency Verification <i class="icon-close div-right"></i></h2>
+            <div class="clear"></div>
+        </div>
+        <div class="popup-content">
+            <ul class="trigger-div">
+                <li>
+                    <label>Field investigation </label>
+                    <span class="icon-sales-manager"><input type="text" placeholder="Agent Name"></span>
+                    <input type="button" value="Initiate">
+                </li>
+                <li>
+                    <label>Document Verification</label>
+                    <span class="icon-sales-manager"><input type="text" placeholder="Agent Name"></span>
+                    <input type="button" value="Initiate">
+                </li>
+                <li>
+                    <label>Legal Verification</label>
+                    <span class="icon-sales-manager"><input type="text" placeholder="Agent Name"></span>
+                    <input type="button" value="Initiate">
+                </li>
+                <li>
+                    <label>Technical Verification</label>
+                    <span class="icon-sales-manager"><input type="text" placeholder="Agent Name"></span>
+                    <input type="button" value="Initiate">
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Agent Verification Popup End-->
+
+<!-- Credit Screen PopUp -->
+
+<div class="popup-bg" id="credit-popup" style="display:none;">
+    <div class="popup-div popup-large">
+        <div class="popup-header">
+            <h2><i onclick="    fnCloseCredit()" class="icon-close div-right"></i></h2>
+            <div class="clear"></div>
+        </div>
+        <div class="popup-content">
+
+        </div>
+    </div>
+</div>
+<!--Changes start By Kani On 20/12/2016-->
+<div class="popup-bg" id="agents-popup" style="display:none;">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2 id="agent_pop_title"><i onclick="$('#agents-popup').hide();" class="icon-close div-right"></i></h2>
+            <div class="clear"></div>
+        </div>
+        <div id="agent_load_div" class="popup-content">
+
+        </div>
+    </div>
+</div>
+<!--/*CHANGES ON 26/12/2016*/-->
+<div class="popup-div" id="verfDiv_popup" style="display:none">
+    <div class="icon-close right"></div>
+    <div class="clear"></div>
+    <div class="tv-content">
+        <h2 style="padding:0px;">Technical Report Details</h2>
+        <div id="techverf">
+            <!--<ul class="tv-display">
+                <li><p>Agent Name</p>VI Agency</li>
+                <li><p>Date Of Report</p>01/05/2016</li>
+                <li class="common-status green"><i class="icon-positive"></i></li>
+                <li class="doc-pop"><i class="icon-document"></i></li>
+            </ul>
+            <ul class="tv-display">
+                <li><p>Agent Name</p>VI Agency</li>
+                <li><p>Date Of Report</p>01/05/2016</li>
+                <li class="common-status green"><i class="icon-positive"></i></li>
+                <li class="doc-pop"><i class="icon-document"></i></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+<!--/*CHANGES ON 26/12/2016*/-->
+
+<div class="popup-bg" id="agentFIR-div" style="display:none">
+    <div class="popup-div">
+        <div class="popup-header">
+            <h2>Field Investigation <i class="icon-close div-right"></i></h2>
+        </div>
+    </div>
+</div>
+<div id="bc_Feedback_div_ZCPNI" class="popup-bg document-pop-content" style="display:none;">
+    <div contentchanged="true">
+        <div class="popup-div popup-small">
+            <div class="popup-header">
+                <h2>
+                    <span id="Feeback_title_ZCPNI">text</span><span class="right">
+                        <input type="hidden" name="text" id="sel_Pop_typ_ZCPNI" key="sel_Pop_typ" />
+                        <input type="hidden" name="text" id="sel_lapFk_ZCPNI" key="sel_lapFk" />
+                    </span> <i class="icon-close div-right"></i>
+                </h2>
+                <div class="clear"></div>
+            </div>
+            <div id="popupdivdate_ZCPNI" class="popup-content">
+                <ul class="form-controls">
+                    <li class="width-15">
+                        <label>Report Date</label>
+                        <input id="bc_RptDt_ZCPNI" name="text" key="pop_date" placeholder="" data-beatpicker="true" data-beatpicker-position="['*','*']" />
+                    </li>
+                    <li class="div-right status">
+                        <p class="bg bg1"><i class="icon-positive" id="rptsts_ZCPNI"></i></p>
+                        <input name="text" key="pop_rptstatus" type="hidden">
+                    </li>
+                    <li class="width-98p contact-details" id="mobnum_ZCPNI">
+                        <label>Details</label>           
+                        <p id="ltv_Mob_ZCPNI" class="TVphNo cursor"><i class="icon-mobile"></i> Mobile   : <span class="TVphNo"></span></p>
+                        <p id="ltv_Lnd_ZCPNI" class="TVphNo cursor"><i class="icon-landline"></i> LandLine : <span class="TVphNo"></span></p>
+                        <p id="ltv_off_ZCPNI" class="TVphNo cursor"><i class="icon-landline"></i> Office No : <span class="TVphNo"></span></p>
+                        <p id="ltv_alter_ZCPNI" class="TVphNo cursor"><i class="icon-mobile"></i> Alternate No : <span class="TVphNo"></span></p>    
+                    </li>
+                    <li class="width-98p">
+                        <label>Remarks</label>
+                        <textarea id="bc_RptRmks_ZCPNI" name="text" key="pop_text" placeholder=""></textarea>
+                    </li>
+                    <li class="width-98p" id="PDattachDiv_ZCPNI" style="display:none;">
+                        <div class="div-left" id="PDfileList_ZCPNI"></div>
+                        <span class="div-right bg-blue cursor"><i class="icon-attach"></i> Attach</span>
+                        <input type="file" style="display:none;" id="pdAttachMnt_ZCPNI" onchange="fnPDattachMent(this)" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Changes end By Kani On 20/12/2016-->
+
+<script>
+    calcHeight(); //Viewport Height Function Starts
+    commontabs(); //Common tab style
+    querypopup();
+    rightdocument(); /*Document Popup*/
+    popupclose(); /*close popup function*/
+    $("[name='range']").ionRangeSlider({ min: 0, max: 200, from: 100 });
+
+    $(".proposal-list").click(function (e) {
+        $(this).removeClass("active");
+        $(this).addClass("active");
+        $(this).siblings().removeClass("active");
+        $(".proposal-div[divfor=" + ProductDiv + "]").show();
+        $(".notes-div,.credit-performance-div,.credit-query-div,.subjective-div").hide();
+    });
+    $(".note-list").click(function (e) {
+        $(this).removeClass("active");
+        $(this).addClass("active");
+        $(this).siblings().removeClass("active");
+        $(".notes-div").show();
+        $(".proposal-div,.credit-performance-div,.credit-query-div,.subjective-div").hide();
+    });
+    $(".performance-list").click(function (e) {
+        $(this).removeClass("active");
+        $(this).addClass("active");
+        $(this).siblings().removeClass("active");
+        $(".credit-performance-div").show();
+        $(".proposal-div,.notes-div,.credit-query-div,.subjective-div").hide();
+        //$('#container1').highcharts().reflow();
+    });
+    $(".query-list").click(function (e) {
+        $(this).removeClass("active");
+        $(this).addClass("active");
+        $(this).siblings().removeClass("active");
+        $(".credit-query-div").show();
+        $(".proposal-div,.notes-div,.credit-performance-div,.subjective-div").hide();
+    });
+    $(".sub-list").click(function (e) {
+        $(this).removeClass("active");
+        $(this).addClass("active");
+        $(this).siblings().removeClass("active");
+        $(".subjective-div").show();
+        $(".proposal-div,.notes-div,.credit-performance-div,.credit-query-div").hide();
+    });
+    $(".trigger-div input[type='button'").click(function (e) {
+        $(this).toggleClass('green');
+    });
+
+
+
+    /*
+ $('#container1').highcharts({
+        xAxis: {
+            min: 5,
+        },
+        yAxis: {
+            min: 10,
+			title: {
+				text: 'ROI'
+			},
+        },
+        title: {
+            text: 'ROI'
+        },
+		legend:{
+			itemStyle:{fontWeight:'normal'}
+		},
+        series: [{
+            type: 'line',
+            name: 'Zone (WA)',
+            data: [[5, 14], [25, 14]],
+            marker: {
+                enabled: false
+            },
+            states: {
+                hover: {
+                    lineWidth: 0
+                }
+            },
+            enableMouseTracking: false
+        },
+		{
+            type: 'line',
+            name: 'Branch (WA)',
+            data: [[5, 13], [25, 13]],
+            marker: {
+                enabled: false
+            },
+            states: {
+                hover: {
+                    lineWidth: 0
+                }
+            },
+            enableMouseTracking: false
+        },
+		{
+            type: 'scatter',
+            name: 'ROI',
+            data: [[5, 13], [10, 14.5], [15, 16], [20, 15.5], [22, 14], [25, 17]],
+            marker: {
+                radius: 4
+            }
+        }]
+ });
+
+ */
+</script>
+<script src="js/Scrn/CreditApprover_new_PNI.js"></script>
+<script src="js/Scrn/deviation-coloring.js?$$$v=1.0.3$$$"></script>
+<style>
+    input[key='rangetextval'] {
+        width: 50px !important;
+        color: white;
+        font-size: 18px;
+    }
+</style>

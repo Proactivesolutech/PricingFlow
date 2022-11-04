@@ -1,0 +1,641 @@
+<div class="title">
+  <h1>Agent Management</h1>
+</div>
+<div class="content-div agent-mgmt-div">
+  <div class="box-div">
+    <ul class="common-tabs">
+      <li class="tab1 active">Agents</li>
+      <li class="tab2">Pending with Agents</li>
+    </ul>
+    <div>
+      <div class="tab1-content agent-cnt">
+        <div class="filters-div"> <span><i class="icon-filter"></i> Filter :</span> <span class="bg">ABC Agent</span> <span class="bg">18/09/2016</span> </div>
+        <ul>
+          <li>
+            <div class="div-left">
+              <div><i class="icon-agents"></i>
+                <p>FI</p>
+              </div>
+              <div>
+                <h2>ABC Agent</h2>
+                <span>Saranya</span> <span>9876543210</span> </div>
+            </div>
+            <div class="div-right align-center status">
+              <div class="bg bg2">5</div>
+              <p>Pending</p>
+            </div>
+            <div class="clear"></div>
+          </li>
+          <li>
+            <div class="div-left">
+              <div> <i class="icon-agents"></i>
+                <p>DV</p>
+              </div>
+              <div>
+                <h2>ABC Agent</h2>
+                <span>Saranya</span> <span>9876543210</span> </div>
+            </div>
+            <div class="div-right align-center status">
+              <div class="bg bg2">5</div>
+              <p>Pending</p>
+            </div>
+            <div class="clear"></div>
+          </li>
+          <li>
+            <div class="div-left">
+              <div> <i class="icon-agents"></i>
+                <p>FI</p>
+              </div>
+              <div>
+                <h2>ABC Agent</h2>
+                <span>Saranya</span> <span>9876543210</span> </div>
+            </div>
+            <div class="div-right align-center status">
+              <div class="bg bg2">5</div>
+              <p>Pending</p>
+            </div>
+            <div class="clear"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="tab2-content agent-cnt" style="display:none;">
+        <div class="filters-div"> <span><i class="icon-filter"></i> Filter : </span> <span class="bg">ABC Agent</span> <span class="bg">18/09/2016</span> </div>
+        <ul>
+          <li class="field-pop">
+            <div class="div-left">
+              <div> <i class="icon-agents"></i>
+                <p>FI</p>
+              </div>
+              <div>
+                <h2>ABC Agent</h2>
+                <span>SHFL11098</span>
+                <p><span>Saranya</span> <span>Applicant</span> <span class="div-right">Allocated on : 08 Jun 2016</span></p>
+              </div>
+            </div>
+            <div class="div-right align-center status">
+              <div class="bg bg2"><i class="icon-pending"></i></div>
+              <p>Overdue 2 days</p>
+            </div>
+            <div class="clear"></div>
+          </li>
+          <li class="doc-pop">
+            <div class="div-left">
+              <div> <i class="icon-agents"></i>
+                <p>DV</p>
+              </div>
+              <div>
+                <h2>ABC Agent</h2>
+                <span>SHFL11098</span>
+                <p><span>Saranya</span> <span>Applicant</span></p>
+              </div>
+            </div>
+            <div class="div-right align-center status">
+              <div class="bg bg1"><i class="icon-positive"></i></div>
+              <p>Completed</p>
+            </div>
+            <div class="clear"></div>
+          </li>
+          <li class="legal-popup">
+            <div class="div-left">
+              <div> <i class="icon-agents"></i>
+                <p>LV</p>
+              </div>
+              <div>
+                <h2>ABC Agent</h2>
+                <span>SHFL11098</span>
+                <p><span>Saranya</span> <span>Applicant</span> <span class="div-right">Paid</span></p>
+              </div>
+            </div>
+            <div class="div-right align-center status">
+              <div class="bg bg2"><i class="icon-pending"></i></div>
+              <p>Overdue 2 days</p>
+            </div>
+            <div class="clear"></div>
+          </li>
+          <li class="technical-popup">
+            <div class="div-left">
+              <div><i class="icon-agents"></i>
+                <p>TV</p>
+              </div>
+              <div>
+                <h2>ABC Agent</h2>
+                <span>SHFL11098</span> <span>Saranya</span> <span>Applicant</span> </div>
+            </div>
+            <div class="div-right align-center status">
+              <div>
+                <div class="bg bg1"><i class="icon-positive"></i></div>
+                <p>Completed</p>
+              </div>
+            <i class="icon-paid"></i> </div>
+            <div class="clear"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Agent Filter popup -->
+  <div class="popup-bg" id="agent-filter" style="display:none;">
+    <div class="popup-div">
+      <div class="popup-header">
+        <h2><i class="icon-filter"></i> Filter <i class="icon-close div-right"></i></h2>
+      </div>
+      <div class="popup-content">
+        <ul class="form-controls">
+          <li class="width-10">
+            <label>Name</label>
+            <input type="text">
+          </li>
+          <li class="width-10">
+            <label>Date</label>
+              <input type="text" data-beatpicker="true" data-beatpicker-position="['*','*']">
+          </li>
+          <li class="width-10">
+            <label>Branch</label>
+            <input type="text">
+          </li>
+          <li class="width-10">
+            <label>Status</label>
+                  <!--<select class="select">
+                      <option>Active</option>
+                      <option>Inactive</option>
+                  </select>-->
+            <div class="select-focus">
+              <input placeholder="Select" onkeypress="return false" class="autofill">
+              <i class="icon-down-arrow"></i>
+              <ul class="custom-select">
+                <li class="selected">Active</li>
+                <li>Inactive</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Agent Filter popup End--> 
+  <!-- Pending Agent Filter popup -->
+  <div class="popup-bg" id="pending-agent-filter" style="display:none;">
+    <div class="popup-div">
+      <div class="popup-header">
+        <h2><i class="icon-filter"></i> Filter <i class="icon-close div-right"></i></h2>
+      </div>
+      <div class="popup-content">
+        <ul class="form-controls">
+          <li class="width-10">
+            <label>Name</label>
+            <input type="text">
+          </li>
+          <li class="width-10">
+            <label>Lead</label>
+            <input type="text">
+          </li>
+          <li class="width-10">
+            <label>Customer</label>
+            <input type="text">
+          </li>
+          <li class="width-10">
+            <label>Status</label>
+                  <!--<select class="select">
+                      <option>Positive</option>
+                      <option>Negative</option>
+                  </select>-->
+            <div class="select-focus">
+              <input placeholder="Select" onkeypress="return false" class="autofill">
+              <i class="icon-down-arrow"></i>
+              <ul class="custom-select">
+                <li class="selected">Positive</li>
+                <li>Negative</li>
+              </ul>
+            </div>
+          </li>
+          <li class="width-10">
+            <label>Service Type</label>
+           <!--<select class="select">
+                      <option>Filed Investigation</option>
+                      <option>Document Verification</option>
+                      <option>Technical Verification</option>
+                  </select>-->
+            <div class="select-focus">
+              <input placeholder="Select" onkeypress="return false" class="autofill">
+              <i class="icon-down-arrow"></i>
+              <ul class="custom-select">
+                <li class="selected">Filed Investigation</li>
+                <li>Document Verification</li>
+                <li>Technical Verification</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Pending Agent Filter popup End--> 
+  <!-- Field Investication popup -->
+  <div class="popup-bg field-popup" id="field-popup" style="display:none;">
+    <div class="popup-div">
+      <div class="popup-header">
+        <h2><i class="icon-agents"></i> Agent Name <span>Field Investigation</span> <i class="icon-close div-right"></i></h2>
+        <span class="div-right">SHFL0035</span>
+        <div class="clear"></div>
+      </div>
+      <div class="popup-content">
+        <div class="field-content">
+          <div class="div-left grid-50">
+            <p>SHFL0035</p>
+            <p>Saranya Chakrapani</p>
+            <p> <span>Applicant</span> , <span>Female</span></p>
+            <p>9876543210</p>
+          </div>
+          <div class="div-right grid-50">
+            <ul class="">
+              <li class="width-9"> <span class="bg">Residence</span> </li>
+              <li class="width-12">
+                <label>Address1</label>
+                <p>Address will comes here</p>
+                <p>Address will comes here</p>
+                <p>Address will comes here</p>
+                <p>Address will comes here</p>
+              </li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="fidt2">
+          <ul class="fom-controls">
+            <li class="div-left width-4">
+              <label>Date of Report</label>
+                <input type="text" data-beatpicker="true" data-beatpicker-position="['*','*']">
+            </li>
+            <li class="div-right status">
+              <p class="bg bg1"><i class="icon-positive"></i></p>
+            </li>
+          </ul>
+          <textarea></textarea>
+            <ul class="div-left attachment-div">
+              <li> <span><i class="icon-attach"></i> report.pdf <i class="icon-down-arrow"></i></span>
+                <ul class="attach-dd" style="display:none;">
+                  <li>Remove</li>
+                  <li>Download</li>
+                </ul>
+              </li>
+            </ul>
+          <span class="div-right bg-blue"><i class="icon-attach"></i> Attach</span> </div>
+      </div>
+      <input type="button" value="Save" class="div-right">
+    </div>
+  </div>
+  <!-- Field Investication popup End--> 
+  <!-- Document Verification popup -->
+  <div class="popup-bg field-popup" id="doc-popup" style="display:none;">
+    <div class="popup-div">
+      <div class="popup-header">
+        <h2><i class="icon-agents"></i> Agent Name <span>Document Verification</span> <i class="icon-close div-right"></i></h2>
+        <span class="div-right">SHFL0035</span>
+        <div class="clear"></div>
+      </div>
+      <div class="popup-content">
+        <div class="field-content">
+          <div class="div-left grid-50">
+            <p>SHFL0035</p>
+            <p>Saranya Chakrapani</p>
+            <p> <span>Applicant</span> , <span>Female</span></p>
+            <p>9876543210</p>
+          </div>
+          <div class="div-right grid-50">
+            <ul class="">
+              <li class="width-9"> <span class="bg">Residence</span> </li>
+              <li class="width-12">
+                <label>Address1</label>
+                <p>Address will comes here</p>
+                <p>Address will comes here</p>
+                <p>Address will comes here</p>
+                <p>Address will comes here</p>
+              </li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="agent-document-list document-entry">
+          <h2>Documents</h2>
+          <div class="documents attach-icon doc-list-view">
+            <ul>
+              <li>
+                <h5>Voter Id</h5>
+                <p>Comments text will comes here</p>
+              </li>
+              <li>
+                <textarea></textarea>
+              </li>
+              <li class="status">
+                <p class="bg bg1"><i class="icon-positive"></i></p>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <h5>Application Form</h5>
+                <p>Comments text will comes here</p>
+              </li>
+              <li>
+                <textarea></textarea>
+              </li>
+              <li class="status">
+                <p class="bg bg1"><i class="icon-positive"></i></p>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <h5>Sale Deed</h5>
+                <p>Comments text will comes here</p>
+              </li>
+              <li>
+                <textarea></textarea>
+              </li>
+              <li class="status">
+                <p class="bg bg1"><i class="icon-positive"></i></p>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <h5>Processing Fee Cheque</h5>
+                <p>Comments text will comes here</p>
+              </li>
+              <li>
+                <textarea></textarea>
+              </li>
+              <li class="status">
+                <p class="bg bg1"><i class="icon-positive"></i></p>
+              </li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="fidt2">
+          <h2>Report</h2>
+          <ul class="fom-controls">
+            <li class="div-left width-4">
+              <label>Date of Report</label>
+                <input type="text" data-beatpicker="true" data-beatpicker-position="['*','*']">
+            </li>
+            <li class="div-right status">
+              <p class="bg bg1"><i class="icon-positive"></i></p>
+            </li>
+          </ul>
+          <textarea></textarea>
+          <ul class="div-left attachment-div">
+              <li> <span><i class="icon-attach"></i> report.pdf <i class="icon-down-arrow"></i></span>
+                <ul class="attach-dd" style="display:none;">
+                  <li>Remove</li>
+                  <li>Download</li>
+                </ul>
+              </li>
+            </ul>
+          <span class="div-right bg-blue"><i class="icon-attach"></i> Attach</span> </div>
+      </div>
+      <input type="button" value="Save" class="div-right">
+    </div>
+  </div>
+  <!-- Document Verification popup End--> 
+  <!-- Legal Verification popup -->
+  <div class="popup-bg field-popup" id="legal-popup" style="display:none;">
+    <div class="popup-div">
+      <div class="popup-header">
+        <h2><i class="icon-agents"></i> Agent Name <span>Legal Verification</span> <i class="icon-close div-right"></i></h2>
+        <span class="div-right">SHFL0035</span>
+        <div class="clear"></div>
+      </div>
+      <div class="popup-content">
+        <div class="field-content">
+          <div class="div-left grid-50">
+            <p>SHFL0035</p>
+            <p>Saranya Chakrapani</p>
+            <p> <span>Applicant</span> , <span>Female</span></p>
+            <p>9876543210</p>
+          </div>
+          <div class="div-right grid-50">
+            <ul>
+              <li class="width-98p">
+                <label>Property Address</label>
+                <p>Address will comes here</p>
+                <p>Address will comes here</p>
+                <p>Address will comes here</p>
+                <p>Address will comes here</p>
+              </li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="legal-content">
+          <ul class="grid-45 div-left box-div">
+            <h2>Boundaries As Per Sale Deed</h2>
+            <li class="width-98p read-only">
+              <label>East</label>
+              <input type="text" placeholder="" value="VACANT LAND">
+            </li>
+            <li class="width-98p read-only"> 
+              <p>MANIKKAM HOUSE</p>
+              <input type="text" placeholder=""value="MANIKKAM HOUSE">
+            </li>
+            <li class="width-98p read-only">
+              <label>North</label>
+              <input type="text" placeholder=""value="ROAD">
+            </li>
+            <li class="width-98p read-only">
+              <label>South</label>
+              <input type="text" placeholder=""value="SSR NAGAR">
+            </li>
+          </ul>
+          <div class="grid-50 div-right box-div">
+            <ul class="form-controls">
+              <li class="width-48p">
+                <label>Reference Number</label>
+                <input type="text" placeholder=""value="859647851263956">
+              </li>
+              <li class="width-48p">
+                <label>Approval Plan Number</label>
+                <input type="text" placeholder=""value="859647851263956">
+              </li>
+              <h2>Property Valuation</h2>
+              <li class="width-48p amount">
+                <label>Asset Cost</label>
+                <i class="icon-indian-rupee"></i>
+                <input type="text" placeholder=""value="65,00,000">
+              </li>
+              <li class="width-48p amount">
+                <label>Registration Charges</label>
+                <i class="icon-indian-rupee"></i>
+                <input type="text" placeholder=""value="3,00,000">
+              </li>
+              <li class="width-48p amount">
+                <label>Stamp Duty Charges</label>
+                <i class="icon-indian-rupee"></i>
+                <input type="text" placeholder=""value="2,00,000">
+              </li>
+              <li class="width-48p amount">
+                <label>Agreement Value</label>
+                <i class="icon-indian-rupee"></i>
+                <input type="text" placeholder=""value="70,00,000">
+              </li>
+              <h2>&nbsp;</h2>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="fidt2">
+          <h2>Report</h2>
+          <ul class="fom-controls">
+            <li class="div-left width-4">
+              <label>Date of Report</label>
+                <input type="text" data-beatpicker="true" data-beatpicker-position="['*','*']">
+            </li>
+            <li class="div-right status">
+              <p class="bg bg1"><i class="icon-positive"></i></p>
+            </li>
+          </ul>
+          <textarea></textarea>
+          <ul class="div-left attachment-div">
+              <li> <span><i class="icon-attach"></i> report.pdf <i class="icon-down-arrow"></i></span>
+                <ul class="attach-dd" style="display:none;">
+                  <li>Remove</li>
+                  <li>Download</li>
+                </ul>
+              </li>
+            </ul>
+          <span class="div-right bg-blue"><i class="icon-attach"></i> Attach</span> </div>
+      </div>
+      <input type="button" value="Save" class="div-right">
+    </div>
+  </div>
+  <!-- Legal Verification popup End--> 
+  <!-- Technical Verification popup -->
+  <div class="popup-bg field-popup" id="technical-popup" style="display:none;">
+    <div class="popup-div">
+      <div class="popup-header">
+        <h2><i class="icon-agents"></i> Agent Name <span>Technical Verification</span> <i class="icon-close div-right"></i></h2>
+        <span class="div-right">SHFL0035</span>
+        <div class="clear"></div>
+      </div>
+      <div class="popup-content">
+        <div class="field-content">
+          <div class="div-left grid-50">
+            <p>SHFL0035</p>
+            <p>Saranya Chakrapani</p>
+            <p> <span>Applicant</span> , <span>Female</span></p>
+            <p>9876543210</p>
+          </div>
+          <div class="div-right grid-50">
+            <ul>
+              <li class="width-98p">
+                <label>Property Address</label>
+                <p>Address will comes here</p>
+                <p>Address will comes here</p>
+                <p>Address will comes here</p>
+                <p>Address will comes here</p>
+              </li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="legal-content">
+          <ul class="grid-45 div-left box-div">
+            <h2>Boundaries As Per Sale Deed</h2>
+            <li class="width-98p read-only">
+              <label>East</label>
+              <input type="text" placeholder="" value="VACANT LAND">
+            </li>
+            <li class="width-98p read-only"> 
+              <p>MANIKKAM HOUSE</p>
+              <input type="text" placeholder=""value="MANIKKAM HOUSE">
+            </li>
+            <li class="width-98p read-only">
+              <label>North</label>
+              <input type="text" placeholder=""value="ROAD">
+            </li>
+            <li class="width-98p read-only">
+              <label>South</label>
+              <input type="text" placeholder=""value="SSR NAGAR">
+            </li>
+          </ul>
+          <div class="grid-50 div-right box-div">
+            <ul class="form-controls">
+              <li class="read-only width-48p">
+                <label>Reference Number</label>
+                <input type="text" placeholder=""value="859647851263956">
+              </li>
+              <h2>Property Valuation</h2>
+              <li class="width-48p amount">
+                <label>Market value</label>
+                <i class="icon-indian-rupee"></i>
+                <input type="text" placeholder=""value="69,37,800">
+              </li>
+              <li class="read-only width-48p amount">
+                <label>Amenities amount </label>
+                <input type="text" placeholder=""value="3,00,000">
+                <i class="icon-indian-rupee"></i> </li>
+              <li class="width-100p">
+                <textarea></textarea>
+              </li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="fidt2">
+          <h2>Report</h2>
+          <ul class="fom-controls">
+            <li class="div-left width-4">
+              <label>Date of Report</label>
+                <input type="text" data-beatpicker="true" data-beatpicker-position="['*','*']">
+            </li>
+            <li class="div-right status">
+              <p class="bg bg1"><i class="icon-positive"></i></p>
+            </li>
+          </ul>
+          <textarea></textarea>
+          <ul class="div-left attachment-div">
+              <li> <span><i class="icon-attach"></i> report.pdf <i class="icon-down-arrow"></i></span>
+                <ul class="attach-dd" style="display:none;">
+                  <li>Remove</li>
+                  <li>Download</li>
+                </ul>
+              </li>
+            </ul>
+          <span class="div-right bg-blue"><i class="icon-attach"></i> Attach</span> </div>
+      </div>
+      <input type="button" value="Save" class="div-right">
+    </div>
+  </div>
+  <!-- Technical Verification popup End--> 
+</div>
+<script src="js/BeatPicker.min.js"></script> 
+<script>   
+calcHeight();
+popupclose();
+customselect();
+commontabs();
+selectfocus(); /* Custom Select2 plugin Function*/
+$(".attachment-div i.icon-down-arrow").click(function(e) {
+    $(".attach-dd").toggle();
+	//$(this).siblings().parent().siblings().children().hide();
+});
+$(".tab1-content.agent-cnt .filters-div .icon-filter").click(function(e) {
+    $("#agent-filter").toggle();
+});
+$(".tab2-content.agent-cnt .filters-div .icon-filter").click(function(e) {
+    $("#pending-agent-filter").toggle();
+});
+$(".tab1-content ul li").click(function(e) {
+	$(".tab2-content").show();
+	$(".tab1-content").hide();
+});
+$(".field-pop").click(function(e) {
+    $("#field-popup").toggle();
+});
+$(".doc-pop").click(function(e) {
+    $("#doc-popup").toggle();
+});
+$(".legal-popup").click(function(e) {
+    $("#legal-popup").toggle();
+});
+$(".technical-popup").click(function(e) {
+    $("#technical-popup").toggle();
+});
+</script> 

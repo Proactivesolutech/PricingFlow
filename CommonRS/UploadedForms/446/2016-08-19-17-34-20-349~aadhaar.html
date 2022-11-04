@@ -1,0 +1,178 @@
+<script>
+		$(".finger-print").click(function(e) {
+    $(".finger-print-cnt").show();
+	$(".otp-cnt").hide();
+	$(this).addClass('active');
+	$(this).siblings().removeClass('active');
+});
+$(".otp").click(function(e) {
+	$(".otp-cnt").show();
+    $(".finger-print-cnt").hide();
+	$(this).addClass('active');
+	$(this).siblings().removeClass('active');
+});
+$(".left-tab").click(function(e) {
+    $(".left-fin-ct").show();
+	$(".right-fin-ct").hide();
+	$(this).addClass('active');
+	$(this).siblings().removeClass('active');
+});
+$(".right-tab").click(function(e) {
+    $(".right-fin-ct").show();
+	$(".left-fin-ct").hide();
+	$(this).addClass('active');
+	$(this).siblings().removeClass('active');
+});
+$(".aadhar-icon").click(function(e) {
+   $(".pop-bg.aadhaar-popup").show(); 
+});
+$(".icon-close").click(function(e) {
+    $(".pop-bg.aadhaar-popup").hide(); 
+});
+</script>
+
+<div class="pop-bg aadhaar-popup">
+  <div class="box-div popup-div">
+    <h2>Aadhaar Verification <i class="icon-close right"></i></h2>
+    <div class="aadhar-content">
+      <ul>
+        <li>
+          <label>Aadhaar Number</label>
+          <input type="text">
+        </li>
+      </ul>
+      <ul class="common-tabs">
+        <li class="finger-print active">Finger Print</li>
+        <li class="otp">OTP</li>
+      </ul>
+      <div class="finger-print-cnt">
+        <div class="left box-div">
+          <ul class="finger-tabs">
+            <li class="left-tab active">Left</li>
+            <li class="right-tab">Right</li>
+          </ul>
+          <div class="left-fin-ct"><img src="images/left-hand.jpg" usemap="#map">
+            <map name="map">
+              <area shape="rect" coords="41,19,89,62" href="#" target="_self" id="areahover">
+              <area shape="rect" coords="102,1,145,49" href="#" target="_self" id="areahover1">
+              <area shape="rect" coords="153,6,186,55" href="#" target="_self" id="areahover2">
+              <area shape="rect" coords="196,55,226,92" href="#" target="_self" id="areahover3">
+              <area shape="rect" coords="-1,116,35,162" href="#" target="_self" id="areahover4">
+            </map>
+          </div>
+          <div class="right-fin-ct" style="display:none;"><img src="images/right-hand.jpg" usemap="#righthand">
+            <map name="righthand">
+              <area shape="rect" coords="174,122,218,168" href="#" target="_self" id="areahover5">
+              <area shape="rect" coords="133,17,169,57" href="#" target="_self" id="areahover6">
+              <area shape="rect" coords="74,2,113,39" href="#" target="_self" id="areahover7">
+              <area shape="rect" coords="29,11,67,51" href="#" target="_self" id="areahover8">
+              <area shape="rect" coords="2,58,23,93" href="#" target="_self" id="areahover9">
+            </map>
+          </div>
+          <div class="hover-thumb">
+            <input type="button" class="hovert hoverthumb">
+            <input type="button" class="hovert hoverthumb1">
+            <input type="button" class="hovert hoverthumb2">
+            <input type="button" class="hovert hoverthumb3">
+            <input type="button" class="hovert hoverthumb4">
+            <input type="button" class="hovert hoverthumb5">
+            <input type="button" class="hovert hoverthumb6">
+            <input type="button" class="hovert hoverthumb7">
+            <input type="button" class="hovert hoverthumb8">
+            <input type="button" class="hovert hoverthumb9">
+          </div>
+        </div>
+        <div class="right box-div">
+          <h3>Right Index</h3>
+          <div class="index-fingure"><img src="images/index.jpg"></div>
+          <input type="button" value="Capture" class="right">
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="otp-cnt" style="display:none;">
+        <ul>
+          <li>
+            <label>Mobile</label>
+            <input type="text">
+          </li>
+          <li>
+            <input type="button" value="Generate OTP">
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <label>Enter OTP</label>
+            <input type="text">
+          </li>
+          <li>
+            <input type="button" value="Capture">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+/*$("#areahover").hover(function(e) {
+    $(".hoverthumb").toggle();
+});
+$("#areahover1").hover(function(e) {
+    $(".hoverthumb1").toggle();
+});
+$("#areahover2").hover(function(e) {
+    $(".hoverthumb2").toggle();
+});
+$("#areahover3").hover(function(e) {
+    $(".hoverthumb3").toggle();
+});
+$("#areahover4").hover(function(e) {
+    $(".hoverthumb4").toggle();
+});
+$("#areahover5").hover(function(e) {
+    $(".hoverthumb5").toggle();
+});
+$("#areahover6").hover(function(e) {
+    $(".hoverthumb6").toggle();
+});
+$("#areahover7").hover(function(e) {
+    $(".hoverthumb7").toggle();
+});
+$("#areahover8").hover(function(e) {
+    $(".hoverthumb8").toggle();
+});
+$("#areahover9").hover(function(e) {
+    $(".hoverthumb9").toggle();
+});*/
+/*$("#areahover").mouseleave(function(e) {
+    $(".hoverthumb").hide();
+  });
+  $("#areahover1").mouseleave(function(e) {
+    $(".hoverthumb1").hide();
+  });
+  $("#areahover2").mouseleave(function(e) {
+    $(".hoverthumb2").hide();
+  });
+  $("#areahover3").mouseleave(function(e) {
+    $(".hoverthumb3").hide();
+  });
+  $("#areahover4").mouseleave(function(e) {
+    $(".hoverthumb4").hide();
+  });
+   $("#areahover5").mouseleave(function(e) {
+    $(".hoverthumb5").hide();
+  });
+   $("#areahover6").mouseleave(function(e) {
+    $(".hoverthumb6").hide();
+  });
+   $("#areahover7").mouseleave(function(e) {
+    $(".hoverthumb7").hide();
+  });
+   $("#areahover8").mouseleave(function(e) {
+    $(".hoverthumb8").hide();
+  });
+   $("#areahover9").mouseleave(function(e) {
+    $(".hoverthumb9").hide();
+  });*/
+  });
+</script>
